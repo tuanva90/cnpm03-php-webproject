@@ -4,7 +4,7 @@
  * @since 2.0.1
  */
 if (version_compare(phpversion(), '5.2.0', '<') === true) {
-    die('ERROR: Your PHP version is ' . phpversion() . '. TomatoCMS requires PHP 5.2.0 or newer.');
+    die('ERROR: Your PHP version is ' . phpversion() . '. Honey CMS requires PHP 5.2.0 or newer.');
 }
 
 include_once 'config.php';
