@@ -1,0 +1,173 @@
+<div id="content">
+<?php echo $this->flashMessenger(); ?>
+<div class="toolbox">
+	<div class="left"><?php echo $this->cmsTranslator('install_config_web_settings'); ?></div>
+	<?php		
+		//1. Save - submit
+		$btnSave = $this->cmsButton(
+						$this->cmsTranslator('install_config_save_button'),
+						$this->baseUrl($this->currentController . '/app'),
+						HTTP_IMAGES . '/icon/icon-32-save.png',
+						'submit'
+					);
+										
+		//2. Cancel - link
+		$btnCancel = $this->cmsButton(
+						'Cancel',
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnSave;?><?php echo $btnCancel;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo HTTP_SERVER . '/admin/config/app/';?>">Hệ thống</a>
+	<a href="<?php echo HTTP_SERVER . '/admin/user/index/';?>">Member Manager</a>
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" > 
+      <table class="form">
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_url'); ?>
+          	<span class="help"><?php echo $this->cmsTranslator('install_config_web_url_guide'); ?></span></td>
+          <td><?php echo $this->formText('url', $this->url, array('size'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_name'); ?>
+          	<span class="help"><?php echo $this->cmsTranslator('install_config_web_name_guide'); ?></span></td>
+          <td><?php echo $this->formText('siteName', $this->siteName, array('size'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_title'); ?>
+          	<span class="help"><?php echo $this->cmsTranslator('install_config_web_title_guide'); ?></span></td>
+          <td><?php echo $this->formText('title', $this->defaultTitle, array('size'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_language'); ?></td>
+        <td><select name="lang">
+				<?php foreach ($this->languages as $lang => $names) : ?>
+				<option value="<?php echo $lang; ?>"<?php if ($this->lang == $lang): ?> selected="selected"<?php endif; ?>><?php echo $names['localName']; ?> (<?php echo $names['englishName']; ?>)</option>
+				<?php endforeach; ?>
+			 </select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_language_direction'); ?></td>
+          <td><select name="langDirection">
+				<option value="ltr"<?php if ('ltr' == $this->langDirection) : ?> selected="selected"<?php endif; ?>><?php echo $this->cmsTranslator('install_config_web_language_ltr'); ?></option>
+				<option value="rtl"<?php if ('rtl' == $this->langDirection) : ?> selected="selected"<?php endif; ?>><?php echo $this->cmsTranslator('install_config_web_language_rtl'); ?></option>
+			  </select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_admin_item_count_per_page'); ?></td>
+          <td><?php echo $this->formText('itemCountPerPage', $this->itemCountPerPage, array('size'=>'10'));?></td>
+        </tr>
+         <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_admin_page_range'); ?></td>
+          <td><?php echo $this->formText('pageRange', $this->pageRange, array('size'=>'10'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_template'); ?></td>
+        <td><select name="template">
+				<?php foreach ($this->templates as $template => $value) : ?>
+				<option value="<?php echo $template; ?>"<?php if ($this->currentTemplate == $template) : ?> selected="selected"<?php endif; ?>><?php echo $template; ?></option>
+				<?php endforeach; ?>
+			</select></td>
+        </tr>
+        <tr>
+           <td><?php echo $this->cmsTranslator('install_config_web_skin'); ?></td>
+       <td><select name="skin">
+				  <option value="default" selected="selected">default</option>
+			   </select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_charset'); ?></td>
+          <td><select name="charset">
+				<?php foreach ($this->charsets as $name => $charset) : ?>
+				<option value="<?php echo $charset; ?>"<?php if ($this->currentCharset == $charset) : ?> selected="selected"<?php endif; ?>><?php echo $name; ?></option>
+				<?php endforeach; ?>
+			</select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_keyword'); ?>
+          	<span class="help"><?php echo $this->cmsTranslator('install_config_web_keyword_guide'); ?></span></td>
+          <td><?php echo $this->formTextArea('metaKeyword', $this->metaKeyword, array('rows'=>'5', 'cols'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_description'); ?>
+          	<span class="help"><?php echo $this->cmsTranslator('install_config_web_description_guide'); ?></span></td>
+          <td><?php echo $this->formTextArea('metaDescription', $this->metaDescription, array('rows'=>'5', 'cols'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_web_offline_message'); ?></td>
+          <td><?php echo $this->formTextArea('offlineMessage', $this->offlineMessage, array('rows'=>'5', 'cols'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="checkbox" name="offline" value="1" <?php if (null != $this->offline && 'true' == $this->offline) : ?>checked="checked"<?php endif; ?> />&nbsp;<?php echo $this->cmsTranslator('install_config_web_offline'); ?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_session_lifetime'); ?>
+          	<span class="help"><?php echo $this->cmsTranslator('install_config_session_lifetime_guide'); ?></span></td>
+          <td><?php echo $this->formText('sessionLifetime', $this->sessionLifetime, array('size'=>'10'));?>
+          <?php echo $this->cmsTranslator('install_config_session_lifetime_seconds'); ?></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="checkbox" name="debugMode" value="1" <?php if (null != $this->debugMode && 'true' == $this->debugMode) : ?>checked="checked"<?php endif; ?> />&nbsp;<?php echo $this->cmsTranslator('install_config_debug_mode'); ?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_timezone'); ?></td>
+          <td><select name="timezone">
+				<?php foreach ($this->timeZones as $timeZone => $name) : ?>
+				<option value="<?php echo $timeZone; ?>"<?php if ($timeZone == $this->currentTimeZone): ?> selected="selected"<?php endif; ?>><?php echo $timeZone; ?> (<?php echo $name; ?>)</option>
+				<?php endforeach; ?>
+			 </select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_date_format'); ?></td>
+          <td><select name="dateFormat">
+				<?php foreach ($this->availableDateFormats as $format) : ?>
+				<option value="<?php echo $format; ?>"<?php if ($format == $this->dateFormat) : ?> selected="selected"<?php endif; ?>><?php echo date($format); ?></option>
+				<?php endforeach; ?>
+			 </select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_date_time_format'); ?></td>
+          <td><select name="datetimeFormat">
+				<?php foreach ($this->availableDateTimeFormats as $format) : ?>
+				<option value="<?php echo $format; ?>"<?php if ($format == $this->dateTimeFormat) : ?> selected="selected"<?php endif; ?>><?php echo date($format); ?></option>
+				<?php endforeach; ?>
+			 </select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_cache_type'); ?></td>
+          <td><select id="cacheSelector" name="cacheType">
+				<option value=""><?php echo $this->cmsTranslator('install_config_select_cache_type'); ?></option>
+				<?php foreach ($this->cacheTypes as $cache) : ?>
+                <option value="<?php echo $cache; ?>"<?php if ($cache == $this->currCacheType): ?> selected="selected"<?php endif; ?>><?php echo $cache; ?></option>
+				<?php endforeach; ?>
+			 </select></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_memcache_host'); ?></td>
+          <td><?php echo $this->formText('memcacheHost', $this->memcacheHost, array('size'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_memcache_port'); ?></td>
+          <td><?php echo $this->formText('memcachePort', $this->memcachePort, array('size'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_cache_lifetime'); ?></td>
+          <td><?php echo $this->formText('cacheLifetime', $this->cacheLifetime, array('size'=>'10'));?>
+          <?php echo $this->cmsTranslator('install_config_cache_lifetime_seconds'); ?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('install_config_cache_prefix'); ?></td>
+          <td><?php echo $this->formText('cachePrefix', $this->cachePrefix, array('size'=>'10'));?></td>
+        </tr>
+      </table>
+    </form>
+</div>
+</div>

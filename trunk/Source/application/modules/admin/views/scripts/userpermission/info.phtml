@@ -1,0 +1,50 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php		
+		//1. Edit - link
+		$btnEdit = $this->cmsButton(
+						'Edit Item',
+						$this->baseUrl($this->currentController . '/edit/user_group_id/' . $this->Item['user_group_id']),
+						HTTP_IMAGES . '/icon/icon-32-edit.png',
+						'link'
+					);
+										
+		//2. Cancel - link
+		$btnCancel = $this->cmsButton(
+						'Cancel',
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnEdit;?><?php echo $btnCancel;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo HTTP_SERVER . '/admin/userpermission/index/';?>">Group Manager</a>
+	<a href="<?php echo HTTP_SERVER . '/admin/user/index/';?>">Member Manager</a>
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" > 
+      <table class="form">
+        <tr>
+          <td>Group Name:</td>
+          <td><input type="text" name="name" value="<?php echo $this->Item['name'];?>" size="50" /></td>
+        </tr>
+        <tr>
+          <td>Status: </td>
+          <?php if($this->Item['status']) {?>
+          <td>Active <input type="radio" name="status" value="1" checked="checked" />&nbsp;&nbsp;&nbsp;&nbsp;Inactive <input type="radio" name="status" value="0" /></td>
+          <?php } else { ?>
+          <td>Active <input type="radio" name="status" value="1"/>&nbsp;&nbsp;&nbsp;&nbsp;Inactive <input type="radio" name="status" value="0" checked="checked" /></td>
+          <?php } ?>
+        </tr>
+        <tr>
+           <td>Order</td>
+           <td><input type="text" name="sort_order" value="<?php echo $this->Item['sort_order'];?>" size="1" /></td>
+        </tr>
+      </table>
+    </form>
+</div>
+</div>

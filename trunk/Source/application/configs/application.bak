@@ -1,0 +1,87 @@
+[production]
+;=========== Any php.ini settings to initialize
+phpSettings.display_status_errors = 0
+phpSettings.display_errors = 0
+phpSettings.error_reporting = 8191
+phpSettings.default_charset = "UTF-8"
+phpSettings.date.timezone = "Asia/Ho_Chi_Minh"
+
+;=========== Options for bootstrapping
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+
+;================== Set Multi Module =================
+
+;=========== Front controller
+resources.frontController.moduleDirectory = APPLICATION_PATH "/modules"
+resources.frontController.params.displayExceptions = 1
+resources.frontController.moduleControllerDirectoryName = "controllers"
+resources.frontController.defaultModule = "front"
+;resources.frontController.throwExceptions = "1"
+
+;=========== Module Zend_Application_Module_Autoloader
+resources.modules[] = ""
+
+;=========== Them mot thu muc chua Zend_View_Helper
+resources.view.helperPath.Honey_View_Helper = "Honey/View/Helper"
+
+;================= Layout ============================
+resources.layout.layoutPath = APPLICATION_PATH "/templates/front/default"
+resources.layout.layout = "index"
+
+;================== Config database ===================
+resources.db.adapter = "mysqli"
+resources.db.params.host = "localhost"
+resources.db.params.username = "root"
+resources.db.params.password ="root"
+resources.db.params.dbname = "zend"
+resources.db.profiler.enabled = true
+
+;=========== Any additional autoloader namespaces to register
+autoloaderNamespaces[] = "Honey_"
+
+[development : production]
+phpSettings.display_status_errors = 1
+phpSettings.display_errors = 1
+
+[web]
+name = "TomatoCMS"
+title = "TomatoCMS"
+meta.keyword = "TomatoCMS, CMS, Content Management System, Open source CMS, Zend Framework, Zend Framework CMS, jQuery, 960gs, 960 Grid System, Layout Editor"
+meta.description = "TomatoCMS - An open source CMS powered by Zend Framework, jQuery and 960grid"
+template = "default"
+skin = "default"
+charset = "utf-8"
+language.code = "vi_VN"
+language.direction = "ltr"
+offline.enable = "false"
+offline.message = "This site is maintained. Sorry for any inconvenience. Please come back later. Thank you."
+session.cookie_lifetime = "36000"
+debug = "true"
+datetime.timezone = "Asia/Bangkok"
+datetime.format.date = "m-d-Y"
+datetime.format.datetime = "m-d-Y H:i:s"
+;url.base = "http://localhost/tomatocms/index.php"
+;url.static = "http://localhost/tomatocms"
+
+[localization]
+enable = "true"
+languages.default = "en_US"
+languages.list = "vi_VN,en_US"
+languages.details.vi_VN = "vi_VN|Tiếng Việt|Vietnamese"
+languages.details.en_US = "en_US|English|English"
+translate.auto = "true"
+translate.service.using = "google"
+translate.service.google.apikey = "ABQIAAAA5rC1gtd5XkYz4NCrXzsu-xTEsvxgx0ZMgr8E8wEZCLKfWhWUXhRtgpJ3NCS7xi7WR4vd9Qj6TbBXEA"
+translate.service.microsoft.apikey = "DFAD5F4685285CBEA48F372A5354D5BC87D85C58"
+
+[cache]
+compress.css = "false"
+compress.js = "false"
+compress.html = "false"
+frontend.name = "Core"
+frontend.options.lifetime = "10000"
+frontend.options.cache_id_prefix = "cache"
+frontend.options.automatic_serialization = "true"
+backend.name = "File"
+backend.options.cache_dir = "{TEMP_PATH}{DS}cache"
