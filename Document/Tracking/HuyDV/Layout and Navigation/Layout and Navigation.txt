@@ -1,0 +1,1 @@
+﻿- Trừ Header và Footer còn các thành phần khác là động, nếu không có nội dung thì nó không xuất hiện.
