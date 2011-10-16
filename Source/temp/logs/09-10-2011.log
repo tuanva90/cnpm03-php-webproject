@@ -1,0 +1,198 @@
+WDS CMS - 2011-10-09T07:11:58+07:00
+DEBUG [7]: Zend_Auth_Adapter_Exception
+Message: A value for the identity was not provided prior to authentication with Zend_Auth_Adapter_DbTable.
+Stack trace: 10
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth\Adapter\DbTable.php
+-- Line: 367
+-- Function: _authenticateSetup
+-- Class: Zend_Auth_Adapter_DbTable
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth.php
+-- Line: 117
+-- Function: authenticate
+-- Class: Zend_Auth_Adapter_DbTable
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Honey\Plugin\Permission\Auth.php
+-- Line: 39
+-- Function: authenticate
+-- Class: Zend_Auth
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 80
+-- Function: login
+-- Class: Honey_Plugin_Permission_Auth
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: loginAction
+-- Class: Admin_AuthController
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-09T07:12:24+07:00
+DEBUG [7]: Zend_Auth_Adapter_Exception
+Message: A value for the identity was not provided prior to authentication with Zend_Auth_Adapter_DbTable.
+Stack trace: 10
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth\Adapter\DbTable.php
+-- Line: 367
+-- Function: _authenticateSetup
+-- Class: Zend_Auth_Adapter_DbTable
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth.php
+-- Line: 117
+-- Function: authenticate
+-- Class: Zend_Auth_Adapter_DbTable
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Honey\Plugin\Permission\Auth.php
+-- Line: 39
+-- Function: authenticate
+-- Class: Zend_Auth
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 80
+-- Function: login
+-- Class: Honey_Plugin_Permission_Auth
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: loginAction
+-- Class: Admin_AuthController
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-09T07:13:55+07:00
+DEBUG [7]: Zend_Auth_Adapter_Exception
+Message: A value for the identity was not provided prior to authentication with Zend_Auth_Adapter_DbTable.
+Stack trace: 10
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth\Adapter\DbTable.php
+-- Line: 367
+-- Function: _authenticateSetup
+-- Class: Zend_Auth_Adapter_DbTable
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth.php
+-- Line: 117
+-- Function: authenticate
+-- Class: Zend_Auth_Adapter_DbTable
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Honey\Plugin\Permission\Auth.php
+-- Line: 39
+-- Function: authenticate
+-- Class: Zend_Auth
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 80
+-- Function: login
+-- Class: Honey_Plugin_Permission_Auth
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: loginAction
+-- Class: Admin_AuthController
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+

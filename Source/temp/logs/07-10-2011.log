@@ -1,0 +1,2967 @@
+WDS CMS - 2011-10-07T16:22:41+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'Translator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\auth\login.phtml
+-- Line: 3
+-- Function: translator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:22:43+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'Translator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\auth\login.phtml
+-- Line: 3
+-- Function: translator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:44:46+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:45:38+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:45:39+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:45:39+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:45:40+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:45:40+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:45:41+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:47:01+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:47:02+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:47:04+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:47:22+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:48:39+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:48:44+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:49:00+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:49:03+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:49:17+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:49:40+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:49:41+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:49:52+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (500) 
+Message: Method "loadTemplate" does not exist and was not trapped in __call()
+Stack trace: 8
+#0
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 30
+-- Function: loadTemplate
+-- Class: Admin_AuthController
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 133
+-- Function: init
+-- Class: Admin_AuthController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 268
+-- Function: __construct
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:58:29+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:58:29+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T16:58:29+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:00:03+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:00:04+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:00:05+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:00:05+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:00:42+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:01:07+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:02:20+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:02:21+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:02:22+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:02:23+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:02:24+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:02:31+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:02:32+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:07:06+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:07:07+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:07:08+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:07:09+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:07:10+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "view" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:08:16+07:00
+DEBUG [7]: Zend_Auth_Adapter_Exception
+Message: A value for the identity was not provided prior to authentication with Zend_Auth_Adapter_DbTable.
+Stack trace: 9
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth\Adapter\DbTable.php
+-- Line: 367
+-- Function: _authenticateSetup
+-- Class: Zend_Auth_Adapter_DbTable
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Auth.php
+-- Line: 117
+-- Function: authenticate
+-- Class: Zend_Auth_Adapter_DbTable
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\AuthController.php
+-- Line: 91
+-- Function: authenticate
+-- Class: Zend_Auth
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: loginAction
+-- Class: Admin_AuthController
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:27:42+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T17:41:03+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T20:29:14+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T21:05:25+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "index" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T21:07:08+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 10
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T21:07:09+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 10
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T21:07:42+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'Translator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 175
+-- Function: translator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T21:07:43+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'Translator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 175
+-- Function: translator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T21:07:44+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'Translator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey/View/Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 175
+-- Function: translator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T21:29:14+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T22:29:15+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-07T23:29:16+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
