@@ -16,4 +16,12 @@ class Admin_MenuController extends Honey_Controller_Action
     {
         /* Code */
     }
+	public function menumanagerAction()
+	{
+	
+	}
+	public function menutrashAction()
+	{
+	
+	}
 }
