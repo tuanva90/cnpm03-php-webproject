@@ -15,7 +15,7 @@ class Admin_Form_UserEdit extends Zend_Form{
 				
 		$fdate = $this->createElement('text', 'date');
 		$fdate->setLabel('Registration date : ');
-		$fdate->addValidator(new Zend_Validate_Date(MM-DD-YY));
+		$fdate->addValidator(new Zend_Validate_Date('MM-DD-YY'));
 
 		$freemail= new Zend_Form_Element_Checkbox('reemail');
 		$freemail->setLabel('Receive System Email : ');
