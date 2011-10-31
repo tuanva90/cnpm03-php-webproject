@@ -19,7 +19,7 @@ class Admin_Form_UserNew extends Zend_Form
         array(new Zend_Filter_StringTrim(), new Zend_Filter_StringToLower()));
         $fdate = $this->createElement('text', 'date');
         $fdate->setLabel('Registration date : ');
-        $fdate->addValidator(new Zend_Validate_Date(MM - DD - YY));
+        $fdate->addValidator(new Zend_Validate_Date('MM-DD-YY'));
         $freemail = new Zend_Form_Element_Checkbox('reemail');
         $freemail->setLabel('Receive System Email : ');
         $fbluser = new Zend_Form_Element_Checkbox('blockuser');
