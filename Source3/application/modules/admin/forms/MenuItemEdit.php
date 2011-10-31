@@ -6,8 +6,8 @@ class Admin_Form_MenuItemEdit extends Zend_Form{
 		$lbltype = new Zend_Form_Element_Text('type');
 		$lbltype->setLabel('Type :');
 		
-		$txttitle = new Zend_Form_Element_Text('title');
-		$txttitle->setLabel('Title :');
+		$txttitle1 = new Zend_Form_Element_Text('title1');
+		$txttitle1->setLabel('Title :');
 		
 		$txtalias = $this->createElement('text', 'alias');
 		$txtalias->setLabel('Alias : ');
@@ -52,12 +52,12 @@ class Admin_Form_MenuItemEdit extends Zend_Form{
 		$fbtnhelp = new Zend_Form_Element_Button('help');
 		$fbtnhelp->setLabel('Help');	
 		
-		$this->addElements(array($lbltype,$txttitle,$txtalias,$lbllink,$cbxdisplay,$lbxparent,$rbtnpublished,$lbxaccesslevel,$lbxopenln,$fbtnsave,$fbtnapply,$fbtncancel,$fbtnhelp,$fbtnchangetype));
+		$this->addElements(array($lbltype,$txttitle1,$txtalias,$lbllink,$cbxdisplay,$lbxparent,$rbtnpublished,$lbxaccesslevel,$lbxopenln,$fbtnsave,$fbtnapply,$fbtncancel,$fbtnhelp,$fbtnchangetype));
 
 		$this->addDecorator('formElements');
 		$this->addDecorator('form');
 		$this->addDisplayGroup(	array('type','changetype'),'Type');
-		$this->addDisplayGroup(	array('title','alias','link','display','published','parentitems','accesslevel','openln'),'options');
+		$this->addDisplayGroup(	array('title1','alias','link','display','published','parentitems','accesslevel','openln'),'options');
 		 
 	}
 }
