@@ -12,4 +12,8 @@ class Admin_CategoryController extends Honey_Controller_Action
     {
         /* Code */
     }
+    public function categorynewAction ()
+    {}
+    public function categoryeditAction ()
+    {}
 }
