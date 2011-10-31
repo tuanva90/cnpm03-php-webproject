@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+//reset css
+*{
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+a:LINK,:VISITED {
+	color: #0e33ec
+}
+
+body{
+	text-align:center;
+	align : center;  
+		 	   
+}
+
+#wrapper{
+	
+	width: 1000px;
+	height: auto;
+	border: 2px solid;
+	background:	#e6e2e9;   
+}
+	
+#header{
+	height: 100px;
+	border: 1px solid;
+}
+#content{
+	height:auto;
+	border: 1px solid;
+	text-align: left;
+}
+
+#title{
+	height:50px;
+	width : 400px;
+	float : left;
+	border: 1px solid;	
+}
+
+
+#footer{
+	height:100px;
+	border: 1px solid;
+}
+.vide{
+	clear:both;
+}
+
+#admin_menu{
+	text-align: left;
+}

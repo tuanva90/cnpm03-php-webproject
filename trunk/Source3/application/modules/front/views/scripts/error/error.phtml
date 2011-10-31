@@ -1,0 +1,147 @@
+<?php $exp = $this->errors->exception;?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Error page</title>
+</head>
+<body>
+<?php
+	define('START_TIME', microtime(true));
+	
+    $shortMessage = "It seems you have just encountered an unknown issue.";
+    $shortMessage .= "Our team has been notified and will deal with the problem as soon as possible.";
+
+    switch ($this->environment) {
+        case 'production':
+            echo nl2br($shortMessage);
+            break;
+        case 'development':
+?>
+<table cellspacing="0" cellpadding="0" border="1" width="100%">
+    <tbody>
+        <tr>
+            <th scope="col" colspan="5">
+                <h1><?php echo $this->message;?></h1>
+            </th>
+        </tr>
+        <tr align="left" valign="middle">
+            <th colspan="5">
+                <h2>Exception information : <?php echo get_class($exp); ?> - Error No: <?php echo $exp->getCode(); ?></h2>
+            </th>
+        </tr>
+       
+        <tr align="left" valign="middle">
+            <th colspan="5"><h3> <?php echo $exp->getMessage(); ?></h3></th>
+        </tr>
+        <tr><td colspan="5"><h3>Call Stack Trace:</h3></td></tr>
+        <tr align="center" valign="middle">
+            <td width="20px"><b>#</b></td>
+            <td><b>Time</b></td>
+            <td><b>Memory</b></td>
+            <td><b>Class &mdash;&gt; Function</b></td>
+            <td><b>Location/File : Line</b></td>
+        </tr>
+        <?php
+               $numOfTrace = 0;     
+               foreach ($exp->getTrace() as $trace):
+                   $nameOfFile = explode("\\",$trace['file']);
+                   $numOfDir = count($nameOfFile);   
+        ?>
+        <tr>
+            <td align="center" valign="middle"><?php echo $numOfTrace++; ?></td>
+            <td align="center" valign="middle"><?php echo number_format(microtime(true) - START_TIME, 5, '.', ''); ?></td>
+            <td align="center" valign="middle"><?php echo memory_get_usage(); ?></td>
+            <td valign="middle"><?php echo  $trace['class'] . ' &mdash;&gt; ' . $trace['function']; ?></td>
+            <td><?php echo '../' . implode("/",array_slice($nameOfFile,$numOfDir-3,3)) . ' : '. $trace['line'];?></td>
+        </tr>
+       
+      <?php endforeach;?>
+        <tr>
+            <td colspan="5"><h3>Total Stack: <?php echo count($exp->getTrace()); ?></h3></td>
+        </tr>
+        <?php if (!empty($this->server['SERVER_ADDR'])) {?>
+        <tr>
+            <td scope="col" colspan="2" align="left" >Server IP:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php echo $this->server['SERVER_ADDR'];?>
+            </td>
+        </tr>
+        <?php } if (!empty($this->server['HTTP_USER_AGENT'])) {?>
+        <tr>
+            <td scope="col" colspan="2" align="left" >User agent:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php echo $this->server['HTTP_USER_AGENT'];?>
+            </td>
+        </tr>
+        <?php } if (!empty($this->server['HTTP_X_REQUESTED_WITH'])) {?>
+           <tr>
+            <td scope="col" colspan="2" align="left" >Request type:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php echo $this->server['HTTP_X_REQUESTED_WITH'];?>
+            </td>
+        </tr>
+        <?php } ?>
+        <tr>
+            <td scope="col" colspan="2" align="left" >Server time:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php echo  date("Y-m-d H:i:s");?>
+            </td>
+        </tr>     
+        <tr>
+            <td scope="col" colspan="2" align="left" >RequestURI:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php  echo 'URL:      ' . $this->request->getRequestUri(); echo '<br /> Decription: ' . var_export($this->request->getParams(), true);?>
+            </td>
+        </tr>     
+        <?php  if (!empty($this->server['HTTP_REFERER'])) :?>
+        <tr>
+            <td scope="col" colspan="2" align="left" >Referer:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php echo $this->server['HTTP_REFERER'];?>
+            </td>
+        </tr>     
+        <?php endif;?>
+        <?php
+                  $it = $this->session->getIterator();
+                  if (!empty($it)) {   
+        ?>
+                           
+        <tr>
+            <td scope="col" colspan="2" align="left" >Session data:
+            </td>
+            <td scope="col" colspan="3" align="left">
+             <?php
+                 $message = '';
+                 foreach ($it as $key => $value){
+                     $message .= $key . ": " . var_export($value, true) . "<br />";
+                 }
+                 echo $message;
+             ?>
+            </td>
+        </tr>
+        <?php } if (!empty($this->query)) :?>                             
+        <tr>
+            <td scope="col" colspan="2" align="left" >Last database query:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php echo $this->query->getQuery();?>
+            </td>
+        </tr> 
+       <tr>
+            <td scope="col" colspan="2" align="left" >Last database query params:
+            </td>
+            <td scope="col" colspan="3" align="left"> <?php echo var_export($this->query->getQueryParams(), true);?>
+            </td>
+        </tr>           
+       <?php endif; ?>   
+    </tbody>
+</table>
+<?php             
+            break;   
+        default:
+            echo nl2br($shortMessage);
+    }
+
+?>
+</body>
+</html>
