@@ -1,0 +1,58 @@
+@CHARSET "ISO-8859-1";
+//reset css
+*{
+	border: 0px;
+	padding: 0px;
+	margin: 0px;
+	
+}
+
+body{
+	text-align:center;
+	align : center;  
+		 	   
+}
+
+#wrapper{
+	
+	width: 1000px;
+	height: auto;
+	border: 2px solid;
+	background:	#e6e2e9;   
+}
+	
+#header{
+	height: 100px;
+	border: 1px solid;
+}
+
+#left{
+	float: left;
+	width: 250px;
+	height: 400px;
+	border: 1px solid;	
+	
+}
+#center{
+	float: left;
+	width: 500px;
+	height: 400px;
+	border: 1px solid;
+	
+	
+}
+#right{
+	float: right;
+	width: 244px;
+	height: 400px;	
+	border: 1px solid;
+	
+}
+
+#footer{
+	height:100px;
+	border: 1px solid;
+}
+.vide{
+	clear:both;
+}

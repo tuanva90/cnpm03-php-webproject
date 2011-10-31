@@ -1,0 +1,22 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+<?php echo $this->headTitle() ?>
+<?php echo $this->headMeta() ?>
+<?php echo $this->headLink() ?>
+<?php echo $this->headStyle() ?>
+<?php echo $this->headScript() ?>
+</head>
+<body>
+<div id="wrapper">
+<?php echo $this->render('_partial/_header.phtml');?>
+<div id="content">	
+	<div id="title">{tiltle}<br></div>
+	<div class="vide"></div>
+	<?php echo $this->layout()->content ?>
+</div><!-- end #content -->
+<?php echo $this->render('_partial/_footer.phtml');?>
+</div><!-- end #wrapper -->
+</body>	
+</html>
+	
