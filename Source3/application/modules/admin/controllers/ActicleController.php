@@ -9,4 +9,10 @@ class Admin_ActicleController extends Honey_Controller_Action
     }
     public function indexAction ()
     {}
+    public function sectionnewAction ()
+    {}
+    public function articlemoveAction ()
+    {}
+    public function sectioneditAction ()
+    {}
 }
