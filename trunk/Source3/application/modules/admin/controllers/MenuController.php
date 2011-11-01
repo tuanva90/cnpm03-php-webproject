@@ -16,24 +16,28 @@ class Admin_MenuController extends Honey_Controller_Action
     {
         /* Code */
     }
-	public function menumanagerAction()
-	{
-	
-	}
-	public function menutrashAction()
-	{
-	
-	}
-	public function menucopyAction()
-	{
-		
-	}
-	public function menueditAction()
-	{
-	
-	}
-	public function menuitemmanagerAction()
-	{
-	
-	}
+    public function menumanagerAction ()
+    {
+        /* Code */
+    }
+    public function menutrashAction ()
+    {
+        /* Code */
+    }
+    public function menucopyAction ()
+    {
+        /* Code */
+    }
+    public function menueditAction ()
+    {
+        /* Code */
+    }
+    public function menunewAction ()
+    {
+        /* Code */
+    }
+    public function menuitemmanagerAction ()
+    {
+        /* Code */
+    }
 }
