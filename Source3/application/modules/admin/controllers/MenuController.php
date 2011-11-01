@@ -32,4 +32,8 @@ class Admin_MenuController extends Honey_Controller_Action
 	{
 	
 	}
+	public function menuitemmanagerAction()
+	{
+	
+	}
 }
