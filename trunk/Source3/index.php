@@ -34,7 +34,7 @@ defined('TEMP_PATH')
 /*================== Define application environment ================================================*/
 defined('APPLICATION_ENV')
 	|| define('APPLICATION_ENV',
-			(getenv(APPLICATION_ENV) ? getenv(APPLICATION_ENV)
+			(getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV')
 									: 'development'));
 
 /*================== Trypically, you will also want to add your library/ direactory ================*/
