@@ -5,10 +5,15 @@
 <form method="post" name="menumanagerForm">
 	 <table border="1" align="right">
 		<tr>
-			<td align="right"><input align="right" type="button" name="btnCopy" id="btnCopy" onClick="window.location.href = '<?php echo $this->baseUrl("/admin/menu/menucopy")?>'" value="Copy" />
-			<input align="right" type="button" name="btnDelete" id="btnDelete" value="Delete" />
-			<input align="right" type="button" name="btnEdit" id="btnEdit" onClick="window.location = '<?php echo $this->baseUrl("/admin/menu/menuedit")?>'" value="Edit" />
-			<input align="right" type="button" name="btnNew" id="btnNew" value="New" />			
+			<td align="right"><input align="right" type="button" name="btnMenus" id="btnCopy" onClick="window.location.href = '<?php echo $this->baseUrl("/admin/menu")?>'" value="Menus" />
+			<input align="right" type="button" name="btnDefault" id="btnDefault" value="Default" />
+			<input align="right" type="button" name="btnPublish" id="btnPublish"  value="Publish" />
+			<input align="right" type="button" name="btnUnpublish" id="btnUnpublish" value="Unpublish" />	
+			<input align="right" type="button" name="btnMove" id="btnMove" value="Move" />	
+			<input align="right" type="button" name="btnCopy" id="btnCopy" value="Copy" />	
+			<input align="right" type="button" name="btnTrash" id="btnTrash" value="Trash" />	
+			<input align="right" type="button" name="btnEdit" id="btnEdit" value="Edit" />	
+			<input align="right" type="button" name="btnNew" id="btnNew" value="New" />				
 			<input align="right" type="button" name="btnHelp" id="btnHelp" value="Help" /></td>
 		</tr>
   </table><br><br>
