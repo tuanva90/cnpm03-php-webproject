@@ -5,16 +5,16 @@
 			<tbody>
 				<tr>
 					<td id="toolbar-delete" class="button">
-						<a class="toolbar" href="#">Xóa</a>
+						<a class="toolbar" href="#">XĂ³a</a>
 					</td>
 					<td id="toolbar-help" class="button">
-						<a class="toolbar" href="#">Trợ giúp</a>
+						<a class="toolbar" href="#">Trá»£ giĂºp</a>
 					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
-	<div><h2>Quản lý Phương tiện</h2></div>
+	<div><h2>Quáº£n lĂ½ PhÆ°Æ¡ng tiá»‡n</h2></div>
 </div>
 			
 			
@@ -22,8 +22,8 @@
 <div id="submenu-box">		
 			<table class="view" cellpadding="5">	
 				<tr>
-					<td class = "link"><a class = "view" onclick="" id="thumbs" href = "">Xem hình nhỏ</a></td>
-					<td class = "link"><a class = "view" onclick="" id="details" href = "">Xem chi tiết</a></td>
+					<td class = "link"><a class = "view" onclick="" id="thumbs" href = "">Xem hĂ¬nh nhá»�</a></td>
+					<td class = "link"><a class = "view" onclick="" id="details" href = "">Xem chi tiáº¿t</a></td>
 				</tr>			
 			</table>
 		</div>
@@ -34,7 +34,7 @@
     				<tr valign="top">
 		        		<td width="200px">
 		           			<fieldset id="treeview">
-		              			<legend>Các danh mục</legend>
+		              			<legend>CĂ¡c danh má»¥c</legend>
               					<div id="media-tree_tree"><div class="mooTree_node mooTree_selected"><a href = "Media/">Media/</a> </div>
                 				</div>
             				</fieldset>
@@ -43,12 +43,12 @@
             
             				<form method="post" id="folderForm" name="folderForm" action="">
                				 <fieldset id="folderview">
-                   				 <legend>Các file</legend>
+                   				 <legend>CĂ¡c file</legend>
                    				 <div class="path">
 			                        <input type="text" readonly="readonly" id="folderpath" class="inputbox">/
 			                        <input type="text" name="foldername" id="foldername" class="inputbox">
 			                        <input type="hidden" value="" id="folderbase" name="folderbase" class="update-folder">
-			                        <button type="submit">Tạo danh mục</button>
+			                        <button type="submit">Táº¡o danh má»¥c</button>
               				     </div>
 			                    <div class="view">
 			                        <iframe width="100%" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" name="folderframe" id="folderframe" src="frame"></iframe>
@@ -57,10 +57,10 @@
 							</form>  
 							<form enctype="multipart/form-data" method="post" id="uploadForm" action="">
 								<fieldset>
-									<legend>Tải tập tin lên</legend>
+									<legend>Táº£i táº­p tin lĂªn</legend>
 									<fieldset class="actions">
 										<input type="file" name="Filedata" id="file-upload">
-										<input type="submit" value="Băt đầu tải lên" id="file-upload-submit">										
+										<input type="submit" value="BÄƒt Ä‘áº§u táº£i lĂªn" id="file-upload-submit">										
 									</fieldset>									
 								</fieldset>
 							</form>	
@@ -71,21 +71,6 @@
 		</div>
 		</div>
 		<?php 
-			//add file upload
-			/*
-		$flupl = new Zend_Form_Element_File('fileupload');
-		$flupl->setLabel("Upload media file");
-		$flupl->setRequired(FALSE);
-		$flupl->setDestination('../public/Media');
-		$flupl->addValidator('Count', false, 1);
-		$flupl->addValidator('Size', false, 204800);
-		$flupl->addValidator('Extension', false, 'ipg, png, gif, ico');
-		$frm->addElement($flupl);
-		
-		//Create button up load
-		$frm->addElement('submit', 'btupload');
-		$btupl = $frm->getElement('btupload');
-		$btupl->setLabel('Upload');
-		*/
+
 				      
 		?>
