@@ -7,6 +7,13 @@ class Admin_MediaController extends Honey_Controller_Action
         $layoutPath = APPLICATION_PATH . '/templates/admin/default';
         $this->loadTemplate($layout, $layoutPath, 'template.ini', 'template');
     }
-    public function indexAction ()
-    {}
+    public function indexAction()
+    {
+        // action body
+    }      
+    public function frameAction()
+    {    	
+    }
+    
+    
 }
