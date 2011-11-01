@@ -7,18 +7,22 @@ class Admin_ConfigController extends Honey_Controller_Action
         $layout = 'index';
         $layoutPath = APPLICATION_PATH . '/templates/admin/default';
         $this->loadTemplate($layout, $layoutPath, 'template.ini', 'template');
-        /* Get Params*/
+        /* Get Params */
+    
         $this->_arrParam = $this->_request->getParams();
         $this->_module = $this->_arrParam['module'];
         $this->_controller = $this->_arrParam['controller'];
         $this->_action = $this->_arrParam['action'];
         $this->view->curent = $this->_module . '/' . $this->_controller . '/' .
-         $this->_action;
+        $this->_action;
+        
     }
     public function indexAction ()
     {}
     public function siteAction ()
     {}
     public function systemAction ()
+    {}
+	public function mediacomponentAction ()
     {}
 }
