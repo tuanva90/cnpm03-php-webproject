@@ -23,8 +23,9 @@ class Admin_Form_CategoryEdit extends Zend_Form{
 		$cbxsection->setMultiOptions(array('group' =>'About C&C Group'));
 		$cbxsection->setRequired(true)->addValidator('NotEmpty', true);
 
-		$lblcatorder = new Zend_Form_Element_Text('catorder');
+		$lblcatorder = new Zend_Form_Element_Select('catorder');
 		$lblcatorder->setLabel('Category Order :');
+		$lblcatorder->setMultiOptions(array('0'=>'0','1'=>'1','2'=>'2'));
 		
 		$lbxaccesslevel= new Zend_Form_Element_Multiselect('accesslevel');
 		$lbxaccesslevel->setLabel('Access Level  : ');
