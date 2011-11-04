@@ -17,8 +17,9 @@ class Admin_Form_SectionEdit extends Zend_Form{
 		$rbtnpublished->setLabel('Published : ');
 		$rbtnpublished->addMultiOptions(array('yes'=>'Yes', 'no'=>'No'));
 
-		$lblorder = new Zend_Form_Element_Text('order');
+		$lblorder = new Zend_Form_Element_Select('order');
 		$lblorder->setLabel('Order :');
+		$lblorder->setMultiOptions(array('0'=>'0','1'=>'1','2'=>'2'));
 		
 		$lbxaccesslevel= new Zend_Form_Element_Multiselect('accesslevel');
 		$lbxaccesslevel->setLabel('Access Level  : ');
@@ -28,13 +29,13 @@ class Admin_Form_SectionEdit extends Zend_Form{
 		$cbximage->setLabel('Image : ')->setRequired(true);
 		$cbximage->addMultiOption(array('selectimage' =>'-Select Image-'));
 		$cbximage->setMultiOptions(array('selectimage' =>'-Select Image-'));
-		$cbximage->setRequired(true)->addValidator('NotEmpty', true);
+		$cbximage->setRequired(true);
 
 		$cbximagepos= new Zend_Form_Element_Select('imagepos');
 		$cbximagepos->setLabel('Image Position : ')->setRequired(true);
 		$cbximagepos->addMultiOption(array('center' =>'Center','left'=>'Left','right'=>'Right'));
 		$cbximagepos->setMultiOptions(array('center' =>'Center','left'=>'Left','right'=>'Right'));
-		$cbximagepos->setRequired(true)->addValidator('NotEmpty', true);
+		$cbximagepos->setRequired(true);
 								
 
 		$texteditor = new Zend_Form_Element_Textarea('texteditor');
