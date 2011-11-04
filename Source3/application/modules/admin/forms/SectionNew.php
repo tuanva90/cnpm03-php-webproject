@@ -16,9 +16,9 @@ class Admin_Form_SectionNew extends Zend_Form{
 		$rbtnpublished = new Zend_Form_Element_Radio('published');
 		$rbtnpublished->setLabel('Published : ');
 		$rbtnpublished->addMultiOptions(array('yes'=>'Yes', 'no'=>'No'));
-
+		
 		$lblorder = new Zend_Form_Element_Text('order');
-		$lblorder->setLabel('Order :');
+		$lblorder->setLabel('Section Order :');
 		
 		$lbxaccesslevel= new Zend_Form_Element_Multiselect('accesslevel');
 		$lbxaccesslevel->setLabel('Access Level  : ');
