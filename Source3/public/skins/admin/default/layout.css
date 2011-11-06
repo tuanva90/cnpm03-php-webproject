@@ -1,56 +1,134 @@
-@CHARSET "ISO-8859-1";
-//reset css
-*{
-	border: 0px;
-	padding: 0px;
-	margin: 0px;
-	
+/* Reset CSS */
+* {margin: 0; padding: 0;}
+body
+{
+    line-height: 1;
+    font-size: 12px;
 }
 
-a:LINK,:VISITED {
-	color: #0e33ec
+h1, h2, h3, h4, h5, h6
+{
+   padding: 5px 0;
+    margin: 0 15px;
 }
 
-body{
-	text-align:center;
-	align : center;  
-		 	   
+ul, ol
+{
+	list-style: none;
 }
+/* End Reset CSS */
+
+body {
+	margin: auto;
+	background: #fff;
+	font-size: 11px;
+}
+
+body, td, th { font-family: Arial, Helvetica, sans-serif; }
+
+html, body { height: 100%; }
 
 #wrapper{
-	margin: auto;
-	width: 1000px;
-	height: auto;
-	border: 2px solid;
-	background:	#e6e2e9;   
-}
-	
-#header{
-	height: 100px;
+	margin: 10px;
 	border: 1px solid;
+	border-radius: 5px 5px 5px 5px;
+}
+
+/* CSS header */
+#header{
+	color: #ffffff;
+	background: url(image/header.png) repeat-x;
+	height: 54px;
+}
+/* End CSS header */
+
+/* CSS Menu */
+#main-menu{
+	background: #f0f0f0;
+	overflow: hidden;
+	font-size: 1.2em;
+	font-weight: bold;
+	border-bottom: 1px solid;
+}
+
+#main-menu li{
+	display: inline;
+	border-left:1px solid #ffffff;
+	border-right: 1px solid #d8d8d8;
+	position: relative;
+	float: left;
+}
+
+#main-menu li a{
+	text-decoration: none;
+	padding: 0.35em 1.6em;
+	margin: 0px 1px	;
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 1.9em;
+	color: #333333;
+	vertical-align: middle;
+}
+
+#main-menu li a:HOVER{
+	background: #E7EDDF;
+	border-left: 1px solid #6D9D2E;
+	border-right: 1px solid #6D9D2E;
 }
 #content{
-	height:auto;
+	padding: 5px;
+	margin: 10px;
 	border: 1px solid;
-	text-align: left;
+	border-radius: 5px;
 }
 
-#title{
-	height:50px;
-	width : 400px;
-	float : left;
-	border: 1px solid;	
+#admin_control{
+	height: 400px;
+	background: #f9f9f9;
 }
-
-
-#footer{
-	height:100px;
-	border: 1px solid;
-}
-.vide{
-	clear:both;
-}
-
 #admin_menu{
-	text-align: left;
+	width: 50%;
+	float: left;
+	padding: 5px;
 }
+
+#admin_menu li{
+	display: inline;
+	float: left;
+	margin: 0px 5px 5px 0px;
+	text-align: center;
+}
+
+#admin_menu li a{
+	border: 1px solid #f0f0f0;
+	display: block;
+	float: left;
+	height: 97px;
+	width: 108px;
+	text-decoration: none;
+}
+
+#admin_menu li a:HOVER{
+	border-color: #EEEEEE #CCCCCC #CCCCCC #EEEEEE;
+	border-width: 1px;
+	color: #0B55C4;
+}
+
+#admin_menu img{
+	margin: 0px auto;
+	padding: 10px 0px;
+}
+
+#admin_info{
+	width: 48%;
+	height:390px;
+	float: right;
+	border: 1px solid #f0f0f0;
+	padding: 5px;
+}
+#footer{
+	border-top: 1px solid;
+	text-align: center;
+	padding: 10px;
+}
+
