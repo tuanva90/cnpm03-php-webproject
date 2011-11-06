@@ -1,6 +1,6 @@
 <?php
-require_once APPLICATION_PATH.'/forms/formNote.php';
-class ArticleListForm extends Zend_Form{
+require_once APPLICATION_PATH.'\modules\admin\forms\formNote.php';
+class Admin_Form_ArticleList extends Zend_Form{
 	private $myVar;
 	private $list_section;
 	private $list_category;
@@ -25,6 +25,75 @@ class ArticleListForm extends Zend_Form{
 	}
 	public function init(){
 		$this->setAction('index')->setMethod('post');
+		$numberofpage = 5;
+    	$articlelist = array(
+    				array(
+    				'title'=>'Article Title 1',
+    				'published'=>'published',
+    				'order'=>'2',
+    				'accesslvl'=>'public',
+    				'section'=>'Section 1',
+    				'category'=>'Category 1',
+    				'Author'=>'Administrator',
+    				'date'=>'27.09.11',
+    				'hits'=>'1',
+    				'id'=>'13'),
+    				array(
+    				'title'=>'Article Title 2',
+    				'published'=>'unpublished',
+    				'order'=>'2',
+    				'accesslvl'=>'private',
+    				'section'=>'Section 2',
+    				'category'=>'Category 2',
+    				'Author'=>'Administrator',
+    				'date'=>'27.09.11',
+    				'hits'=>'2',
+    				'id'=>'11'),
+    				array(
+    				'title'=>'Article Title 3',
+    				'published'=>'published',
+    				'order'=>'5',
+    				'accesslvl'=>'public',
+    				'section'=>'Section 3',
+    				'category'=>'Category 3',
+    				'Author'=>'Administrator',
+    				'date'=>'27.09.11',
+    				'hits'=>'1',
+    				'id'=>'31'),
+    				array(
+    				'title'=>'Article Title 3',
+    				'published'=>'published',
+    				'order'=>'5',
+    				'accesslvl'=>'public',
+    				'section'=>'Section 3',
+    				'category'=>'Category 3',
+    				'Author'=>'Administrator',
+    				'date'=>'27.09.11',
+    				'hits'=>'1',
+    				'id'=>'31'),
+    				array(
+    				'title'=>'Article Title 3',
+    				'published'=>'published',
+    				'order'=>'5',
+    				'accesslvl'=>'public',
+    				'section'=>'Section 3',
+    				'category'=>'Category 3',
+    				'Author'=>'Administrator',
+    				'date'=>'27.09.11',
+    				'hits'=>'1',
+    				'id'=>'31'));
+  		$sectionlist = array('Section 1','Section 2','Section 3','Section 4');
+  		$categorylist = array('Category 1','Category 2','Category 3','Category 4');
+  		$authorlist = array('Author 1','Author 2','Author 3','Author 4');
+  		$statelist = array('State 1','State 2','State 3','State 4');
+    	
+  		
+    	
+    	$this->set_list_section($sectionlist);
+    	$this->set_list_category($categorylist);
+    	$this->set_list_author($authorlist);
+    	$this->set_list_state($statelist);
+    	$this->start_form($articlelist,$numberofpage);
 	}
 	public function start_form($articles,$numberofpage){
 		
