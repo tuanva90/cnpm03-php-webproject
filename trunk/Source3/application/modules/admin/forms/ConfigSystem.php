@@ -45,15 +45,27 @@ class Admin_Form_ConfigSystem extends Zend_Form
         $ftppassword = new Zend_Form_Element_Password('ftppassword');
         $ftppassword->setLabel("Ftp password: ")->setOptions(
         array('size' => '30'));
+        //Create button
+        $save=new Zend_Form_Element_Submit('save');
+        $save->setLabel('Save');
+       	$cancel=new Zend_Form_Element_Button('cancel');
+       	$cancel->setLabel('Cancel');
+        
+        $help=new Zend_Form_Element_Button('help');
+        $help->setLabel('Help');
+        /////////////////////
         $this->addElements(
         array($timezone, $database, $host, $dbname, $dbprefix, $enableFTP, 
-        $ftphost, $ftpusername, $ftppassword));
+        $ftphost, $ftpusername, $ftppassword,$save,$cancel,$help));
         $this->addDisplayGroup(
         array('timezone', 'database', 'host', 'dbname', 'dbprefix'), 'system', 
         array('legend' => 'System Setting'));
         $this->addDisplayGroup(
         array('enableFTP', 'ftphost', 'ftpusername', 'ftppassword'), 'ftp', 
         array('legend' => 'FTP'));
+        $this->addDisplayGroup(
+        array('save','cancel','help'),'submit',
+        array('legend'=>'Submit'));
     }
 }
 ?>
