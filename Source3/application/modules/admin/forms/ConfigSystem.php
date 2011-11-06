@@ -48,7 +48,7 @@ class Admin_Form_ConfigSystem extends Zend_Form
         //Create button
         $save=new Zend_Form_Element_Submit('save');
         $save->setLabel('Save');
-       	$cancel=new Zend_Form_Element_Button('cancel');
+       	$cancel=new Zend_Form_Element_Reset('cancel');
        	$cancel->setLabel('Cancel');
         
         $help=new Zend_Form_Element_Button('help');
