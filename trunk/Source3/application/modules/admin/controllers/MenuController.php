@@ -40,4 +40,14 @@ class Admin_MenuController extends Honey_Controller_Action
     {
         /* Code */
     }
+    public function menuitemnewselecttypeAction ()
+    {
+        $form = new Admin_Form_MenuNewSelectType();
+        $this->view->form = $form;
+    }
+    public function menuitemnewAction ()
+    {
+        $form = new Admin_Form_MenuItemNew();
+        $this->view->form = $form;
+    }
 }

@@ -13,4 +13,9 @@ class Admin_UserController extends Honey_Controller_Action
     {}
     public function newAction ()
     {}
+	public function managerAction()
+    {
+    	$form = new Admin_Form_UserManager();
+    	$this->view->form = $form;
+    }
 }
