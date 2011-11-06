@@ -31,14 +31,23 @@ class Admin_Form_ConfigSite extends Zend_Form
             ->addMultiOption('FCKeditor', 'FCKeditor');
         $defaultlimit = new Zend_Form_Element_Text('defaultlimit');
         $defaultlimit->setLabel("Default Limit: ");
+        //button Save,Help,Cancel
+        $save=new Zend_Form_Element_Submit('save');
+        $save->setLabel('Save');
+        $cancel=new Zend_Form_Element_Button('cancel');
+        $cancel->setLabel('Cancel');
+        
+        $help=new Zend_Form_Element_Button('help');
+        $help->setLabel('Help');
+        
         // ***Add form element**//
         $this->addElements(
         array($sitename, $sitedecription, $message, $status, $editor, 
-        $defaultlimit));
+        $defaultlimit,$save,$cancel,$help));
         // ***create form Group**//
         $this->addDisplayGroup(
         array('sitename', 'sitedecription', 'message', 'status', 'editor', 
-        'defaultlimit'), 'config', array('legend' => 'Site Setting'));
+        'defaultlimit','save','cancel','help'), 'config', array('legend' => 'Site Setting'));
     }
 }
 ?>
