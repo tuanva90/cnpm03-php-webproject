@@ -9,13 +9,27 @@
 </head>
 <body>
 <div id="wrapper">
+
 <?php echo $this->render('_partial/_header.phtml');?>
+
+<div id="main-menu">
+	<ul>
+		<li><a href="<?php echo $this->baseUrl("/admin")?>">Site</a></li>
+		<li><a href=#>Menu</a></li>
+		<li><a href=#>Content</a></li>
+		<li><a href=#>Component</a></li>
+		<li><a href=#>Extensions</a></li>
+		<li><a href=#>Tools</a></li>
+		<li><a href=#>Help</a></li>
+	</ul>	
+</div>
+
 <div id="content">	
-	<div id="title">{tiltle}<br></div>
-	<div class="vide"></div>
 	<?php echo $this->layout()->content ?>
 </div><!-- end #content -->
+
 <?php echo $this->render('_partial/_footer.phtml');?>
+
 </div><!-- end #wrapper -->
 </body>	
 </html>
