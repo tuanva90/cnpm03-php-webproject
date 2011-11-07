@@ -22,9 +22,10 @@ class Admin_ConfigController extends Honey_Controller_Action
     public function siteAction ()
     {
     	$pathConfig=APPLICATION_PATH.'/configs/application.ini';
-    	 $siteForm=new Admin_Form_ConfigSite();
-    	 $siteForm->setAction($this->view->baseUrl() . '/config/site');
-    	 $siteForm->setMethod('post');
+    	$siteForm=new Admin_Form_ConfigSite();
+    	$siteForm->setAction($this->view->baseUrl() . '/config/site');
+    	$siteForm->setMethod('post');
+    	
     	if($this->getRequest()->isPost()){
 			if($siteForm->isValid($_POST)){
 				$option = array('allowModifications'=>true,
@@ -37,7 +38,7 @@ class Admin_ConfigController extends Honey_Controller_Action
 				$config->web->offline->message=$data['message'];
 				$config->web->offline->enable=$data['status'];
 				$config->web->editor=$data['editor'];
-				$config->web->session->cookie_lifetime=$data['defaultlimit'];
+				$config->web->admin->pageRange=$data['defaultlimit'];
 				
 				$writeConfig = new Zend_Config_Writer_Ini(array('config'=>$config,
 														'filename'=>$pathConfig));
