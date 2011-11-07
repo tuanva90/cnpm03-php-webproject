@@ -2,14 +2,13 @@
 class Admin_Form_ConfigSystem extends Zend_Form
 {
     public function init ()
-    {        
+    {     
+    	$pathConfig=APPLICATION_PATH.'/configs/application.ini';
+		$config = new Zend_Config_Ini($pathConfig,null);
+    	/////////////////////////////   
         $this->setMethod('post');
         $this->setAttrib('id', 'siteform');
-        //$this->setDecorators(array(
-        //		'FormElements', 
-        //		array('HtmlTag', array('tag' => 'table')), 'Form')
-        //	);
-        //site name		
+     		
         $timezone = new Zend_Form_Element_Select(
         'timezone');
         $timezone->setLabel("Time zone: ")
@@ -23,13 +22,17 @@ class Admin_Form_ConfigSystem extends Zend_Form
         //Host address
         $host = new Zend_Form_Element_Text('host');
         $host->setLabel("Host: ")->setOptions(array('size' => '30'));
+        
+        $host->setValue($config->db->dbname);
         //Database name	
         $dbname = new Zend_Form_Element_Text('dbname');
         $dbname->setLabel("Database name: ")->setOptions(array('size' => '30'));
+        $dbname->setValue($config->db->dbname);
         //Database prefix	
         $dbprefix = new Zend_Form_Element_Text('dbprefix');
         $dbprefix->setLabel("Database presfix: ")->setOptions(
         array('size' => '30'));
+        $dbprefix->setValue($config->db->prefix);
         //enable FTP
         $enableFTP = new Zend_Form_Element_Radio('enableFTP');
         $enableFTP->setLabel("Enable FTP: ")
@@ -39,12 +42,15 @@ class Admin_Form_ConfigSystem extends Zend_Form
         //ftphost
         $ftphost = new Zend_Form_Element_Text('ftphost');
         $ftphost->setLabel("Ftp host: ")->setOptions(array('size' => '30'));
+        $ftphost->setValue($config->web->fpt->host);
         $ftpusername = new Zend_Form_Element_Text('ftpusername');
         $ftpusername->setLabel("FTP username: ")->setOptions(
         array('size' => '30'));
+        $ftpusername->setValue($config->web->fpt->username);
         $ftppassword = new Zend_Form_Element_Password('ftppassword');
         $ftppassword->setLabel("Ftp password: ")->setOptions(
         array('size' => '30'));
+        $ftppassword->setValue($config->web->fpt->password);
         //Create button
         $save=new Zend_Form_Element_Submit('save');
         $save->setLabel('Save');
