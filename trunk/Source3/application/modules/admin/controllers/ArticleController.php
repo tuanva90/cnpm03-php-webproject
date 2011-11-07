@@ -24,6 +24,10 @@ class Admin_ArticleController extends Honey_Controller_Action
     {}
     public function sectioneditAction ()
     {}
+	public function articleeditAction ()
+    {}
+	public function sectionmanagerAction ()
+	{}
     public function articlelistAction ()
     {
     	$this->view->form = new Admin_Form_ArticleList();    	
