@@ -32,5 +32,7 @@ class Admin_ArticleController extends Honey_Controller_Action
     {
     	$this->view->form = new Admin_Form_ArticleList();    	
     }
+	public function frontpagemanagerAction ()
+    {}
    		
 }
