@@ -16,4 +16,8 @@ class Admin_CategoryController extends Honey_Controller_Action
     {}
     public function categoryeditAction ()
     {}
+	public function categorymanagerAction ()
+    {}
+	public function frontpagemanagerAction ()
+    {}
 }
