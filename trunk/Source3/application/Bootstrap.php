@@ -20,7 +20,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 //        // Set database as default
 //        Zend_Db_Table::setDefaultAdapter($db);
 //        // Save database object in Zend_Registry
-//        Zend_Registry::set('connectDB', $db);
+//        Zend_Registry::set('connectDB', $db);// lấy kết nối:  Zend_Registry::get('connectDB');
 //        // Return it, so that it can be stored by the bootstrap
 //        return $db;
     }
