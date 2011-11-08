@@ -10,4 +10,6 @@ class Admin_LoginController extends Honey_Controller_Action
     }
     public function indexAction ()
     {}
+    public function loginAction ()
+    {}
 }
