@@ -1,0 +1,77 @@
+<?php echo $this->doctype() ?>
+<html>
+<head>
+<?php echo $this->headTitle() ?>
+<?php echo $this->headMeta() ?>
+<?php echo $this->headLink() ?>
+<?php echo $this->headStyle() ?>
+<?php echo $this->headScript() ?>
+</head>
+<body>
+<div id="container">
+<div id="header">
+  <div class="div1">
+    <div class="div2"><img src="<?php echo HTTP_IMAGES . '/icon/logo.png' ;?>" title="" onClick="location = '<?php echo $this->baseUrl('/admin'); ?>'" /></div>
+    <?php //if ($logged) { ?>
+    <div class="div3"><img src="<?php echo HTTP_IMAGES . '/icon/lock.png' ;?>" alt="" style="position: relative; top: 3px;" />&nbsp; đã đăng nhập<?php //echo $logged; ?></div>
+    <?php //} ?>
+  </div>
+  <?php //if ($logged) { ?>
+  <div id="menu">
+    <ul class="left" style="display: none;">
+      <li id="catalog"><a class="top"><?php echo $this->cmsTranslator('menu_catalog');?></a>
+        <ul>
+          <li><a href="<?php echo $this->baseUrl('/admin/category/index');?>"><?php echo $this->cmsTranslator('menu_catalog_category');?></a></li>
+          <li><a href="<?php echo $this->baseUrl('/admin/acticle/index');?>">Acticle Manager</a></li>
+        </ul>
+      </li>
+      <li id="extension"><a class="top"><?php echo $this->cmsTranslator('menu_extend');?></a>
+        <ul>
+          <li><a href="#"><?php echo $this->cmsTranslator('menu_config_module');?></a></li>
+        </ul>
+      </li>
+      <li id="system"><a class="top"><?php echo $this->cmsTranslator('menu_system');?></a>
+        <ul>
+          <li><a class="parent"><?php echo $this->cmsTranslator('menu_config');?></a>
+            <ul>
+              <li><a href="<?php echo $this->baseUrl('/admin/config/app');?>"><?php echo $this->cmsTranslator('menu_config_app');?></a></li>
+              <li><a href="<?php echo $this->baseUrl('/admin/config/mail');?>">Cấu hình mail</a></li>
+              <li><a href="<?php echo $this->baseUrl('/admin/config/locale');?>">Configure Localization</a></li>
+            </ul>
+          </li>
+          <li><a class="parent"><?php echo $this->cmsTranslator('menu_system_user');?></a>
+            <ul>
+              <li><a href="<?php echo $this->baseUrl('/admin/user');?>"><?php echo $this->cmsTranslator('menu_system_user');?></a></li>
+              <li><a href="<?php echo $this->baseUrl('/admin/userpermission');?>"><?php echo $this->cmsTranslator('menu_privilege');?></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="right">
+      <li id="store"><a onClick="window.open('<?php echo HTTP_SERVER; ?>');" class="top"><?php echo $this->cmsTranslator('menu_homepage');?></a></li>
+      <li id="store"><a class="top" href="<?php echo $this->baseUrl('/admin/auth/logout');?>"><?php echo $this->cmsTranslator('menu_logout');?></a></li>
+    </ul>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#menu > ul').superfish({
+		hoverClass	 : 'sfHover',
+		pathClass	 : 'overideThisToUse',
+		delay		 : 0,
+		animation	 : {height: 'show'},
+		speed		 : 'normal',
+		autoArrows   : false,
+		dropShadows  : false, 
+		disableHI	 : false, /* set to true to disable hoverIntent detection */
+		onInit		 : function(){},
+		onBeforeShow : function(){},
+		onShow		 : function(){},
+		onHide		 : function(){}
+	});
+	
+	$('#menu > ul').css('display', 'block');
+});
+</script> 
+  </div>
+  <?php //} ?>
+</div>

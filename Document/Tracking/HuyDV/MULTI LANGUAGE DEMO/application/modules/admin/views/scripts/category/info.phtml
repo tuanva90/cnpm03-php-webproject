@@ -1,0 +1,101 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php		
+		//1. Edit - link
+		$btnEdit = $this->cmsButton(
+						$this->cmsTranslator('category_edit_button'),
+						$this->baseUrl($this->currentController . '/edit/category_id/' . $this->Item['category_id']),
+						HTTP_IMAGES . '/icon/icon-32-edit.png',
+						'link'
+					);
+		//2. Cancel - link
+		$btnCancel = $this->cmsButton(
+						$this->cmsTranslator('category_cancel_button'),
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnEdit;?><?php echo $btnCancel;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo $this->baseUrl($this->currentController . '/index');?>"><?php echo $this->cmsTranslator('category_home');?></a>
+	<a href="#">??</a>
+</div>
+<div class="content">
+	<form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
+	<div id="languages" class="htabs">
+	<?php foreach ($this->languages as $key => $value) { ?>
+	<?php $language = explode('|', $value);?>
+	<a href="#language_<?php echo $key; ?>">
+		<img src="<?php echo HTTP_IMAGES . '/flags/' . $language[0] . '.png'; ?>" title="<?php echo $language[1]; ?>" />
+		<?php echo $language[1]; ?>
+	</a>
+	<?php } ?>
+	</div>
+	<?php foreach ($this->languages as $language => $value) { ?>
+	<div id="language_<?php echo $language; ?>">    
+      <table class="form">
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_name'); ?></td>
+          <td><?php echo isset($this->Item['category_description'][$language]['name']) ? $this->Item['category_description'][$language]['name'] : '';?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_meta_keywords'); ?></td>
+          <td><?php echo isset($this->Item['category_description'][$language]['meta_keywords']) ? $this->Item['category_description'][$language]['meta_keywords'] : '';?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_meta_description'); ?></td>
+          <td><?php echo isset($this->Item['category_description'][$language]['meta_description']) ? $this->Item['category_description'][$language]['meta_description'] : '';?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_description'); ?></td>
+          <td><?php echo isset($this->Item['category_description'][$language]['description']) ? $this->Item['category_description'][$language]['description'] : '';?></td>
+        </tr>
+      </table>
+	</div>
+	<?php } ?>
+      <table class="form">
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_parent'); ?></td>
+          <td><?php foreach ($this->categories as $category) {
+          			if ($category['category_id'] == $this->Item['parent_id']) echo $category['name'];
+              	} ?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_top'); ?></td>
+          <td><?php if($this->Item['top'] == 1){
+          		echo $this->cmsIconButton('Active', HTTP_IMAGES . '/icon/icon_16_active.png');
+          	  }else{
+          		echo $this->cmsIconButton('Inactive', HTTP_IMAGES . '/icon/icon_16_inactive.png');
+          	  }?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_column'); ?></td>
+          <td><?php echo $this->Item['column'];?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_image'); ?></td>
+          <td><?php echo $this->Item['image'];?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('category_entry_sort_order'); ?></td>
+          <td><?php echo $this->Item['sort_order'];?></td>
+        </tr>
+		<tr>
+		   <td><?php echo $this->cmsTranslator('category_entry_status'); ?></td>
+           <td><?php if($this->Item['status'] == 1){
+          		echo $this->cmsIconButton('Active', HTTP_IMAGES . '/icon/icon_16_active.png');
+          	  }else{
+          		echo $this->cmsIconButton('Inactive', HTTP_IMAGES . '/icon/icon_16_inactive.png');
+          	  }?></td>
+        </tr>
+      </table>
+    </form>
+	<script type="text/javascript">
+		$('#languages a').tabs();
+	</script> 
+</div>
+</div>

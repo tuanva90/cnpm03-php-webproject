@@ -1,0 +1,33 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php		
+		//1. Accept - submit
+		$btnAccept = $this->cmsButton(
+						'Accept',
+						$this->baseUrl($this->currentController . '/delete/category_id/'  . $this->arrParam['category_id']),
+						HTTP_IMAGES . '/icon/icon-32-accept.png',
+						'submit'
+					);
+										
+		//2. Cancel - link
+		$btnCancel = $this->cmsButton(
+						'Cancel',
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnAccept;?><?php echo $btnCancel;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo $this->baseUrl($this->currentController . '/index');?>"><?php echo $this->cmsTranslator('category_home');?></a>
+	<a href="#">??</a>
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" > 
+		<div class="warning">Ban co chac chacn muon xoa phan tu nay hay khong?</div>
+    </form>
+</div>
+</div>
