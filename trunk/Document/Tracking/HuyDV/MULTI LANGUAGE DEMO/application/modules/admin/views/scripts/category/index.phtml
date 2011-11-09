@@ -1,0 +1,93 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php
+		//1. Add new - link
+		$btnAddNew = $this->cmsButton(
+						'Add new',
+						$this->baseUrl($this->currentController . '/add'),
+						HTTP_IMAGES . '/icon/icon-32-new.png',
+						'link'
+					);
+		//2. Active - submit
+		$btnActive = $this->cmsButton(
+						'Active Items',
+						$this->baseUrl($this->currentController . '/status/type/1'),											
+						HTTP_IMAGES . '/icon/icon-32-active.png',
+						'submit'
+					);
+		//3. Inactive- submit
+		$btnInactive = $this->cmsButton(
+						'Inactive Items',
+						$this->baseUrl($this->currentController . '/status/type/0'),										
+						HTTP_IMAGES . '/icon/icon-32-inactive.png',
+						'submit'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnAddNew;?><?php echo $btnActive;?><?php echo $btnInactive;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo $this->baseUrl($this->currentController . '/index');?>"><?php echo $this->cmsTranslator('category_home');?></a>
+	<a href="#">??</a>
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
+      <table class="list">
+        <thead>
+          <tr>
+            <td width="1" style="text-align: center;">
+            	<input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" />
+            </td>            
+            <td class="left"><?php echo $this->cmsTranslator('category_column_id');?></td>
+            <td class="left"><?php echo $this->cmsTranslator('category_column_name');?></td>
+            <td class="left"><?php echo $this->cmsTranslator('category_column_slug');?></td>
+            <td class="center"><?php echo $this->cmsTranslator('category_column_status');?></td>
+            <td class="center"><?php echo $this->cmsTranslator('category_column_sort_order');?></td>
+            <td class="center"><?php echo $this->cmsTranslator('category_column_date_added');?></td>
+            <td class="right"><?php echo $this->cmsTranslator('category_column_control');?></td>
+          </tr>
+        </thead>
+        <tbody>
+          <?php if ($this->Items) { ?>
+          <?php foreach($this->Items as $key => $val){
+          	
+				$selected = $this->formCheckbox('selected[]', $val['category_id']);
+								
+				if($val['status'] == 1){	
+					$linkStatus = $this->baseUrl($this->currentController . '/status/type/0/category_id/' . $val['category_id']);											
+					$status = $this->cmsIconButton('Active', HTTP_IMAGES. '/icon/icon_16_active.png', $linkStatus);
+				}else{
+					$linkStatus = $this->baseUrl($this->currentController . '/status/type/1/category_id/' . $val['category_id']);
+					$status = $this->cmsIconButton('INactive', HTTP_IMAGES. '/icon/icon_16_inactive.png', $linkStatus);
+				}
+										
+				$linkInfo = $this->baseUrl($this->currentController . '/info/category_id/' . $val['category_id']);											
+				$btnInfo = $this->cmsIconButton('View Item', HTTP_IMAGES. '/icon/icon_16_info.png', $linkInfo);
+				$linkEdit = $this->baseUrl($this->currentController . '/edit/category_id/' . $val['category_id']);
+				$btnEdit = $this->cmsIconButton('Edit Item', HTTP_IMAGES. '/icon/icon_16_edit.png', $linkEdit);
+				$linkDelete	= $this->baseUrl($this->currentController . '/delete/category_id/' . $val['category_id']);
+				$btnDelete = $this->cmsIconButton('Delete Item', HTTP_IMAGES. '/icon/icon_16_del.png', $linkDelete);
+				$strIconButton = $btnInfo . ' ' . $btnEdit . ' ' . $btnDelete;
+		  ?>
+          <tr>            
+            <td align="center"><?php echo $selected;?></td>
+            <td align="left"><?php echo $val['category_id'];?></td>
+            <td align="left"><?php echo $val['name'];?></td>
+            <td align="left"><?php echo $val['slug'];?></td>
+            <td align="center"><?php echo $status;?></td>
+            <td align="center"><?php echo $val['sort_order'];?></td>
+            <td align="center"><?php echo date('d/m/Y H:i:s', strtotime($val['date_added']));?></td>
+ 			<td align="right"><?php echo $strIconButton;?></td>
+          </tr>
+          <?php } ?>
+          <?php } else { ?>
+          <tr>
+            <td class="center" colspan="8">Không có kết quả</td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </form>
+</div>
+</div>
