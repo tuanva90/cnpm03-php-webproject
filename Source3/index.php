@@ -88,7 +88,6 @@ $options = array(
 		'view' => array(
 			'helperPath' => array(
 				'Honey_View_Helper'	=> 'Honey' . DS . 'View' . DS . 'Helper',
-				'Block'				=> APPLICATION_PATH . DS . 'blocks',
 			),
 		),
 		'modules' => array(
