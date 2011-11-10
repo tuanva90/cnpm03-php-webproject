@@ -1,0 +1,26 @@
+<div id="header">
+	<div id="logo">
+		<a href="#"><img src="<?php echo HTTP_IMAGES . '/logo/logo.png'; ?>" title="" alt="logo.png" /></a>
+	</div>
+	<div id="language">
+		<img src="<?php echo HTTP_IMAGES . '/flags/vi_VN.png';?>" title="" alt="vi" />
+		<img src="<?php echo HTTP_IMAGES . '/flags/en_US.png';?>" title=""alt="" /> <input type="hidden" name="language_code" value="" />    
+    </div>
+  	<div id="search">
+    	<div class="button-search"></div>
+    	<input type="text" name="filter_name" value="Tìm kiếm" onClick="this.value = '';" onKeyDown="this.style.color = '#000000';" />
+  	</div>
+  	<div id="welcome">Chúc mừng bạn đã đăng nhập</div>
+  	<div class="links">
+  		<a href="<?php echo $this->baseUrl('')?>"> <?php echo $this->cmsTranslator('menu_homepage');?></a>
+  		<a href="<?php echo $this->baseUrl('admin')?>"> <?php echo $this->cmsTranslator('menu_admin');?></a>
+  	</div>
+</div><!-- End #Header -->
+<div id="menu">
+  <ul>
+    <li><a href="<?php echo $this->baseUrl('front')?>">Trang chủ</a></li>
+    <li><a href="<?php echo $this->baseUrl('front/news')?>">Tin Tức</a></li>
+    <li><a href="<?php echo $this->baseUrl('front/products')?>">Sản Phẩm</a></li>
+  </ul>
+</div> <!-- End #menu -->
+<div id="notification"></div>
