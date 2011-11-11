@@ -1,0 +1,358 @@
+html {margin: 0;padding: 0;	height: 100%;}
+body {margin: 0;padding: 0;	height: 100%;background: #FFFFFF;}
+body, td, th, input, select, textarea, option, optgroup {font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;	font-size: 11px; color: #000000;}
+input[type='text'], input[type='password'] {padding: 3px;}
+select {padding: 2px;}
+textarea {padding: 2px;}
+input[type='text'], input[type='password'], textarea, select {background: #F8F8F8; border: 1px solid #CCCCCC; -moz-border-radius: 3px; -webkit-border-radius:3px; border-radius: 3px; outline: none;}
+input[type='text']:focus, input[type='password']:focus, textarea:focus, select:focus{-moz-box-shadow:0px 0px 3px #aaa; -webkit-box-shadow:0px 0px 3px #aaa; box-shadow:0px 0px 3px #aaa; }
+a, a:visited {color: #003366;text-decoration: underline;cursor: pointer;}
+a img {border: 0;}
+form {margin: 0;padding: 0;}
+label {cursor: pointer;}
+#header .div1 {height: 56px;padding: 0px 30px;background: url('images/header.png') repeat-x;min-width: 900px;}
+#header .div2 {color: #FFFFFF;padding: 18px 0px 0px 0px;float: left;}
+#header .div3 {font-size: 11px;color: #FFF;text-align: right;padding: 15px 0px 0px 0px;	float: right;}
+#header .div2 span {font-weight: bold;}
+#menu {	background: url('images/menu.png') repeat-x;position: relative;	z-index: 1;	height: 34px;clear: both; padding: 0px 30px; min-width: 900px;}
+#menu > ul.left {float: left;}
+#menu > ul.right {float: right;}
+#menu > ul {position: relative;	margin: 0;padding: 0;}
+#menu > ul ul {list-style: none;margin: 0;padding: 0;background: url('images/transparent.png');}
+#menu > ul a {display: block;color: #FFFFFF; text-decoration: none; padding: 5px;}
+#menu > ul > li + li {background: url('images/split.png') center left no-repeat;}
+#menu > ul .top, #menu > ul li li.sfhover{padding:10px 15px 9px 17px; font-size:11.5px; color:#FFFFFF; text-align:center;  font-weight:bold;}
+#menu > ul ul li {padding: 2px;}
+#menu > ul .selected .top {background: url('images/selected.png') repeat-x;	color: #FFFFFF;}
+#menu > ul .selected:hover a.top, #menu > ul .sfhover a.top {}
+#menu > ul .parent {background: url('images/arrow-right.png') 95% center no-repeat;}
+#menu > ul li {float: left;	list-style: none;}
+#menu > ul li ul {position: absolute;}
+#menu > ul li li {clear: both;}
+#menu > ul li ul a {color: #FFFFFF;	height: 15px;width: 145px;}
+#menu > ul li ul ul {margin: -27px 0 0 157px;}
+#menu > ul li li:hover, #menu > ul li li.sfhover {background: #333;color: #000000;}
+
+#container {height: 100%;}
+body > #container {	height: auto;min-height: 100%;}
+
+#content {background: #FFFFFF url('images/background.png') 0px 1px repeat-x;padding: 10px 10px 0px 10px;min-width: 900px;	padding-bottom: 128px;}
+
+#footer {background: #FFFFFF url('images/footer.png') repeat-x;	height: 90px;padding-top: 38px;text-align: center;	font-size: 11px;color: #333;position: relative;	margin-top: -128px;	clear: both;}
+#footer a {color: #333;	text-decoration: underline;}
+
+.toolbox {margin-bottom: 10px; border: solid 1px #CCC; padding:5px; background:#F0F0F0; overflow:auto; font-size:11px;}
+.toolbox .left{float:left; line-height:48px; background: url(images/icon-48-extension.png) left no-repeat; font-size:22px; padding-left:60px; color: #0B55C4; font-weight:bold;}
+.toolbox .right{float:right;}
+.toolbox .right > div{width:80px; float:left; text-align:center;}
+.toolbox .right > div a{text-decoration:none;  color: #0B55C4;}
+
+.breadcrumb {margin-bottom: 10px;border: solid 1px #CCC; padding:5px; background:#F0F0F0;}
+.breadcrumb a {font-size:11px; color: #0B55C4; line-height:11px;padding:0 10px;text-decoration:none; font-weight:bold;}
+.breadcrumb a+a{border-left: solid 1px #CCC;}
+.breadcrumb a:hover{text-decoration:underline;}
+
+.content {overflow: auto;}
+
+.success {padding: 10px 10px 10px 33px;	margin-bottom: 10px;background: #EAF7D9 url('images/success.png') 10px center no-repeat;border: 1px solid #BBDF8D;color:#F00;}
+.warning {padding: 10px 10px 10px 33px;	margin-bottom: 10px;background: #FFD1D1 url('images/warning.png') 10px center no-repeat;border: 1px solid #F8ACAC;color: #555555;}
+.attention {padding: 10px 10px 10px 33px;margin-bottom: 10px;background: #FFF5CC url('images/attention.png') 10px center no-repeat;border: 1px solid #F2DD8C;color: #555555;}
+.required {	color: #FF0000;	font-weight: bold;}
+.error {margin-top: 3px;color: #FF0000;	display: block;	font-size: 11px; font-weight: normal;}
+.help {color: #666;	font-size: 10px;font-weight: normal;font-family: Verdana, Geneva, sans-serif;display: block;}
+.icon {vertical-align: middle;cursor: pointer;}
+.image {cursor: pointer;}
+a.button, .list a.button {
+	text-decoration: none;
+	color: #FFF;
+	display: inline-block;
+	padding-left: 8px;
+	margin-right: 5px;
+	background: url('images/button-left.png') center left no-repeat;
+	font-weight:bold;
+}
+a.button span {
+	color: #FFF;
+	text-decoration: none;
+	display: block;
+	padding: 5px 10px 5px 2px;
+	background: url('images/button-right.png') center right no-repeat;
+}
+table.filter {
+	width: 100%;
+	background: #E7EFEF; 
+	border: 1px solid #C6D7D7; 
+	margin-bottom: 15px;	
+}
+table.filter td {
+	padding: 5px;
+}
+.list {
+	border-collapse: collapse;
+	width: 100%;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	margin-bottom: 20px;
+}
+.list td {
+	border-right: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+}
+.list thead td {
+	background-color: #EFEFEF;
+	padding: 0px 5px;
+}
+.list thead td a, .list thead td {
+	text-decoration: none;
+	color: #222222;
+	font-weight: bold;
+}
+.list tbody td a {
+	text-decoration: underline;
+}
+.list tbody td {
+	vertical-align: middle;
+	padding: 3px 5px;
+	background: #FFFFFF;
+}
+.list .left {
+	text-align: left;
+	padding: 7px;
+}
+.list .right {
+	text-align: right;
+	padding: 7px;
+}
+.list .center {
+	text-align: center;
+	padding: 7px;
+}
+.list .asc {
+	padding-right: 15px;
+	background: url('images/asc.png') right center no-repeat;
+}
+.list .desc {
+	padding-right: 15px;
+	background: url('images/desc.png') right center no-repeat;
+}
+.list .filter td {
+	padding: 5px;
+	background: #E7EFEF;
+}
+.pagination {
+	margin-top: 10px;
+	border-top: 1px solid #EEEEEE;
+	background: #F8F8F8;
+	display: inline-block;
+	width: 100%;
+}
+.pagination .links, .pagination .results {
+	padding: 9px;
+}
+.pagination .links {
+	float: left;
+}
+.pagination .links a {
+	border: 1px solid #CCCCCC;
+	padding: 4px 7px;
+	text-decoration: none;
+	color: #000000;
+}
+.pagination .links b {
+	border: 1px solid #CCCCCC;
+	padding: 4px 7px;
+	text-decoration: none;
+	color: #000000;
+	background: #FFFFFF;
+}
+.pagination .results {
+	float: right;
+}
+table.form {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+table.form > tbody > tr > td:first-child {
+	width: 200px;
+}
+table.form > tbody > tr > td {
+	padding: 10px;
+	color: #000000;
+	border-bottom: 1px dotted #CCCCCC;
+}
+.scrollbox {
+	border: 1px solid #CCCCCC;
+	width: 350px;
+	height: 100px;
+	background: #FFFFFF;
+	overflow-y: scroll;
+}
+.scrollbox img {
+	float: right;
+}
+.htabs {
+	padding: 0px 0px 0px 10px;
+	height: 30px;
+	line-height: 16px;
+	border-bottom: 1px solid #DDDDDD;
+	margin-bottom: 15px;
+}
+.htabs a {
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-right: 1px solid #DDDDDD; 
+	background: #FFFFFF url('images/tab.png') repeat-x;
+	padding: 7px 15px 6px 15px;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	color: #000000;
+	margin-right: 2px;
+	display: none;
+}
+.htabs a.selected {
+	padding-bottom: 7px;
+	background: #FFFFFF;
+}
+.vtabs {
+	width: 190px;
+	padding: 10px 0px;
+	min-height: 300px;
+	float: left;
+	display: block;
+	border-right: 1px solid #DDDDDD;
+}
+.vtabs a {
+	display: none;
+}
+.vtabs a, .vtabs span {
+	display: block;
+	float: left;
+	width: 160px;
+	margin-bottom: 5px;
+	clear: both;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	background: #F7F7F7;
+	padding: 6px 14px 7px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	text-align: right;
+	text-decoration: none;
+	color: #000000;
+}
+.vtabs a.selected {
+	padding-right: 15px;
+	background: #FFFFFF;
+}
+.vtabs a img, .vtabs span img {
+	position: relative;
+	top: 3px;
+	cursor: pointer;
+}
+.vtabs-content {
+	margin-left: 205px;
+}
+.scrollbox div {
+	padding: 3px;
+}
+.scrollbox div input {
+	margin: 0px;
+	padding: 0px;
+	margin-right: 3px;
+}
+.scrollbox div.even {
+	background: #FFFFFF;
+}
+.scrollbox div.odd {
+	background: #E4EEF7;
+}
+
+.overview {
+	float: left;
+	width: 49%;
+	margin-bottom: 20px;	
+}
+.overview table {
+	width: 100%;
+}
+.overview td + td {
+	text-align: right;
+}
+.statistic {
+	float: right;
+	width: 49%;
+	margin-bottom: 20px;
+}
+.range {
+	float: right;
+	color: #FFF;
+	vertical-align: middle;
+}
+.range {
+	padding-top: 1px;
+	padding-right: 1px;
+}
+.range, .range select {
+	font-size: 11px;	
+}
+.latest {
+	clear: both;	
+}
+.latest tbody td {
+	background: #FFF;
+}
+.dashboard-heading {
+	background: #547C96; 
+	color: #FFF; 
+	border-bottom: 1px solid #8EAEC3; 
+	padding: 5px; 
+	font-size: 14px; 
+	font-weight: bold;	
+}
+.dashboard-content {
+	background: #FCFCFC; 
+	border: 1px solid #8EAEC3; 
+	padding: 10px; 
+	min-height: 180px;	
+}
+
+.login {
+    margin-bottom: 15px;
+}
+.login > .heading {
+    background: url("images/box.png") repeat-x scroll 0 0 transparent;
+    border: 1px solid #DBDBDB;
+    border-radius: 7px 7px 0 0;
+    height: 38px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+.login > .heading h1 {
+    color: #003A88;
+    float: left;
+    font-size: 16px;
+    margin: 0;
+    padding: 11px 0 0;
+}
+.login > .heading h1 img {
+    float: left;
+    margin-left: 3px;
+    margin-right: 8px;
+    margin-top: -1px;
+}
+
+.login > .content {
+    border-bottom: 1px solid #CCCCCC;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    min-height: 300px;
+    overflow: auto;
+    padding: 10px;
+}
