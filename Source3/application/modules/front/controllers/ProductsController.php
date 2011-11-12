@@ -30,8 +30,17 @@ class ProductsController extends Honey_Controller_Action {
 		$this->view->headLink ( array ('rel' => 'canonical', 'href' => 'http://' ) );
 		
 		$products = new Front_Model_Catalog_Product ();	
-
+		$this->view->products=$products->getProducts();
 	}
+ 	public function deleteAction(){
+    	$id = $this->_request->getParam('id');
+    	$this->view->id=$id;
+    }
+ 	public function updateAction(){
+  
+    	$id = $this->_request->getParam('id');
+    	$this->view->id=$id;
+    }
 
 
 }

@@ -1,3 +1,37 @@
 <div id="content">
 <h1>Sản Phẩm</h1>
+  <div class="product-grid">
+    <table width="900px" align="center" border>
+	<tr>
+		<th>Mã</th>
+		<th>Tên Sản Phẩm</th>
+		<th>Giá</th>
+		<th>Hình Ảnh</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+	</tr>
+	<?php foreach ($this->products as $product) { ?>
+	<tr>
+		<td>
+			<?php echo $product['product_id'];?>
+		</td>
+		<td>
+			<?php echo $product['model'];?>
+		</td>
+		<td>
+			<?php echo $product['price'];?>
+		</td>
+		<td>
+			<img src="<?php echo HTTP_IMAGES . '/' . $product['image'];?>" width="50px" height="50px"/>
+		</td>
+		<td>
+			<a href="<?php echo $this->baseUrl();?>/products/update/id/<?php echo $product['product_id'];?>">Xóa</a>
+		</td>
+		<td>
+			<a href="<?php echo $this->baseUrl(); ?>/products/delete/id/<?php echo $product['product_id'];?>">Sửa</a>
+		</td>
+	</tr>
+	<?php }?>
+</table>
+  </div>
 </div>
