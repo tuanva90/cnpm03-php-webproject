@@ -31,4 +31,8 @@ class Admin_NewsController extends Honey_Controller_Action {
 		$model = new Admin_Model_News();
 		$this->view->news = $model->getNews();	
 	}
+	public function newsnewAction(){		
+	}
+	public function newseditAction(){
+	}
 }
