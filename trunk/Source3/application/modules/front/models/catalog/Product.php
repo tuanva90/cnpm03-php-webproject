@@ -1,8 +1,8 @@
 <?php
 class Front_Model_Catalog_Product extends Zend_Db_Table{
 	
-	protected $_pd = 'product';
-	protected $_pdd = 'product_description';	
+	protected $_pd = 'cms_product';
+	protected $_pdd = 'cms_product_description';	
 	
   	public function getProducts(){
   		$db = Zend_Registry::get('connectDB');
