@@ -2,7 +2,7 @@
 -- version 3.4.3.2
 -- http://www.phpmyadmin.net
 --
--- Host: instance2623.db.xeround.com.:3608
+-- Host: instance2623.db.MyISAM.com.:3608
 -- Generation Time: Nov 10, 2011 at 09:36 PM
 -- Server version: 5.1.42
 -- PHP Version: 5.3.1
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `cms_menu` (
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `status` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`menu_id`)
-) ENGINE=Xeround DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `cms_menu_description` (
   `description` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`menu_id`,`language`),
   KEY `name` (`name`)
-) ENGINE=Xeround DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -70,7 +70,7 @@ CREATE TABLE IF NOT EXISTS `cms_news` (
   `date_added` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`news_id`)
-) ENGINE=Xeround DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `cms_news`
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `cms_news_description` (
   `summary` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`news_id`,`language`)
-) ENGINE=Xeround DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `cms_news_description`
@@ -127,7 +127,7 @@ CREATE TABLE IF NOT EXISTS `cms_product` (
   `sort_order` int(11) NOT NULL DEFAULT '0',
   `status` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`product_id`)
-) ENGINE=Xeround DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=45 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `cms_product`
@@ -170,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `cms_product_description` (
   `description` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`product_id`,`language`),
   KEY `name` (`name`)
-) ENGINE=Xeround DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=45 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=45 ;
 
 --
 -- Dumping data for table `cms_product_description`
