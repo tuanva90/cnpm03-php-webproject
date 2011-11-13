@@ -29,7 +29,13 @@ class Admin_ProductsController extends Honey_Controller_Action {
 	
 	public function indexAction() {
 		$model = new Admin_Model_Products();
-		$this->view->products = $model->getProducts();	
+		$products = $model->getProducts();
+		$this->view->products = $products[''];	
 
+	}
+	
+	public function productnewAction(){		
+	}
+	public function producteditAction(){
 	}
 }

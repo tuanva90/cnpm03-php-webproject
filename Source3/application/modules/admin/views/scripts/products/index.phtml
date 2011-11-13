@@ -1,9 +1,9 @@
 <div id="content">
 	<div class="toolbox">
-		<div class="left">Quản lý :: Tin Tức - Sự Kiện</div>
+		<div class="left">Quản lý :: Sản phẩm</div>
 		<div class="right">
-			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
-			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
+			<div><a href="<?php echo $this->baseUrl("/admin/products/productnew")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
+			<div><a href="<?php echo $this->baseUrl("/admin/products/productedit")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
 			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>			
 			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-delete.png';?>"/><br>Delete</a></div>
 		</div>
@@ -15,14 +15,15 @@
 	<table border="1" width="800" cellpadding="1" cellspacing="0">
 	<tr style="font-weight: bold;"> <td>Product_ID </td> <td>Image</td> <td>Price</td> <td>Date Added</td> <td>Action</td></tr> 
 	<?php 
-	foreach($this->products as $product){
-		echo '<tr><td>'.$product["product_id"];
-		echo '</td> <td>'.$product["image"];
-		echo '</td> <td>'.$product["price"];
-		echo '#</td> <td>'.$product["date_added"];
-		echo '</td><td><a>Edit</a>  &nbsp&nbsp  <a>Delete</a> &nbsp&nbsp <a>Active</a></td>';
-	}
-	?>	
+//	foreach($this->products as $product){
+//		echo '<tr><td>'.$product["product_id"];
+//		echo '</td> <td>'.$product["image"];
+//		echo '</td> <td>'.$product["price"];
+//		echo '#</td> <td>'.$product["date_added"];
+//		echo '</td><td><a>Edit</a>  &nbsp&nbsp  <a>Delete</a> &nbsp&nbsp <a>Active</a></td>';
+//	}
+print_r($this->products);
+//	?>	
 
 	</table>
 	

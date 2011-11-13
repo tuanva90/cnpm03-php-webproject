@@ -5,7 +5,7 @@ class Admin_Model_Products{
 
       	$db = Zend_Registry::get('connectDB');
   		$sql = 'SELECT * FROM cms_product,cms_product_description';  				  
-  		$result =  $db->fetchAll($sql)->toArray();
+  		$result =  $db->fetchAll($sql);
   		return $result;
   	}
   	public function DeleteProduct($Product_ID)
@@ -28,7 +28,7 @@ class Admin_Model_Products{
 									$descriptionVI) 
 	{		
 		$db = Zend_Registry::get('ConnectDB');
-		//Cập nhật vào bảng cms_product
+		//Cáº­p nháº­t vĂ o báº£ng cms_product
 		$where = "'product_id' = $product_id" ;
 		$Product = array(
       	'model'     =>$model ,
@@ -42,10 +42,10 @@ class Admin_Model_Products{
 		'status'	=>$status);
 		$db->update('cms_product',$Product,$where);
 		
-		//Mặc định ngôn ngữ là tiếng việt
+		//Máº·c Ä‘á»‹nh ngĂ´n ngá»¯ lĂ  tiáº¿ng viá»‡t
 		$Language_Vi = 'VI';
 		
-		//Cập nhật vào bản cms_product_description
+		//Cáº­p nháº­t vĂ o báº£n cms_product_description
 		$Product_Description = array(
 		'product_id'	=>$product_id,
 		'language'		=>$Language_Vi,
@@ -67,7 +67,7 @@ class Admin_Model_Products{
 	{
 		$db = Zend_Registry::get('ConnectDB');
 		
-		//tạo mảng các giá trị truyền vào bảng cms_product
+		//táº¡o máº£ng cĂ¡c giĂ¡ trá»‹ truyá»�n vĂ o báº£ng cms_product
 		$Product = array(
       	'model'     =>$model ,
      	'image'    	=>$image ,
@@ -80,13 +80,13 @@ class Admin_Model_Products{
 		'status'	=>$status);      
 		$db->insert('cms_product',$Product);
 		
-		//Lấy ID phát sinh tự động khi thêm vào bảng.
+		//Láº¥y ID phĂ¡t sinh tá»± Ä‘á»™ng khi thĂªm vĂ o báº£ng.
 		$id = $db->lastInsertId();
 		
-		//Mặc định ngôn ngữ là tiếng việt
+		//Máº·c Ä‘á»‹nh ngĂ´n ngá»¯ lĂ  tiáº¿ng viá»‡t
 		$Language_Vi = 'VI';
 		
-		//Tạo mảng các giá trị truyền vào bảng Product_description.
+		//Táº¡o máº£ng cĂ¡c giĂ¡ trá»‹ truyá»�n vĂ o báº£ng Product_description.
 		$Product_Description = array(
 		'product_id'	=>$id,
 		'language'		=>$Language_Vi,
