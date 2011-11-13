@@ -1,6 +1,6 @@
 <div id="content">
 	<div class="toolbox">
-		<div class="left">Quản lý :: Sản phẩm</div>
+		<div class="left">Quản Lý:Sản Phẩm</div>
 		<div class="right">
 			<div><a href="<?php echo $this->baseUrl("/admin/products/productnew")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
 			<div><a href="<?php echo $this->baseUrl("/admin/products/productedit")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
@@ -12,20 +12,44 @@
 		<a href="#">...</a>
 		<a href="#">...</a>
 	</div>
-	<table border="1" width="800" cellpadding="1" cellspacing="0">
-	<tr style="font-weight: bold;"> <td>Product_ID </td> <td>Image</td> <td>Price</td> <td>Date Added</td> <td>Action</td></tr> 
-	<?php 
-//	foreach($this->products as $product){
-//		echo '<tr><td>'.$product["product_id"];
-//		echo '</td> <td>'.$product["image"];
-//		echo '</td> <td>'.$product["price"];
-//		echo '#</td> <td>'.$product["date_added"];
-//		echo '</td><td><a>Edit</a>  &nbsp&nbsp  <a>Delete</a> &nbsp&nbsp <a>Active</a></td>';
-//	}
-print_r($this->products);
-//	?>	
-
+	<div id="content">
+<h1>Sản Phẩm</h1>
+	<div class="product-grid"> 
+     <table class="spreadsheet">
+     	<th><input id="Checkbox1" type="checkbox" /></th>
+		<th>Mã</th>
+		<th>Tên Sản Phẩm</th>
+		<th>Giá</th>
+		<th>Hình Ảnh</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+	</tr>
+	<?php foreach ($this->products as $product) { ?>
+	<tr>
+		<td><input id="Checkbox2" type="checkbox" /></td>
+		<td>
+			<?php echo $product['product_id'];?>
+		</td>
+		<td>
+			<?php echo $product['model'];?>
+		</td>
+		<td>
+			<?php echo $product['price'];?>
+		</td>
+		<td>
+			<img src="<?php echo HTTP_IMAGES . '/' . $product['image'];?>" width="50px" height="50px"/>
+		</td>
+		<td>
+			<a href="<?php echo $this->baseUrl(); ?>/admin/products/delete/id/<?php echo $product['product_id'];?>">Sửa</a>
+		</td>
+		<td>
+			<a href="<?php echo $this->baseUrl(); ?>/admin/products/delete/id/<?php echo $product['product_id'];?>">Xóa</a>
+		</td>
+	</tr>
+	<?php }?>
 	</table>
+ </div>
+</div>
 	
 </div>
 
