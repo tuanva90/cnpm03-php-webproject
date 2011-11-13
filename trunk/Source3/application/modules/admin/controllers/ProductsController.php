@@ -14,11 +14,7 @@ class Admin_ProductsController extends Honey_Controller_Action {
 	//The path of the Action
 	protected $_actionMain;
 	
-	public function init() {
-//		$this->_arrParam = $this->_request->getParams ();		
-//		$this->_currentController = '/' . $this->_arrParam ['module'] . '/' . $this->_arrParam ['controller'];		
-//		$this->_actionMain = '/' . $this->_arrParam ['module'] . '/' . $this->_arrParam ['controller'] . '/index';
-				
+	public function init() {			
 		$layout = 'index';
 		$layoutPath = APPLICATION_PATH . '/templates/admin/default';
 		$this->loadTemplate ( $layout, $layoutPath, 'template.ini', 'template' );
@@ -28,12 +24,17 @@ class Admin_ProductsController extends Honey_Controller_Action {
 	}
 	
 	public function indexAction() {
-		$model = new Admin_Model_Products();
-		$products = $model->getProducts();
-		$this->view->products = $products[''];	
-
+		$products = new Admin_Model_Products();	
+		$this->view->products=$products->GetProducts();
 	}
-	
+	public function deleteAction(){
+    	$id = $this->_request->getParam('id');
+    	$this->view->id=$id;
+    }
+	public function updateAction(){
+    	$id = $this->_request->getParam('id');
+    	$this->view->id=$id;
+    }
 	public function productnewAction(){		
 	}
 	public function producteditAction(){
