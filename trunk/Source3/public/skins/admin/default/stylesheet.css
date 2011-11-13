@@ -181,6 +181,20 @@ table.form > tbody > tr > td {
 	color: #000000;
 	border-bottom: 1px dotted #CCCCCC;
 }
+.spreadsheet
+{
+	border: 2px #3333CC solid; 
+	width:900px;
+	font-size: 14px;
+	margin:0 auto;
+	text-align: center;
+}
+table th
+{
+	background-color: #99FF66; 
+	font-size: 17px;
+	border-bottom: 2px #3333CC solid; 
+}
 .scrollbox {
 	border: 1px solid #CCCCCC;
 	width: 350px;
