@@ -31,8 +31,32 @@ class Admin_NewsController extends Honey_Controller_Action {
 		$model = new Admin_Model_News();
 		$this->view->news = $model->getNews();	
 	}
-	public function newsnewAction(){		
+	public function newAction(){
+
 	}
-	public function newseditAction(){
+	public function deleteAction(){
+		$message = "";
+		$n_id = $this->_request->getParam('news_id');    	   	
+    	$model = new Admin_Model_News();// khai bao model    		
+    	$news_item = $model->getNews_item($n_id);
+    	if(empty($news_item)){// thông báo nêu không thìm thấy News   
+    		$this->view->message = "Không tìm thấy News_ID= ".$n_id;    
+    	}
+    	$n_language = "vi_VN";// tạm thời code cứng: ngôn ngữ là Tiếng Việt
+    	$news_dectiption = $model->getNews_description($n_id, $n_language);
+    	$this->view->news_item = array_merge ($news_item, $news_dectiption);// merge giá trị 2 mảng, không merge cũng được    	
+	}
+	public function editAction(){	    
+		$message = "";
+		$n_id = $this->_request->getParam('news_id');    	   	
+    	$model = new Admin_Model_News();// khai bao model    		
+    	$news_item = $model->getNews_item($n_id);
+    	if(empty($news_item)){// thông báo nêu không thìm thấy News   
+    		$this->view->message = "Không tìm thấy News_ID= ".$n_id;    		
+    	}     	
+    	$n_language = "vi_VN";// tạm thời code cứng: ngôn ngữ là Tiếng Việt
+    	$news_dectiption = $model->getNews_description($n_id, $n_language);
+    	// Gán giá trị xuống View (edit.phtml)
+    	$this->view->news_item = array_merge ($news_item, $news_dectiption);// merge giá trị 2 mảng, không merge cũng được    	
 	}
 }

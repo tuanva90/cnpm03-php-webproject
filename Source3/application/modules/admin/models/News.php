@@ -18,7 +18,7 @@ class Admin_Model_News {
         		FROM cms_news 
 		WHERE news_id = ?   
         		";
-		$result=$db->fetchAll($sql,array($n_id));
+		$result=$db->fetchRow($sql,array($n_id));
 			return $result;
           
 	}
@@ -81,9 +81,9 @@ public function getNews_description($n_id,$n_language)
         FROM cms_news_description 
         WHERE news_id = ?     
         AND language = ?";
-		$db->fetchAll($sql,array($n_id,$n_language));
-        
-			return $result;
+		$result = $db->fetchRow($sql,array($n_id,$n_language));    
+	
+		return $result;
 	}
 	
 	public function deleteNews_description($n_id,$n_language) 
