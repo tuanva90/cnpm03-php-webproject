@@ -96,7 +96,7 @@ class ErrorController extends Zend_Controller_Action {
 		$errorMessage .= PHP_EOL;
 		
 		// Tạo định dạng phần đầu cho files log [Tùy Chọn]
-		$logFormat = 'WDS CMS - %timestamp%' . PHP_EOL . '%priorityName% [%priority%]: %message%' . PHP_EOL;
+		$logFormat = 'Honey CMS - %timestamp%' . PHP_EOL . '%priorityName% [%priority%]: %message%' . PHP_EOL;
 		
 		// Đường dẫn và tên của file logs
 		$logFile = TEMP_PATH . DS . 'logs' . DS . date ( 'd-m-Y' ) . '.log';

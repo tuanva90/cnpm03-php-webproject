@@ -1,7 +1,7 @@
 <?php
 class Honey_View_Helper_CmsSelect extends Zend_View_Helper_Abstract{
 	
-	public function cmsSelect($name,$value = null, $options, $attribs = array() ){
+	public function cmsSelect($name, $value = null, $options, $attribs = array() ){
 		$strAttribs = '';
 		if(count($attribs)>0){
 			foreach ($attribs as $keyAttribs => $valueAttribs){
