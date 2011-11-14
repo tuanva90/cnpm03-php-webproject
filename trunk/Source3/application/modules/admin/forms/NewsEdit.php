@@ -7,9 +7,8 @@ class Admin_Form_NewsEdit extends Zend_Form{
 		$description = new Zend_Form_Element_Textarea('description');
         	$description->setLabel('Description: ')
                    	->setAttrib('rows','2')
-                    	->setAttrib('cols','60');		               
-                   	
-		
+                    	->setAttrib('cols','60');          
+                   			
 		$txtcontent = new Zend_Form_Element_Textarea('content');
 		$txtcontent->setLabel('Content :')
 					->setAttrib('rows','10')
@@ -53,6 +52,12 @@ class Admin_Form_NewsEdit extends Zend_Form{
             array('HtmlTag', array('tag' => 'div', 'class' => 'element')), 
         ), 
     )); 	
+	}
+	public function setValue($arrParam) {
+		//print_r($arrParam);
+		$this->getElement("title")->setValue($arrParam['title']);
+		$this->getElement("description")->setValue($arrParam['summary']);
+		$this->getElement("content")->setValue($arrParam['description']);		
 	}
 }
 ?>
