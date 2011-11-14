@@ -1,0 +1,33 @@
+<div id="content">
+  <div class="breadcrumb"></div>
+  <?php if ($this->Item) {?>
+  <h1><?php echo $this->Item['name']; ?></h1>
+  <div class="product-info">
+    <div class="left">
+      <div class="image"><a class="fancybox" rel="fancybox" title="<?php echo $this->Item['name']; ?>" href="<?php echo HTTP_IMAGES . '/' . $this->Item['image'];?>"><img id="image" width="228" alt="<?php echo $this->Item['name']; ?>" title="<?php echo $this->Item['name']; ?>" src="<?php echo HTTP_IMAGES . '/' . $this->Item['image'];?>">
+</a></div>
+      <div class="image-additional"></div>
+    </div>
+    <div class="right">
+      <div class="description">
+        <span>Tên sản phẩm: </span><?php echo $this->Item['name']; ?><br>
+        <span>Số lượng: </span><?php echo $this->Item['quantity']; ?>
+      </div>
+      <div class="price"><span>Giá: </span><?php echo round($this->Item['price']) . 'đ'; ?></div>
+      <div class="cart"></div>
+    </div>
+  </div>
+  <div id="tabs" class="htabs">
+    <a href="#tab-description">Description</a>
+    <a href="#tab-review">Reviews (0)</a>
+  </div>
+  <div id="tab-description" class="tab-content">
+  	<?php echo html_entity_decode($this->Item['description'], ENT_QUOTES, 'UTF-8'); ?>
+  </div>
+  <div id="tab-review" class="tab-content"><br><br><br>
+  </div>
+  <?php } ?>
+</div>
+<script type="text/javascript"><!--
+jQuery('#tabs a').tabs();
+//--></script>
