@@ -1,0 +1,20 @@
+<div id="header">
+  <div class="div1">
+    <div class="div2"><img src="<?php echo HTTP_IMAGES . '/icon/logo.png' ;?>" title="" onClick="location = '<?php echo HTTP_SERVER; ?>'" /></div>  
+    <div class="div3"><img src="<?php echo HTTP_IMAGES . '/icon/lock.png' ;?>" alt="" style="position: relative; top: 3px;" />&nbsp; Đẵ đăng nhập</div> 
+  </div>
+  <div id="menu">
+    <ul class="left">
+      <li id="news">
+      	<a class="top" href="<?php echo $this->baseUrl('admin/news')?>"><?php echo $this->cmsTranslator('menu_news');?></a>
+      </li>
+      <li id="product">
+      	<a class="top" href="<?php echo $this->baseUrl('admin/products')?>"><?php echo $this->cmsTranslator('menu_products');?></a>        
+      </li>
+    </ul>
+    <ul class="right">
+      <li id="store"><a onClick="window.open('<?php echo HTTP_SERVER; ?>');" class="top"><?php echo $this->cmsTranslator('menu_homepage');?></a></li>
+      <li id="store"><a class="top" href="<?php echo $this->baseUrl('/front');?>"><?php echo $this->cmsTranslator('menu_logout');?></a></li>
+    </ul>
+  </div><!-- End #menu -->
+</div> <!-- End #header -->  
