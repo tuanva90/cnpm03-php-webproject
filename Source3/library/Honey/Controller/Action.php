@@ -8,12 +8,12 @@ class Honey_Controller_Action extends Zend_Controller_Action {
 	protected function loadTemplate($layout, $layoutPath, $fileConfig = 'template.ini', $sectionConfig = 'template') {
 		
 		//Set NULL
-		$this->view->headTitle ()->set ( '' );
+		$this->view->headTitle ();
 		$this->view->headMeta ()->getContainer ()->exchangeArray ( array () );
 		$this->view->headLink ()->getContainer ()->exchangeArray ( array () );
 		$this->view->headScript ()->getContainer ()->exchangeArray ( array () );
 		
-		$module = Zend_Controller_Front::getInstance ()->getRequest ()->getModuleName ();		
+		$module = Zend_Controller_Front::getInstance ()->getRequest ()->getModuleName ();
 		$filename = APPLICATION_PATH . DS . 'modules' . DS . $module . DS . 'configs' . DS . $fileConfig;
 		
 		$section = $sectionConfig;
@@ -23,12 +23,23 @@ class Honey_Controller_Action extends Zend_Controller_Action {
 		/** 
 		 * Set the initial title: 
 		 */
-		$this->view->headTitle ( $config ['title'] );
+		$this->view->headTitle ( $config ['headTitle'] );
+		
+		/** 
+		 * Set the initial headLink: 
+		 * */
+		if (! empty ( $config ['headLink'] ) && count ( $config ['headLink'] ) > 0) {
+			foreach ( $config ['headLink'] as $key => $value ) {
+				$tmp = explode ( "|", $value );
+				$this->view->headLink ()->headLink ( array ('rel' => $tmp [0], 'href' => $tmp [1] ) );
+			}
+		}
+		$this->view->headLink ( array ('rel' => 'canonical', 'href' => HTTP_SERVER . $this->_request->getPathInfo () ) );
 		
 		/** 
 		 * Set the initial meta: 
 		 * */
-		if (! empty ( $config ['metaHttp'] ) &&  count ( $config ['metaHttp'] ) > 0) {
+		if (! empty ( $config ['metaHttp'] ) && count ( $config ['metaHttp'] ) > 0) {
 			foreach ( $config ['metaHttp'] as $key => $value ) {
 				$tmp = explode ( "|", $value );
 				$this->view->headMeta ()->appendHttpEquiv ( $tmp [0], $tmp [1] );
@@ -45,8 +56,8 @@ class Honey_Controller_Action extends Zend_Controller_Action {
 		/** 
 		 * Set the initial css: 
 		 */
-		if (! empty ( $config ['fileCss'] ) && count ( $config ['fileCss'] ) > 0) {
-			foreach ( $config ['fileCss'] as $key => $css ) {
+		if (! empty ( $config ['headStyle'] ) && count ( $config ['headStyle'] ) > 0) {
+			foreach ( $config ['headStyle'] as $key => $css ) {
 				$this->view->headLink ()->appendStylesheet ( HTTP_PUBLIC . $css, 'screen' );
 			}
 		}
@@ -54,8 +65,8 @@ class Honey_Controller_Action extends Zend_Controller_Action {
 		/** 
 		 * Set the initial javascript: 
 		 */
-		if (! empty ( $config ['fileJs'] ) && count ( $config ['fileJs'] ) > 0) {
-			foreach ( $config ['fileJs'] as $key => $js ) {
+		if (! empty ( $config ['headScript'] )&& count ( $config ['headScript'] ) > 0) {
+			foreach ( $config ['headScript'] as $key => $js ) {
 				$this->view->headScript ()->appendFile ( HTTP_PUBLIC . $js, 'text/javascript' );
 			}
 		}

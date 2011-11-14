@@ -76,6 +76,7 @@ $options = array(
 			'moduleDirectory'				=> APPLICATION_PATH . DS . 'modules',
 			'moduleControllerDirectoryName'	=> 'controllers',
     		'defaultModule'		  			=> 'front',
+    		//'defaultModule'		  			=> 'link',
     		/*'throwExceptions'	  			=> 1,*/
     		'params'	=> array(
     			'displayExceptions'	=> 1,
@@ -83,11 +84,13 @@ $options = array(
 		),
 		'layout' => array(
 			'layoutPath'	=> APPLICATION_PATH . DS . 'templates' . DS . 'front' . DS . 'default',
+			//'layoutPath'	=> APPLICATION_PATH . DS . 'templates' . DS . 'link' . DS . 'default',
 			'layout'		=> 'index'
 		),
 		'view' => array(
 			'helperPath' => array(
 				'Honey_View_Helper'	=> 'Honey' . DS . 'View' . DS . 'Helper',
+				'Block'				=> APPLICATION_PATH . DS . 'blocks',
 			),
 		),
 		'modules' => array(
