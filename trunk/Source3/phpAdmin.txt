@@ -1,5 +1,0 @@
-
-https://cloud.xeround.com/phpMyAdmin/login.php?instanceName=zendcms&host=instance2623.db.xeround.com.&port=3608&user=user&hash=c9f8f286b804f25086b3e9360611e9565c738c4d
-
-user: user
-pass: 123456
