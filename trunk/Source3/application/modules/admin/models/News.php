@@ -1,25 +1,35 @@
 <?php
-class Admin_Model_News {
+class Admin_Model_News  extends Zend_Db_Table{
+
 	
 	public function getNews() {
 		
 		$db = Zend_Registry::get ( 'connectDB' );
-		$sql = "SELECT *  
-        		FROM cms_news 
-        		";
-		$result=$db->fetchAll($sql);
+	
+	
+		$select = $db->select()
+        			  ->from(array('n' => 'cms_news'))
+        			  ->joinLeft(array('nd' => 'cms_news_description'), 'n.news_id = nd.news_id')
+	  				  ->limitPage(0, 10);
+        			  ;
+		
+        	$result = $db->fetchAll($select);
+        	
 			return $result;
 	}
 
 	public function getNews_item($n_id) {
 		
 		$db = Zend_Registry::get ( 'connectDB' );
-		$sql = "SELECT *  
-        		FROM cms_news 
-		WHERE news_id = ?   
-        		";
-		$result=$db->fetchRow($sql,array($n_id));
+		
+		
+		$sql= $db->select()
+				->from(array('n' => 'cms_news'))
+        			  ->joinLeft(array('nd' => 'cms_news_description'), 'n.news_id = nd.news_id')
+	  				  ->where('n.news_id = ?',$n_id);
+		$result=$db->fetchRow($sql);
 			return $result;
+			
           
 	}
 	
@@ -27,16 +37,18 @@ class Admin_Model_News {
 	{
 		
 		$db = Zend_Registry::get ( 'connectDB' );
-		$where = " news_id = $n_id";
-		$n = $db->delete ( 'cms_news', $where);
-		return $n; // ki?m tra có th?c hi?n thành công hay không
+		$where =  'news_id= '.$n_id;
+		$db->delete ( 'cms_news', $where);
+		 
+		
+		
 	}
 	
 	public function updateNews($n_id,$n_image,$n_viewed,$n_sort_order,$n_status,$n_date_added,$n_date_modified) 
 	{
 		
 		$db = Zend_Registry::get ( 'connectDB' );
-		$where = " news_id = $n_id";
+		$where = ' news_id ='.$n_id;
 		$data = array (
 		'image' => $n_image,
 		 'viewed' => $n_viewed ,
@@ -46,8 +58,7 @@ class Admin_Model_News {
 		'date_modified'=>$n_date_modified
 		);
 		
-		$n = $db->update ( 'cms_news', $data, $where );
-		return $n; // ki?m tra có th?c hi?n thành công hay không
+		 $db->update ( 'cms_news', $data, $where );
 	
 
 	}
@@ -65,8 +76,8 @@ class Admin_Model_News {
 		'date_modified'=>$n_date_modified
 		);
 		
-		$n = $db->insert ( 'cms_news', $data );
-		return $n; // ki?m tra có th?c hi?n thành công hay không
+		 $db->insert ( 'cms_news', $data );
+		
 	}
 
 	
@@ -77,13 +88,14 @@ public function getNews_description($n_id,$n_language)
 {
 		
 		$db = Zend_Registry::get ( 'connectDB' );
-		$sql = "SELECT *  
-        FROM cms_news_description 
-        WHERE news_id = ?     
-        AND language = ?";
-		$result = $db->fetchRow($sql,array($n_id,$n_language));    
-	
-		return $result;
+		$sql= $db->select()
+				->from('cms_news_description')
+				->where('news_id = ?',$n_id)
+				->where('language = ?',$n_language);
+				;
+		$result=$db->fetchAll($sql);
+			return $result;
+		
 	}
 	
 	public function deleteNews_description($n_id,$n_language) 
@@ -94,8 +106,8 @@ public function getNews_description($n_id,$n_language)
 				'news_id' => $n_id, 
 				'language' => $n_language
 				);	
-		$n = $db->delete ( 'cms_news_description', $where);
-		return $n; // ki?m tra có th?c hi?n thành công hay không
+		 $db->delete ( 'cms_news_description', $where);
+		
 	}
 	
 	public function updateNews_description($n_id,$n_language,$n_title,$n_summary,$n_description)  
@@ -112,8 +124,8 @@ public function getNews_description($n_id,$n_language)
 		'description'=>$n_description	
 		);
 		
-		$n = $db->update ( 'cms_news_description', $data, $where );
-		return $n; // ki?m tra có th?c hi?n thành công hay không
+		 $db->update ( 'cms_news_description', $data, $where );
+		
 	
 
 	}
@@ -130,8 +142,8 @@ public function getNews_description($n_id,$n_language)
 		'description'=>$n_description	
 		);
 		
-		$n = $db->insert ( 'cms_news_description', $data );
-		return $n; // ki?m tra có th?c hi?n thành công hay không
+		$db->insert ( 'cms_news_description', $data );
+		
 	}
 	
 	
