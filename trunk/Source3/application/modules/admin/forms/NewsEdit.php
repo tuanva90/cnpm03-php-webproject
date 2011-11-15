@@ -2,12 +2,17 @@
 class Admin_Form_NewsEdit extends Zend_Form{
 	public function init(){
 		$txtname = new Zend_Form_Element_Text('title');
-		$txtname->setLabel('Title :');
+		$txtname->setLabel('Title :')
+				->setAttrib('style', 'width:500px');
+		
+		$txtauthor = new Zend_Form_Element_Text('author');
+		$txtauthor->setLabel('Author :')
+				->setAttrib('style', 'width:150px');
 		
 		$description = new Zend_Form_Element_Textarea('description');
         	$description->setLabel('Description: ')
-                   	->setAttrib('rows','2')
-                    	->setAttrib('cols','60');          
+                   	->setAttrib('rows','4')
+                    	->setAttrib('cols','100');          
                    			
 		$txtcontent = new Zend_Form_Element_Textarea('content');
 		$txtcontent->setLabel('Content :')
@@ -26,12 +31,12 @@ class Admin_Form_NewsEdit extends Zend_Form{
 		$cbxstatus->addMultiOption(array('published' =>'Published', 'unpublished' =>'Unpublished'));
 		$cbxstatus->setMultiOptions(array('published' =>'Published', 'unpublished' =>'Unpublished'));	
 		
-		$this->addElements(array($txtname,$description,$txtcontent,$image,$txtorder, $cbxstatus));	
+		$this->addElements(array($txtname,$txtauthor,$description,$txtcontent,$image,$txtorder, $cbxstatus));	
 		
 	
 		$this->addDecorator('formElements');
 		$this->addDecorator('form');
-		$this->addDisplayGroup(	array('title','description','content','image','price','order','status'),'News');	
+		$this->addDisplayGroup(	array('title','author','description','content','image','price','order','status'),'News');	
 		
 		$this->addElement('submit', 'submit', array( 
         'label' => 'Save', 
