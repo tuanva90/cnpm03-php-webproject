@@ -1,31 +1,39 @@
 <div id="content">
 	<div class="toolbox">
-		<div class="left">Qu·∫£n l√Ω :: Tin T·ª©c - S·ª± Ki·ªán</div>
+		<div class="left">Qu?n l? :: Tin T?c - S? Ki?n</div>
 		<div class="right">
-			<div><a href="<?php echo $this->baseUrl("/admin/news/newsnew")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
-			<div><a href="<?php echo $this->baseUrl("/admin/news/newsedit")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
-			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>			
-			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-delete.png';?>"/><br>Delete</a></div>
+			<div><a href="<?php echo $this->baseUrl("/admin/news/new")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
+			<div><a href="<?php echo $this->baseUrl("/admin/news/edit")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
+			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>
+			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>
 		</div>
 	</div>
 	<div class="breadcrumb">
 		<a href="#">...</a>
 		<a href="#">...</a>
 	</div>
-	<table border="1" width="800" cellpadding="1" cellspacing="0">
-	<tr style="font-weight: bold;"> <td> News_ID </td> <td>Image</td> <td>Date Added</td> <td>Date Modified</td> <td>Action</td></tr>
+	<table border="1" cellpadding="1" cellspacing="0">
+	<tr style="font-weight: bold;"> <td>ID</td> <td>TI U –?</td> <td>T¡C GI?</td> <td>H?NH ?NH</td> <td>L›?T XEM</td> <td>TH? T?</td> <td>TR?NG TH¡I</td> <td>NG¿Y T?O</td> <td>NG¿Y S?A</td> <td>THAO T¡C</td></tr> 
 	<?php 
-	foreach($this->Items as $news){
+	foreach($this->news as $news){
+		$news_description = $this->model->getNews_description($news['news_id'],"vi_VN");
 		echo '<tr><td>'.$news["news_id"];
-		echo '</td> <td>'.$news["image"];
-		echo '<tr><td>'.$news["title"];
+		echo '</td> <td>'.$news_description['title'];
+		echo '</td> <td>'.$news['author'];
+		echo "</td> <td>".$news["image"];
+		echo '</td> <td>'.$news['viewed'];
+		echo '</td> <td>'.$news['sort_order'];
+		echo '</td> <td>'.$news['status'];
 		echo '</td> <td>'.$news["date_added"];
 		echo '</td> <td>'.$news["date_modified"];
-		echo '</td><td><a>Edit</a>  &nbsp&nbsp  <a>Delete</a> &nbsp&nbsp <a>Active</a></td></tr>';
+		echo '</td><td><a href='.$this->baseUrl("/admin/news/edit")."?news_id=".$news['news_id'].'>S?a</a>  &nbsp&nbsp  <a href='.$this->baseUrl("admin/news/delete")."?news_id=".$news['news_id'].'>XÛa</a> &nbsp&nbsp <a>Active</a></td></tr>';
 	}
-	?>	
+	?>
 
 	</table>
+	<pre>
+		<?php print_r($this->news);?>
+	</pre>
 	
 </div>
 
