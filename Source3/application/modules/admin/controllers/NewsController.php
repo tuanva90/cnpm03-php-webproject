@@ -30,6 +30,7 @@ class Admin_NewsController extends Honey_Controller_Action {
 	public function indexAction() {
 		$model = new Admin_Model_News();
 		$this->view->news = $model->getNews();	
+		$this->view->model = $model;
 	}
 	public function newAction(){
 
@@ -39,24 +40,24 @@ class Admin_NewsController extends Honey_Controller_Action {
 		$n_id = $this->_request->getParam('news_id');    	   	
     	$model = new Admin_Model_News();// khai bao model    		
     	$news_item = $model->getNews_item($n_id);
-    	if(empty($news_item)){// thông báo nêu không thìm thấy News   
-    		$this->view->message = "Không tìm thấy News_ID= ".$n_id;    
+    	if(empty($news_item)){// thÃ´ng bÃ¡o nÃªu khÃ´ng thÃ¬m tháº¥y News   
+    		$this->view->message = "KhÃ´ng tÃ¬m tháº¥y News_ID= ".$n_id;    
     	}
-    	$n_language = "vi_VN";// tạm thời code cứng: ngôn ngữ là Tiếng Việt
+    	$n_language = "vi_VN";// táº¡m thá»�i code cá»©ng: ngÃ´n ngá»¯ lÃ  Tiáº¿ng Viá»‡t
     	$news_dectiption = $model->getNews_description($n_id, $n_language);
-    	$this->view->news_item = array_merge ($news_item, $news_dectiption);// merge giá trị 2 mảng, không merge cũng được    	
+    	$this->view->news_item = array_merge ($news_item, $news_dectiption);// merge giÃ¡ trá»‹ 2 máº£ng, khÃ´ng merge cÅ©ng Ä‘Æ°á»£c    	
 	}
 	public function editAction(){	    
 		$message = "";
 		$n_id = $this->_request->getParam('news_id');    	   	
     	$model = new Admin_Model_News();// khai bao model    		
     	$news_item = $model->getNews_item($n_id);
-    	if(empty($news_item)){// thông báo nêu không thìm thấy News   
-    		$this->view->message = "Không tìm thấy News_ID= ".$n_id;    		
+    	if(empty($news_item)){// thÃ´ng bÃ¡o nÃªu khÃ´ng thÃ¬m tháº¥y News   
+    		$this->view->message = "KhÃ´ng tÃ¬m tháº¥y News_ID= ".$n_id;    		
     	}     	
-    	$n_language = "vi_VN";// tạm thời code cứng: ngôn ngữ là Tiếng Việt
+    	$n_language = "vi_VN";// táº¡m thá»�i code cá»©ng: ngÃ´n ngá»¯ lÃ  Tiáº¿ng Viá»‡t
     	$news_dectiption = $model->getNews_description($n_id, $n_language);
-    	// Gán giá trị xuống View (edit.phtml)
-    	$this->view->news_item = array_merge ($news_item, $news_dectiption);// merge giá trị 2 mảng, không merge cũng được    	
+    	// GÃ¡n giÃ¡ trá»‹ xuá»‘ng View (edit.phtml)
+    	$this->view->news_item = array_merge ($news_item, $news_dectiption);// merge giÃ¡ trá»‹ 2 máº£ng, khÃ´ng merge cÅ©ng Ä‘Æ°á»£c    	
 	}
 }
