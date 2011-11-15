@@ -1,0 +1,69 @@
+<div id="content">
+	<div class="toolbox">
+		<div class="left">Quản lý :: Menu</div>
+		<div class="right">
+			<div><a href="<?php echo $this->baseUrl("/admin/menu/new")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
+			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
+			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>			
+			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-delete.png';?>"/><br>Delete</a></div>
+		</div>
+	</div><!-- End Toolbox -->
+
+	<?php 
+//	$filter = $this->arrParam['filter'];
+//	$action_link 	= "#";/*$this->baseUrl($this->currentController . '/filter/type/order');*/
+//	$sortID 	= $this->cmsLinkSort($this->cmsTranslator('menu_column_id'), 'l.id', $filter, $action_link);	
+	?>
+	<div id="main">
+		<form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
+      		<table class="list">
+        	<thead>
+          	<tr>  
+            <td width="1" style="text-align: center;">
+            	<input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" />
+            </td>     
+            	<td class="left"><?php echo $this->cmsTranslator('menu_column_id');?></td>
+            	<td class="left"><?php echo $this->cmsTranslator('menu_column_name');?></td>   
+            	<td class="center"><?php echo $this->cmsTranslator('menu_column_link');?></td>
+            	<td class="center"><?php echo $this->cmsTranslator('menu_column_des');?></td>
+            	<td class="center"><?php echo $this->cmsTranslator('menu_column_status');?></td>     
+            	<td class="center"><?php echo $this->cmsTranslator('menu_column_lang');?></td>
+            	<td class="center"><?php echo $this->cmsTranslator('menu_column_pid');?></td>
+            	<td class="center"><?php echo $this->cmsTranslator('menu_column_order');?></td>
+				<td class="center"><?php echo $this->cmsTranslator('menu_column_added');?></td>
+				<td class="center"><?php echo $this->cmsTranslator('menu_column_modified');?></td>
+				<td class="center"><?php echo $this->cmsTranslator('menu_column_control');?></td>
+          	</tr>
+        	</thead>
+        	<tbody>
+            
+            <?php foreach($this->menus as $menu){             
+            	$selected = $this->formCheckbox('selected', $menu['link']);   
+				$linkEdit = $this->baseUrl($this->currentController . '/edit/menu_id/' . $menu['menu_id']);
+				$btnEdit = $this->cmsIconButton('Edit Item', HTTP_IMAGES. '/icon/icon_16_edit.png', $linkEdit);
+				$linkDelete	= $this->baseUrl($this->currentController . '/delete/menu_id/' . $menu['menu_id']);
+				$btnDelete = $this->cmsIconButton('Delete Item', HTTP_IMAGES. '/icon/icon_16_del.png', $linkDelete);
+				$strIconButton =  $btnEdit . ' ' . $btnDelete;
+		    ?>
+          	<tr class="row">
+          		<td><?php echo $selected?></td>
+            	<td><?php echo $menu['menu_id']?></td>
+            	<td><?php echo $menu['name']?></td>
+            	<td><?php echo $this->baseUrl($menu['link']);?></td>
+            	<td><?php echo $menu['description']?></td>
+            	<td class='center'><?php echo $menu['status']?></td>
+            	<td class='center'><?php echo $menu['language']?></td>
+            	<td class='center'><?php echo $menu['parent_id']?></td>
+            	<td class='center'><?php echo $menu['sort_order']?></td>
+            	<td class='center'><?php echo $menu['date_added']?></td>     
+            	<td class='center'><?php echo $menu['date_modified']?></td>             
+            	<td class="center"><?php echo $strIconButton;?></td>
+          	</tr>
+    		<?php }?>
+          	</tbody>
+        	</table>
+        </form>	
+	</div>
+	
+</div>
+
