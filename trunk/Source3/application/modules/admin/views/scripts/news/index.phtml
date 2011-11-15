@@ -2,10 +2,10 @@
 	<div class="toolbox">
 		<div class="left">Quản lý :: Tin Tức - Sự Kiện</div>
 		<div class="right">
-			<div><a href="<?php echo $this->baseUrl("/admin/news/new")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
-			<div><a href="<?php echo $this->baseUrl("/admin/news/edit")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
+			<div><a href="<?php echo $this->baseUrl("/admin/news/newsnew")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
+			<div><a href="<?php echo $this->baseUrl("/admin/news/newsedit")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
 			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>			
-			<div><a href="<?php echo $this->baseUrl("/admin/news/delete")?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-delete.png';?>"/><br>Delete</a></div>
+			<div><a href=""><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-delete.png';?>"/><br>Delete</a></div>
 		</div>
 	</div>
 	<div class="breadcrumb">
@@ -13,18 +13,19 @@
 		<a href="#">...</a>
 	</div>
 	<table border="1" width="800" cellpadding="1" cellspacing="0">
-	<tr style="font-weight: bold;"> <td> News_ID </td> <td>Image</td> <td>Date Added</td> <td>Date Modified</td> <td>Action</td></tr><!-- 
+	<tr style="font-weight: bold;"> <td> News_ID </td> <td>Image</td> <td>Date Added</td> <td>Date Modified</td> <td>Action</td></tr>
 	<?php 
-//	foreach($this->news as $news){
-//		echo '<tr><td>'.$news["news_id"];
-//		echo '</td> <td>'.$news["image"];
-//		echo '</td> <td>'.$news["date_added"];
-//		echo '#</td> <td>'.$news["date_modified"];
-//		echo '</td><td><a>Edit</a>  &nbsp&nbsp  <a>Delete</a> &nbsp&nbsp <a>Active</a></td>';
-//	}
+	foreach($this->Items as $news){
+		echo '<tr><td>'.$news["news_id"];
+		echo '</td> <td>'.$news["image"];
+		echo '<tr><td>'.$news["title"];
+		echo '</td> <td>'.$news["date_added"];
+		echo '</td> <td>'.$news["date_modified"];
+		echo '</td><td><a>Edit</a>  &nbsp&nbsp  <a>Delete</a> &nbsp&nbsp <a>Active</a></td></tr>';
+	}
 	?>	
 
-	--></table>
+	</table>
 	
 </div>
 
