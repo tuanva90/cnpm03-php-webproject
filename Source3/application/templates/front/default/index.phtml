@@ -10,7 +10,11 @@
 <body>
 <div id="container">
 <?php echo $this->render('_partial/_header.phtml');?>
-	<?php echo $this->layout()->content ?>
+<?php echo $this->render('_partial/_left.phtml');?>
+<div id="center">
+<?php echo $this->layout()->content ?>
+</div> <!-- End #center -->
+<?php echo $this->render('_partial/_right.phtml');?>
 <?php echo $this->render('_partial/_footer.phtml');?>
 </div><!-- End #container -->
 </body>
