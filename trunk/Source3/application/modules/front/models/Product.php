@@ -51,7 +51,6 @@ class Front_Model_Product extends Honey_Db_Table{
 	
 	public function getItem($arrParam = null, $options = null) {
 		$db = Zend_Registry::get ('connectDB');
-		echo $arrParam['product_id'];
 		if ($options ['task'] == 'info') {
 	  		$select = $db->select()
 	  				  ->from(array('p' => $this->getPrefix() . 'product'))
