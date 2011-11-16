@@ -94,17 +94,6 @@ class Admin_ProductsController extends Honey_Controller_Action {
     	$id = $this->_request->getParam('id');
     	$this->view->id=$id;
     }
-	
-    public function deleteAction ()
-    {
-        $id = $this->_request->getParam('id');
-        $this->view->id = $id;
-    }
-    public function updateAction ()
-    {
-        $id = $this->_request->getParam('id');
-        $this->view->id = $id;
-    }
     
     /**
      * productnewAction
@@ -143,7 +132,7 @@ class Admin_ProductsController extends Honey_Controller_Action {
                 } else if($price == "") {
                 	$message = $style_error . 'Chưa nhập giá sản phẩm.</p>';
                 } else {
-	                
+	                /*
                 	//Insert data to database
 	                $productModel = new Admin_Model_Products();
 	                $now = getdate();
@@ -152,9 +141,9 @@ class Admin_ProductsController extends Honey_Controller_Action {
 	                
                 	//Show message
 	                $message = $style_success . 'Đã thêm '.$name.' vào cơ sở dữ liệu</p>';
-	                
+	                */
                 	
-                	/*
+                	
 	                //Test data
 	                $message = $style_success . 'Name: ' . $name . '<br/>';
 	                $message = $message . 'Description: ' . $description . '<br/>';
@@ -164,7 +153,7 @@ class Admin_ProductsController extends Honey_Controller_Action {
 	                $message = $message . 'Price: ' . $price . '<br/>';
 	                $message = $message . 'Order: ' . $order . '<br/>';
 	                $message = $message . 'Status: ' . $status . '<br/>';
-	                */
+	                
                 }
             } else {
                 $message = $style_error . 'An Error Occurred.</p>';
