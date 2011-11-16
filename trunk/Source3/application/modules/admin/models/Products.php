@@ -33,7 +33,7 @@ class Admin_Model_Products extends Zend_Db_Table{
 		$db = Zend_Registry::get ( 'connectDB' );
 		$sql= $db->select()
 				->from('cms_product_description')
-				->where('news_id = ?',$product_id)
+				->where('product_id = ?',$product_id)
 				->where('language = ?',$language);
 				;
 		$result=$db->fetchAll($sql);
