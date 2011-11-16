@@ -59,5 +59,29 @@ class Admin_NewsController extends Honey_Controller_Action {
     	$news_dectiption = $model->getNews_description($n_id, $n_language);
     	// GÃ¡n giÃ¡ trá»‹ xuá»‘ng View (edit.phtml)
     	$this->view->news_item = array_merge ($news_item, $news_dectiption);// merge giÃ¡ trá»‹ 2 máº£ng, khÃ´ng merge cÅ©ng Ä‘Æ°á»£c    	
+		
+		$form = new Admin_Form_NewsEdit();
+		$style_error = '<p style="background:#FF0000; text-align: center; padding: 3px;">';
+        $style_success = '<p style="background:#33CC66; text-align: center; padding: 3px;">';
+        $message = '';
+		
+		//submit save button
+		if($this->_request->isPost())
+		{
+			if($form->isValid($_POST)){
+				$submitButton = $form->getUnfilteredValue('submit');
+				$cancelButton = $form->getUnfilteredValue('cancel');
+				if(!is_null($submitButton)){
+					
+				}else{
+					$this->_helper->redirector('index');
+				}
+				$message = $style_error . 'Chưa nhập tên sản phẩm.</p>';
+			}else
+				$message = $style_success . 'Đã thêm '.$name.' vào cơ sở dữ liệu</p>';
+		}else
+			$message = $style_success . 'Cancel</p>';
+		$this->view->note = $message;
+        $this->view->form = $form;
 	}
 }
