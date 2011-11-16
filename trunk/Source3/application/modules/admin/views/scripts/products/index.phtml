@@ -39,7 +39,7 @@
 			<img src="<?php echo HTTP_IMAGES . '/' . $product['image'];?>" width="50px" height="50px"/>
 		</td>
 		<td class='center'>
-			<a href="<?php echo $this->baseUrl("/admin/products/productedit")?>/id/<?php echo $product['product_id'];?>">Sửa</a>
+			<a href="<?php echo $this->baseUrl("/admin/products/edit")?>/id/<?php echo $product['product_id'];?>">Sửa</a>
 		</td>
 		<td class='center'>
 			<a onclick="alert('Bạn có muốn xóa các sản phẩm có id là:<?php echo $product['product_id'];?>');" href="<?php echo $this->baseUrl(); ?>/admin/products/delete/id/<?php echo $product['product_id'];?>">Xóa</a>
