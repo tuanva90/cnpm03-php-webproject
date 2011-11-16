@@ -103,7 +103,7 @@ class Admin_ProductsController extends Honey_Controller_Action {
    $result = $DB->fetchRow($sql);
    print_r($result);
    $this->view->assign('data',$result);
-   $this->view->assign('action', $request->getBaseURL()."/products/processedit");
+   $this->view->assign('action', $request->getBaseURL()."/admin/products/processedit");
    $this->view->assign('title','Product Editing');
    //$this->view->assign('label_name','Name');
    $this->view->assign('label_model','Model');	
