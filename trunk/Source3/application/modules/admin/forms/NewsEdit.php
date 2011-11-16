@@ -21,7 +21,7 @@ class Admin_Form_NewsEdit extends Zend_Form{
 		
 		$image = new Zend_Form_Element_File('image');
 		$image->setLabel('Image: ');
-		$image->addValidator('Extension', true, 'jpg,png,gif');
+		//$image->addValidator('Extension', true, 'jpg,png,gif');
 		
 		$txtorder = new Zend_Form_Element_Text('order');
 		$txtorder->setLabel('Order :');
@@ -29,7 +29,7 @@ class Admin_Form_NewsEdit extends Zend_Form{
 		$cbxstatus= new Zend_Form_Element_Select('status');
 		$cbxstatus->setLabel('Status : ');
 		$cbxstatus->addMultiOption(array('published' =>'Published', 'unpublished' =>'Unpublished'));
-		$cbxstatus->setMultiOptions(array('published' =>'Published', 'unpublished' =>'Unpublished'));	
+		$cbxstatus->setMultiOptions(array('published' =>'Published', 'unpublished' =>'Unpublished'));
 		
 		$this->addElements(array($txtname,$txtauthor,$description,$txtcontent,$image,$txtorder, $cbxstatus));	
 		
@@ -59,10 +59,17 @@ class Admin_Form_NewsEdit extends Zend_Form{
     )); 	
 	}
 	public function setValue($arrParam) {
-		//print_r($arrParam);
-		$this->getElement("title")->setValue($arrParam['title']);
-		$this->getElement("description")->setValue($arrParam['summary']);
-		$this->getElement("content")->setValue($arrParam['description']);		
+		
+		$this->getElement("title")->setValue(html_entity_decode($arrParam['title'], ENT_QUOTES, 'UTF-8'));
+		$this->getElement("author")->setValue($arrParam['author']);
+		$this->getElement("description")->setValue(html_entity_decode($arrParam['summary'], ENT_QUOTES, 'UTF-8'));
+		//$content = $arrParam['description'];
+		//$content =  html_entity_decode($content, ENT_QUOTES, 'UTF-8'); 		
+		//$content =  html_entity_decode($content, ENT_NOQUOTES, 'UTF-8');		
+		$this->getElement("content")->setValue(html_entity_decode($arrParam['description'], ENT_QUOTES, 'UTF-8'));
+		$this->getElement("image")->setValue($arrParam['image']);
+		$this->getElement("order")->setValue($arrParam['sort_order']);
+		$this->getElement("status")->setValue($arrParam['status']);
 	}
 }
 ?>
