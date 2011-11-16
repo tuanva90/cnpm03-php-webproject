@@ -1,6 +1,9 @@
-<div style="text-align: left">
-	
+<div id="content">
+<?php 
+$form = new Admin_Form_ProductEdit();
+//$form->populate($this->current()->toArray());
+$form->setValue($this->id);
+echo $form;
+?>	
 </div>
-<h1>MĂ£ sáº£n pháº©m:<?php echo $this->id;?></h1>
-<br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br>
+
