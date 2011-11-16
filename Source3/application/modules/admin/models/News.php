@@ -10,7 +10,7 @@ class Admin_Model_News  extends Zend_Db_Table{
 		$select = $db->select()
         			  ->from(array('n' => 'cms_news'))
         			  ->joinLeft(array('nd' => 'cms_news_description'), 'n.news_id = nd.news_id')
-	  				  ->limitPage(0, 10);
+	  				  //->limitPage(0, 10);
         			  ;
 		
         	$result = $db->fetchAll($select);
