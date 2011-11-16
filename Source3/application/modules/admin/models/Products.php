@@ -13,6 +13,20 @@ class Admin_Model_Products extends Zend_Db_Table{
         	$result = $db->fetchAll($select);    	
 			return $result;
 	}
+	public function getProduct_item($p_id) {
+		
+		$db = Zend_Registry::get ( 'connectDB' );
+		
+		
+		$sql= $db->select()
+				->from(array('p' => 'cms_product'))
+        			  ->joinLeft(array('pd' => 'cms_product_description'), 'p.product_id = pd.product_id')
+	  				  ->where('p.product_id = ?',$p_id);
+		$result=$db->fetchRow($sql);
+			return $result;
+			
+          
+	}
 	public function GetProduct_Description($product_id,$language) 
 	{
 		
