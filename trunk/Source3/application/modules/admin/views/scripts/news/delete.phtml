@@ -2,13 +2,31 @@
 	
 </div>
 <h2>Bạn có muốn xóa Bài đăng này không?</h2>
+
 <p>Title: <?php echo $this->news_item['title'] ?></p>
 <p>Author:<?php echo $this->news_item['author']?></p>
 <p><?php ?></p>
 <p><?php ?></p>
 <form>
-<input id="Checkbox_yes" type="checkbox">Yes
-<a href="<?php echo $this->baseUrl("/admin/news/delete")?>">Delete</a>
+
+<br/>
+<a href="  
+<?php 
+
+
+echo $this->baseUrl("/admin/news");
+?>"
+
+onclick=" 
+	<?php 
+$id = $this->news_item['news_id'];
+	$language = "vi_VN";
+$model= new Admin_Model_News();
+$model->deleteNews_description($id, $language);
+$model->deleteNews($id);
+?>">Đồng ý xóa</a>
+
+
 </form>
 <br><br><br><br><br><br><br><br><br>
 <br><br><br><br><
