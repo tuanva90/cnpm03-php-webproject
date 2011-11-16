@@ -1,27 +1,49 @@
 <?php
-class Admin_Model_Products{
-//-------------------------------Lấy-------------------------------------------//
-  	public function GetProducts(){
+class Admin_Model_Products extends Zend_Db_Table{
+//------------------------------------Get--------------------------------------------//
 
-      	$db = Zend_Registry::get('connectDB');
-  		$sql = 'SELECT * FROM cms_product';  				  
-  		$result =  $db->fetchAll($sql);
-  		return $result;
-  	}
-//-------------------------------Xóa-------------------------------------------//
-  	public function DeleteProduct($Product_ID)
+	public function GetProducts() {		
+		$db = Zend_Registry::get ( 'connectDB' );
+		$select = $db->select()
+        			  ->from(array('n' => 'cms_product'))
+        			  ->joinLeft(array('nd' => 'cms_product_description'), 'n.product_id = nd.product_id')
+	  				  ->limitPage(0, 10);
+        			  ;
+		
+        	$result = $db->fetchAll($select);    	
+			return $result;
+	}
+	public function GetProduct_Description($product_id,$language) 
+	{
+		
+		$db = Zend_Registry::get ( 'connectDB' );
+		$sql= $db->select()
+				->from('cms_product_description')
+				->where('news_id = ?',$product_id)
+				->where('language = ?',$language);
+				;
+		$result=$db->fetchAll($sql);
+			return $result;
+		
+	}
+//------------------------------------Delete--------------------------------------------//
+	public function DeleteProduct($n_id) 
+	{
+		
+		$db = Zend_Registry::get ( 'connectDB' );
+		$where =  'product_id= '.$n_id;
+		$db->delete ( 'cms_product', $where);		
+	}
+	public function DeleteProductDescription($Product_ID,$Language)
   	{
-  		$db = Zend_Registry::get('ConnectDB');
-  		$where = "'product_id' = $Product_ID" ;
-  		$db->delete('cms_product',$where);
+  		$db = Zend_Registry::get ( 'connectDB' );
+		$where = array(
+				'product_id' => $Product_ID, 
+				'language' => $Language
+				);	
+		 $db->delete ( 'cms_product_description', $where);
   	}
-	public function DeleteProductDescription($Product_ID)
-  	{
-  		$db = Zend_Registry::get('ConnectDB');
-  		$where = "'product_id' = $Product_ID" ;
-  		$db->delete('cms_product_description',$where);
-  	}
-//------------------------------Sửa--------------------------------------------//
+//------------------------------------Update--------------------------------------------//
 	public function UpdateProduct($product_id,
 									$model,
 									$image, 
@@ -34,8 +56,7 @@ class Admin_Model_Products{
 									$status) 
 	{		
 		$db = Zend_Registry::get('ConnectDB');
-		//Cap nhat vao bang cms_product
-		$where = "'product_id' = $product_id" ;
+		$where = 'product_id ='.$product_id;
 		$Product = array(
       	'model'     =>$model ,
      	'image'    	=>$image ,
@@ -48,25 +69,22 @@ class Admin_Model_Products{
 		'status'	=>$status);
 		$db->update('cms_product',$Product,$where);
 	}
+	
+	
 	public function Update_product_description($product_id,
 												$nameVI,
 												$descriptionVI)
 	{
 		$db = Zend_Registry::get('ConnectDB');
-		//Mặc định ngôn ngữ là tiếng việt
-		$Language_Vi = 'VI';
-		
-		$where = "'product_id' = $product_id" ;
-		
-		//Cập nhật vào bản cms_product_description
+		$Language_Vi = 'VI';		
+		$where = 'product_id ='. $product_id ;
 		$Product_Description = array(
-		'product_id'	=>$product_id,
 		'language'		=>$Language_Vi,
 		'name'			=>$nameVI,
 		'description'	=>$descriptionVI);		
 		$db->update('cms_product_description',$Product_Description,$where);
 	}
-//--------------------------------Thêm------------------------------------------//
+//--------------------------------Insert------------------------------------------------//
 	public function InsertProduct($model,
 									$image, 
 									$price, 
@@ -77,11 +95,10 @@ class Admin_Model_Products{
 									$sort_order,
 									$status,
 									$nameVI,
-									$descriptionVI) 
+									$descriptionVI
+									) 
 	{
 		$db = Zend_Registry::get('ConnectDB');
-		
-		//Cac thong tin truyen vao cms_product
 		$Product = array(
       	'model'     =>$model ,
      	'image'    	=>$image ,
@@ -91,22 +108,28 @@ class Admin_Model_Products{
 		'date_modified'	=>$date_modified,
 		'viewed'	=>$viewed,
 		'sort_oder'	=>$sort_order,
-		'status'	=>$status);      
+		'status'	=>$status
+		);      
 		$db->insert('cms_product',$Product);
+	}
+	public function InsertProductDescription($product_id,
+												$language,
+												$name,
+												$meta_keywords,
+												$meta_description,
+												$description												
+												)
+	{
+		$db = Zend_Registry::get('ConnectDB');
+		$data = array(
+		'product_id'	=>$product_id,
+		'language'		=>$language,
+		'name'			=>$name,
+		'meta_keywords'	=>$meta_keywords,
+		'meta_description'	=>$meta_description,
+		'decription'	=>$description);
 		
-		//lay ID san pham moi them.
-		$id = $db->lastInsertId();
-		
-		//
-		$Language_Vi = 'VI';
-		
-		//nhap thong tin cho bang Product_description.
-		$Product_Description = array(
-		'product_id'	=>$id,
-		'language'		=>$Language_Vi,
-		'name'			=>$nameVI,
-		'description'	=>$descriptionVI);		
-		$db->insert('cms_product_description',$Product_Description);
+		$db->insert('cms_product_description',$data);													
 	}
 }
 ?>
