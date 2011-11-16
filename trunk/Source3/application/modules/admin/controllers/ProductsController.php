@@ -193,23 +193,9 @@ class Admin_ProductsController extends Honey_Controller_Action {
                 	$message = $style_error . 'Chưa nhập Model sản phẩm.</p>';
                 } else if($price == "") {
                 	$message = $style_error . 'Chưa nhập giá sản phẩm.</p>';
-                } else { 
-	                               
-	                $test = $p_model->update_product2($p_id, $value);	                
-                	//Show message
-                	if($test){
-	               		$message = $style_success . 'Đã update.</p>';
-                	}else{
-                		$message = $style_success . 'Error.</p>';
-                	}
-	             
-                	
-                	
-	                //Test data	 
-	                                	
+                } else {       	
 	                //Test data
 	                $message = $style_success . 'Name: ' . $name . '<br/>';
-
 	                $message = $message . 'Catalog: ' . $catalog . '<br/>';
 	                $message = $message . 'Model: ' . $model . '<br/>';
 	                $message = $message . 'Image: ' . $image . '<br/>';
@@ -217,7 +203,14 @@ class Admin_ProductsController extends Honey_Controller_Action {
 	                $message = $message . 'Order: ' . $order . '<br/>';
 	                $message = $message . 'Status: ' . $status . '<br/>';
 	                $message = $message . 'Date_added: ' . $value['date_added'] . '<br/>';	  	        
-	                               
+	                //code
+	                $test = $p_model->update_product2($p_id, $value);	                
+                	//Show message
+                	if($test){
+	               		$message = $style_success . 'Đã update.</p>';
+                	}else{
+                		$message = $style_success . 'Error.</p>';
+                	}               
                 }
             } else {
                 $message = $style_error . 'An Error Occurred.</p>';
