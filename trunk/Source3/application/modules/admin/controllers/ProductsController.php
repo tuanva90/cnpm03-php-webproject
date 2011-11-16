@@ -117,7 +117,7 @@ public function processeditAction()
     $params = array('host'		=>'localhost',
                 'username'	=>'root',
 				'password'  =>'12345',
-				'dbname'	=>'cms_product'
+				'dbname'	=>'source3'
                );
     $DB = new Zend_Db_Adapter_Mysqli($params);
     $request = $this->getRequest();
