@@ -29,7 +29,7 @@ class Admin_NewsController extends Honey_Controller_Action {
 	
 	public function indexAction() {
 		$model = new Admin_Model_News();
-		$this->view->news = $model->getNews();	
+		$this->view->news = $model->getNews(0,10);	
 		$this->view->model = $model;
 	}
 	public function newAction(){
