@@ -69,9 +69,10 @@ class Admin_NewsController extends Honey_Controller_Action {
 		if($this->_request->isPost())
 		{
 			//get value posted
-			$data = $form->getValues();
+			$data =$this->getRequest()->getPost();
+			
 			$title = $data['title'];
-			$author = $form->getValue('author');
+			$author = $data['author'];
 			$summary = $data['description'];
 			$content = $data['content'];
 			$image = $data['image'];
@@ -79,12 +80,13 @@ class Admin_NewsController extends Honey_Controller_Action {
 			$status = $data['status'];
 			
 			if($form->isValid($_POST)){
+			
 				$submitButton = $form->getUnfilteredValue('submit');
 				$cancelButton = $form->getUnfilteredValue('cancel');
 				
 				if(!is_null($submitButton)){//pressed save button
 				//check whether the values is valid or not
-					if(is_null($data)) {
+					if($title=="") {
 						$message = $style_error . 'Chưa nhập tựa đề của bài viết.</p>';
 					} else if($author == "") {
 						$message = $style_error . 'Chưa nhập tác giả của bài viết.</p>';
@@ -92,7 +94,7 @@ class Admin_NewsController extends Honey_Controller_Action {
 						$message = $style_error . 'Chưa nhập tóm tắt của bài viết.</p>';
 					} else if($content == "") {
 						$message = $style_error . 'Chưa nhập nội dung bài viết.</p>';
-					} else if($image == "") {
+					} else if($form->getElement('image')->getFileName(null, true)=="") {
 						$message = $style_error . 'Chưa chọn ảnh cho bài viết.</p>';
 					} else {//if fields is valid
 						if($order="")
@@ -112,7 +114,7 @@ class Admin_NewsController extends Honey_Controller_Action {
 						getdate());
 						
 						//show message
-						$message = $style_success . 'Bản tin đã được cập nhật vào csdl</p>';
+						$message = $style_success.'Bản tin đã được cập nhật vào csdl</p>';
 
 					}
 				}else{//cancel creating article, go back to new list page
