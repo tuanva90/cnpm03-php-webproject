@@ -1,8 +1,10 @@
-<?php
+﻿<?php
 /**
  * @author HUYPRO
  * huydang1920@gmail.com
  */
+require_once 'Zend/Controller/Action.php';
+require_once 'Zend/Db/Adapter/Mysqli.php';
 class Admin_ProductsController extends Honey_Controller_Action {
 	
 	//Parameter array received in any Action
@@ -86,6 +88,50 @@ class Admin_ProductsController extends Honey_Controller_Action {
 		$this->view->products = $paginator;
     
 	}
+	public function editAction()
+   {
+   $params = array('host'		=>'localhost',
+                'username'	=>'root',
+				'password'  =>'12345',
+				'dbname'	=>'source3'
+               );
+   $DB = new Zend_Db_Adapter_Mysqli($params);
+   $request = $this->getRequest();
+   $id 	 = $request->getParam("id");
+
+   $sql = "SELECT * FROM `cms_product` WHERE product_id='".$id."'";
+   $result = $DB->fetchRow($sql);
+   print_r($result);
+   $this->view->assign('data',$result);
+   $this->view->assign('action', $request->getBaseURL()."/products/processedit");
+   $this->view->assign('title','Product Editing');
+   //$this->view->assign('label_name','Name');
+   $this->view->assign('label_model','Model');	
+   $this->view->assign('label_price','Price');	
+   $this->view->assign('label_sort_order','Sort Order');
+   $this->view->assign('label_submit','Edit');		
+   $this->view->assign('description','Please update this form completely:');		
+ }
+public function processeditAction()
+    {
+    $params = array('host'		=>'localhost',
+                'username'	=>'root',
+				'password'  =>'12345',
+				'dbname'	=>'cms_product'
+               );
+    $DB = new Zend_Db_Adapter_Mysqli($params);
+    $request = $this->getRequest();
+   
+    $sql = "UPDATE `cms_product` SET  `model` = '".$request->getParam('model')."',
+                           `price` = '".$request->getParam('price')."',
+						   `sort_order` = '".$request->getParam('sort_order')."'
+        WHERE product_id = '".$request->getParam('id')."'";
+    $DB->query($sql);
+
+   $this->view->assign('title','Editing Process');
+   $this->view->assign('description','Editing success');  	
+	
+ }
 	public function deleteAction(){
     	$id = $this->_request->getParam('id');
     	$this->view->id=$id;
@@ -94,75 +140,8 @@ class Admin_ProductsController extends Honey_Controller_Action {
     	$id = $this->_request->getParam('id');
     	$this->view->id=$id;
     }
-    
-    /**
-     * productnewAction
-     * Excute action for productnewController.
-     * Edited by: HuyNVK
-     * Modified Date: 14/11/2011
-     * Modified Content: Add Body for Function.
-     */
-    public function productnewAction () {
-        //Create an Admin_Form_ProductNew()
-        $form = new Admin_Form_ProductNew();
-        $style_error = '<p style="background:#FF0000; text-align: center; padding: 3px;">';
-        $style_success = '<p style="background:#33CC66; text-align: center; padding: 3px;">';
-        $message = '';
-        
-        if ($this->_request->isPost()) {
-            if ($form->isValid($_POST)) {
-            	//Get value posted
-            	$result = $form->getValues();
-            	$name = $result['name'];
-                $description = $result['description'];
-                $catalog = $result['catalog'];
-                $model = $result['model'];
-                $image = $result['image'];
-                $price = $result['price'];
-                $order = $result['order'];
-                $status = $result['status'];
-                
-                //Check whether the values is valid or not
-                if($name == "") {
-                	$message = $style_error . 'Chưa nhập tên sản phẩm.</p>';
-                } else if($description == "") {
-                	$message = $style_error . 'Chưa nhập mô tả sản phẩm.</p>';
-                } else if($model == "") {
-                	$message = $style_error . 'Chưa nhập model sản phẩm.</p>';
-                } else if($price == "") {
-                	$message = $style_error . 'Chưa nhập giá sản phẩm.</p>';
-                } else {
-	                /*
-                	//Insert data to database
-	                $productModel = new Admin_Model_Products();
-	                $now = getdate();
-	                $viewed = 1;
-	                $productModel->InsertProduct($model, $image, $price, $now, $now, $now, $viewed, $order, $status, $name, $description);
-	                
-                	//Show message
-	                $message = $style_success . 'Đã thêm '.$name.' vào cơ sở dữ liệu</p>';
-	                */
-                	
-                	
-	                //Test data
-	                $message = $style_success . 'Name: ' . $name . '<br/>';
-	                $message = $message . 'Description: ' . $description . '<br/>';
-	                $message = $message . 'Catalog: ' . $catalog . '<br/>';
-	                $message = $message . 'Model: ' . $model . '<br/>';
-	                $message = $message . 'Image: ' . $image . '<br/>';
-	                $message = $message . 'Price: ' . $price . '<br/>';
-	                $message = $message . 'Order: ' . $order . '<br/>';
-	                $message = $message . 'Status: ' . $status . '<br/>';
-	                
-                }
-            } else {
-                $message = $style_error . 'An Error Occurred.</p>';
-            }
-        }
-        
-        $this->view->note = $message;
-        $this->view->form = $form;
-    }
-    public function producteditAction ()
-    {}
+	public function productnewAction(){		
+	}
+	public function producteditAction(){
+	}
 }
