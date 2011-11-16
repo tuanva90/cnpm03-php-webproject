@@ -93,7 +93,7 @@ public function getNews_description($n_id,$n_language)
 				->where('news_id = ?',$n_id)
 				->where('language = ?',$n_language);
 				;
-		$result=$db->fetchAll($sql);
+		$result=$db->fetchrow($sql);
 			return $result;
 		
 	}

@@ -1,61 +1,42 @@
 <script type="text/javascript">
-/*function getSelectedCheckbox(alink){
-	var a = document.forms['newsform'].mycheckbox.length;
-	var a = 5;
-	var count = 0;
+function getSelectedCheckbox(alink){
+	alert('1');
+	var a = document.news_form.check_box.length;
+	var a = 5;   
 	var i = 0;   
 	var checked_values = new Array();   
 	alink = String(alink);
 	alert(alink);
 	for(i = 0; i < a; i++){	   
-		if(document.newsform.mycheckbox[i].checked == true){
-			alink = alink.concat("?news_id=",document.newsform.mycheckbox[i].value);
-			count++;
+		if(document.news_form.check_box[i].checked == true){
+			alert('2');
+			checked_values.push(document.news_form.check_box[i].value);
+			alert('3');
+			alink = alink.concat("?check_box=",document.news_form.check_box[i].value);
+			alert('4');
 			}
 		}	
 	alert(alink);	
-	window.location = alink;
+	//window.location = alink;
 	}
 	function function2(){	
 		var txt1 = "Hello ";	
 		var txt2 = "world!";	
 		var txt3 = "fuck it!";	
 		alert(txt1.concat(txt2,txt3));
-	}*/
-	function getSelectedCheckbox(alink,sender){
-		// sender is supposed to be an array of elements with same name
-		// alink is mainlink, sublink is in format link "?news_id="
-	var a = sender.length;
-	var a = 5;
-	var count = 0;
-	var i = 0;   
-	var checked_values = new Array();   
-	alink = String(alink);
-	alert(alink);
-	for(i = 0; i < a; i++){	   
-		if(sender[i].checked == true){
-			if(count == 0)
-				alink = alink.concat("?news_id=",sender[i].value);
-			else alink = alink.concat("&news_id=",sender[i].value);
-			count++;
-			}
-		}
-	if(count > 0)
-		window.location = alink;
-	else alert("Bạn chưa chọn bài viết nào cả");	
 	}
 </script>
 <div id="content">
 <?php $newlink = $this->baseUrl("/admin/news/new");
-	$editlink = $this->baseUrl("/admin/news/publish");
+	$editlink = $this->baseUrl("/admin/news/edit");
 	$deletelink = $this->baseUrl("/admin/news/delete");
 ?>
 	<div class="toolbox">
 		<div class="left">Quản lý :: Tin tức - Sự kiện</div>
 		<div class="right">
 			<div><a href="<?php echo $newlink;?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-new.png';?>"/><br>New</a></div>
-			<div><a href="#" <?php echo " onclick=\"getSelectedCheckbox('$editlink',document.newsform.mycheckbox)\""?>><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
-			<div><a href="#" <?php echo " onclick=\"getSelectedCheckbox('$deletelink',document.newsform.mycheckbox)\""?>><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Delete</a></div>
+			<div><a href="<?php echo $$editlink;?>"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-inactive.png';?>"/><br>Edit</a></div>
+			<div><a href="#" <?php echo " onclick=\"getSelectedCheckbox('$deletelink')\""?>><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Delete</a></div>
 			<div><a href="#"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>
 			<div><a href="#"><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Active</a></div>
 			<div><a href="#" <?php echo " onclick=\"function2()\""?>><img alt="" src="<?php echo HTTP_IMAGES . '/icon/icon-32-active.png';?>"/><br>Delete</a></div>
@@ -66,25 +47,23 @@
 		<a href="#">...</a>
 	</div>
 	
-<form name="newsform" method="post">
+<form id="news_form" name="news-form" method="post">
 	<table border="1" cellpadding="1" cellspacing="0">
 	<tr style="font-weight: bold;"> <td><input type="checkbox" name="checkboxCol"/></td> <td>ID</td> <td>TIÊU ĐỀ</td> <td>TÁC GIẢ</td> <td>HÌNH ẢNH</td> <td>LƯỢT XEM</td> <td>THỨ TỰ</td> <td>TRẠNG THÁI</td> <td>NGÀY TẠO</td> <td>NGÀY SỬA</td> <td>THAO TÁC</td></tr> 
 	<?php 
 	foreach($this->news as $news){
 		$news_description = $this->model->getNews_description($news['news_id'],"vi_VN");
-		echo "<tr><td><input type='checkbox' name='mycheckbox' value='".$news['news_id']."' />";
+		echo "<tr><td><input type='checkbox' name='check_box' value='".$news['news_id']."' />";
 		echo '</td> <td>'.$news['news_id'];
 		echo '</td> <td>'.$news_description['title'];
 		echo '</td> <td>'.$news['author'];
 		echo "</td> <td>".$news["image"];
 		echo '</td> <td>'.$news['viewed'];
 		echo '</td> <td>'.$news['sort_order'];
-		if ($news['status'] == 1)
-			echo '</td> <td>Publised';
-		else echo '</td> <td>Unpublised';
+		echo '</td> <td>'.$news['status'];
 		echo '</td> <td>'.$news["date_added"];
 		echo '</td> <td>'.$news["date_modified"];
-		echo '</td><td><a href='.$this->baseUrl("/admin/news/edit")."?news_id=".$news['news_id'].'>SỬA</a>  &nbsp&nbsp  <a href='.$this->baseUrl("admin/news/delete")."?news_id=".$news['news_id'].'>XÓA</a></td></tr>';
+		echo '</td><td><a href='.$this->baseUrl("/admin/news/edit")."?news_id=".$news['news_id'].'>SỬA</a>  &nbsp&nbsp  <a href='.$this->baseUrl("admin/news/delete")."?news_id=".$news['news_id'].'>XÓA</a> &nbsp&nbsp <a>Active</a></td></tr>';
 	}
 	?>
 	</table>
