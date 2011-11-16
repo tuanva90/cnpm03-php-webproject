@@ -39,6 +39,25 @@ class Admin_Form_ProductNew extends Zend_Form{
 		$this->addDisplayGroup(	array('name','description'),'Product');
 		$this->addDisplayGroup(	array('catalog','model','image','price','order','status'),'Details');
 		 
+		$this->addElement('submit', 'submit', array( 
+        'label' => 'Save', 
+        'decorators' => array( 
+            'ViewHelper', 
+        ), 
+    ));				
+		$this->addElement('submit', 'cancel', array( 
+        'label' => 'Cancel', 
+        'decorators' => array( 
+            'ViewHelper', 
+        ), 
+    )); 
+
+		$this->addDisplayGroup(array('submit', 'cancel'), 'submitButtons', array( 
+        'decorators' => array( 
+            'FormElements', 
+            array('HtmlTag', array('tag' => 'div', 'class' => 'element')), 
+        ), 
+    ));
 	}
 }
 ?>
