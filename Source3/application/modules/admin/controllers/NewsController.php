@@ -65,22 +65,31 @@ class Admin_NewsController extends Honey_Controller_Action {
         $style_success = '<p style="background:#33CC66; text-align: center; padding: 3px;">';
         $message = '';
 		
-		//submit save button
+		//submit button
 		if($this->_request->isPost())
 		{
+			//get value posted
+			$data = $form->getValues();
+			$title = $result['title'];
+			$author = $result['author'];
+			$summary = $result['description'];
+			$content = $result['content'];
+			$image = $result['image'];
+			$order = $result['order'];
+			$status = $result['status'];
+			
 			if($form->isValid($_POST)){
 				$submitButton = $form->getUnfilteredValue('submit');
 				$cancelButton = $form->getUnfilteredValue('cancel');
-				if(!is_null($submitButton)){
+				
+				if(!is_null($submitButton)){//pressed save button
 					
-				}else{
+				}else{//cancel creating article, go back to new list page
 					$this->_helper->redirector('index');
 				}
 				$message = $style_error . 'Chưa nhập tên sản phẩm.</p>';
-			}else
-				$message = $style_success . 'Đã thêm '.$name.' vào cơ sở dữ liệu</p>';
-		}else
-			$message = $style_success . 'Cancel</p>';
+			}
+		}			
 		$this->view->note = $message;
         $this->view->form = $form;
 	}
