@@ -1,0 +1,22 @@
+  <h1><?=$this->escape($this->title);?></h1>
+  <div id="description">
+    <?=$this->escape($this->description);?>
+  </div>
+  <form name="edit" method="post" action="<?=$this->escape($this->action)?>">
+  <input type="hidden" name="id" value="<?=$this->data['product_id']?>">
+  <table>
+    <tr>
+	  <td><?=$this->escape($this->label_model)?></td>
+	  <td><input type="text" name="model" value="<?=$this->data['model']?>"></td>
+	</tr>
+    <tr>
+	  <td><?=$this->escape($this->label_price)?></td>
+	  <td><input type="text" name="price" value="<?=$this->data['price']?>"></td>
+	</tr>	
+    <tr>
+	  <td><?=$this->escape($this->label_sort_order)?></td>
+	  <td><input type="text" name="sort_order" value="<?=$this->data['sort_order']?>"></td>
+	</tr>	
+  </table>
+  <input type="submit" name="submit" value="<?=$this->escape($this->label_submit);?>">
+  </form>
