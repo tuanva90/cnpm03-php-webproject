@@ -1,8 +1,11 @@
 <?php
 class Admin_Model_News  extends Zend_Db_Table{
 
+	protected $_name   = 'cms_news';
 	
-	public function getNews() {
+
+	
+	public function getNews($page,$limit) {
 		
 		$db = Zend_Registry::get ( 'connectDB' );
 	
@@ -10,7 +13,7 @@ class Admin_Model_News  extends Zend_Db_Table{
 		$select = $db->select()
         			  ->from(array('n' => 'cms_news'))
         			  ->joinLeft(array('nd' => 'cms_news_description'), 'n.news_id = nd.news_id')
-	  				  //->limitPage(0, 10);
+	  				  ->limitPage($page, $limit);
         			  ;
 		
         	$result = $db->fetchAll($select);
@@ -18,6 +21,9 @@ class Admin_Model_News  extends Zend_Db_Table{
 			return $result;
 	}
 
+	
+
+	
 	public function getNews_item($n_id) {
 		
 		$db = Zend_Registry::get ( 'connectDB' );
@@ -33,6 +39,21 @@ class Admin_Model_News  extends Zend_Db_Table{
           
 	}
 	
+
+	public function countItem() {
+		$db = Zend_Registry::get ( 'connectDB' );
+		
+		
+		$select = $db->select ('COUNT(n.user_id) AS totalItem' )
+		->from('cms_news AS n');
+				//->from (  'cms_news AS n', array ('COUNT(n.user_id) AS totalItem' ) );
+		
+		
+		$result = $db->fetchOne ( $select );
+		return $result;
+	
+	}
+	
 	public function deleteNews($n_id) 
 	{
 		
@@ -44,17 +65,18 @@ class Admin_Model_News  extends Zend_Db_Table{
 		
 	}
 	
-	public function updateNews($n_id,$n_image,$n_viewed,$n_sort_order,$n_status,$n_date_added,$n_date_modified) 
+	public function updateNews($n_id,$n_image,$n_sort_order,$n_status,$n_date_modified) 
 	{
 		
 		$db = Zend_Registry::get ( 'connectDB' );
 		$where = ' news_id ='.$n_id;
 		$data = array (
+		
 		'image' => $n_image,
-		 'viewed' => $n_viewed ,
+		 
 		'sort_order'=>$n_sort_order,
 		'status'=>$n_status,
-		'date_added'=>$n_date_added,
+		
 		'date_modified'=>$n_date_modified
 		);
 		
@@ -63,23 +85,6 @@ class Admin_Model_News  extends Zend_Db_Table{
 
 	}
 	
-	public function insertNews($n_image,$n_viewed,$n_sort_order,$n_status,$n_date_added,$n_date_modified) 
-	{
-		$db = Zend_Registry::get ( 'connectDB' );
-		
-		$data = array (		
-		'image' => $n_image,
-		 'viewed' => $n_viewed ,
-		'sort_order'=>$n_sort_order,
-		'status'=>$n_status,
-		'date_added'=>$n_date_added,
-		'date_modified'=>$n_date_modified
-		);
-		
-		 $db->insert ( 'cms_news', $data );
-		
-	}
-
 	
 	
 	
@@ -93,7 +98,7 @@ public function getNews_description($n_id,$n_language)
 				->where('news_id = ?',$n_id)
 				->where('language = ?',$n_language);
 				;
-		$result=$db->fetchrow($sql);
+		$result=$db->fetchAll($sql);
 			return $result;
 		
 	}
