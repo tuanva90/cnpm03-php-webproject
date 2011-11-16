@@ -65,29 +65,59 @@ class Admin_NewsController extends Honey_Controller_Action {
         $style_success = '<p style="background:#33CC66; text-align: center; padding: 3px;">';
         $message = '';
 		
-		//submit button
+		//submit event
 		if($this->_request->isPost())
 		{
 			//get value posted
 			$data = $form->getValues();
-			$title = $result['title'];
-			$author = $result['author'];
-			$summary = $result['description'];
-			$content = $result['content'];
-			$image = $result['image'];
-			$order = $result['order'];
-			$status = $result['status'];
+			$title = $data['title'];
+			$author = $form->getValue('author');
+			$summary = $data['description'];
+			$content = $data['content'];
+			$image = $data['image'];
+			$order = $data['order'];
+			$status = $data['status'];
 			
 			if($form->isValid($_POST)){
 				$submitButton = $form->getUnfilteredValue('submit');
 				$cancelButton = $form->getUnfilteredValue('cancel');
 				
 				if(!is_null($submitButton)){//pressed save button
-					
+				//check whether the values is valid or not
+					if(is_null($data)) {
+						$message = $style_error . 'Chưa nhập tựa đề của bài viết.</p>';
+					} else if($author == "") {
+						$message = $style_error . 'Chưa nhập tác giả của bài viết.</p>';
+					} else if($summary == "") {
+						$message = $style_error . 'Chưa nhập tóm tắt của bài viết.</p>';
+					} else if($content == "") {
+						$message = $style_error . 'Chưa nhập nội dung bài viết.</p>';
+					} else if($image == "") {
+						$message = $style_error . 'Chưa chọn ảnh cho bài viết.</p>';
+					} else {//if fields is valid
+						if($order="")
+							$order='0';
+							
+						//update to database
+						$newsModel = new Admin_Model_News();
+						$newsModel->updateNews_description($n_id,
+						'vi_VN',
+						$title,
+						$summary,
+						$description);
+						$newsModel->updateNews($n_id,
+						$image,
+						$order,
+						$status,
+						getdate());
+						
+						//show message
+						$message = $style_success . 'Bản tin đã được cập nhật vào csdl</p>';
+
+					}
 				}else{//cancel creating article, go back to new list page
 					$this->_helper->redirector('index');
-				}
-				$message = $style_error . 'Chưa nhập tên sản phẩm.</p>';
+				}			
 			}
 		}			
 		$this->view->note = $message;
