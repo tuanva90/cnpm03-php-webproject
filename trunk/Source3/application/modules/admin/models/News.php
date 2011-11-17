@@ -13,7 +13,8 @@ class Admin_Model_News  extends Zend_Db_Table{
 		$select = $db->select()
         			  ->from(array('n' => 'cms_news'))
         			  ->joinLeft(array('nd' => 'cms_news_description'), 'n.news_id = nd.news_id')
-	  				  ->limitPage($page, $limit);
+	  				  ->limitPage($page, $limit)
+	  				  ->order('n.sort_order DESC');
         			  ;
 		
         	$result = $db->fetchAll($select);
@@ -24,18 +25,15 @@ class Admin_Model_News  extends Zend_Db_Table{
 	
 
 	
-	public function getNews_item($n_id) {
-		
-		$db = Zend_Registry::get ( 'connectDB' );
-		
-		
+	public function getNews_item($n_id) {		
+		$db = Zend_Registry::get ( 'connectDB' );		
 		$sql= $db->select()
 				->from(array('n' => 'cms_news'))
-        			  ->joinLeft(array('nd' => 'cms_news_description'), 'n.news_id = nd.news_id')
-	  				  ->where('n.news_id = ?',$n_id);
+				 ->where('n.news_id = ?',$n_id)
+        		->joinLeft(array('nd' => 'cms_news_description'), 'n.news_id = nd.news_id');
+	  				 
 		$result=$db->fetchRow($sql);
-			return $result;
-			
+			return $result;		
           
 	}
 	
@@ -125,14 +123,11 @@ public function getNews_description($n_id,$n_language)
 				);	
 				$data = array (
 		'title' => $n_title,
-		 'summary' => $n_summary,
+		'summary' => $n_summary,
 		'description'=>$n_description	
 		);
 		
 		 $db->update ( 'cms_news_description', $data, $where );
-		
-	
-
 	}
 	
 	public function insertNews_description($n_id,$n_language,$n_title,$n_summary,$n_description) 
@@ -150,6 +145,75 @@ public function getNews_description($n_id,$n_language)
 		$db->insert ( 'cms_news_description', $data );
 		
 	}
+	
+	////////////////////////////////ThaoNX////////////////
+	public function insertNews_Item2($arrParam) 
+	{
+		$db = Zend_Registry::get ( 'connectDB' );
+		
+		$data = array (		
+		'author'=>$arrParam['author'],	
+		'image' => $arrParam['image'],
+		'sort_order' => $arrParam['order'],
+		'status'=>$arrParam['status'],
+		'date_added'=>$arrParam['date_added']	
+		);
+		
+		$db->insert ( 'cms_news', $data );
+		$n_id= $db->lastInsertId();
+		$result = $this->insertNews_description2($n_id,$arrParam);
+		return $result;
+		
+	}
+	
+	public function insertNews_description2($n_id,$arrParam) 
+	{
+		$db = Zend_Registry::get ( 'connectDB' );
+		
+		$data = array (	
+		'news_id'=>$n_id,
+		'language'=>'vi_VN',	
+		'title' => $arrParam['title'],
+		'summary' => $arrParam['description'],
+		'description'=>$arrParam['content']	
+		);		
+		$result = $db->insert ( 'cms_news_description', $data );
+		return  $result;
+		
+	}
+	
+	public function updateNews2($n_id,$arrParam) 
+	{
+		
+		$db = Zend_Registry::get ( 'connectDB' );
+		$where = ' news_id ='.(int)$n_id;
+		$data = array (
+		
+		'image' => $arrParam['image'],
+		 
+		'sort_order'=> $arrParam['image'],
+		
+		'date_added'=> $arrParam['date_added'],
+		);
+		
+		 $db->update ( 'cms_news', $data, $where );
+		 $this->updateNews_description2($n_id, "vi_VN", $arrParam);
+	}
+	
+public function updateNews_description2($n_id,$language,$arrParam)  
+	{
+		
+		$db = Zend_Registry::get ( 'connectDB' );
+		$where = "news_id = " . (int)$n_id;		
+		$data = array (
+		'title' => $arrParam['title'],
+		'description' => $arrParam['content'],
+		'summary'=>$arrParam['description'],
+		);
+		
+		 $db->update ( 'cms_news_description', $data, $where );
+	}
+	
 	
 	
 }

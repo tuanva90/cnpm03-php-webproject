@@ -13,15 +13,26 @@ class Admin_Model_Products extends Zend_Db_Table{
         	$result = $db->fetchAll($select);    	
 			return $result;
 	}
-	public function getProduct_item($p_id) {
-		
-		$db = Zend_Registry::get ( 'connectDB' );
-		
+	public function getProduct_item2($p_id,$language) {
+		$language = "vi_VN";
+		$db = Zend_Registry::get ( 'connectDB' );		
 		
 		$sql= $db->select()
 				->from(array('p' => 'cms_product'))
-        			  ->joinLeft(array('pd' => 'cms_product_description'), 'p.product_id = pd.product_id')
-	  				  ->where('p.product_id = ?',$p_id);
+					->where('p.product_id = ?',$p_id)					
+        			->joinLeft(array('pd' => 'cms_product_description'), 'p.product_id = pd.product_id')
+        			->where('p.lang = ?', $language);	  				  
+		$result=$db->fetchRow($sql);
+			return $result;          
+	}
+	public function getProduct_item($p_id) {
+		
+		$db = Zend_Registry::get ( 'connectDB' );		
+		$sql= $db->select()
+				->from(array('p' => 'cms_product'))
+					->where('p.product_id = ?',$p_id)
+        			->joinLeft(array('pd' => 'cms_product_description'), 'p.product_id = pd.product_id')
+        			->where('p.product_id = ?',$p_id);	  				  
 		$result=$db->fetchRow($sql);
 			return $result;
 			
@@ -48,6 +59,7 @@ class Admin_Model_Products extends Zend_Db_Table{
 		$where =  'product_id= '.$n_id;
 		$db->delete ( 'cms_product', $where);		
 	}
+	
 	public function DeleteProductDescription($Product_ID,$Language)
   	{
   		$db = Zend_Registry::get ( 'connectDB' );
@@ -81,8 +93,12 @@ class Admin_Model_Products extends Zend_Db_Table{
 		'viewed'	=>$viewed,
 		'sort_oder'	=>$sort_order,
 		'status'	=>$status);
-		$db->update('cms_product',$Product,$where);
+		$result = $db->update('cms_product',$Product,$where);
+		return ;
+		
 	}
+	
+
 	
 	
 	public function Update_product_description($product_id,
@@ -100,30 +116,33 @@ class Admin_Model_Products extends Zend_Db_Table{
 	}
 //--------------------------------Insert------------------------------------------------//
 	public function InsertProduct($model,
+	$quantity,
 									$image, 
 									$price, 
 									$date_available,
+									$status,
 									$date_added,
 									$date_modified,
 									$viewed,
-									$sort_order,
-									$status,
-									$nameVI,
-									$descriptionVI
+									$sort_order
+									
+								//	$nameVI,
+								//	$descriptionVI
 									) 
 	{
 		$db = Zend_Registry::get('ConnectDB');
 		$Product = array(
       	'model'     =>$model ,
+		'quantity' =>$quantity,
      	'image'    	=>$image ,
       	'price'  	=>$price ,
 		'date_available'	=>$date_available,
+	'status'	=>$status,
 		'date_added'	=>$date_added,
 		'date_modified'	=>$date_modified,
 		'viewed'	=>$viewed,
-		'sort_oder'	=>$sort_order,
-		'status'	=>$status
-		);      
+		'sort_order'	=>$sort_order
+				);      
 		$db->insert('cms_product',$Product);
 	}
 	public function InsertProductDescription($product_id,
@@ -141,9 +160,42 @@ class Admin_Model_Products extends Zend_Db_Table{
 		'name'			=>$name,
 		'meta_keywords'	=>$meta_keywords,
 		'meta_description'	=>$meta_description,
-		'decription'	=>$description);
-		
+		'decription'	=>$description);		
 		$db->insert('cms_product_description',$data);													
+	}
+
+///////////////////By ThaoNX/////////////////
+
+	
+	public function update_product2($p_id,$arrParam){
+		$db = Zend_Registry::get('connectDB');
+			$where = 'product_id = ' . (int)$p_id;
+			
+			$data = array(
+		        'model'	=> $arrParam ['model'],	
+				'image'	=> $arrParam ['image'],	
+				'price'	=> $arrParam ['price'],	
+				'sort_order'=> $arrParam ['oder'],	
+				'status' =>$arrParam ['status'],
+				'date_added'=> date ( "Y-m-d H:i:s" ),	
+		    );
+		   $result =  $db->update('cms_product', $data, $where);
+		   $result =  $this->update_product_description2($p_id, $arrParam);
+		return $result;
+			
+	}
+	
+	public function update_product_description2($p_id,$arrParam){
+		$db = Zend_Registry::get('connectDB');
+			$where = "product_id = " . (int)$p_id;			
+			$data = array(
+		        'name'	=> $arrParam ['name'],				
+			    'description'	=> $arrParam ['description'],
+		    );
+		   $result =  $db->update('cms_product_description', $data, $where);
+		return $result;
+			
 	}
 }
 ?>
+

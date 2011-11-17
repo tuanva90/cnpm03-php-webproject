@@ -116,8 +116,8 @@ class Admin_ProductsController extends Honey_Controller_Action {
                 $image = $result['image'];
                 $price = $result['price'];
                 $order = $result['order'];
-                $status = $result['status'];
-                
+                //$status = $result['status'];
+                $status = 1;
                 //Check whether the values is valid or not
                 if($name == "") {
                 	$message = $style_error . 'ChÆ°a nháº­p tĂªn sáº£n pháº©m.</p>';
@@ -128,26 +128,28 @@ class Admin_ProductsController extends Honey_Controller_Action {
                 } else if($price == "") {
                 	$message = $style_error . 'ChÆ°a nháº­p giĂ¡ sáº£n pháº©m.</p>';
                 } else {
-	                /*
+	                
                 	//Insert data to database
 	                $productModel = new Admin_Model_Products();
-	                $now = getdate();
+	                $now1 = date ( "Y-m-d " );
+	                $now = date ( "Y-m-d H:i:s" );
 	                $viewed = 1;
-	                $productModel->InsertProduct($model, $image, $price, $now, $now, $now, $viewed, $order, $status, $name, $description);
-	                
+	                $quantity =2;
+	            //$productModel->InsertProduct($model,$quantity, $image, $price, $now1,$status, $now, $now, $viewed, $order );
+	                	              
                 	//Show message
 	                $message = $style_success . 'Ä�Ă£ thĂªm '.$name.' vĂ o cÆ¡ sá»Ÿ dá»¯ liá»‡u</p>';
-	                */
+	                
                 	
                 	
 	                //Test data
 	                $message = $style_success . 'Name: ' . $name . '<br/>';
 	                $message = $message . 'Description: ' . $description . '<br/>';
-	                $message = $message . 'Catalog: ' . $catalog . '<br/>';
+	                $message = $message . 'Catalog: ' . $order . '<br/>';
 	                $message = $message . 'Model: ' . $model . '<br/>';
 	                $message = $message . 'Image: ' . $image . '<br/>';
 	                $message = $message . 'Price: ' . $price . '<br/>';
-	                $message = $message . 'Order: ' . $order . '<br/>';
+	                $message = $message . 'Order: ' . $now1 . '<br/>';
 	                $message = $message . 'Status: ' . $status . '<br/>';
 	                
                 }
