@@ -15,14 +15,17 @@
 	<div id="main">
 <h1>Sản Phẩm</h1>
      <table class="list">
-     	<th><input id="Checkbox1" type="checkbox" /></th>
-		<th>Mã</th>
-		<th>Tên Sản Phẩm</th>
-		<th>Giá</th>
-		<th>Hình Ảnh</th>
-		<th>&nbsp;</th>
-		<th>&nbsp;</th>
+     <thead>
+     <tr>
+     	<td class="center"><input id="Checkbox1" type="checkbox" /></td>
+		<td class="center">Mã</td>
+		<td class="center">Tên Sản Phẩm</td>
+		<td class="center">Giá</td>
+		<td class="center">Hình Ảnh</td>
+		<td class="center">&nbsp;</td>
+		<td class="center">&nbsp;</td>
 	</tr>
+	</thead>
 	<?php foreach ($this->products as $product) { ?>
 	<tr class="row">
 		<td class='center'><input id="Checkbox2" type="checkbox" /></td>
@@ -30,7 +33,7 @@
 			<?php echo $product['product_id'];?>
 		</td>
 		<td class='center'>
-			<?php echo $product['model'];?>
+			<?php echo $product['name'];?>
 		</td>
 		<td class='center'>
 			<?php echo $product['price'];?>

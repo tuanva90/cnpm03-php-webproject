@@ -19,8 +19,9 @@ class Admin_Form_NewsEdit extends Zend_Form{
 					->setAttrib('rows','10')
                     ->setAttrib('cols','60');
 		
-		$image = new Zend_Form_Element_File('image');
-		$image->setLabel('Image: ');
+		$image = new Zend_Form_Element_Text('image');
+		$image->setLabel('Image: ')
+			->setAttrib('style', 'width:300px');
 		//$image->addValidator('Extension', true, 'jpg,png,gif');
 		
 		$txtorder = new Zend_Form_Element_Text('order');
@@ -28,8 +29,8 @@ class Admin_Form_NewsEdit extends Zend_Form{
 
 		$cbxstatus= new Zend_Form_Element_Select('status');
 		$cbxstatus->setLabel('Status : ');
-		$cbxstatus->addMultiOption(array('published' =>'Published', 'unpublished' =>'Unpublished'));
-		$cbxstatus->setMultiOptions(array('published' =>'Published', 'unpublished' =>'Unpublished'));
+		$cbxstatus->addMultiOption(array('1' =>'Published', '0' =>'Unpublished'));
+		$cbxstatus->setMultiOptions(array('1' =>'Published', '0' =>'Unpublished'));
 		
 		$this->addElements(array($txtname,$txtauthor,$description,$txtcontent,$image,$txtorder, $cbxstatus));	
 		
@@ -60,13 +61,16 @@ class Admin_Form_NewsEdit extends Zend_Form{
 	}
 	public function setValue($arrParam) {
 		
+	
 		$this->getElement("title")->setValue(html_entity_decode($arrParam['title'], ENT_QUOTES, 'UTF-8'));
 		$this->getElement("author")->setValue($arrParam['author']);
-		$this->getElement("description")->setValue(html_entity_decode($arrParam['summary'], ENT_QUOTES, 'UTF-8'));
-		//$content = $arrParam['description'];
-		//$content =  html_entity_decode($content, ENT_QUOTES, 'UTF-8'); 		
-		//$content =  html_entity_decode($content, ENT_NOQUOTES, 'UTF-8');		
-		$this->getElement("content")->setValue(html_entity_decode($arrParam['description'], ENT_QUOTES, 'UTF-8'));
+		$summary =  html_entity_decode($arrParam['summary']);
+		$summary =  html_entity_decode($summary, ENT_NOQUOTES, 'UTF-8');	
+		$this->getElement("description")->setValue($summary, ENT_QUOTES, 'UTF-8');
+		$content = $arrParam['description'];
+		$content =  html_entity_decode($content, ENT_QUOTES, 'UTF-8'); 		
+		$content =  html_entity_decode($content, ENT_NOQUOTES, 'UTF-8');		
+		$this->getElement("content")->setValue($content);
 		$this->getElement("image")->setValue($arrParam['image']);
 		$this->getElement("order")->setValue($arrParam['sort_order']);
 		$this->getElement("status")->setValue($arrParam['status']);

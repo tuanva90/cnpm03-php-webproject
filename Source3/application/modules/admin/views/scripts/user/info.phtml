@@ -1,0 +1,74 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php		
+		//1. Edit - link
+		$btnEdit = $this->cmsButton(
+						'Edit Item',
+						$this->baseUrl($this->currentController . '/edit/user_id/' . $this->Item['user_id']),
+						HTTP_IMAGES . '/icon/icon-32-edit.png',
+						'link'
+					);
+										
+		//2. Cancel - link
+		$btnCancel = $this->cmsButton(
+						'Cancel',
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnEdit;?><?php echo $btnCancel;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo HTTP_SERVER . '/admin/userpermission/index/';?>">Group Manager</a>
+	<a href="<?php echo HTTP_SERVER . '/admin/user/index/';?>">Member Manager</a>
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" > 
+      <table class="form">
+        <tr>
+          <td>User Name:</td>
+          <td><?php echo $this->Item['username'];?></td>
+        </tr>
+        <tr>
+          <td><span class="required">*</span> First Name:</td>
+          <td><?php echo $this->Item['firstname'];?></td>
+        </tr>
+        <tr>
+          <td><span class="required">*</span> Last Name:</td>
+          <td><?php echo $this->Item['lastname'];?></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><?php echo $this->Item['email'];?></td>
+        </tr>
+        <tr>
+          <td>Birthday:</td>
+          <td><?php echo date('d-m-Y', strtotime($this->Item['birthday']));?></td>
+        </tr>
+        <tr>
+          <td>Avatar:</td>
+          <td><?php echo $this->Item['avatar'];?></td>
+        </tr>
+        <tr>
+          <td>Group Name:</td>
+          <td><?php echo $this->Item['group'];?></td>
+        </tr>
+        <tr>
+          <td>Status: </td>
+          <td><?php if($this->Item['status'] == 1){
+          		echo $this->cmsIconButton('Active', HTTP_IMAGES . '/icon/icon_16_active.png');
+          	}else{
+          		echo $this->cmsIconButton('Inactive', HTTP_IMAGES . '/icon/icon_16_inactive.png');
+          		}?></td>
+        </tr>
+        <tr>
+           <td>Sign:</td>
+           <td><?php echo $this->Item['sign'];?></td>
+        </tr>
+      </table>
+    </form>
+</div>
+</div>

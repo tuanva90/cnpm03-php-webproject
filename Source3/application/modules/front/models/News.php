@@ -16,7 +16,7 @@ class Front_Model_News extends Honey_Db_Table{
 	  				  ->joinLeft(array('nd' => $this->getPrefix() . 'news_description'), 'n.news_id = nd.news_id')
 	  				  ->where('n.status = ?', 1)
 	  				  ->where('nd.language = ?', $this->_lang)
-	  				  ->order('n.news_id DESC');
+	  				  ->order('n.sort_order DESC');
   			
 	  		if ($paginator ['itemCountPerPage'] > 0) {
 				$page = $paginator ['currentPage'];

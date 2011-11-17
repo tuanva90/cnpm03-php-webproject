@@ -36,7 +36,7 @@ class Admin_MenuController extends Honey_Controller_Action {
 		$message = "";
 		$m_id = $this->_request->getParam('menu_id');    	   	
     	$model = new Admin_Model_Menu();// khai bao model    		
-    	//$menu_item = $model->getItem2($m_id,array('task'=>'edit','lang'=>'vi_VN'));
+    	$menu_item = $model->getItem2($m_id,array('task'=>'edit','lang'=>'vi_VN'));
     	if(empty($menu_item)){// thông báo nêu không thìm thấy News   
     		$this->view->message = "Không tìm thấy Menu= ".$m_id;    
     	} 
