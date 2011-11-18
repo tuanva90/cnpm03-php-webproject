@@ -65,7 +65,7 @@ class Honey_Controller_Action extends Zend_Controller_Action {
 		/** 
 		 * Set the initial javascript: 
 		 */
-		if (! empty ( $config ['headScript'] )&& count ( $config ['headScript'] ) > 0) {
+		if (count ( $config ['headScript'] ) > 0) {
 			foreach ( $config ['headScript'] as $key => $js ) {
 				$this->view->headScript ()->appendFile ( HTTP_PUBLIC . $js, 'text/javascript' );
 			}

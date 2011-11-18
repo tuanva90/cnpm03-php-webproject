@@ -12,6 +12,7 @@ form {margin: 0;padding: 0;}
 label {cursor: pointer;}
 #header .div1 {height: 56px;padding: 0px 30px;background: url('images/header.png') repeat-x;min-width: 900px;}
 #header .div2 {color: #FFFFFF;padding: 18px 0px 0px 0px;float: left;}
+#header .div2 img{cursor: pointer;}
 #header .div3 {font-size: 11px;color: #FFF;text-align: right;padding: 15px 0px 0px 0px;	float: right;}
 #header .div2 span {font-weight: bold;}
 #menu {	background: url('images/menu.png') repeat-x;position: relative;	z-index: 1;	height: 34px;clear: both; padding: 0px 30px; min-width: 900px;}
@@ -41,16 +42,23 @@ body > #container {	height: auto;min-height: 100%;}
 #footer {background: #FFFFFF url('images/footer.png') repeat-x;	height: 90px;padding-top: 38px;text-align: center;	font-size: 11px;color: #333;position: relative;	margin-top: -128px;	clear: both;}
 #footer a {color: #333;	text-decoration: underline;}
 
+.breadcrumb {margin-bottom: 10px;border: solid 1px #CCC; padding:5px; background:#F0F0F0;}
+.breadcrumb a {font-size:11px; color: #0B55C4; line-height:11px;padding:0 10px;text-decoration:none; font-weight:bold;}
+.breadcrumb a+a{border-left: solid 1px #CCC;}
+.breadcrumb a:hover{text-decoration:underline;}
+
 .toolbox {margin-bottom: 10px; border: solid 1px #CCC; padding:5px; background:#F0F0F0; overflow:auto; font-size:11px;}
 .toolbox .left{float:left; line-height:48px; background: url(images/icon-48-extension.png) left no-repeat; font-size:22px; padding-left:60px; color: #0B55C4; font-weight:bold;}
 .toolbox .right{float:right;}
 .toolbox .right > div{width:80px; float:left; text-align:center;}
 .toolbox .right > div a{text-decoration:none;  color: #0B55C4;}
 
-.breadcrumb {margin-bottom: 10px;border: solid 1px #CCC; padding:5px; background:#F0F0F0;}
-.breadcrumb a {font-size:11px; color: #0B55C4; line-height:11px;padding:0 10px;text-decoration:none; font-weight:bold;}
-.breadcrumb a+a{border-left: solid 1px #CCC;}
-.breadcrumb a:hover{text-decoration:underline;}
+
+#content .main{margin:10px 0;}
+#content .main .group{border:1px solid #CCC; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;-moz-box-shadow:0px 0px 3px #ccc;-webkit-box-shadow:0px 0px 3px #ccc; box-shadow:0px 0px 3px #ccc; margin-bottom:10px;padding-bottom:5px; overflow:auto;}
+#content .main .group .title{background:#E1E1E1; color:#333; border-bottom: 1px solid #CCC; padding: 5px; font-size: 12px; font-weight: bold;}
+#content .main .group .icon_main {float:left; display: block;text-align :center; padding-top:10px; margin:10px 6px;border:1px #EAEAEA solid; width:110px; height:80px; cursor:pointer;}
+#content .main .group .text_icon_main {font-size:11px;text-align:center;padding: 0px 5px 0px 5px;cursor: pointer;}
 
 .content {overflow: auto;}
 
@@ -82,7 +90,7 @@ table.filter {
 	width: 100%;
 	background: #E7EFEF; 
 	border: 1px solid #C6D7D7; 
-	margin-bottom: 15px;	
+	margin-bottom: 15px;
 }
 table.filter td {
 	padding: 5px;
@@ -106,6 +114,7 @@ table.filter td {
 	text-decoration: none;
 	color: #222222;
 	font-weight: bold;
+	white-space:nowrap;
 }
 .list tbody td a {
 	text-decoration: underline;
@@ -180,20 +189,6 @@ table.form > tbody > tr > td {
 	padding: 10px;
 	color: #000000;
 	border-bottom: 1px dotted #CCCCCC;
-}
-.spreadsheet
-{
-	border: 2px #3333CC solid; 
-	width:900px;
-	font-size: 14px;
-	margin:0 auto;
-	text-align: center;
-}
-table th
-{
-	background-color: #99FF66; 
-	font-size: 17px;
-	border-bottom: 2px #3333CC solid; 
 }
 .scrollbox {
 	border: 1px solid #CCCCCC;
