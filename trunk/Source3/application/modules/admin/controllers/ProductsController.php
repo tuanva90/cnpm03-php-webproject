@@ -85,6 +85,8 @@ class Admin_ProductsController extends Honey_Controller_Action {
 	public function deleteAction(){
     	$id = $this->_request->getParam('id');
     	$this->view->id=$id;
+    	$products = new Admin_Model_Products();	
+    	$products->DeleteProduct($id);
     }
 	public function updateAction(){
     	$id = $this->_request->getParam('id');
