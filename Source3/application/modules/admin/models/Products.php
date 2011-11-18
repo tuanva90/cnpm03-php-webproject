@@ -60,107 +60,77 @@ class Admin_Model_Products extends Zend_Db_Table{
 		$db->delete ( 'cms_product', $where);		
 	}
 	
-	public function DeleteProductDescription($Product_ID,$Language)
+	public function DeleteProductDescription($n_id)
   	{
   		$db = Zend_Registry::get ( 'connectDB' );
-		$where = array(
-				'product_id' => $Product_ID, 
-				'language' => $Language
-				);	
+		$where = 'product_id= '.$n_id;
 		 $db->delete ( 'cms_product_description', $where);
   	}
 //------------------------------------Update--------------------------------------------//
-	public function UpdateProduct($product_id,
-									$model,
-									$image, 
-									$price, 
-									$date_available,
-									$date_added,
-									$date_modified,
-									$viewed,
-									$sort_order,
-									$status) 
+	public function UpdateProduct($product_id,$arrParam) 
 	{		
 		$db = Zend_Registry::get('ConnectDB');
 		$where = 'product_id ='.$product_id;
 		$Product = array(
-      	'model'     =>$model ,
-     	'image'    	=>$image ,
-      	'price'  	=>$price ,
-		'date_available'	=>$date_available,
-		'date_added'	=>$date_added,
-		'date_modified'	=>$date_modified,
-		'viewed'	=>$viewed,
-		'sort_oder'	=>$sort_order,
-		'status'	=>$status);
+      	'model'     => $arrParam['model'] ,
+		'quantity' 	=> $arrParam['quantity'],
+     	'image'    	=> $arrParam['image'] ,
+      	'price'  	=>$arrParam['price'] ,
+		'date_available'	=>$arrParam['date_available'],
+		'status'	=> $arrParam['status'],
+		'date_added'	=>$arrParam['date_added'] ,
+		'date_modified'	=>$arrParam['date_modified'] ,
+		'viewed'	=> $arrParam['viewed'],
+		'sort_order'	=>$arrParam['sort_order']
+		); 
 		$result = $db->update('cms_product',$Product,$where);
-		return ;
+		return $result;
 		
 	}
 	
 
 	
 	
-	public function Update_product_description($product_id,
-												$nameVI,
-												$descriptionVI)
+	public function Update_product_description($product_id,$arrParam)
 	{
-		$db = Zend_Registry::get('ConnectDB');
+		$db = Zend_Registry::get('connectDB');
 		$Language_Vi = 'VI';		
 		$where = 'product_id ='. $product_id ;
-		$Product_Description = array(
-		'language'		=>$Language_Vi,
-		'name'			=>$nameVI,
-		'description'	=>$descriptionVI);		
-		$db->update('cms_product_description',$Product_Description,$where);
+		$data = array(
+				'meta_keywords' => $arrParam['meta_keywords'],
+				'meta_description' =>$arrParam['meta_description'],
+		        'name'	=> $arrParam ['name'],				
+			    'description'	=> $arrParam ['description'],
+		    );
+		$db->update('cms_product_description',$data,$where);
 	}
 //--------------------------------Insert------------------------------------------------//
-	public function InsertProduct($model,
-	$quantity,
-									$image, 
-									$price, 
-									$date_available,
-									$status,
-									$date_added,
-									$date_modified,
-									$viewed,
-									$sort_order
-									
-								//	$nameVI,
-								//	$descriptionVI
-									) 
+	public function InsertProduct($arrParam) 
 	{
-		$db = Zend_Registry::get('ConnectDB');
+		$db = Zend_Registry::get('connectDB');
 		$Product = array(
-      	'model'     =>$model ,
-		'quantity' =>$quantity,
-     	'image'    	=>$image ,
-      	'price'  	=>$price ,
-		'date_available'	=>$date_available,
-	'status'	=>$status,
-		'date_added'	=>$date_added,
-		'date_modified'	=>$date_modified,
-		'viewed'	=>$viewed,
-		'sort_order'	=>$sort_order
+      	'model'     => $arrParam['model'] ,
+		'quantity' 	=> $arrParam['quantity'],
+     	'image'    	=> $arrParam['image'] ,
+      	'price'  	=>$arrParam['price'] ,
+		'date_available'	=>$arrParam['date_available'],
+		'status'	=> $arrParam['status'],
+		'date_added'	=>$arrParam['date_added'] ,
+		'date_modified'	=>$arrParam['date_modified'] ,
+		'viewed'	=> $arrParam['viewed'],
+		'sort_order'	=>$arrParam['sort_order']
 				);      
 		$db->insert('cms_product',$Product);
 	}
-	public function InsertProductDescription($product_id,
-												$language,
-												$name,
-												$meta_keywords,
-												$meta_description,
-												$description												
-												)
+	public function InsertProductDescription($p_id,$arrParam)
 	{
-		$db = Zend_Registry::get('ConnectDB');
+		$db = Zend_Registry::get('connectDB');
 		$data = array(
-		'product_id'	=>$product_id,
-		'language'		=>$language,
-		'name'			=>$name,
-		'meta_keywords'	=>$meta_keywords,
-		'meta_description'	=>$meta_description,
-		'decription'	=>$description);		
+				'meta_keywords' => $arrParam['meta_keywords'],
+				'meta_description' =>$arrParam['meta_description'],
+		        'name'	=> $arrParam ['name'],				
+			    'description'	=> $arrParam ['description'],
+		    );		
 		$db->insert('cms_product_description',$data);													
 	}
 
