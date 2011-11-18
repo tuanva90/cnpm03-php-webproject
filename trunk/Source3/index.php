@@ -75,16 +75,16 @@ $options = array(
 		'frontController' => array(
 			'moduleDirectory'				=> APPLICATION_PATH . DS . 'modules',
 			'moduleControllerDirectoryName'	=> 'controllers',
+    		//'defaultModule'		  			=> 'front',
     		'defaultModule'		  			=> 'front',
-    		//'defaultModule'		  			=> 'link',
     		/*'throwExceptions'	  			=> 1,*/
     		'params'	=> array(
     			'displayExceptions'	=> 1,
     		),  		
 		),
 		'layout' => array(
-			'layoutPath'	=> APPLICATION_PATH . DS . 'templates' . DS . 'front' . DS . 'default',
-			//'layoutPath'	=> APPLICATION_PATH . DS . 'templates' . DS . 'link' . DS . 'default',
+			//'layoutPath'	=> APPLICATION_PATH . DS . 'templates' . DS . 'front' . DS . 'default',
+			'layoutPath'	=> APPLICATION_PATH . DS . 'templates' . DS . 'link' . DS . 'default',
 			'layout'		=> 'index'
 		),
 		'view' => array(
