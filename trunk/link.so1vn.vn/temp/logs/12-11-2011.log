@@ -1,0 +1,30 @@
+Honey CMS - 2011-11-12T08:57:25+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (zend)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+

@@ -1,0 +1,38 @@
+<?php echo $this->doctype();?>
+<html>
+<head>
+<?php echo $this->headTitle();?>
+<?php echo $this->headMeta();?>
+<?php echo $this->headLink();?>
+<?php echo $this->headStyle();?>
+<?php echo $this->headScript();?>
+</head>
+<body>
+<div id="container">
+<div id="header">
+  <div id="logo"><a href="#"><img src="<?php echo HTTP_IMAGES . '/logo/logo.png'; ?>" title="" alt="" /></a></div>
+  <form action="#" method="post" enctype="multipart/form-data">
+    <div id="language">
+      <img src="<?php echo HTTP_IMAGES . '/flags/vi_VN.png'; ?>" title="" alt="" />
+      <img src="<?php echo HTTP_IMAGES . '/flags/en_US.png'; ?>" title="" alt="" />
+      <input type="hidden" name="language_code" value="" />
+      <input type="hidden" name="redirect" value="<?php //echo $redirect; ?>" />
+    </div>
+  </form>
+  <!-- 
+  <form action="#" method="post" enctype="multipart/form-data">
+    <div id="currency">Tiền tệ<br />
+      <input type="hidden" name="currency_code" value="" />
+      <input type="hidden" name="redirect" value="<?php //echo $redirect; ?>" />
+    </div>
+  </form>
+   -->
+  <div id="search">
+    <div class="button-search"></div>
+    <input type="text" name="filter_name" value="Tìm kiếm" onClick="this.value = '';" onKeyDown="this.style.color = '#000000';" />
+  </div>
+  <div id="welcome">Chúc mừng bạn đã đăng nhập</div>
+  <div class="links"><a href="#">Trang chủ</a><a href="#">Tài khoản</a></div>
+</div>
+<?php echo $this->blkFrontMenu2();?>
+<div id="notification"></div>

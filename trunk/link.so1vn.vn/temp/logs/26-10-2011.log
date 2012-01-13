@@ -1,0 +1,804 @@
+Honey CMS - 2011-10-26T08:06:43+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:07:10+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:07:29+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:07:37+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:08:54+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:09:54+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:09:57+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:11:42+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:12:13+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T08:12:17+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T20:20:36+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T20:20:40+07:00
+DEBUG [7]: Zend_Controller_Router_Exception
+Message: Route multimedia_set_edit is not defined
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Router\Rewrite.php
+-- Line: 469
+-- Function: getRoute
+-- Class: Zend_Controller_Router_Rewrite
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Helper\Url.php
+-- Line: 49
+-- Function: assemble
+-- Class: Zend_Controller_Router_Rewrite
+
+#2
+-- File: 
+-- Line: 
+-- Function: url
+-- Class: Zend_View_Helper_Url
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\index\index.phtml
+-- Line: 11
+-- Function: url
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T20:21:06+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T20:21:44+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T20:21:51+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T21:21:52+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T22:21:53+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T23:00:57+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (comment)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T23:21:53+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T23:33:31+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (comment)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T23:36:19+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (comment)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T23:37:26+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (comment)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T23:38:39+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (comment)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+
+Honey CMS - 2011-10-26T23:40:53+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (.233.205.cache)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 103
+-- Function: run
+-- Class: Zend_Application
+
+
+

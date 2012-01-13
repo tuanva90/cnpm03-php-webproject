@@ -1,0 +1,35 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php		
+		//1. Accept - submit
+		$btnAccept = $this->cmsButton(
+						'Đồng ý Xóa',
+						$this->baseUrl($this->currentController . '/delete/Thamso/ID cần xóa'),
+						HTTP_IMAGES . '/icon/icon-32-accept.png',
+						'submit'
+					);
+										
+		//2. Cancel - link
+		$btnCancel = $this->cmsButton(
+						'Cancel',
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnAccept;?><?php echo $btnCancel;?></div>
+</div>
+<div class="breadcrumb">
+	<!-- Thêm các breadcrumb với đường link để truy cập dể dàng hơn -->
+	<a href="#">Tên số 1</a>
+	<a href="#">Tên số 2</a>
+	<!-- Hết breadcrumb -->
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" > 
+		<div class="warning">Ban co chac chacn muon xoa phan tu nay hay khong?</div>
+    </form>
+</div>
+</div>

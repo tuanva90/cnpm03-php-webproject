@@ -1,0 +1,7786 @@
+WDS CMS - 2011-10-08T00:29:16+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 30
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:07+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:08+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:09+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:10+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:10+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:11+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:11+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:18+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:19+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T00:58:19+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 89
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:01:01+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 92
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:01:02+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 92
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:01:03+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 92
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:01:04+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 92
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:01:06+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 92
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:01:07+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 92
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:01:07+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'CmsTranslator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 3
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 92
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:26:13+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 108
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:26:14+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 108
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:27:23+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:29:17+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:32:53+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:43:42+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "index" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T01:45:12+07:00
+DEBUG [7]: Zend_Controller_Action_Exception (404) 
+Message: Action "index" does not exist and was not trapped in __call()
+Stack trace: 6
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 518
+-- Function: __call
+-- Class: Zend_Controller_Action
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T02:29:17+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T03:29:18+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:28:59+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'Translator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 11
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\ConfigController.php
+-- Line: 414
+-- Function: translator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: appAction
+-- Class: Admin_ConfigController
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:29:18+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:29:41+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:34:55+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:37:27+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:41:35+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:45:13+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:45:30+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:45:33+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T04:51:31+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T09:10:16+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T09:59:26+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T09:59:28+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T09:59:29+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:13:22+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:13:34+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:51+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:52+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:53+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:54+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:54+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:55+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:56+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:57+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:14:57+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:15:01+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:15:04+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:15:05+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:15:05+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:46+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:48+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:50+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:52+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:53+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:55+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:56+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:30:57+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:31:36+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 109
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:38:25+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 17
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:39:26+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:39:27+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:43:45+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (app)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:50:20+07:00
+DEBUG [7]: Zend_Translate_Exception
+Message: Ini file 'Array' not found
+Stack trace: 22
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 646
+-- Function: _loadTranslationData
+-- Class: Zend_Translate_Adapter_Ini
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 327
+-- Function: _addTranslationData
+-- Class: Zend_Translate_Adapter
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 176
+-- Function: addTranslation
+-- Class: Zend_Translate_Adapter
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate.php
+-- Line: 140
+-- Function: __construct
+-- Class: Zend_Translate_Adapter
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate.php
+-- Line: 93
+-- Function: setAdapter
+-- Class: Zend_Translate
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Honey\View\Helper\CmsTranslator.php
+-- Line: 73
+-- Function: __construct
+-- Class: Zend_Translate
+
+#6
+-- File: 
+-- Line: 
+-- Function: cmsTranslator
+-- Class: Honey_View_Helper_CmsTranslator
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#8
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 6
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#18
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#19
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#20
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#21
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:50:22+07:00
+DEBUG [7]: Zend_Translate_Exception
+Message: Ini file 'Array' not found
+Stack trace: 22
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 646
+-- Function: _loadTranslationData
+-- Class: Zend_Translate_Adapter_Ini
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 327
+-- Function: _addTranslationData
+-- Class: Zend_Translate_Adapter
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 176
+-- Function: addTranslation
+-- Class: Zend_Translate_Adapter
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate.php
+-- Line: 140
+-- Function: __construct
+-- Class: Zend_Translate_Adapter
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate.php
+-- Line: 93
+-- Function: setAdapter
+-- Class: Zend_Translate
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Honey\View\Helper\CmsTranslator.php
+-- Line: 73
+-- Function: __construct
+-- Class: Zend_Translate
+
+#6
+-- File: 
+-- Line: 
+-- Function: cmsTranslator
+-- Class: Honey_View_Helper_CmsTranslator
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#8
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 6
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#18
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#19
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#20
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#21
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T10:50:49+07:00
+DEBUG [7]: Zend_Translate_Exception
+Message: Ini file 'Array' not found
+Stack trace: 22
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 646
+-- Function: _loadTranslationData
+-- Class: Zend_Translate_Adapter_Ini
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 327
+-- Function: _addTranslationData
+-- Class: Zend_Translate_Adapter
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate\Adapter.php
+-- Line: 176
+-- Function: addTranslation
+-- Class: Zend_Translate_Adapter
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate.php
+-- Line: 140
+-- Function: __construct
+-- Class: Zend_Translate_Adapter
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Translate.php
+-- Line: 93
+-- Function: setAdapter
+-- Class: Zend_Translate
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Honey\View\Helper\CmsTranslator.php
+-- Line: 73
+-- Function: __construct
+-- Class: Zend_Translate
+
+#6
+-- File: 
+-- Line: 
+-- Function: cmsTranslator
+-- Class: Honey_View_Helper_CmsTranslator
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#8
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 6
+-- Function: cmsTranslator
+-- Class: Zend_View
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#18
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#19
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#20
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#21
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T11:41:58+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:11:52+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:34:19+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:34:21+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:34:22+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:34:27+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:34:28+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'FlashMessenger' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: flashMessenger
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:36:01+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:36:02+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:36:03+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:36:04+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:37:37+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:37:38+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:38:25+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:38:26+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:38:27+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:38:27+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 18
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 155
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\helpers\SuccessMessenger.php
+-- Line: 9
+-- Function: getStaticHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: 
+-- Line: 
+-- Function: successMessenger
+-- Class: Admin_View_Helper_SuccessMessenger
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 350
+-- Function: call_user_func_array
+-- Class: 
+
+#4
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\config\app.phtml
+-- Line: 2
+-- Function: successMessenger
+-- Class: Zend_View
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#17
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T12:40:44+07:00
+DEBUG [7]: Zend_Controller_Action_Exception
+Message: Action Helper by name SuccessMessenger not found
+Stack trace: 8
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 293
+-- Function: _loadHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\controllers\ConfigController.php
+-- Line: 293
+-- Function: getHelper
+-- Class: Zend_Controller_Action_HelperBroker
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 516
+-- Function: appAction
+-- Class: Admin_ConfigController
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T15:25:12+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T15:36:20+07:00
+DEBUG [7]: Zend_Loader_PluginLoader_Exception
+Message: Plugin by name 'Translator' was not found in the registry; used paths:
+Admin_View_Helper_: D:/JOB/AppServ/www/Zend/application/modules/admin/views\helpers/
+Honey_View_Helper_: Honey\View\Helper/
+Zend_View_Helper_: Zend/View/Helper/
+Stack trace: 17
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 1182
+-- Function: load
+-- Class: Zend_Loader_PluginLoader
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 618
+-- Function: _getPlugin
+-- Class: Zend_View_Abstract
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 344
+-- Function: getHelper
+-- Class: Zend_View_Abstract
+
+#3
+-- File: 
+-- Line: 
+-- Function: __call
+-- Class: Zend_View_Abstract
+
+#4
+-- File: D:\JOB\AppServ\www\Zend\application\modules\admin\views\scripts\auth\deny.phtml
+-- Line: 2
+-- Function: translator
+-- Class: Zend_View
+
+#5
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View.php
+-- Line: 108
+-- Function: include
+-- Class: 
+
+#6
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\View\Abstract.php
+-- Line: 888
+-- Function: _run
+-- Class: Zend_View
+
+#7
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 900
+-- Function: render
+-- Class: Zend_View_Abstract
+
+#8
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 921
+-- Function: renderScript
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#9
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\Helper\ViewRenderer.php
+-- Line: 960
+-- Function: render
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#10
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action\HelperBroker.php
+-- Line: 277
+-- Function: postDispatch
+-- Class: Zend_Controller_Action_Helper_ViewRenderer
+
+#11
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Action.php
+-- Line: 527
+-- Function: notifyPostDispatch
+-- Class: Zend_Controller_Action_HelperBroker
+
+#12
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Dispatcher\Standard.php
+-- Line: 295
+-- Function: dispatch
+-- Class: Zend_Controller_Action
+
+#13
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#14
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#15
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#16
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T15:37:58+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+
+WDS CMS - 2011-10-08T15:39:03+07:00
+DEBUG [7]: Zend_Controller_Dispatcher_Exception
+Message: Invalid controller specified (public)
+Stack trace: 4
+#0
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Controller\Front.php
+-- Line: 954
+-- Function: dispatch
+-- Class: Zend_Controller_Dispatcher_Standard
+
+#1
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application\Bootstrap\Bootstrap.php
+-- Line: 97
+-- Function: dispatch
+-- Class: Zend_Controller_Front
+
+#2
+-- File: D:\JOB\AppServ\www\Zend\library\Zend\Application.php
+-- Line: 366
+-- Function: run
+-- Class: Zend_Application_Bootstrap_Bootstrap
+
+#3
+-- File: D:\JOB\AppServ\www\Zend\index.php
+-- Line: 100
+-- Function: run
+-- Class: Zend_Application
+
+
+

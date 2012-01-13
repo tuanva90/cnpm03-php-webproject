@@ -1,0 +1,120 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php		
+		//1. Cancel - link
+		$btnCancel = $this->cmsButton(
+						$this->cmsTranslator('link_button_cancel'),
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right">
+		<div><a onclick="$('#form').submit();"><img src="<?php echo HTTP_IMAGES . '/icon/icon-32-save.png';?>"/><br>Lưu</a></div>
+		<?php echo $btnCancel;?>
+	</div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo $this->baseUrl('/admin/link/index/');?>">????</a>
+	<a href="<?php echo $this->baseUrl('/admin/link/index/');?>">????</a>
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" > 
+      <table class="form">
+        <tr>
+          <td><span class="required">*</span> <?php echo $this->cmsTranslator('link_entry_title');?></td>
+          <td><?php echo $this->formText('title', null, array('size'=>'50'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('link_entry_slug');?></td>
+          <td><?php echo $this->formText('slug', null, array('size'=>'50'));?></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('link_entry_description'); ?></td>
+          <td><textarea name="description" id="description"></textarea></td>
+        </tr>
+        <tr>
+           <td><?php echo $this->cmsTranslator('link_entry_category');?></td>
+           <td><div class="scrollbox">
+                  <?php $class = 'odd'; ?>
+                  <?php foreach ($this->categories as $category) { ?>
+                  <?php $class = ($class == 'even' ? 'odd' : 'even'); ?>
+                  <div class="<?php echo $class; ?>">
+                    <input type="checkbox" name="link_category[]" value="<?php echo $category['category_id']; ?>" />
+                    <?php echo $category['name']; ?>
+                  </div>
+                  <?php } ?>
+                </div>
+                <a onclick="$(this).parent().find(':checkbox').attr('checked', true);"><?php echo $this->cmsTranslator('link_text_select_all');?></a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);"><?php echo $this->cmsTranslator('link_text_unselect_all');?></a></td>
+        </tr>
+        <tr>
+          <td><?php echo $this->cmsTranslator('link_entry_image');?></td>
+          <td><?php echo $this->formText('image', null, array('size'=>'100'));?></td>
+        </tr>
+        <tr>
+          <td><span class="required">*</span> <?php echo $this->cmsTranslator('link_entry_source');?></td>
+          <td><?php echo $this->formText('link_source', null, array('size'=>'100'));?></td>
+        </tr>
+        <tr>
+           <td><span class="required">*</span> <?php echo $this->cmsTranslator('link_entry_website');?></td>
+           <td><select name="link_web_id">
+                  <option value=""><?php echo $this->cmsTranslator('link_text_select'); ?></option>
+                  <?php foreach ($this->webs as $web) { ?>
+                  <option value="<?php echo $web['link_web_id']; ?>"><?php echo $web['website_name']; ?></option>
+                  <?php } ?>
+                </select></td>
+        </tr>
+        <tr>
+		  <td><?php echo $this->cmsTranslator('link_entry_status');?></td>
+          <td><select name="status">
+                  <option value="1" selected="selected"><?php echo $this->cmsTranslator('link_text_enabled'); ?></option>
+                  <option value="0"><?php echo $this->cmsTranslator('link_text_disabled'); ?></option>
+                </select></td>
+        </tr>
+      </table>
+    </form>
+    <!-- khởi tạo editor -->
+	<?php echo $this->cmsEditor(array('description'), array());?>	
+	<script type="text/javascript">
+	$(document).ready(function() {
+		/**
+		 * Validate form
+		 */
+		$('#form').validate({
+			rules: {				
+				title: {
+					required: true,
+			  		minlength: 3,
+			  		maxlength: 150,
+				},
+				link_source: {
+					required: true,
+			  		minlength: 3,
+			  		maxlength: 150,
+				},
+				link_web_id: {
+					required: true,
+				},
+		    },
+		    messages: {		    	
+		    	title: {
+		        	required: "<?php echo $this->cmsTranslator('link_error_name'); ?>",
+		        	minlength: "<?php echo $this->cmsTranslator('link_error_name_minlength'); ?>",
+		        	maxlength: "<?php echo $this->cmsTranslator('link_error_name_maxlength'); ?>",
+				},
+				link_source: {
+		        	required: "<?php echo $this->cmsTranslator('link_error_source'); ?>",
+		        	minlength: "<?php echo $this->cmsTranslator('link_error_source_minlength'); ?>",
+		        	maxlength: "<?php echo $this->cmsTranslator('link_error_source_maxlength'); ?>",
+				},
+				link_web_id: {
+					required: "<?php echo $this->cmsTranslator('link_error_link_web'); ?>",
+				},
+			}
+		});
+	});
+	</script>
+</div>
+</div>
