@@ -1,0 +1,140 @@
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php
+		//1. Add new - link
+		$btnAddNew = $this->cmsButton(
+						$this->cmsTranslator('linkcron_new_add'),
+						$this->baseUrl($this->currentController . '/add'),
+						HTTP_IMAGES . '/icon/icon-32-new.png',
+						'link'
+					);
+		//2. Active - submit
+		$btnActive = $this->cmsButton(
+						'Active Items',
+						$this->baseUrl($this->currentController . '/status/type/1'),											
+						HTTP_IMAGES . '/icon/icon-32-active.png',
+						'submit'
+					);
+		//3. Inactive- submit
+		$btnInactive = $this->cmsButton(
+						'Inactive Items',
+						$this->baseUrl($this->currentController . '/status/type/0'),										
+						HTTP_IMAGES . '/icon/icon-32-inactive.png',
+						'submit'
+					);
+
+		//4. Delete - submit
+		$btnDelete = $this->cmsButton(
+						'Delete Items',
+						$this->baseUrl($this->currentController . '/multi-delete'),
+						HTTP_IMAGES . '/icon/icon-32-delete.png',
+						'submit'
+					);	
+		
+	?>
+	<div class="right"><?php echo $btnAddNew;?><?php echo $btnActive;?><?php echo $btnInactive;?><?php echo $btnDelete;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo $this->baseUrl('/admin/category/index/');?>">????</a>
+	<a href="<?php echo $this->baseUrl($this->currentController . '/linkcron/index/');?>">????</a>
+</div>
+<div class="content">
+	<?php 		
+		$filter = $this->arrParam['filter'];
+		$action_link 	= $this->baseUrl($this->currentController . '/filter/type/order');
+		
+		$sortID 	= $this->cmsLinkSort($this->cmsTranslator('linkcron_column_id'),'lc.link_cron_id', $filter, $action_link);
+		
+		$sortName 	= $this->cmsLinkSort($this->cmsTranslator('linkcron_column_name'), 'lc.name', $filter, $action_link);
+													
+		$sortSource	= $this->cmsLinkSort($this->cmsTranslator('linkcron_column_source'), 'lc.source', $filter, $action_link);
+		
+		$sortFrequency	= $this->cmsLinkSort($this->cmsTranslator('linkcron_column_frequency'), 'lc.frequency', $filter, $action_link);
+		
+		$sortPriority	= $this->cmsLinkSort($this->cmsTranslator('linkcron_column_priority'), 'lc.priority', $filter, $action_link);
+		
+		$sortStatus	= $this->cmsLinkSort($this->cmsTranslator('linkcron_column_status'), 'lc.status', $filter, $action_link);																				
+																		
+	?>
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
+      <table class="list">
+        <thead>
+          <tr>
+            <td width="1" style="text-align: center;">
+            	<input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" />
+            </td>            
+            <td class="left"><?php echo $sortID;?></td>
+            <td class="left"><?php echo $sortName;?></td>
+            <td class="left"><?php echo $sortSource;?></td>
+            <td class="center"><?php echo $sortFrequency;?></td>
+            <td class="center"><?php echo $sortPriority;?></td>
+            <td class="center"><?php echo $this->cmsTranslator('linkcron_column_website');?></td>
+            <td class="center"><?php echo $sortStatus;?></td>
+            <td class="right"><?php echo $this->cmsTranslator('linkcron_column_control');?></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="filter">
+            <td></td>
+            <td></td>
+            <td><input type="text" name="filter_name" value=""/></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="right">
+            	<a class="button" onclick="OnSubmitForm('<?php echo $this->baseUrl($this->currentController . '/filter/type/search/key/1'); ?>')"><span>filter</span></a>
+            	<a class="button" onclick="OnSubmitForm('<?php echo $this->baseUrl($this->currentController . '/filter/type/search/key/0'); ?>')"><span>clear</span></a>
+            </td>
+          </tr>
+          <?php if ($this->Items) { ?>
+          <?php foreach($this->Items as $key => $val){
+          	
+				$selected = $this->formCheckbox('selected[]', $val['link_cron_id']);
+								
+				if($val['status'] == 1){	
+					$linkStatus = $this->baseUrl($this->currentController . '/status/type/0/link_cron_id/' . $val['link_cron_id']);											
+					$status = $this->cmsIconButton('Active', HTTP_IMAGES. '/icon/icon_16_active.png', $linkStatus);
+				}else{
+					$linkStatus = $this->baseUrl($this->currentController . '/status/type/1/link_cron_id/' . $val['link_cron_id']);
+					$status = $this->cmsIconButton('INactive', HTTP_IMAGES. '/icon/icon_16_inactive.png', $linkStatus);
+				}
+										
+				$linkInfo = $this->baseUrl($this->currentController . '/info/link_cron_id/' . $val['link_cron_id']);											
+				$btnInfo = $this->cmsIconButton('View Item', HTTP_IMAGES. '/icon/icon_16_info.png', $linkInfo);
+				$linkEdit = $this->baseUrl($this->currentController . '/edit/link_cron_id/' . $val['link_cron_id']);
+				$btnEdit = $this->cmsIconButton('Edit Item', HTTP_IMAGES. '/icon/icon_16_edit.png', $linkEdit);
+				$linkDelete	= $this->baseUrl($this->currentController . '/delete/link_cron_id/' . $val['link_cron_id']);
+				$btnDelete = $this->cmsIconButton('Delete Item', HTTP_IMAGES. '/icon/icon_16_del.png', $linkDelete);
+				$strIconButton = $btnInfo . ' ' . $btnEdit . ' ' . $btnDelete;
+		  ?>
+          <tr>            
+            <td class="center"><?php echo $selected;?></td>
+            <td class="left"><?php echo $val['link_cron_id'];?></td>
+            <td class="left"><?php echo $val['name'];?></td>
+            <td class="left"><?php echo $val['source'];?></td>
+            <td class="center"><?php echo $val['frequency'];?></td>
+            <td class="center"><?php echo $val['priority'];?></td>
+            <td class="center"><?php echo $val['website_name'];?></td>
+            <td class="center"><?php echo $status;?></td>
+ 			<td class="right"><?php echo $strIconButton;?></td>
+          </tr>
+          <?php } ?>
+          <?php } else { ?>
+          <tr>
+            <td class="center" colspan="9">Không có kết quả</td>
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+    </form>
+    <div class="pagination">
+    <?php 
+    	$currentUrl = $this->baseUrl($this->currentController . '/index');
+    	echo $this->paginationControl($this->panigator,'Sliding','pagination.phtml', array('currentUrl'=>$currentUrl));
+    ?>
+    </div>
+</div>
+</div>

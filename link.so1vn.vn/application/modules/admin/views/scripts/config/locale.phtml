@@ -1,0 +1,95 @@
+<div id="content">
+<?php echo $this->flashMessenger(); ?>
+<div class="toolbox">
+	<div class="left"><?php echo $this->cmsTranslator('locale_config_page_title'); ?></div>
+	<?php		
+		//1. Save - submit
+		$btnSave = $this->cmsButton(
+						$this->cmsTranslator('locale_config_save_button'),
+						$this->baseUrl($this->currentController . '/locale'),
+						HTTP_IMAGES . '/icon/icon-32-save.png',
+						'submit'
+					);
+										
+		//2. Cancel - link
+		$btnCancel = $this->cmsButton(
+						'Cancel',
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right"><?php echo $btnSave;?><?php echo $btnCancel;?></div>
+</div>
+<div class="breadcrumb">
+	<a href="<?php echo HTTP_SERVER . '/admin/config/app/';?>">Hệ thống</a>
+	<a href="<?php echo HTTP_SERVER . '/admin/user/index/';?>">Member Manager</a>
+</div>
+<div class="content">
+    <form action="" method="post" enctype="multipart/form-data" id="form" name="form" > 
+      <table class="form" style="margin-bottom:0;">
+        <tr>
+          <td><?php echo $this->cmsTranslator('locale_config_default_language'); ?></td>
+          <td><select name="defaultLanguage">
+				<?php foreach ($this->locales as $code => $locale) : ?>
+				<option value="<?php echo $locale['code']; ?>"<?php if ($this->defaultLanguage == $locale['code']): ?> selected="selected"<?php endif; ?>><?php echo $locale['localName']; ?> (<?php echo $locale['englishName']; ?>)</option>
+				<?php endforeach; ?>
+			</select></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="checkbox" name="localizeEnable" id="localizeEnable"<?php if ($this->enable) : ?> checked="checked"<?php endif; ?> />
+          <?php echo $this->cmsTranslator('locale_config_enable_multilingual'); ?></td>
+        </tr>
+      </table>      				
+      <table class="form" id="localization" style="display: <?php if ($this->enable) : ?>block<?php else : ?>none<?php endif; ?>; margin-bottom:0;">
+        <tr>
+          <td><?php echo $this->cmsTranslator('locale_config_supported_languages'); ?></td>
+          <td><div class="scrollbox">
+                  <?php $class = 'odd'; ?>
+                  <?php foreach (array_values($this->locales) as $index => $locale) { ?>
+                  <?php $class = ($class == 'even' ? 'odd' : 'even'); ?>
+                  <div class="<?php echo $class; ?>">
+                    <input type="checkbox" name="supportedLanguages[]" value="<?php echo $locale['code']; ?>"<?php if (in_array($locale['code'], $this->availableLanguages)) : ?> checked="checked"<?php endif; ?> />
+                    <img src="<?php echo HTTP_IMAGES; ?>/flags/<?php echo $locale['code']; ?>.png" />
+                    <?php echo $locale['localName']; ?> (<?php echo $locale['englishName']; ?>)
+                  </div>
+                  <?php } ?>
+                </div>
+                <a onclick="$(this).parent().find(':checkbox').attr('checked', true);">Select All</a> / <a onclick="$(this).parent().find(':checkbox').attr('checked', false);">Unselect All</a></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="checkbox" name="autoTranslate" id="autoTranslate"<?php if ('true' == $this->config['translate']['auto']) : ?> checked="checked"<?php endif; ?> />
+          	<?php echo $this->cmsTranslator('locale_config_auto_translate'); ?></td>
+        </tr>
+      </table>
+      <table class="form" id="translatorService" class="clearfix t_a_bottom" style="display: <?php if ('true' == $this->config['translate']['auto']) : ?>block<?php else : ?>none<?php endif; ?>">
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="radio" name="service" value="google"<?php if ('google' == $this->config['translate']['service']['using']) : ?> checked="checked"<?php endif; ?> />
+          	<?php echo $this->cmsTranslator('locale_config_google_translate_service'); ?><br>
+          	<textarea style="width: 300px; height: 100px" name="googleApiKey"><?php echo $this->config['translate']['service']['google']['apikey']; ?></textarea></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="radio" name="service" value="microsoft"<?php if ('microsoft' == $this->config['translate']['service']['using']) : ?> checked="checked"<?php endif; ?> />
+          	<?php echo $this->cmsTranslator('locale_config_microsoft_translate_service'); ?><br>
+          	<textarea style="width: 300px; height: 100px" name="microsoftApiKey"><?php echo $this->config['translate']['service']['microsoft']['apikey']; ?></textarea>
+        </tr>
+      </table>
+    </form>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$('#localizeEnable').change(function() {
+			$('#localization').toggle();
+		});
+	
+		$('#autoTranslate').change(function() {
+			$('#translatorService').toggle();
+		});
+	});
+	</script>
+</div>
+</div>

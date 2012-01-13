@@ -1,0 +1,52 @@
+<!-- THÊM 1 RECORD VÀO DATABASE KHI SUBMIT -->
+<div id="content">
+<div class="toolbox">
+	<div class="left"><?php echo $this->Title?></div>
+	<?php		
+		//1. Cancel - link
+		$btnCancel = $this->cmsButton(
+						'Thóat',
+						$this->baseUrl($this->currentController . '/index'),
+						HTTP_IMAGES . '/icon/icon-32-cancel.png',
+						'link'
+					);
+		
+	?>
+	<div class="right">
+		<div><a onclick="$('#form').submit();"><img src="<?php echo HTTP_IMAGES . '/icon/icon-32-save.png';?>"/><br>Lưu</a></div>
+		<?php echo $btnCancel;?>
+	</div>
+</div>
+<div class="breadcrumb">
+	<!-- Thêm các breadcrumb với đường link để truy cập dể dàng hơn -->
+	<a href="#">Tên số 1</a>
+	<a href="#">Tên số 2</a>
+	<!-- Hết breadcrumb -->
+</div>
+<div class="content">
+	<form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
+      <table class="form">
+        <!-- Bao nhiêu record thì có bấy nhiêu dòng và mỗi dòng có 2 cột nội dung như ở dưới -->
+        <tr>
+          <td><!-- Tên của mục --></td>
+          <td><!-- Nội dung là tag INPUT, SELECT... để nhập dữ liệu --></td>
+        </tr>
+      </table>
+    </form>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	/**
+	 * Validate form
+	 */
+	$('#form').validate({
+		rules: {
+			
+		},
+	 	messages: {
+		 	
+		}
+	});
+});
+</script> 
+</div>
