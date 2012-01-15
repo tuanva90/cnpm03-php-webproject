@@ -1,0 +1,53 @@
+div#highlighter-region
+{
+	background-image:url('images/bg_trans.png');
+	display:none;
+}
+.editable-item
+{
+	border:1px dotted red;
+}
+#contextMenu
+{
+	background:#C0C0C0;
+	position:absolute;
+	padding-top:6px;
+	padding-bottom:6px;
+	padding-left:2px;
+	padding-right:2px;
+	display:block;
+	width:120px;
+}
+#contextMenu_01
+{
+	list-style:none;
+	background-color:transparent;	
+	margin:12px 0;
+	padding:0;
+}
+#contextMenu_01 li{
+}
+#contextMenu_01 li a{
+	text-decoration:none;	
+}
+#contextMenu_01 li a span{
+	background-repeat:no-repeat;
+	display:block;
+	padding:3px 10px 3px 30px !important;
+	background-position:6px 4px;
+}
+#contextMenu_01 li a span.add-menu-item{
+	background-image:url(images/add_2.png);
+}
+#contextMenu_01 li a span.edit-menu-item{
+	background-image:url(images/edit_small.png);
+}
+#contextMenu_01 li a span.remove-menu-item{
+	background-image:url(images/remove.png);
+}
+#contextMenu_01 li a span.add-menu-item{
+}
+#contextMenu_01 li:hover{
+	background:url('images/bg_menu_active.png');
+	cursor:pointer;
+}
