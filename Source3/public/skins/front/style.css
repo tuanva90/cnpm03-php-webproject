@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #033;
+}
+
+.container {
+	width: 1000px;	
+	margin: 0px auto;
+	background-color: white;
+}
+
+.clear {
+	clear: both;
+}
+
+#header {
+	position: relative;
+	color: black;
+}
+
+#header #page-title {
+	font-size: 3em;
+	position: absolute;
+	bottom: 50px;
+	left: 20px;
+}
+
+#header #welcome-text {
+	font-size: 1.5 em;
+	position: absolute;
+	font-style: italic;
+	bottom: 40px;
+	left: 20px;
+}
+
+.edit-button {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	font-size: small;
+}
+
+.toolbar-button {
+	padding: 0 3px;
+	margin: 5px;
+	cursor: pointer;
+	border: thin solid #000;
+	text-align: center;
+	background: #FFF;
+	text-decoration: none;
+	color: #000;
+}
+
+#col-left {
+	width:795px;
+	float: left;
+	margin: 0px;
+	min-height: 500px;
+	position: relative;
+}
+
+#col-right {
+	width: 200px;
+	float:left;
+	margin: 0px 5px 0px 0px;
+	min-height: 500px;
+	position: relative;
+}
+
+.box {
+	margin: 0 0 5px 0;
+	padding: 0 5px 5px 5px;
+	border: thin solid #000;
+	background:#FFF;
+	position: relative;
+}
+
+.module {
+	padding: 0.2em;
+	margin-bottom: 10px;
+}
+
+.module .module-title {
+	position: relative;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0;
+}
+
+.box #title {
+	padding: 3px 5px;
+	margin: 0 -5px 5px -5px;
+	background:#666;
+}
+
+.acticle {
+	margin: 0 0 10px 0;
+	background: #FFF;
+	position: relative;
+}
+
+.acticle #headline {
+	font-weight: bold;
+}

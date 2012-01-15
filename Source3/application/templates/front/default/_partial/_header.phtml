@@ -1,27 +1,108 @@
+<script>
+var imageRoot = "<?php echo HTTP_IMAGES;?>";
+var imageLink = "header_1.jpg";
+var pageTitle = "C&C13";
+var welcomeText = "Bring you the easiest way to own Websites";
+
+$(function() {
+	function updateValue() {
+		$("#banner").attr("src", imageRoot + '/' + imageLink);
+		$("#page-title").html(pageTitle);
+		$("#welcome-text").html(welcomeText);
+	}
+	
+	$("#banner").attr("src", imageRoot + '/' + imageLink);
+	$("#page-title").html(pageTitle);
+	$("#welcome-text").html(welcomeText);
+	$("#choose-image-form").dialog({
+		autoOpen: false,
+		height: 600,
+		width: 600,
+		modal: true,
+		buttons: {
+			"Save": function() {
+				var str = $("input[name='rdoBannerImage']:checked").val();
+				$("#txtUrl").val(str);
+				$(this).dialog("close");
+			},
+			Cancel: function() {
+				$(this).dialog("close");
+			}
+		}
+	});
+	$("#edit-header-form").dialog({
+		autoOpen: false,
+		height: 300,
+		width: 350,
+		modal: true,
+		buttons: {
+			"Save": function() {
+				imageLink = $("#txtUrl").val();
+				pageTitle = $("#txtTitle").val();
+				welcomeText = $("#txtWelcomeText").val();
+				updateValue();
+				$(this).dialog("close");
+			},
+			Cancel: function() {
+				$( this ).dialog( "close" );
+			}
+		}
+	});
+	
+	$('#edit-header').button().click(function() {
+		$('[name=txtUrl]').val(imageLink);
+		$("#txtTitle").val(pageTitle);
+		$("#txtWelcomeText").val(welcomeText);
+		$("#txtWelcomeText").value = welcomeText;
+		$("#edit-header-form").dialog( "open" );
+	})
+
+	$("#choose-image").button().click(function(){
+		$("input[name='rdoBannerImage']").each(function(){
+			if($(this).val() == imageLink) {
+				$(this).prop('checked', true);
+			} else {
+				$(this).prop('checked', false);
+			}
+		});
+		$("#choose-image-form").dialog("open");
+		
+	});
+});
+</script>
 <div id="header">
-  <div id="logo"><a href="#"><img src="<?php echo HTTP_IMAGES . '/logo/logo.png'; ?>" title="" alt="" /></a></div>
-  <form action="#" method="post" enctype="multipart/form-data">
-    <div id="language">
-      <img src="<?php echo HTTP_IMAGES . '/flags/vi_VN.png'; ?>" title="" alt="" />
-      <img src="<?php echo HTTP_IMAGES . '/flags/en_US.png'; ?>" title="" alt="" />
-      <input type="hidden" name="language_code" value="" />
-      <input type="hidden" name="redirect" value="<?php //echo $redirect; ?>" />
-    </div>
-  </form>
-  <!-- 
-  <form action="#" method="post" enctype="multipart/form-data">
-    <div id="currency">Tiền tệ<br />
-      <input type="hidden" name="currency_code" value="" />
-      <input type="hidden" name="redirect" value="<?php //echo $redirect; ?>" />
-    </div>
-  </form>
-   -->
-  <div id="search">
-    <div class="button-search"></div>
-    <input type="text" name="filter_name" value="Tìm kiếm" onClick="this.value = '';" onKeyDown="this.style.color = '#000000';" />
-  </div>
-  <div id="welcome">Chúc mừng bạn đã đăng nhập</div>
-  <div class="links"><a href="<?php echo $this->baseUrl('font')?>">Trang chủ</a><a href=" <?php echo $this->baseUrl('admin')?>">Quản lý</a></div>
-</div><!-- End #header -->
-<?php echo $this->blkFrontMenu2();?>
-<div id="notification"></div>
+	<img id="banner" style="width: 100%"/>
+	<div class='edit-button'><button id='edit-header'>...</button></div>
+	<div id="page-title"></div>
+	<div id="welcome-text"></div>
+	
+	<div id="edit-header-form" title="Edit Page Header.">
+		<form style="position: relative;">
+		<table border="0px;" width="100%">
+			<tr>
+				<td width="100px;"><label for="txtUrl">Banner URL</label></td>
+				<td><input type="text" name="txtUrl" id="txtUrl" maxlength="200" size="30"/>
+				<div id="choose-image">...</div></td>
+			</tr>
+			<tr>
+				<td width="100px;"><label for="txtTitle">Page Title</label></td>
+				<td><input type="text" name="txtTitle" id="txtTitle" maxlength="50" size="40"/></td>
+			</tr>
+			<tr>
+				<td width="100px;"><label for="txtWelcomeText">Welcome Text</label></td>
+				<td><input type="text" name="txtWelcomeText" id="txtWelcomeText" maxlength="200" size="40"/></td>
+			</tr>
+		</table>
+	    </form>
+	</div>
+	<?php echo $this->blkFrontMenu2();?>
+	
+	<div id="choose-image-form">
+		Notice: This form will be replaced by Media Manager (TuanVA)<br>
+		<input type="radio" name="rdoBannerImage" value="header_1.jpg">
+		<img alt="" src= "<?php echo HTTP_IMAGES.DS."header_1.jpg"?>" style="width:500px; height:150px"><br>
+		<input type="radio" name="rdoBannerImage" value="header_2.jpg">
+		<img alt="" src= "<?php echo HTTP_IMAGES.DS."header_2.jpg"?>" style="width:500px; height:150px"><br>
+	</div>
+	
+</div>
