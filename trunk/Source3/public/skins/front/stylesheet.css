@@ -20,66 +20,6 @@ label {cursor: pointer;}
 #column-left + #column-right + #content, #column-left + #content {margin-left: 195px;}
 #column-right + #content {margin-right: 195px;}
 
-/* header */
-#header {height: 90px;margin-bottom: 7px;padding-bottom: 4px;position: relative;z-index: 99;}
-#header #logo {position: absolute;	top: 10px;left: 10px;}
-#header #language {position: absolute;	top:1px; right:5px; width:100px; color: #999; line-height: 16px; text-align:right;}
-#header #language img {cursor: pointer;}
-#header #currency {width: 120px; position: absolute; top: 10px;left: 350px; color: #999; line-height: 17px;}
-#header #currency a {display: inline-block;padding: 2px 4px;border: 1px solid #CCC;color: #999;	text-decoration: none;margin-right: 2px; margin-bottom: 2px;}
-#header #currency a b {color: #000;text-decoration: none;}
-#header #search {position: absolute; top:17px; right: 0px; width: 298px; z-index: 15;}
-#header .button-search {
-	position: absolute;
-	left: 0px;
-	background: url('images/button-search.png') center center no-repeat;
-	width: 28px;
-	height: 24px;
-	border-right: 1px solid #CCCCCC;
-	cursor: pointer;
-}
-#header #search input {
-	background: #FFF;
-	padding: 1px 1px 1px 33px;
-	width: 262px;
-	height: 21px;
-	border: 1px solid #CCCCCC;
-	-webkit-border-radius: 3px 3px 3px 3px;
-	-moz-border-radius: 3px 3px 3px 3px;
-	-khtml-border-radius: 3px 3px 3px 3px;
-	border-radius: 3px 3px 3px 3px;
-	-webkit-box-shadow: 0px 2px 0px #F0F0F0;
-	-moz-box-shadow: 0px 2px 0px #F0F0F0;
-	box-shadow: 0px 2px 0px #F0F0F0;	
-}
-#header #welcome {
-	position: absolute;
-	top: 47px;
-	right: 0px;
-	z-index: 5;
-	width: 298px;
-	text-align: right;
-	color: #999999;
-}
-#header .links {
-	position: absolute;
-	right: 0px;
-	bottom: 3px;
-	font-size: 10px;
-	padding-right: 10px;
-}
-#header .links a {
-	float: left;
-	display: block;
-	padding: 0px 0px 0px 7px;
-	color: #38B0E3;
-	text-decoration: none;
-	font-size: 12px;
-}
-#header .links a + a {
-	margin-left: 8px;
-	border-left: 1px solid #CCC;
-}
 /* menu */
 #menu {
 	background: #585858;
