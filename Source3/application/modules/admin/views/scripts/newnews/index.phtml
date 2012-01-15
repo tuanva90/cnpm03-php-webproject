@@ -29,12 +29,12 @@
   <div id="highlighter-region">
   </div>
   <div id="contextMenu">
-  <form id='news-context-menu' name='contextMenu' method='post' action=''>
+  <form id='news-context-menu' name='contextMenu' method='post' action="">
   <input type='hidden' name='news-id' value=''/>
   <ul id="contextMenu_01">
   	<li><a href="javascript:void();" name="news-add"><span class="add-menu-item">Add</span></a></li>
   	<li><a href="javascript:void();" name="news-edit"><span class="edit-menu-item">Edit</span></a></li>
-  	<li><a href="javascript:void();" name="news-remove"><span class="remove-menu-item">Remove</span></a></li>
+  	<li><a href="javascript:void();" ><span class="remove-menu-item" id="remove-menu-item_01" actionurl="<?php echo $this->baseUrl('admin/newnews/delete');?>">Remove</span></a></li>
   	<li><a href="javascript:void();" name="news-detail"><span class="detail-menu-item">Show detail</span></a></li>
   </ul>
   </form>
