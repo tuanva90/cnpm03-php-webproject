@@ -10,12 +10,16 @@
 <body>
 <div id="container">
 <?php echo $this->render('_partial/_header.phtml');?>
-<?php echo $this->render('_partial/_left.phtml');?>
-<div id="center">
+
+<div id="col-left">
 <?php echo $this->layout()->content ?>
-</div> <!-- End #center -->
-<?php echo $this->render('_partial/_right.phtml');?>
+</div>
+
+<div id="col-right">
+<?php echo $this->render('_partial/_left.phtml');?>
+</div>
+
 <?php echo $this->render('_partial/_footer.phtml');?>
-</div><!-- End #container -->
+</div>
 </body>
 </html>

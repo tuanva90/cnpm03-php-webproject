@@ -1,60 +1,7 @@
-<!-- Begin #left -->
-<div id="left">
-<div class="box">
-                <div class="box-tilte">
-                    Menu_1
-                </div>                    
-                <div class="box-body">
-                    <ul>
-                        <li><a href="#">SubMenu_1</a></li>
-                        <li><a href="#">SubMenu_2</a></li>
-                        <li><a href="#">SubMenu_3</a></li>
-                        <li><a href="#">SubMenu_4</a></li>
-                        <li><a href="#">SubMenu_5</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-tilte">
-                    Menu_2
-                </div>                    
-                <div class="box-body">
-                    <ul>
-                        <li><a href="#">SubMenu_1</a></li>
-                        <li><a href="#">SubMenu_2</a></li>
-                        <li><a href="#">SubMenu_3</a></li>
-                        <li><a href="#">SubMenu_4</a></li>
-                        <li><a href="#">SubMenu_5</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-tilte">
-                    Menu_3
-                </div>                    
-                <div class="box-body">
-                    <ul>
-                        <li><a href="#">SubMenu_1</a></li>
-                        <li><a href="#">SubMenu_2</a></li>
-                        <li><a href="#">SubMenu_3</a></li>
-                        <li><a href="#">SubMenu_4</a></li>
-                        <li><a href="#">SubMenu_5</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-tilte">
-                    Menu_4
-                </div>                    
-                <div class="box-body">
-                    <ul>
-                        <li><a href="#">SubMenu_1</a></li>
-                        <li><a href="#">SubMenu_2</a></li>
-                        <li><a href="#">SubMenu_3</a></li>
-                        <li><a href="#">SubMenu_4</a></li>
-                        <li><a href="#">SubMenu_5</a></li>
-                    </ul>
-                </div>
-            </div>
-</div>
-<!-- Ende #left -->
+<?php
+$modules = new Front_Model_Module();
+$module_list = $modules->listItem(1);
+foreach($module_list as $module) {
+	$functionName = $module['file_name'];
+	echo $this->$functionName();
+}

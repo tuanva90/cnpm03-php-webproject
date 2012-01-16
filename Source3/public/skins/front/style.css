@@ -41,7 +41,7 @@ body {
 	position: absolute;
 	right: 0px;
 	top: 0px;
-	font-size: small;
+	font-size: 0.8em;
 }
 
 .toolbar-button {
@@ -56,11 +56,13 @@ body {
 }
 
 #col-left {
-	width:795px;
+	width:770px;
 	float: left;
 	margin: 0px;
 	min-height: 500px;
 	position: relative;
+	background-color: white;
+	margin-right: 5px;
 }
 
 #col-right {
@@ -87,9 +89,13 @@ body {
 .module .module-title {
 	position: relative;
 	text-align: center;
-	font-size: 1.2em;
 	font-weight: normal;
 	margin: 0;
+}
+
+.module .module-title h3 {
+	padding: 1px;
+	margin: 5px;
 }
 
 .box #title {
