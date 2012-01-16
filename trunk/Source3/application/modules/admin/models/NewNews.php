@@ -38,4 +38,12 @@ class Admin_Model_NewNews extends Honey_Db_Table{
 		$result = $db->fetchOne($select);
 		return $result;
 	}
+	
+	public function deleteItem($arrParam = null, $option = null)
+	{
+		$db = Zend_Registry::get('connectDB');
+		$where = ' news_id = '.$arrParam['news-id'];
+		$db->delete($this->getPrefix().'news', $where);
+		$db->delete($this->getPrefix().'news_description', $where);
+	}
 }

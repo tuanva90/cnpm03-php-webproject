@@ -1,6 +1,6 @@
 <div id="content">
   <div class="breadcrumb"></div>
-  
+  <?php echo $_SESSION["delete_news_message"]; $_SESSION["delete_news_message"] = "";?>
 	<pre>
 	<?php print_r($this->testparam);?>
 	</pre>
@@ -31,12 +31,17 @@
   <div id="contextMenu">
   <form id='news-context-menu' name='contextMenu' method='post' action="">
   <input type='hidden' name='news-id' value=''/>
+  <input type="hidden" id="delete-action" value="<?php echo $this->baseUrl('admin/newnews/delete');?>">
   <ul id="contextMenu_01">
-  	<li><a href="javascript:void();" name="news-add"><span class="add-menu-item">Add</span></a></li>
-  	<li><a href="javascript:void();" name="news-edit"><span class="edit-menu-item">Edit</span></a></li>
-  	<li><a href="javascript:void();" ><span class="remove-menu-item" id="remove-menu-item_01" actionurl="<?php echo $this->baseUrl('admin/newnews/delete');?>">Remove</span></a></li>
+  	<li><a href="javascript:void();"><span class="add-menu-item" id="add-menu-item_01">Add</span></a></li>
+  	<li><a href="javascript:void();"><span class="edit-menu-item" id="edit-menu-item_01">Edit</span></a></li>
+  	<li><a href="javascript:void();" ><span class="remove-menu-item" id="remove-menu-item_01">Remove</span></a></li>
   	<li><a href="javascript:void();" name="news-detail"><span class="detail-menu-item">Show detail</span></a></li>
   </ul>
   </form>
+  </div>
+  
+  <div id="add-edit-form" title="Add News Dialog">
+ 	<input value="text input">
   </div>
 </div>
