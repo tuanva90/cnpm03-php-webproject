@@ -71,7 +71,7 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$this->view->testparam = $this->_arrParam;
 	}
 	public function deleteAction(){
-		//$this->_arrParam['news-remove'] = $this->_request->getPost('news-remove');
+		// $this->_arrParam['news-remove'] = $this->_request->getPost('news-remove');
 		// get news-id for delete action
 		$this->_arrParam['news-id'] = $this->_request->getPost('news-id');
 		
