@@ -4,7 +4,7 @@
 	<pre>
 	<?php print_r($this->testparam);?>
 	</pre>
-  
+  <?php echo date("m-d-Y H:i:s");?>
   <?php if ($this->Items) { ?>
   <div class="news-list">
     <?php foreach ($this->Items as $news) { ?>
@@ -35,13 +35,41 @@
   <ul id="contextMenu_01">
   	<li><a href="javascript:void();"><span class="add-menu-item" id="add-menu-item_01">Add</span></a></li>
   	<li><a href="javascript:void();"><span class="edit-menu-item" id="edit-menu-item_01">Edit</span></a></li>
-  	<li><a href="javascript:void();" ><span class="remove-menu-item" id="remove-menu-item_01">Remove</span></a></li>
-  	<li><a href="javascript:void();" name="news-detail"><span class="detail-menu-item">Show detail</span></a></li>
+  	<li><a href="javascript:void();"><span class="remove-menu-item" id="remove-menu-item_01">Remove</span></a></li>
+  	<li><a href="javascript:void();"><span class="detail-menu-item" id="detail-menu-item_01">Show detail</span></a></li>
   </ul>
   </form>
   </div>
   
   <div id="add-edit-form" title="Add News Dialog">
- 	<input value="text input">
+  <form id="add-news-form" name="add-news-form" method="post" action="<?php echo $this->baseUrl('admin/newnews/save')?>">
+  	<input type="hidden" name="save-news-id" value=""/>
+  	<fieldset>
+ 	<legend>Thông tin chung</legend>
+ 	<span style="width:100px; display:inline-block">Image</span><input type="text" name="image" size="60"><br/>
+ 	<span style="width:100px; display:inline-block">Sort order</span><input type="text" name="sort-order" size="3"><br/>
+ 	<span style="width:100px; display:inline-block">Status</span><select name="status"><option value="1">Enable</option><option value="2">Disable</option></select><br/>
+ 	</fieldset>
+ 	
+ 	<fieldset>
+ 	<legend>Phiên bản tiếng việt</legend>
+ 	Title<br/><input type="text" name="vi_title" size="83"><br/>
+ 	Summary<br/><textarea cols="80" rows="2" name="vi_summary"></textarea><br/>
+ 	Description<br/><textarea cols="80" rows="6" name="vi_description"></textarea><br/>
+ 	Meta keywords<br/><input type="text" name="vi_metakeywords" size="60"><br/>
+ 	Meta description<br/><input type="text" name="vi_metadescription" size="60"><br/>
+ 	</fieldset>
+ 	
+ 	<fieldset>
+ 	<legend>Phiên bản tiếng anh</legend>
+ 	Title<br/><input type="text" name="en_title" size="83"><br/>
+ 	Summary<br/><textarea cols="80" rows="2" name="en_summary"></textarea><br/>
+ 	Description<br/><textarea cols="80" rows="6" name="en_description"></textarea><br/>
+ 	Meta keywords<br/><input type="text" name="en_metakeywords" size="60"><br/>
+ 	Meta description<br/><input type="text" name="en_metadescription" size="60"><br/>
+ 	</fieldset>
+ 	
+ 	</form>
   </div>
+  
 </div>

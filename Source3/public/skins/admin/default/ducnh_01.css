@@ -51,3 +51,6 @@ div#highlighter-region
 	background:url('images/bg_menu_active.png');
 	cursor:pointer;
 }
+legend{
+	font-size:large;
+}

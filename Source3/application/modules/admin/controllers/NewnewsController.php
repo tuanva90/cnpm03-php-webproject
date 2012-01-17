@@ -19,6 +19,8 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 	public function init(){
 		// mang tham so nhan duoc o moi action
 		$this->_arrParam = $this->_request->getParams();
+		$this->_arrParam['user'] = 'ducnh'; 
+		$this->_arrParam['date'] = date("m-d-Y H:i:s");
 
 		// Duong dan cua Controller;
 		$this->_currentController = '/'.$this->_arrParam['module'].'/'.$this->_arrParam['controller'];
@@ -66,8 +68,6 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$this->view->paginator = $paginator->createPaginator($totalItems, $this->_paginator);
 		
 		// 
-		//$this->_arrParam['news-remove'] = $this->_request->getPost('news-remove');
-		//$this->_arrParam['news-id'] = $this->_request->getPost('news-id');
 		$this->view->testparam = $this->_arrParam;
 	}
 	public function deleteAction(){
@@ -81,7 +81,20 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$_SESSION['delete_news_message'] = "Delete success!";
 		$this->_helper->redirector('index', 'newnews', 'admin');
 	}
-	public function addAction(){
+	public function saveAction(){
+		$adminnews = new Admin_Model_NewNews();
+		if ($this->_arrParam['save-news-id'] == ""){
+			$adminnews->saveItem($this->_arrParam, array('task'=>'add'));
+			$_SESSION['add_news_message'] = "Add news success!";
+		}
+		else{
+			$adminnews->saveItem($this->_arrParam, array('task'=>'edit'));
+			$_SESSION['edit_news_message'] = "Edit news success!";
+		}
+		
+		$this->_helper->redirector('index','newnews', 'admin');
+	}
+	public function uploadAction(){
 		
 	}
 }
