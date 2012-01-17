@@ -46,4 +46,19 @@ class Admin_Model_NewNews extends Honey_Db_Table{
 		$db->delete($this->getPrefix().'news', $where);
 		$db->delete($this->getPrefix().'news_description', $where);
 	}
+	
+	public function saveItem($arrParam = null, $option = null)
+	{
+		$db = Zend_Registry::get('connectDB');
+		if ($option['task'] == 'add')
+		{
+			$thenews = array(
+				'author'=> $arrParam['user'],
+				'image'=> $arrParam['image'],
+				'sort-order'=> $arrParam['sort-order'],
+				'status'=> $arrParam['status'],
+				'date_added'=> $arrParam['date']
+			)
+		}
+	}
 }
