@@ -55,10 +55,36 @@ class Admin_Model_NewNews extends Honey_Db_Table{
 			$thenews = array(
 				'author'=> $arrParam['user'],
 				'image'=> $arrParam['image'],
-				'sort-order'=> $arrParam['sort-order'],
+				'sort_order'=> $arrParam['sort-order'],
 				'status'=> $arrParam['status'],
 				'date_added'=> $arrParam['date']
-			)
+			);
+			$db->insert($this->getPrefix().'news', $thenews);
+			
+			$newsid = $db->lastInsertId();
+			
+			$thenews_description_vi = array(
+				'news_id' => $newsid,
+				'language' => 'vi_VN',
+				'title' => $arrParam['vi_title'],
+				'summary' => $arrParam['vi_summary'],
+				'description' => $arrParam['vi_description'],
+				'meta_keywords' => $arrParam['vi_metakeywords'],
+				'meta_description' => $arrParam['vi_metadescription']
+			);
+			
+			$thenews_description_en = array(
+				'news_id' => $newsid,
+				'language' => 'en_US',
+				'title' => $arrParam['en_title'],
+				'summary' => $arrParam['en_summary'],
+				'description' => $arrParam['en_description'],
+				'meta_keywords' => $arrParam['en_metakeywords'],
+				'meta_description' => $arrParam['en_metadescription']
+			);
+			
+			$db->insert($this->getPrefix().'news_description', $thenews_description_vi);
+			$db->insert($this->getPrefix().'news_description', $thenews_description_en);
 		}
 	}
 }
