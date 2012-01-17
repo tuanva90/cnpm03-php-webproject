@@ -37,6 +37,10 @@ $(document).ready(function(){
 		$('#add-edit-form').dialog("open");
 	});
 	
+	$('#edit-menu-item_01').click(function(){
+		$('#add-edit-form').after("<input type='hidden' name='save-news-id' value='" + _currentNewsID + "'/>");
+		$('#add-edit-form').dialog("open");
+	});
 	$('#upload-news-image').click(function(){
 		var addaction = $('#add-action-url').val();
 		$('#add-news-form').action(addaction);
