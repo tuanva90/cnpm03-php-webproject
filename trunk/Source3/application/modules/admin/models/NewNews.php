@@ -87,4 +87,14 @@ class Admin_Model_NewNews extends Honey_Db_Table{
 			$db->insert($this->getPrefix().'news_description', $thenews_description_en);
 		}
 	}
+	public function testfunction()
+	{
+				$db = Zend_Registry::get('connectDB');
+		
+			$result = $db->select()
+					->from(array('n'=>$this->getPrefix().'news'))
+					->joinLeft(array('nd'=>$this->getPrefix().'news_description'), 'n.news_id=nd.news_id')
+					->where('n.news_id = ?',753);
+					return $db->fetchAll($result);
+	}
 }

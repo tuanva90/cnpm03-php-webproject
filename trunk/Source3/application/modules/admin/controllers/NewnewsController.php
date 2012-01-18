@@ -95,6 +95,7 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$this->_helper->redirector('index','newnews', 'admin');
 	}
 	public function uploadAction(){
-		
+		$adminnews = new Admin_Model_NewNews();
+		$this->view->testresult = $adminnews->testfunction();
 	}
 }
