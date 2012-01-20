@@ -3,7 +3,7 @@
  * WDS Project - WDS
  * @name ErrorController.php
  * @package application/modules/front/controllers
- * @author Đặng Văn Huy
+ * @author Ä�áº·ng VÄƒn Huy
  * @version 1.0
  * License http://cnpm03-php-webproject.googlecode.com/svn/trunk/
  */
@@ -75,19 +75,19 @@ class ErrorController extends Zend_Controller_Action {
 	private function Wlog() {
 		/**
 		 * Log File Contents
-		 * Chứa phần đầu - thông tin website - thời gian và hệ thống
-		 * Phần thân chưa thông tin lỗi
+		 * Chá»©a pháº§n Ä‘áº§u - thÃ´ng tin website - thá»�i gian vÃ  há»‡ thá»‘ng
+		 * Pháº§n thÃ¢n chÆ°a thÃ´ng tin lá»—i
 		 * @var $errorMessage String
 		 */
-		// Khởi tạo đối tượng thông tin lỗi
+		// Khá»Ÿi táº¡o Ä‘á»‘i tÆ°á»£ng thÃ´ng tin lá»—i
 		$exp = $this->_error->exception;
 		$errorMessage = get_class ( $exp );
 		
-		// Thông tin bắt đầu bằng mã lỗi nếu có
+		// ThÃ´ng tin báº¯t Ä‘áº§u báº±ng mÃ£ lá»—i náº¿u cÃ³
 		if ($exp->getCode ()) {
 			$errorMessage .= ' (' . $exp->getCode () . ') ';
 		}
-		// Thông tin được ghi thành từng dòng
+		// ThÃ´ng tin Ä‘Æ°á»£c ghi thÃ nh tá»«ng dÃ²ng
 		$errorMessage .= PHP_EOL . 'Message: ' . $exp->getMessage () . PHP_EOL . 'Stack trace: ' . count ( $exp->getTrace () ) . PHP_EOL;
 		$numTrace = 0;
 		foreach ( $exp->getTrace () as $trace ) {
@@ -95,34 +95,35 @@ class ErrorController extends Zend_Controller_Action {
 		}
 		$errorMessage .= PHP_EOL;
 		
-		// Tạo định dạng phần đầu cho files log [Tùy Chọn]
+		// Táº¡o Ä‘á»‹nh dáº¡ng pháº§n Ä‘áº§u cho files log [TÃ¹y Chá»�n]
 		$logFormat = 'Honey CMS - %timestamp%' . PHP_EOL . '%priorityName% [%priority%]: %message%' . PHP_EOL;
 		
-		// Đường dẫn và tên của file logs
+		// Ä�Æ°á»�ng dáº«n vÃ  tÃªn cá»§a file logs
 		$logFile = TEMP_PATH . DS . 'logs' . DS . date ( 'd-m-Y' ) . '.log';
 		
-		// Mở file logs
+		// Má»Ÿ file logs
 		$stream = @fopen ( $logFile, 'a', false );
-		// Nếu như không mở được hay file log chưa được tạo
+		// Náº¿u nhÆ° khÃ´ng má»Ÿ Ä‘Æ°á»£c hay file log chÆ°a Ä‘Æ°á»£c táº¡o
 		if (! $stream) {
-			// Tạo file logs mới
+			// Táº¡o file logs má»›i
 			$stream = @fopen ( $logFile, 'w', false );
 		}
-		// Khởi tạo đối tượng ghi log vào files
+		/*
+		// Khá»Ÿi táº¡o Ä‘á»‘i tÆ°á»£ng ghi log vÃ o files
 		$logWriter = new Zend_Log_Writer_Stream ( $stream );
-		// Thiết lập định dạng file log theo tùy chọn định dạng
+		// Thiáº¿t láº­p Ä‘á»‹nh dáº¡ng file log theo tÃ¹y chá»�n Ä‘á»‹nh dáº¡ng
 		$logWriter->setFormatter ( New Zend_Log_Formatter_Simple ( $logFormat ) );
 		
-		// Khởi tạo đối tượng điểu khiển log
+		// Khá»Ÿi táº¡o Ä‘á»‘i tÆ°á»£ng Ä‘iá»ƒu khiá»ƒn log
 		$logController = new Zend_Log ();
 		
-		// Thêm bộ lọc lỗi [Tùy Chọn]
+		// ThÃªm bá»™ lá»�c lá»—i [TÃ¹y Chá»�n]
 		//$logController->addFilter(new Zend_Log_Filter_Priority(Zend_Log::DEBUG));		
 
-		// Thêm định dạng cho đối tượng ghi logs             
+		// ThÃªm Ä‘á»‹nh dáº¡ng cho Ä‘á»‘i tÆ°á»£ng ghi logs             
 		$logController->addWriter ( $logWriter );
-		// Ghi logs theo định dạng trên
-		$logController->log ( $errorMessage, Zend_Log::DEBUG );
+		// Ghi logs theo Ä‘á»‹nh dáº¡ng trÃªn
+		$logController->log ( $errorMessage, Zend_Log::DEBUG );*/
 	}
 	
 	public function notify() {

@@ -71,8 +71,9 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$this->view->testparam = $this->_arrParam;
 	}
 	public function deleteAction(){
-		// $this->_arrParam['news-remove'] = $this->_request->getPost('news-remove');
-		// get news-id for delete action
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+		
 		$this->_arrParam['news-id'] = $this->_request->getPost('news-id');
 		
 		$adminews = new Admin_Model_NewNews();
@@ -82,6 +83,9 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$this->_helper->redirector('index', 'newnews', 'admin');
 	}
 	public function saveAction(){
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+		
 		$adminnews = new Admin_Model_NewNews();
 		if ($this->_arrParam['save-news-id'] == ""){
 			$adminnews->saveItem($this->_arrParam, array('task'=>'add'));
@@ -95,7 +99,7 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$this->_helper->redirector('index','newnews', 'admin');
 	}
 	public function uploadAction(){
-		$adminnews = new Admin_Model_NewNews();
-		$this->view->testresult = $adminnews->testfunction();
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
 	}
 }

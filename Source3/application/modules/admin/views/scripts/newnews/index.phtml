@@ -1,3 +1,122 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	var _currentNewsID;
+	//
+	$('#contextMenu').hide();
+	
+	$('.editable-item').mouseenter(function(e){
+		if($('#contextMenu').css('display')=='block') return false;
+		e.stopPropagation();
+		_currentNewsID = $(this).attr('newsid');
+		var offset = $(this).offset();
+		$('#highlighter-region').css('position','absolute');
+		$('#highlighter-region').css('top', offset.top);
+		$('#highlighter-region').css('left', offset.left);
+		$('#highlighter-region').css('width',$(this).width());
+		$('#highlighter-region').css('height',$(this).height());
+		$('#highlighter-region').css('display','block');
+		
+	});
+	
+	$('#highlighter-region').click(function(e){
+		e.stopPropagation();
+		$('#contextMenu').css('top',e.pageY);
+		$('#contextMenu').css('left',e.pageX);
+		$('#contextMenu').find('input[name=news-id]').val(_currentNewsID);
+		$('#contextMenu').show();
+		
+	});
+	
+	$('#remove-menu-item_01').click(function(){
+		var actionurl = $("#delete-action").val();
+		$('#news-context-menu').attr('action',actionurl);
+		$('#news-context-menu').submit();
+	});
+	
+	$('#add-menu-item_01').click(function(){
+		$('#add-form').dialog("open");
+	});
+	
+	$('#edit-menu-item_01').bind('click',function(){
+		alert(_currentNewsID);		
+		$.ajax({
+			type:'POST',
+			url:'<?php echo $this->baseUrl('admin/services/getnews')?>',
+			data:{newsid:_currentNewsID},
+			dataType:'json',
+			success:function(json){
+				if(json.success){
+					$('#edit-news-form input[name=save-news-id]').val(json.news_id);
+					$('#edit-news-form img[name=image]').attr('src',json.image);
+					$('#edit-news-form input[name=sort-order]').val(json.sort_order);
+					$('#edit-news-form select[name=status]').val(json.status);
+					if(json.en_language)
+					{
+						$('#edit-news-form fieldset input[name=en_title]').val(json.en_title);
+						$('#edit-news-form fieldset textarea[name=en_summary]').val(json.en_summary);
+						$('#edit-news-form fieldset textarea[name=en_description]').val(json.en_description);
+						$('#edit-news-form fieldset input[name=en_metakeywords]').val(json.en_meta_keywords);
+						$('#edit-news-form fieldset input[name=en_metadescription]').val(json.en_meta_description);
+					}
+					if(json.vi_language)
+					{
+						$('#edit-news-form fieldset input[name=vi_title]').val(json.vi_title);
+						$('#edit-news-form fieldset textarea[name=vi_summary]').val(json.vi_summary);
+						$('#edit-news-form fieldset textarea[name=vi_description]').val(json.vi_description);
+						$('#edit-news-form fieldset input[name=vi_metakeywords]').val(json.vi_meta_keywords);
+						$('#edit-news-form fieldset input[name=vi_metadescription]').val(json.vi_meta_description);
+					}
+					alert(json.success);
+				}
+				if(json.error){
+					alert(json.error);
+				}
+			}			
+		});
+		
+
+		$('#edit-form').dialog("open");
+	});
+});
+$(function(){
+	//
+	$(document).click(function(){
+		$('#highlighter-region').hide();
+		$('#contextMenu').hide();
+	});
+	
+	//
+	$('#add-form').dialog({
+			autoOpen:false,
+			modal:true,
+			width:500,
+			height:500,
+			buttons: {
+				"Save": function() {
+					$('#add-news-form').submit();
+				},
+				Cancel: function() {
+					$( this ).dialog( "close" );
+				}
+			}});
+	
+	//
+	$('#edit-form').dialog({
+		autoOpen:false,
+		modal:true,
+		width:500,
+		height:500,
+		buttons:{
+			"Save":function(){
+				$('#edit-news-form').submit();
+			},
+			Cancel:function(){
+				$(this).dialog("close");
+			}
+		}
+	});
+});
+</script>
 <div id="content">
   <div class="breadcrumb"></div>
   <?php echo $_SESSION["delete_news_message"]; $_SESSION["delete_news_message"] = "";?>
@@ -45,12 +164,42 @@
   
   <div id="add-form" title="Add News Dialog">
   <form id="add-news-form" name="add-news-form" method="post" action="<?php echo $this->baseUrl('admin/newnews/save')?>">
-  	<input type="hidden" name="save-news-id" value=""/>
   	<fieldset>
  	<legend>Thông tin chung</legend>
  	<span style="width:100px; display:inline-block">Image</span><input type="text" name="image" size="60"><br/>
  	<span style="width:100px; display:inline-block">Sort order</span><input type="text" name="sort-order" size="3"><br/>
- 	<span style="width:100px; display:inline-block">Status</span><select name="status"><option value="1">Enable</option><option value="2">Disable</option></select><br/>
+ 	<span style="width:100px; display:inline-block">Status</span><select name="status"><option value="1">Enable</option><option value="0">Disable</option></select><br/>
+ 	</fieldset>
+ 	
+ 	<fieldset>
+ 	<legend>Phiên bản tiếng việt</legend>
+ 	Title<br/><input type="text" name="vi_title" size="83"><br/>
+ 	Summary<br/><textarea cols="80" rows="2" name="vi_summary"></textarea><br/>
+ 	Description<br/><textarea cols="80" rows="6" name="vi_description"></textarea><br/>
+ 	Meta keywords<br/><input type="text" name="vi_metakeywords" size="60"><br/>
+ 	Meta description<br/><input type="text" name="vi_metadescription" size="60"><br/>
+ 	</fieldset>
+ 	
+ 	<fieldset>
+ 	<legend>Phiên bản tiếng anh</legend>
+ 	Title<br/><input type="text" name="en_title" size="83"><br/>
+ 	Summary<br/><textarea cols="80" rows="2" name="en_summary"></textarea><br/>
+ 	Description<br/><textarea cols="80" rows="6" name="en_description"></textarea><br/>
+ 	Meta keywords<br/><input type="text" name="en_metakeywords" size="60"><br/>
+ 	Meta description<br/><input type="text" name="en_metadescription" size="60"><br/>
+ 	</fieldset>
+ 	
+ 	</form>
+  </div>
+  
+  <div id="edit-form" title="Edit News Dialog">
+  <form id="edit-news-form" name="edit-news-form" method="post" action="<?php echo $this->baseUrl('admin/newnews/save')?>">
+  	<input type="hidden" name="save-news-id" value=""/>
+  	<fieldset>
+ 	<legend>Thông tin chung</legend>
+ 	<span style="width:100px; display:inline-block">Image</span><img src="" name="image"><a href="javascript:void();" id="edit-news-change-image">Change</a><br/>
+ 	<span style="width:100px; display:inline-block">Sort order</span><input type="text" name="sort-order" size="3"><br/>
+ 	<span style="width:100px; display:inline-block">Status</span><select name="status"><option value="1">Enable</option><option value="0">Disable</option></select><br/>
  	</fieldset>
  	
  	<fieldset>
