@@ -42,6 +42,9 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		// Luu cac du lieu filter vao SESSION
 		// Dat ten SESSION
 		
+		$_SESSION['edit_news_message'] = "";
+		$_SESSION['add_news_message'] = "";
+		$_SESSION['delete_news_message'] = "";
 		
 		/**
 		 * View
@@ -82,19 +85,25 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$_SESSION['delete_news_message'] = "Delete success!";
 		$this->_helper->redirector('index', 'newnews', 'admin');
 	}
+	public function addAction(){
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+		
+		$adminnews = new Admin_Model_NewNews();
+		
+		$adminnews->saveItem($this->_arrParam, array('task'=>'add'));
+		$_SESSION['add_news_message'] = "Add news success!";
+		
+		$this->_helper->redirector('index','newnews', 'admin');
+	}
 	public function saveAction(){
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 		
 		$adminnews = new Admin_Model_NewNews();
-		if ($this->_arrParam['save-news-id'] == ""){
-			$adminnews->saveItem($this->_arrParam, array('task'=>'add'));
-			$_SESSION['add_news_message'] = "Add news success!";
-		}
-		else{
-			$adminnews->saveItem($this->_arrParam, array('task'=>'edit'));
-			$_SESSION['edit_news_message'] = "Edit news success!";
-		}
+		
+		$adminnews->saveItem($this->_arrParam, array('task'=>'edit'));
+		$_SESSION['edit_news_message'] = "Edit news success!";
 		
 		$this->_helper->redirector('index','newnews', 'admin');
 	}
