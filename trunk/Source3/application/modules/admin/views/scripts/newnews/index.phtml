@@ -163,7 +163,7 @@ $(function(){
   </div>
   
   <div id="add-form" title="Add News Dialog">
-  <form id="add-news-form" name="add-news-form" method="post" action="<?php echo $this->baseUrl('admin/newnews/save')?>">
+  <form id="add-news-form" name="add-news-form" method="post" action="<?php echo $this->baseUrl($this->currentController.'/add')?>">
   	<fieldset>
  	<legend>Thông tin chung</legend>
  	<span style="width:100px; display:inline-block">Image</span><input type="text" name="image" size="60"><br/>
@@ -193,7 +193,7 @@ $(function(){
   </div>
   
   <div id="edit-form" title="Edit News Dialog">
-  <form id="edit-news-form" name="edit-news-form" method="post" action="<?php echo $this->baseUrl('admin/newnews/save')?>">
+  <form id="edit-news-form" name="edit-news-form" method="post" action="<?php echo $this->baseUrl($this->currentController.'/save')?>">
   	<input type="hidden" name="save-news-id" value=""/>
   	<fieldset>
  	<legend>Thông tin chung</legend>

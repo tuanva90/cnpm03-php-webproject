@@ -86,6 +86,39 @@ class Admin_Model_NewNews extends Honey_Db_Table{
 			$db->insert($this->getPrefix().'news_description', $thenews_description_vi);
 			$db->insert($this->getPrefix().'news_description', $thenews_description_en);
 		}
+		elseif ($option['task'] == 'edit')
+		{
+			$where = 'news_id = '.$arrParam['save-news-id'];
+			
+			$thenews = array(
+				'image'=> $arrParam['image'],
+				'sort_order'=> $arrParam['sort-order'],
+				'status'=> $arrParam['status'],
+				'date_modified'=> $arrParam['date']
+			);
+			$db->update($this->getPrefix().'news',$thenews,$where);
+			
+			$thenews_description_vi = array(
+				'title' => $arrParam['vi_title'],
+				'summary' => $arrParam['vi_summary'],
+				'description' => $arrParam['vi_description'],
+				'meta_keywords' => $arrParam['vi_metakeywords'],
+				'meta_description' => $arrParam['vi_metadescription']
+			);
+			$where = 'news_id = '.$arrParam['save-news-id'].' and language = \'vi_VN\'';
+			$db->update($this->getPrefix().'news_description',$thenews_description_vi,$where);
+			
+			$thenews_description_en = array(
+				'title' => $arrParam['en_title'],
+				'summary' => $arrParam['en_summary'],
+				'description' => $arrParam['en_description'],
+				'meta_keywords' => $arrParam['en_metakeywords'],
+				'meta_description' => $arrParam['en_metadescription']
+			);
+			$where = 'news_id = '.$arrParam['save-news-id'].' and language = \'en_US\'';
+			$db->update($this->getPrefix().'news_description',$thenews_description_en,$where);
+			
+		}
 	}
 	public function testfunction()
 	{
