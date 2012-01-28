@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2012 at 03:41 PM
+-- Generation Time: Jan 28, 2012 at 04:13 PM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -34,13 +34,14 @@ CREATE TABLE IF NOT EXISTS `cms_module` (
   `sort_order` tinyint(2) DEFAULT NULL,
   `option` text COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`module_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `cms_module`
 --
 
 INSERT INTO `cms_module` (`module_id`, `name`, `file_name`, `is_showed`, `position`, `sort_order`, `option`) VALUES
-(1, 'Login', 'BlkLogin', '1', 1, 1, 'show-keep-signin=1;show-forgot-password=1;'),
-(2, 'Newest Product', 'BlkNewestProduct', '1', 1, 2, 'amout-item=5;'),
-(3, 'Impressive Product', 'BlkImpressiveProduct', '1', 1, 3, 'amout-item=5;');
+(1, 'Login', 'BlkLogin', '1', 1, 1, '$use_forgot_password_link=1;$use_keep_signed_in=1;'),
+(2, 'Newest Product', 'BlkNewestProduct', '1', 1, 2, '$amount_items=5;'),
+(3, 'Impressive Product', 'BlkImpressiveProduct', '1', 1, 3, '$amount_items=10;'),
+(5, 'Header', '', '1', 0, 0, '$banner=''header_1.jpg'';$title=''C&C13'';$welcome_text=''Bring you the easiest way to own Websites.'';');
