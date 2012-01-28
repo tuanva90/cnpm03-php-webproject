@@ -1,8 +1,8 @@
 <script type="text/javascript">
+
 $(function(){
-	$("#edit-impressive-product").button().click(function(){
-		$("#edit-impressive-product-form").dialog("open");
-	});
+	var amount_items = <?php echo $amount_items;?>;
+	$("#txtMaxAmount").val(amount_items);
 
 	$("#edit-impressive-product-form").dialog({
 		autoOpen: false,
@@ -11,14 +11,19 @@ $(function(){
 		modal: true,
 		buttons: {
 			"Save": function() {
+				amount_items = $("#txtMaxAmout").val();
+				this.dialog("close");
 			},
 			Cancel: function() {
 				$( this ).dialog( "close" );
 			}
-		},
-		close: function() {
-			allFields.val( "" ).removeClass( "ui-state-error" );
 		}
+	});
+
+	$("#edit-impressive-product").button().click(function(){
+		$("#txtMaxAmount").val(amount_items);
+		alert($("#txtMaxAmount").val());
+		$("#edit-impressive-product-form").dialog("open");
 	});
 });
 </script>
@@ -34,6 +39,6 @@ $(function(){
 <div id="edit-impressive-product-form" title="Edit Impressive Product Module">
 	<form>
 		<input type="checkbox" name="chkIsShowed" id=chkIsShowed checked="checked"/>Use this module.<br>
-		Amount of items to show: <input type="text" maxlength="2" size="5" value="5" name="txtMaxAmount" id="txtMaxAmount"/>
+		Amount of items to show: <input type="text" maxlength="2" size="5" value="2" name="txtMaxAmount" id="txtMaxAmount"/>
 	</form>
 </div>
