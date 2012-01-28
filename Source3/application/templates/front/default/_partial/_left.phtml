@@ -1,7 +1,8 @@
 <?php
 $modules = new Front_Model_Module();
-$module_list = $modules->listItem(1);
-foreach($module_list as $module) {
+$moduleList = $modules->listItem(1);
+foreach($moduleList as $module) {
 	$functionName = $module['file_name'];
-	echo $this->$functionName();
+	$info = $module;
+	echo $this->$functionName($info);
 }

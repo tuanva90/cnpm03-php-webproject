@@ -5,7 +5,7 @@ var pageTitle = "C&C13";
 var welcomeText = "Bring you the easiest way to own Websites";
 
 $(function() {
-	function updateValue() {
+	function updateHeader() {
 		$("#banner").attr("src", imageRoot + '/' + imageLink);
 		$("#page-title").html(pageTitle);
 		$("#welcome-text").html(welcomeText);
@@ -40,7 +40,7 @@ $(function() {
 				imageLink = $("#txtUrl").val();
 				pageTitle = $("#txtTitle").val();
 				welcomeText = $("#txtWelcomeText").val();
-				updateValue();
+				updateHeader();
 				$(this).dialog("close");
 			},
 			Cancel: function() {
@@ -53,7 +53,6 @@ $(function() {
 		$('[name=txtUrl]').val(imageLink);
 		$("#txtTitle").val(pageTitle);
 		$("#txtWelcomeText").val(welcomeText);
-		$("#txtWelcomeText").value = welcomeText;
 		$("#edit-header-form").dialog( "open" );
 	})
 

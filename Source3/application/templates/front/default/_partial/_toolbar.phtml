@@ -1,0 +1,30 @@
+<script>
+function showMessage(message) {
+	$("#message-content").html(message);
+	$("#message").dialog("open");
+};
+
+function closeMessage() {
+	$("#message").dialog("close");
+};
+
+$(function(){
+	//Init message dialog
+	$("#message").dialog({
+		autoOpen: false,
+		height: 100,
+		width: 200,
+		modal: true
+	});
+});
+</script>
+
+<!-- Define MessageBox with default information -->
+<div id="message">
+	<p id="message-content" align="center">Saving...</p>
+</div>
+
+<!-- Toolbar for administrator's editor mode -->
+<div id="admin-toolbar">
+
+</div>
