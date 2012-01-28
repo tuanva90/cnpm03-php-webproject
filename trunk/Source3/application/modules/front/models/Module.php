@@ -29,6 +29,16 @@ class Front_Model_Module extends Honey_Db_Table{
   		return $result;
   	}
   	
+  	public function getItemByName($name) {
+  		$db = Zend_Registry::get('connectDB');
+  		$select = $db->select()
+  				  ->from('cms_module')
+  				  ->where('name = ?', $name);
+  		
+		$result = $db->fetchRow($select);
+  		return $result;
+  	}
+  	
   	public function updateItem($arrParram) {
   		$db = Zend_Registry::get('connectDB');
 		$where = 'module_id ='.$arrParram['module_id'];

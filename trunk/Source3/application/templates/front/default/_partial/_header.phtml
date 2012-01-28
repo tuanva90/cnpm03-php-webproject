@@ -1,14 +1,53 @@
+<?php
+//Get options from database
+$modules = new Front_Model_Module();
+$header = $modules->getItemByName("Header");
+
+//set default values;
+$banner = "header_1.jpg";
+$title = "C&C1";
+$welcome_text = "Bring you the easiest way to own Websites.";
+
+if($header!=null) {
+	//if header's information exists in db, load option
+	eval($header['option']);
+} else {
+	$header = array("name" => "Header", "module_id" => "", "file_name" => "");
+}
+?>
 <script>
 var imageRoot = "<?php echo HTTP_IMAGES;?>";
-var imageLink = "header_1.jpg";
-var pageTitle = "C&C13";
-var welcomeText = "Bring you the easiest way to own Websites";
+var imageLink = "<?php echo $banner;?>";
+var pageTitle = "<?php echo $title;?>";
+var welcomeText = "<?php echo $welcome_text;?>";
 
 $(function() {
 	function updateHeader() {
 		$("#banner").attr("src", imageRoot + '/' + imageLink);
 		$("#page-title").html(pageTitle);
 		$("#welcome-text").html(welcomeText);
+		var option_str = "$banner='" + imageLink + "';$title='" + pageTitle + "';$welcome_text='" + welcomeText +"';"
+
+		$.ajax({
+			type: 'POST',
+			url: 'front/index/saveblock',
+			dataType: 'json',
+			data: {
+				module_id: "<?php echo $header['module_id'];?>",
+				name: "<?php echo $header['name'];?>",
+				file_name: "<?php echo $header['file_name'];?>",
+				is_showed: 1,
+				position: 0,
+				sort_order: 0,
+				option: option_str
+			},
+			success: function(data) {
+				closeMessage();	
+			},
+			error: function(request, error) {
+				showMessage("Error! <br> Detail: <br>" + request.responseText);
+			}	
+		});
 	}
 	
 	$("#banner").attr("src", imageRoot + '/' + imageLink);
@@ -40,6 +79,8 @@ $(function() {
 				imageLink = $("#txtUrl").val();
 				pageTitle = $("#txtTitle").val();
 				welcomeText = $("#txtWelcomeText").val();
+
+				showMessage("Saving...")
 				updateHeader();
 				$(this).dialog("close");
 			},
