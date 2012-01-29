@@ -1,4 +1,5 @@
 <script>
+var currentLayout="3A";
 function showMessage(message) {
 	$("#message-content").html(message);
 	$("#message").dialog("open");
@@ -16,6 +17,42 @@ $(function(){
 		width: 200,
 		modal: true
 	});
+
+	//Init choose-layout-form dialog
+	$("#choose-layout-form").dialog({
+		autoOpen: false,
+		height: 400,
+		width: 700,
+		modal: true,
+		buttons: {
+			"Save": function(){
+				currentLayout = $("input[name=rdoLayout]:checked").val();
+				$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
+				$(this).dialog("close");
+			},
+			Cancel: function(){
+				$(this).dialog("close");
+			}
+		}
+	});
+
+	//Init toolbar buttons
+	$("#btnSelectModules").button().click(function(){
+		
+	});
+
+	$("#btnSelectLayout").button().click(function(){
+		$("#choose-layout-form").dialog("open");
+		for(i = 0; i < $("input[name=rdoLayout]").length; i++) {
+			if ($("input[name=rdoLayout]")[i].value == currentLayout) {
+				$("input[name=rdoLayout]")[i].checked = true;
+			} else {
+				$("input[name=rdoLayout]")[i].checked = false;
+			}
+		}
+	});
+	
+	$("#btnLayoutModules").button();
 });
 </script>
 
@@ -25,6 +62,21 @@ $(function(){
 </div>
 
 <!-- Toolbar for administrator's editor mode -->
-<div id="admin-toolbar">
+<div id="admin-toolbar" class="ui-widget-header ui-corner-all">
+	<div id="btnSelectModules">Select Modules</div>
+	<div id="btnSelectLayout">Select Layout</div>
+	<div id="btnLayoutModules">Layout Modules</div>
+</div>
 
+<div id="choose-layout-form" title="Select Page Layout">
+	<input type="radio" name="rdoLayout" value="3A">
+	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3A.JPG";?>">
+	<input type="radio" name="rdoLayout" value="3B">
+	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3B.JPG";?>">
+	<input type="radio" name="rdoLayout" value="3C">
+	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3C.JPG";?>"><br>
+	<input type="radio" name="rdoLayout" value="2A">
+	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2A.JPG";?>">
+	<input type="radio" name="rdoLayout" value="2B">
+	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2B.JPG";?>">
 </div>

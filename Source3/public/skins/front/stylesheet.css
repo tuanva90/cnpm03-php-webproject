@@ -662,12 +662,11 @@ a.button:hover span {
 /* footer */ 
 #footer {
 	clear: both;
-	overflow: auto;
-	min-height: 100px;
-	padding: 20px;
+	min-height: 50px;
 	border-top: 1px solid #DBDEE1;
 	border-bottom: 1px solid #DBDEE1;
 	background: #F8F8F8;
+	margin-top: 10px;
 }
 #footer h3 {
 	color: #000000;
@@ -697,7 +696,7 @@ a.button:hover span {
 }
 #powered {
 	margin-top: 5px;
-	text-align: right;
+	text-align: center;
 	clear: both;
 }
 

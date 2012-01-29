@@ -1,0 +1,22 @@
+#col-main {
+	width:560px;
+	float: left;
+	min-height: 500px;
+	position: relative;
+	background-color: white;
+	margin: 0px 10px;
+}
+
+#col-1 {
+	width: 200px;
+	float:left;
+	min-height: 500px;
+	position: relative;
+}
+
+#col-2 {
+	width: 200px;
+	float:right;
+	min-height: 500px;
+	position: relative;
+}
