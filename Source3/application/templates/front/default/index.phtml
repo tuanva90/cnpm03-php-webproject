@@ -14,15 +14,17 @@
 			<?php echo $this->render('_partial/_toolbar.phtml');?>
 			<?php echo $this->render('_partial/_header.phtml');?>
 			
-			<div id="col-1">
+			<div id="col-1" class="changeable">
 				<?php echo $this->render('_partial/_left.phtml');?>
 			</div>
 			
-			<div id="col-main">
-				<?php echo $this->layout()->content ?>
+			<div id="col-main" class="changeable">
+				<div id="main-content">
+					<?php echo $this->layout()->content ?>
+				</div>
 			</div>
 			
-			<div id="col-2">
+			<div id="col-2" class="changeable">
 				<?php echo $this->render('_partial/_right.phtml');?>
 			</div>
 			

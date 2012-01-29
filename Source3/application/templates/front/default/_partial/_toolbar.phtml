@@ -55,7 +55,7 @@ $(function(){
 	});
 
 	//Init toolbar buttons
-	$("#btnSelectModules").button().click(function(){
+	$("#btnMoreModules").button().click(function(){
 		
 	});
 
@@ -70,10 +70,34 @@ $(function(){
 		}
 	});
 	
-	$("#btnLayoutModules").button();
+	$("#chkLayoutModules").button().click(function(){
+		if($(this).is(":checked")) {
+			//Turn on Layout Mode
+			$(this).button({
+				label: "Layout Mode: ON"
+				});
+			$(".state-changable-button").button("option", "disabled", true);
+			$("#col-1, #col-2, #col-main").sortable("enable");
+		} else {
+			//Turn off Layout Mode
+			$(this).button({
+				label: "Layout Mode: OFF"
+				});
+			$(".state-changable-button").button("option", "disabled", false);
+			$("#col-1, #col-2, #col-main").sortable("disable");
+		}
+	});
 
 	//Layout followed setting
 	$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
+
+	//Allow sort modules but disable until turn on Layout Mode
+	$("#col-1, #col-2, #col-main").sortable({
+		connectWith: ".changeable",
+		cancel: "#main-content"
+	});
+	$("#col-1, #col-2, #col-main").disableSelection();
+	$("#col-1, #col-2, #col-main").sortable("disable");
 });
 </script>
 
@@ -84,9 +108,10 @@ $(function(){
 
 <!-- Toolbar for administrator's editor mode -->
 <div id="admin-toolbar" class="ui-widget-header ui-corner-all">
-	<div id="btnSelectModules">Select Modules</div>
-	<div id="btnSelectLayout">Select Layout</div>
-	<div id="btnLayoutModules">Layout Modules</div>
+	<div id="btnMoreModules" class="state-changable-button">More Modules</div>
+	<div id="btnSelectLayout" class="state-changable-button">Select Layout</div>
+	<input type="checkbox" id="chkLayoutModules"/>
+	<label for="chkLayoutModules">Layout Mode: OFF</label>
 </div>
 
 <div id="choose-layout-form" title="Select Page Layout">

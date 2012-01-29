@@ -23,7 +23,9 @@ $(function(){
 <div class="ui-widget-content ui-conner-all module" id="newest-product">
 	<div class="ui-widget-header ui-corner-all module-title">
 		<h3>Newest Product</h3>
-		<div class="edit-button"><button id='edit-newest-product'>...</button></div>
+		<div class="edit-button">
+			<button id='edit-newest-product' class="state-changable-button">...</button>
+		</div>
 	</div>
 	<p>Content of Newest Product Module.</p>
 </div>

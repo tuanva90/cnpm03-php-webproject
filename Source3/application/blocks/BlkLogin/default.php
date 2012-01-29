@@ -99,7 +99,9 @@ $(function(){
 <div class="ui-widget-content ui-conner-all module" id="login">
 	<div class="ui-widget-header ui-corner-all module-title">
 		<h3>Login</h3>
-		<div class="edit-button"><button id='edit-login'>...</button></div>
+		<div class="edit-button">
+			<button id='edit-login' class="state-changable-button">...</button>
+		</div>
 	</div>
 	Username:<br> 
 	<input type="text" name="txtUserName" id="txtUserName" maxlength="50" size="25"/><br>
