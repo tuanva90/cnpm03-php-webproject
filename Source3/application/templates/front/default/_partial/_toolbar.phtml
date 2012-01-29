@@ -1,5 +1,8 @@
+<?php
+$layoutConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "layout"); 
+?>
 <script>
-var currentLayout="3A";
+var currentLayout="<?php echo $layoutConfig->currentLayout;?>";
 function showMessage(message) {
 	$("#message-content").html(message);
 	$("#message").dialog("open");
@@ -27,6 +30,21 @@ $(function(){
 		buttons: {
 			"Save": function(){
 				currentLayout = $("input[name=rdoLayout]:checked").val();
+				$.ajax({
+					
+					type: 'POST',
+					url: '<?php echo HTTP_SERVER."front/index/savelayout"?>',
+					dataType: 'json',
+					data: {
+						currentLayout: currentLayout
+					},
+					success: function(data) {
+						closeMessage();	
+					},
+					error: function(request, error) {
+						showMessage("Error! <br> Detail: <br>" + request.responseText);
+					}	
+				});
 				$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
 				$(this).dialog("close");
 			},
@@ -53,6 +71,9 @@ $(function(){
 	});
 	
 	$("#btnLayoutModules").button();
+
+	//Layout followed setting
+	$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
 });
 </script>
 

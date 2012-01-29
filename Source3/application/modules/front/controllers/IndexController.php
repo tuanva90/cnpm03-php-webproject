@@ -31,7 +31,7 @@ class IndexController extends Honey_Controller_Action {
 	public function saveblockAction() {
 		$this->_helper->layout()->disableLayout();
   		$this->_helper->viewRenderer->setNoRender(true);
-  		
+  		try {
   		$info = array(	"module_id" => $_POST['module_id'], 
 						"name" 		=> $_POST['name'],
 						"file_name" => $_POST['file_name'],
@@ -43,7 +43,26 @@ class IndexController extends Honey_Controller_Action {
   		
   		$modules = new Front_Model_Module();
   		$modules->updateItem($info);
+  		} catch (Exception $e) {
+  			echo $e->getMessage();
+  		}
+	}
+	
+	public function savelayoutAction() {
+		$this->_helper->layout()->disableLayout();
+  		$this->_helper->viewRenderer->setNoRender(true);
+  		try {
+  		$layout = $_POST['currentLayout'];
+  		$config = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini",
+  										null,
+			                            array('allowModifications' => true));
+  		$config->currentLayout = $layout;
   		
-		echo json_encode($info);
+  		$writer = new Zend_Config_Writer_Ini(array("config" => $config,
+                                           "filename" => APPLICATION_PATH .DS. "configs/application.ini"));
+  		$writer->write();
+  		} catch (Exception $e) {
+  			echo $e->getMessage();
+  		}
 	}
 }
