@@ -42,8 +42,9 @@ $(function(){
 		}
 
 		$.ajax({
+			
 			type: 'POST',
-			url: 'front/index/saveblock',
+			url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
 			dataType: 'json',
 			data: {
 				module_id: <?php echo $info['module_id'];?>,
@@ -96,7 +97,7 @@ $(function(){
 </script>
 
 <div class="ui-widget-content ui-conner-all module" id="login">
-	<div class="ui-widget-header ui-conner-all module-title">
+	<div class="ui-widget-header ui-corner-all module-title">
 		<h3>Login</h3>
 		<div class="edit-button"><button id='edit-login'>...</button></div>
 	</div>

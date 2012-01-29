@@ -30,7 +30,7 @@ $(function() {
 
 		$.ajax({
 			type: 'POST',
-			url: 'front/index/saveblock',
+			url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
 			dataType: 'json',
 			data: {
 				module_id: "<?php echo $header['module_id'];?>",

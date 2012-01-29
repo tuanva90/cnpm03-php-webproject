@@ -44,33 +44,8 @@ body {
 	font-size: 0.8em;
 }
 
-.toolbar-button {
-	padding: 0 3px;
-	margin: 5px;
-	cursor: pointer;
-	border: thin solid #000;
-	text-align: center;
-	background: #FFF;
-	text-decoration: none;
-	color: #000;
-}
-
-#col-left {
-	width:770px;
-	float: left;
-	margin: 0px;
-	min-height: 500px;
-	position: relative;
-	background-color: white;
-	margin-right: 5px;
-}
-
-#col-right {
-	width: 200px;
-	float:left;
-	margin: 0px 5px 0px 0px;
-	min-height: 500px;
-	position: relative;
+#admin-toolbar {
+	padding: 4px 2px;
 }
 
 .box {

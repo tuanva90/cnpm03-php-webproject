@@ -29,7 +29,7 @@ $(function(){
 </script>
 
 <div class="ui-widget-content ui-conner-all module" id="impressive-product">
-	<div class="ui-widget-header ui-conner-all module-title">
+	<div class="ui-widget-header ui-corner-all module-title">
 		<h3>Impressive Product</h3>
 		<div class="edit-button"> <button id='edit-impressive-product'>...</button></div>
 	</div>
