@@ -88,3 +88,11 @@ body {
 .acticle #headline {
 	font-weight: bold;
 }
+
+.position-highlight {
+	border: 1px solid #fed22f;
+	background: #ffe45c url(ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png) 50% top repeat-x;
+	color: #363636;
+	height: 20px;
+	margin-bottom: 10px;
+}

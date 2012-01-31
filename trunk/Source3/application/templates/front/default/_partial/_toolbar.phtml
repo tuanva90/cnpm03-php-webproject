@@ -2,7 +2,6 @@
 $layoutConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "layout"); 
 ?>
 <script>
-var currentLayout="<?php echo $layoutConfig->currentLayout;?>";
 function showMessage(message) {
 	$("#message-content").html(message);
 	$("#message").dialog("open");
@@ -13,12 +12,70 @@ function closeMessage() {
 };
 
 $(function(){
+	var currentLayout="<?php echo $layoutConfig->currentLayout;?>";
+	var changeLayout = false;
+	var order1, order2, order3;
+
+	//Order a DIV follow a List
+	function orderDIV(object, array) {
+		for(var i=0; i < array.length; i++) {
+			array[i] = $('#' + array[i]);
+			$("#temp").append(array[i]);
+			object.append(array[i]);
+		}
+	}
+		  
+	//If user do not SAVE, reset the DIV order as original order
+	function resetDIVsOrder() {
+		orderDIV($("#col-1"), order1);
+		orderDIV($("#col-2"), order2);
+		orderDIV($("#col-main"), order3);
+	}
+	
 	//Init message dialog
 	$("#message").dialog({
 		autoOpen: false,
 		height: 100,
 		width: 200,
 		modal: true
+	});
+
+	//Init ask dialog
+	$("#ask").dialog({
+		autoOpen: false,
+		height: 150,
+		width: 300,
+		modal: true,
+		buttons: {
+			"Save": function() {
+				//Get the current orderring information
+				order1 = $("#col-1").sortable('toArray');
+				order2 = $("#col-2").sortable('toArray');
+				order3 = $("#col-main").sortable('toArray');
+				
+				$.ajax({
+					type: 'POST',
+					url: '<?php echo HTTP_SERVER."front/index/saveposition"?>',
+					dataType: 'json',
+					data: {
+						col_1: order1, 
+						col_2: order2, 
+						col_main: order3
+					},
+					success: function(data) {
+						closeMessage();	
+					},
+					error: function(request, error) {
+						showMessage("Error! <br> Detail: <br>" + request.responseText);
+					}	
+				});
+				$(this).dialog("close");
+			},
+			Cancel: function() {
+				resetDIVsOrder();
+				$(this).dialog("close");
+			}
+		}
 	});
 
 	//Init choose-layout-form dialog
@@ -74,17 +131,34 @@ $(function(){
 		if($(this).is(":checked")) {
 			//Turn on Layout Mode
 			$(this).button({
-				label: "Layout Mode: ON"
+				label: "Layout Modules Mode: ON"
 				});
 			$(".state-changable-button").button("option", "disabled", true);
 			$("#col-1, #col-2, #col-main").sortable("enable");
+
+			//Get the current orderring information
+			order1 = $("#col-1").sortable('toArray');
+			order2 = $("#col-2").sortable('toArray');
+			order3 = $("#col-main").sortable('toArray');
+			
+			/*var newOrder = $(this).sortable('toArray');
+			var str = "Order1: ";
+            for(i in order1) {
+                str += order1[i] + ", ";
+            }
+            alert(str);*/
 		} else {
 			//Turn off Layout Mode
 			$(this).button({
-				label: "Layout Mode: OFF"
+				label: "Layout Modules Mode: OFF"
 				});
 			$(".state-changable-button").button("option", "disabled", false);
 			$("#col-1, #col-2, #col-main").sortable("disable");
+
+			if(changeLayout == true) {
+				$("#ask").dialog("open");
+				changeLayout = false;
+			}
 		}
 	});
 
@@ -94,16 +168,29 @@ $(function(){
 	//Allow sort modules but disable until turn on Layout Mode
 	$("#col-1, #col-2, #col-main").sortable({
 		connectWith: ".changeable",
-		cancel: "#main-content"
+		cancel: "#main-content",
+		placeholder: "position-highlight",
+		revert: 100,
+		update: function() {
+			changeLayout = true;
+		}
 	});
 	$("#col-1, #col-2, #col-main").disableSelection();
 	$("#col-1, #col-2, #col-main").sortable("disable");
 });
 </script>
 
+<!-- Temporary DIV for orderDIV function -->
+<div id="temp"></div>
+
 <!-- Define MessageBox with default information -->
-<div id="message">
+<div id="message" title="CMS Click and Change">
 	<p id="message-content" align="center">Saving...</p>
+</div>
+
+<!-- Define MessageBox with Yes/No button -->
+<div id="ask" title="CMS Click and Change">
+	<p id="ask-content" align="center">Do you want to save changes you made to Modules Position?</p>
 </div>
 
 <!-- Toolbar for administrator's editor mode -->
@@ -111,9 +198,10 @@ $(function(){
 	<div id="btnMoreModules" class="state-changable-button">More Modules</div>
 	<div id="btnSelectLayout" class="state-changable-button">Select Layout</div>
 	<input type="checkbox" id="chkLayoutModules"/>
-	<label for="chkLayoutModules">Layout Mode: OFF</label>
+	<label for="chkLayoutModules">Layout Modules Mode: OFF</label>
 </div>
 
+<!-- Form for choosing page layout -->
 <div id="choose-layout-form" title="Select Page Layout">
 	<input type="radio" name="rdoLayout" value="3A">
 	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3A.JPG";?>">

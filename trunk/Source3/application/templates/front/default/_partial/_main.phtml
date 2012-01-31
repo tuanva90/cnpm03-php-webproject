@@ -1,0 +1,16 @@
+<?php
+$modules = new Front_Model_Module();
+$moduleList = $modules->listItem(COL_MAIN_POSITION);
+foreach($moduleList as $module) {
+	if($module['name'] == "Main") {
+?>
+		<div id="main-content">
+		<?php echo $this->layout()->content ?>
+		</div>
+<?php
+	} else {
+		$functionName = $module['file_name'];
+		$info = $module;
+		echo $this->$functionName($info);
+	}
+}

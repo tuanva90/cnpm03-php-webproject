@@ -55,4 +55,22 @@ class Front_Model_Module extends Honey_Db_Table{
 		$result = $db->update('cms_module',$module,$where);
 		return $result;
   	}
+  	
+	public static function savePosition($position, $order) {
+		$db = Zend_Registry::get('connectDB');
+		$modules = new Front_Model_Module();
+		$where = null;
+		$temp = null;
+		$result = null;
+		for($i = 0; $i < count($order); $i++) {
+			if($order[$i] != "main-content"){
+				$temp = $modules->getItem($order[$i]);
+				$temp['position'] = $position;
+				$temp['sort_order'] = $i;
+				$where = 'module_id ='.$temp['module_id'];
+				$result = $db->update('cms_module',$temp,$where);
+			}
+		}
+		return $result;
+	}
 }
