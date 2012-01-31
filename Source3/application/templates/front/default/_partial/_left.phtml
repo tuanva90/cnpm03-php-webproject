@@ -1,6 +1,6 @@
 <?php
 $modules = new Front_Model_Module();
-$moduleList = $modules->listItem(1);
+$moduleList = $modules->listItem(COL_1_POSITION);
 foreach($moduleList as $module) {
 	$functionName = $module['file_name'];
 	$info = $module;

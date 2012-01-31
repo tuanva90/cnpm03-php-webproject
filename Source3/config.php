@@ -10,3 +10,8 @@ define('HTTP_JAVASCRIPT', 'http://localhost/CMS-Source3/public/javascript');
 define('HTTP_SCRIPTS', 'http://localhost/CMS-Source3/public/scripts');
 define('HTTP_SKINS', 'http://localhost/CMS-Source3/public/skins');
 define('HTTP_UPLOADS', 'http://localhost/CMS-Source3/public/uploads');
+define('HEADER_POSITION', 0);
+define('COL_1_POSITION', 1);
+define('COL_2_POSITION', 2);
+define('COL_MAIN_POSITION', 3);
+define('FOOTER_POSITION', 4);

@@ -1,20 +1,8 @@
-<div class="ui-widget-content ui-conner-all module" id="module1">
-	<div class="ui-widget-header ui-corner-all module-title">
-		<h3>Module1</h3>
-	</div>
-	<p>Content of Module1 goes here.</p>
-</div>
-
-<div class="ui-widget-content ui-conner-all module" id="module2">
-	<div class="ui-widget-header ui-corner-all module-title">
-		<h3>Module2</h3>
-	</div>
-	<p>Content of Module2 goes here.</p>
-</div>
-
-<div class="ui-widget-content ui-conner-all module" id="module3">
-	<div class="ui-widget-header ui-corner-all module-title">
-		<h3>Module3</h3>
-	</div>
-	<p>Content of Module3 goes here.</p>
-</div>
+<?php
+$modules = new Front_Model_Module();
+$moduleList = $modules->listItem(COL_2_POSITION);
+foreach($moduleList as $module) {
+	$functionName = $module['file_name'];
+	$info = $module;
+	echo $this->$functionName($info);
+}

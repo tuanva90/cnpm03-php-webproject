@@ -65,4 +65,25 @@ class IndexController extends Honey_Controller_Action {
   			echo $e->getMessage();
   		}
 	}
+	
+	public function savepositionAction() {
+		$this->_helper->layout()->disableLayout();
+  		$this->_helper->viewRenderer->setNoRender(true);
+  		try {
+  			if(isset($_POST['col_1'])) {
+  				$col1 = $_POST['col_1'];
+  				Front_Model_Module::savePosition(COL_1_POSITION, $col1);
+  			}
+  			if(isset($_POST['col_2'])) {
+  				$col2 = $_POST['col_2'];
+  				Front_Model_Module::savePosition(COL_2_POSITION, $col2);
+  			}
+  			if(isset($_POST['col_main'])) {
+  				$col_main = $_POST['col_main'];
+  				Front_Model_Module::savePosition(COL_MAIN_POSITION, $col_main);
+  			}
+  		} catch (Exception $e) {
+  			echo "Error: " . $e->getMessage();
+  		}
+	}
 }
