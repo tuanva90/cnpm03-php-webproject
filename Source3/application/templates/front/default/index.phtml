@@ -12,25 +12,26 @@
 	<body>
 		<div id="container">
 			<?php echo $this->render('_partial/_toolbar.phtml');?>
-			<?php echo $this->render('_partial/_header.phtml');?>
-			
-			<div id="col-1" class="changeable">
-				<?php echo $this->render('_partial/_left.phtml');?>
-			</div>
-			
-			<div id="col-main" class="changeable">
-				<?php echo $this->render('_partial/_main.phtml');?>
-				<!-- 
-				<div id="main-content">
-					<?php echo $this->layout()->content ?>
+			<div id="web-body">
+				<?php echo $this->render('_partial/_header.phtml');?>
+				<div id="col-1" class="changeable">
+					<?php echo $this->render('_partial/_left.phtml');?>
 				</div>
-				 -->
+				
+				<div id="col-main" class="changeable">
+					<?php echo $this->render('_partial/_main.phtml');?>
+					<!-- 
+					<div id="main-content">
+						<?php echo $this->layout()->content ?>
+					</div>
+					 -->
+				</div>
+				
+				<div id="col-2" class="changeable">
+					<?php echo $this->render('_partial/_right.phtml');?>
+				</div>
+				<div class="clear"></div>
 			</div>
-			
-			<div id="col-2" class="changeable">
-				<?php echo $this->render('_partial/_right.phtml');?>
-			</div>
-			
 			<?php echo $this->render('_partial/_footer.phtml');?>
 		</div>
 	</body>
