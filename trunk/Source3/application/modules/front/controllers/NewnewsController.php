@@ -1,5 +1,5 @@
 <?php
-class Admin_NewnewsController extends Honey_Controller_Action{
+class NewnewsController extends Honey_Controller_Action{
 	
 	// parameter array received in any action
 	protected $_arrParam;
@@ -11,7 +11,7 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 	protected $_actionMain;
 	
 	// paging parameters
-	protected $_paginator = array('itemCountPerPage' => 5, 'pageRange' => 3);
+	protected $_paginator;
 	
 	// ?
 	protected $_namespace;
@@ -20,7 +20,7 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		// mang tham so nhan duoc o moi action
 		$this->_arrParam = $this->_request->getParams();
 		$this->_arrParam['user'] = 'ducnh'; 
-		$this->_arrParam['date'] = date("m-d-Y H:i:s");
+		$this->_arrParam['date'] = date("Y-m-d H:i:s");
 
 		// Duong dan cua Controller;
 		$this->_currentController = '/'.$this->_arrParam['module'].'/'.$this->_arrParam['controller'];
@@ -42,6 +42,9 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		// Luu cac du lieu filter vao SESSION
 		// Dat ten SESSION
 		
+		$_SESSION['edit_news_message'] = "";
+		$_SESSION['add_news_message'] = "";
+		$_SESSION['delete_news_message'] = "";
 		
 		/**
 		 * View
@@ -51,61 +54,63 @@ class Admin_NewnewsController extends Honey_Controller_Action{
 		$this->view->actionMain = $this->_actionMain;
 		
 		$layout = 'index';
-		$layoutPath = APPLICATION_PATH.'/templates/admin/default';
+		$layoutPath = APPLICATION_PATH.'/templates/front/default';
 		$this->loadTemplate($layout, $layoutPath, 'template.ini', 'template');
 		
 	}
 	
 	public function indexAction(){
-		$this->view->Title = 'Admin :: News';
+		$this->view->Title = 'Front :: News';
 		$this->view->headTitle = $this->view->Title;
 		
-		$adminnews = new Admin_Model_NewNews();
-		$this->view->Items = $adminnews->listItem($this->_arrParam, array('task'=>'list'));
+		$newnews = new Front_Model_NewNews();
+		$this->view->Items = $newnews->listItem($this->_arrParam, array('task'=>'list'));
 		
-		$totalItems = $adminnews->countItem($this->_arrParam);
+		$totalItems = $newnews->countItem($this->_arrParam);
 		$paginator = new Honey_Paginator();
 		$this->view->paginator = $paginator->createPaginator($totalItems, $this->_paginator);
 		
-		// 
-		$this->view->testparam = $this->_arrParam;
 	}
 	public function deleteAction(){
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 		
-		$this->_arrParam['news-id'] = $this->_request->getPost('news-id');
-		
-		$adminews = new Admin_Model_NewNews();
-		$adminews->deleteItem($this->_arrParam);
+		$newnews = new Front_Model_NewNews();
+		$newnews->deleteItem($this->_arrParam);
 		
 		$_SESSION['delete_news_message'] = "Delete success!";
-		$this->_helper->redirector('index', 'newnews', 'admin');
+		$this->_helper->redirector('index', 'newnews', 'front');
 	}
 	public function addAction(){
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 		
-		$adminnews = new Admin_Model_NewNews();
+		$newnews = new Front_Model_NewNews();
 		
-		$adminnews->saveItem($this->_arrParam, array('task'=>'add'));
+		$newnews->saveItem($this->_arrParam, array('task'=>'add'));
 		$_SESSION['add_news_message'] = "Add news success!";
 		
-		$this->_helper->redirector('index','newnews', 'admin');
+		$this->_helper->redirector('index','newnews', 'front');
 	}
 	public function saveAction(){
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 		
-		$adminnews = new Admin_Model_NewNews();
+		$newnews = new Front_Model_NewNews();
 		
-		$adminnews->saveItem($this->_arrParam, array('task'=>'edit'));
+		$newnews->saveItem($this->_arrParam, array('task'=>'edit'));
 		$_SESSION['edit_news_message'] = "Edit news success!";
 		
-		$this->_helper->redirector('index','newnews', 'admin');
+		$this->_helper->redirector('index','newnews', 'front');
 	}
 	public function uploadAction(){
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
+	}
+	public function detailAction() {
+		$newnews = new Front_Model_NewNews();
+		$this->view->Item = $newnews->getItem($this->_arrParam, array('task'=>'info'));
+		$this->view->Title = 'News :: '.$this->view->Item['title'];
+		$this->view->headTitle($this->view->Title, true);
 	}
 }
