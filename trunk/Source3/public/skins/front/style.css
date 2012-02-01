@@ -4,7 +4,8 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background-color: #033;
+	background: url('images/background.jpg');
+	/*background-color: #434343;*/
 }
 
 .container {
