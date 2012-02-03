@@ -1,0 +1,104 @@
+<div id="content">
+  <div class="breadcrumb"></div>
+  <?php if ($this->Items) { ?>
+  <h1>YOUR CART</h1>
+  <div id="cartDetail">
+                       
+      <div class="cartDetail-header">
+   	      <div class="col-th" style="width: 30px;">ID</div>
+          <div class="col-th" style="width: 217px;">Book title</div>
+          <div class="col-th"  style="width: 60px;">Quantity</div>
+          <div class="col-th"  style="width: 60px;">Price</div>
+          <div class="col-th"  style="width: 60px;">Selloff</div>
+          <div class="col-th"  style="width: 70px;">Total</div>
+          <div class="clr"></div>
+      </div>
+      <?php 
+                         /*   echo '<pre>';
+                            print_r($this->cart);
+                            echo '</pre>';*/
+                            $cart = $this->cart;
+                            	if(count($this->Items)>0){
+                            		$totalPrice = 0;
+                            		foreach ($this->Items as $key => $val){
+                            			$name = $val['name'];
+                            			$id = $val['product_id'];
+                            			$price = round($val['price'],0);
+                            			$selloff = 0;//$selloff = $val['selloff'];
+                            			$quantity = $cart[$id];
+                            			$total = 0;
+	                            		if($selloff <=0 ){
+		                          			$price = '<span class="price-1" style="">' . $price . 'đ</span> ';
+		                          			$selloff = '';
+		                          			$total = $quantity * $val['price'];
+		                          			$totalPrice += $total;
+		                          			$total = $total . 'đ';
+		                          		}else{
+		                          			$price = '<span class="price-1" style="text-decoration: line-through;">' . $price . 'đ</span> ';
+		                          			$selloff = $val['price'];//'$' . $val['selloff']; 
+		                          			$total = $quantity * $val['price'];//$val['selloff']; 
+		                          			$totalPrice += $total;
+		                          			$total = $total . 'đ';		 
+		                          		}
+										
+										$linkDetail = $this->baseUrl('/front/product/detail/product_id/' . $val['product_id']);
+
+	                          		    $itemProduct = $quantity;
+
+                            			$linkOrder = $this->baseUrl('/front/checkout/order');
+                            			$linkBack = $this->baseUrl('/front/product');
+                            ?>
+    <div class="cartDetail-row">
+       	    <div class="col-row" style="width: 30px;"><?php echo $id;?></div>
+            <div class="col-row" style="width: 217px;  text-align: left;">
+			    <a href="<?php echo $linkDetail;?>" class="itemLink" target="_blank"><?php echo $name;?></a></div>
+            <div class="col-row"  style="width: 60px;">
+           	    <?php echo $itemProduct;?>
+      </div>
+            <div class="col-row"  style="width: 60px;"><?php echo $price;?></div>
+            <div class="col-row"  style="width: 60px;"><?php echo $selloff;?></div>
+            <div class="col-row"  style="width: 70px;"><?php echo $total;?></div>
+            <div class="clr"></div>
+      </div>
+      <?php 
+                            		}
+                            	}
+                         	?>   
+                           
+  </div>
+  <div class="cartDetail-total"> Tổng số tiền bạn phải trả là: <span><?php echo $totalPrice . 'đ';?></span></div>
+  <?php 
+                     		$full_name = $this->formText('full_name','',array('style'=>'width: 60%;'));
+                     		$email = $this->formText('email','',array('style'=>'width: 60%;'));
+                     		$phone = $this->formText('phone','',array('style'=>'width: 60%;'));
+                     		$address = $this->formTextarea('address','',array('rows'=>4,'style'=>'width: 100%;'));
+                     		$shipping = $this->formTextarea('shipping','',array('rows'=>4,'style'=>'width: 100%;'));
+                     		$comment = $this->formTextarea('comment','',array('rows'=>4,'style'=>'width: 100%;'));
+                     	
+                     	?>
+                       <form name="your-cart" id="your-cart" action="" method="post">
+                       
+                        <div class="cartDetail-order">
+                        Xin vui lòng nhập đầy đủ thông tin vào Form sau: <br><br>
+                        	<label>Full Name:</label>
+                            <div><?php echo $full_name;?></div>
+                            <label>Email:</label>
+                            <div><?php echo $email;?></div>
+                            <label>Phone:</label>
+                            <div><?php echo $phone;?></div>
+                            <label>Address:</label>
+                            <div><?php echo $address;?></div>
+                            <label>Shipping:</label>
+                            <div><?php echo $shipping;?></div>
+                            <label>Comment:</label>
+                            <div><?php echo $comment;?></div>
+                            <br>
+                            
+                        	<input type="submit" name="update" id="update" value="Order" class="button"> 
+                            
+                            
+                        </div>
+                        </form>
+              
+  <?php } ?>
+</div>
