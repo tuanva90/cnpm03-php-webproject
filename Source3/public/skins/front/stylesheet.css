@@ -731,3 +731,26 @@ a.button:hover span {
 	background:#FFFFFF;
 	opacity: 0.9;
 }
+
+/*DucNH*/
+.fl{
+	float:left;
+}
+.fr{
+	float:right;
+}
+.cl{
+	clear:both;
+}
+.news-thumb{
+	width:200px;
+	height:200px;
+	margin:2px;
+}
+.news-title{
+	font-size:large;
+	font-weight:bold;
+}
+.news-title a{
+	text-decoration:none;
+}
