@@ -23,9 +23,55 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			$rowCount = $paginator['itemCountPerPage'];
 			$select->limitPage($page,$rowCount);
 		}
+		
+
 		$result = $db->fetchAll($select);
 		}
 		return $result;
+	}
+	
+	public function listItemByCate($category_id, $option = null)
+	{
+		$db = Zend_Registry::get('connectDB');
+	    if($option['task'] == 'listbyonecate'){
+	    	$select = $db->select()
+	    	->from(array('n'=>$this->getPrefix().'news'))
+	    	->joinLeft(array('nd'=>$this->getPrefix().'news_description'), 'n.news_id = nd.news_id')
+	    	->where('n.status = ?', 1)
+	    	->where('n.category_id = ?', $category_id)
+	    	->where('nd.language = ?', $this->_lang)
+	    	->order('n.date_modified DESC');
+	    	
+	    	$result = $db->fetchAll($select);
+	    }
+	    return $result;
+
+	}
+	
+	public function listItemByManyCate($arrParam = null,$option = null)
+	{
+	    $db = Zend_Registry::get('connectDB');
+	    $paginator = $arrParam['paginator'];
+	    $child_categories = $arrParam['child_categories'];
+	    array_push($child_categories, $arrParam['category_id']);
+	    if($option['task'] == 'listbymanycate'){
+	    	$select = $db->select()
+	    	->from(array('n'=>$this->getPrefix().'news'))
+	    	->joinLeft(array('nd'=>$this->getPrefix().'news_description'), 'n.news_id = nd.news_id')
+	    	->where('n.status = ?', 1)
+	    	->where('nd.language = ?', $this->_lang)
+	    	->where('n.category_id IN (?)', $child_categories)
+	    	->order('n.date_modified DESC');
+	    	 
+	    	if ($paginator['itemCountPerPage'] > 0){
+	    		$page = $paginator['currentPage'];
+	    		$rowCount = $paginator['itemCountPerPage'];
+	    		$select->limitPage($page,$rowCount);
+	    	}
+	    	$result = $db->fetchAll($select);
+	    	}
+	    	
+	    	return $result;
 	}
 	
 	public function countItem($arrParam = null, $options = null)
@@ -39,6 +85,23 @@ class Front_Model_NewNews extends Honey_Db_Table{
 		return $result;
 	}
 	
+	public function countItemByCate($arrParam = null, $option = null)
+	{
+	    $db = Zend_Registry::get('connectDB');
+	    
+	    $child_categories = $arrParam['child_categories'];
+	    array_push($child_categories, $arrParam['category_id']);
+	    
+	    $select = $db->select('n.news_id')
+	    		->from(array('n'=>$this->getPrefix().'news'))
+	    		->joinLeft(array('nd'=>$this->getPrefix().'news_description'), 'n.news_id = nd.news_id')
+	    		->where('n.status = ?', 1)
+	    		->where('n.category_id IN (?)', $child_categories)
+	    		->where('nd.language = ?', $this->_lang);
+	    
+	    $result = $db->fetchAll($select);
+	    return count($result);
+	}
 	public function deleteItem($arrParam = null, $option = null)
 	{
 		$db = Zend_Registry::get('connectDB');
@@ -57,7 +120,8 @@ class Front_Model_NewNews extends Honey_Db_Table{
 				'sort_order'=> $arrParam['sort-order'],
 				'status'=> $arrParam['status'],
 				'date_added'=> $arrParam['date'],
-				'author'=> $arrParam['user'],
+				'date_modified'=> $arrParam['date'],
+				'author'=> $arrParam['user']
 			);
 			$db->insert($this->getPrefix().'news', $thenews);
 			
