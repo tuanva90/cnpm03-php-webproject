@@ -41,12 +41,21 @@ $(document).ready(function(){
 		$('#add-form').after("<input type='hidden' name='save-news-id' value='" + _currentNewsID + "'/>");
 		$('#add-form').dialog("open");
 	});
+	
+	$('#edit-news-form').bind(function(){
+		ajax({
+			url:'<?php ?>'
+		});
+	});
 });
 $(function(){
+	//
 	$(document).click(function(){
 		$('#highlighter-region').hide();
 		$('#contextMenu').hide();
 	});
+	
+	//
 	$('#add-form').dialog({
 			autoOpen:false,
 			modal:true,
@@ -60,4 +69,20 @@ $(function(){
 					$( this ).dialog( "close" );
 				}
 			}});
+	
+	//
+	$('#edit-form').dialog({
+		autoOpen:false,
+		modal:true,
+		width:500,
+		height:500,
+		buttons:{
+			"Save":function(){
+				$('#edit-news-form').submit();
+			},
+			Cancel:function(){
+				$(this).dialog("close");
+			}
+		}
+	});
 });

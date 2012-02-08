@@ -1,22 +1,87 @@
 <div id="content">
   <div class="breadcrumb"></div>
-  <?php if ($this->Items) { ?>
-  <div class="news-list">
-    <?php foreach ($this->Items as $news) { ?>
-    <div>
-      <?php if ($news['image']) { ?>
-      <div class="image"><a class="fancybox" href="<?php echo $this->baseUrl($this->currentController . '/detail/news_id/' . $news['news_id']);?>" title="<?php echo $news['title']; ?>"><img src="<?php echo HTTP_IMAGES . '/' . $news['image']; ?>" width="90" height="90" title="<?php echo $news['title']; ?>" /></a></div>
-      <?php } ?>
-      <div class="title"><a href="<?php echo $this->baseUrl($this->currentController . '/detail/news_id/' . $news['news_id']);?>"><?php echo $news['title']; ?></a></div>
-      <div class="summary"><?php echo html_entity_decode($news['summary'], ENT_QUOTES, 'UTF-8'); ?></div>
-    </div>
-    <?php } ?>
-    <div class="pagination">
-    <?php 
-    	$currentUrl = $this->baseUrl($this->currentController . '/index');
-    	echo $this->paginationControl($this->panigator,'Sliding','pagination.phtml', array('currentUrl'=>$currentUrl));
-    ?>
-    </div>
-  </div>
-  <?php } ?>
+  <pre>
+  </pre>
+  <?php if($this->arrayItems){ reset($this->arrayItems);?>
+  	<div id="cate-list">
+  		<?php while(!is_null(key($this->arrayItems))){ $curCategory = $this->arrayItems[key($this->arrayItems)];?>
+  			<?php if(key($this->arrayItems) == 0){?>
+  				<div id="category-title"></div>
+  				<div id="parent-category">
+  				<div class="category-header">
+  					<a href="<?php echo $this->baseUrl($this->currentController.'/'.'index'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>"><?php echo $curCategory['categoryinfo']['category_description']['vi_VN']['name'];?></a>
+  				</div>
+  				<div class="category-body">
+  					<div id="latest-news">
+  						<img class="latest-news-thumb fl" src="<?php echo $curCategory['news'][0]['image']?>"/>
+  						<a class="latest-news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$curCategory['news'][0]['news_id'])?>"><?php echo $curCategory['news'][0]['title']?></a>
+  						<br/>
+  						<?php echo html_entity_decode($curCategory['news'][0]['summary'],ENT_QUOTES,'UTF-8'); ?>
+  						<div class="cl"></div>
+  					</div>
+  					<table id="older-newses">
+  						<tr>
+  							<td>
+  								<?php if(!is_null($curCategory['news'][1])){?>
+  								<span>
+  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$curCategory['news'][1]['news_id'])?>">
+  								<img class="news-thumb" src="<?php echo $curCategory['news'][1]['image']?>"/><br/><?php echo $curCategory['news'][1]['title']?></a>
+  								</span>
+  								<?php }?>
+  							</td>
+  							<td>
+  								<?php if(!is_null($curCategory['news'][2])){?>
+  							  	<span>
+  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$curCategory['news'][2]['news_id'])?>">
+  								<img class="news-thumb" src="<?php echo $curCategory['news'][2]['image']?>"/><br/><?php echo $curCategory['news'][2]['title']?></a>
+  								</span>
+  								<?php }?>
+  							</td>
+  							<td>
+  								<?php if(!is_null($curCategory['news'][3])){?>
+  								<span>
+  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$curCategory['news'][3]['news_id'])?>">
+  								<img class="news-thumb" src="<?php echo $curCategory['news'][3]['image']?>"/><br/><?php echo $curCategory['news'][3]['title']?></a>
+  								</span>
+  								<?php }?>
+  							</td>
+  						</tr>
+  					</table>
+  				</div>
+  				<div class="category-footer">
+  					<a class="fr" href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>">Xem nhiều hơn&gt;&gt;</a>
+  				</div>
+  				</div>
+  			<?php } else{?>
+  				<div class="child-category">
+  				<div class="category-header">
+  				<a href="<?php echo $this->baseUrl($this->currentController.'/'.'index'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>"><?php echo $curCategory['categoryinfo']['category_description']['vi_VN']['name'];?></a>
+  				</div>
+  					<table>
+  						<tr>
+  						<?php if(!is_null($curCategory['news'])){ reset($curCategory['news']);?>
+  						<?php while(!is_null(key($curCategory['news'])) && key($curCategory['news']) <4){ $news = current($curCategory['news']);?>
+  							<td>
+  								<span>
+  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$news['news_id'])?>">
+  								<img class="news-thumb" src="<?php echo $news['image']?>"/><br/><?php echo $news['title']?></a>
+  								</span>
+  							</td>
+  							
+  							<?php next($curCategory['news']); }?>
+  							<?php }?>
+  						</tr>
+  					</table>
+  				<div class="category-footer">
+  					<a class="fr" href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>">Xem nhiều hơn&gt;&gt;</a>
+  				</div>
+  				</div>
+  			<?php }?>
+  			<?php next($this->arrayItems);?>
+  		<?php }?>
+  	</div>
+  <?php }?>
+  
+  <pre>
+  </pre>
 </div>
