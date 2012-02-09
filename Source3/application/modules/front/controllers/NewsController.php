@@ -16,7 +16,9 @@ class NewsController extends Honey_Controller_Action {
 	public function init() {
 		$this->_arrParam = $this->_request->getParams ();
 		
-		
+		if(!isset($this->_arrParam['category_id'])) 
+		    $this->_arrParam['category_id'] = 1;
+		 		
 		$this->_currentController = '/' . $this->_arrParam ['module'] . '/' . $this->_arrParam ['controller'];
 		
 		$this->_actionMain = '/' . $this->_arrParam ['module'] . '/' . $this->_arrParam ['controller'] . '/index';
@@ -86,7 +88,6 @@ class NewsController extends Honey_Controller_Action {
 	}
 	
 	public function listAction(){
-		session_start();	 
 		// format: list of news in a category
 		$this->view->Title = 'Front :: News';
 		$this->view->headTitle = $this->view->Title;
@@ -103,6 +104,7 @@ class NewsController extends Honey_Controller_Action {
 		$paginator = new Honey_Paginator();
 		$this->view->panigator = $paginator->createPaginator($totalItem, $this->_paginator);
 		
+		session_start();
 		// Oi session oi la session
 		$_SESSION["myback"] = $_SERVER['REQUEST_URI'];
 	}
@@ -113,7 +115,9 @@ class NewsController extends Honey_Controller_Action {
 		$this->view->Item = $news->getItem($this->_arrParam, array('task'=>'info'));
 		$this->view->Title = 'News :: '.html_entity_decode($this->view->Item['title']);
 		$this->view->headTitle($this->view->Title, true);
-
+		
+		session_start();
+		$_SESSION['newseditmode'] = 'ON';
 	}
 	
 	
