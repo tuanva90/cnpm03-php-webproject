@@ -839,3 +839,87 @@ table#older-newses td{
 {
 	border:1px dotted red;
 }
+
+/*-------------------buttonCart------------------------*/
+.button_add_small, a.button_add_small:visited {
+	margin-top: 3px;
+	background: url('images/button_add_small.png') no-repeat left center transparent;
+	padding:5px;
+	text-decoration: none;
+	cursor:pointer;
+}
+/*-------------------cartDetail------------------------*/
+#cartDetail{
+	background-color: #FFF;
+	padding: 10px;
+}
+.cartDetail-header{
+	border-left: solid 1px #CCC;
+	border-top: solid 1px #CCC;
+	background-color:#CCF;
+	
+		
+}
+#cartDetail .col-th{
+	float: left;
+	font-weight: bold;
+	padding: 3px;
+	text-align: center;
+	border-right: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
+
+.cartDetail-row{
+	border-left: solid 1px #CCC;	
+	
+}
+#cartDetail .col-row{
+	float: left;	
+	padding: 5px 3px 3px 3px;
+	text-align: center;
+	border-right: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	height: 27px;
+	font-size: 11px;
+	
+}
+
+#cartDetail a.itemLink:link, a.itemLink:active, a.itemLink:visited{
+	text-decoration: none;
+	color:#06C;
+	
+}
+
+#cartDetail  a.itemLink:hover{
+	text-decoration: underline;
+	color:#F00;
+	
+}
+
+.cartDetail-button{
+	background:#FFF;
+	padding: 15px;	
+}
+.cartDetail-total{
+	background:#FFF;
+	padding: 5px 20px;	
+	text-align: right;
+	font-weight: bold;
+}
+
+.cartDetail-order{
+	background:#FFF;
+	padding: 5px 20px;	
+	text-align: left;
+	font-weight: bold;
+}
+
+.cartDetail-order label{
+	padding: 3;	
+}
+
+.cartDetail-order div{
+	padding: 3px 3px 7px 3px;	
+	margin-bottom: 5px;
+	border-bottom: solid 1px #EEE;
+}

@@ -78,7 +78,8 @@ class CheckoutController extends Honey_Controller_Action {
 	}
 	
 	public function cartAction(){
-		$yourCart = new Zend_Session_Namespace('cart');		
+		$yourCart = new Zend_Session_Namespace('cart');	
+
 		if($this->_request->isPost()){
 			$itemProduct = $this->_arrParam['itemProduct'];			
 			if(count($itemProduct)>0)
@@ -89,10 +90,16 @@ class CheckoutController extends Honey_Controller_Action {
 			}			
 			$yourCart->cart = $itemProduct;
 		}		
-		$ssInfo = $yourCart->getIterator();		
+		$ssInfo = $yourCart->getIterator();
+		
+		if(empty($ssInfo['cart'])){
+			$this->_redirect('/product/');
+		}
+		
 		$tblProduct = new Front_Model_Product();
 		$this->_arrParam['cart'] = $ssInfo['cart'];		
-		$this->view->Items = $tblProduct->listItem($this->_arrParam, array('task'=>'cart'));
+		$this->view->Items = $tblProduct->listItem($this->_arrParam, array('task'=>'view-cart'));
+		
 		$this->view->cart =  $ssInfo['cart'];		
 	}
 
@@ -101,33 +108,24 @@ class CheckoutController extends Honey_Controller_Action {
 			
 		$ssInfo = $yourCart->getIterator();
 		
+		if(empty($ssInfo['cart'])){
+			$this->_redirect('/product/');
+		}
+		
 		$tblProduct = new Front_Model_Product();
 		$this->_arrParam['cart'] = $ssInfo['cart'];
 		
-		$this->view->Items = $tblProduct->listItem($this->_arrParam,array('task'=>'cart'));
+		$this->view->Items = $tblProduct->listItem($this->_arrParam, array('task'=>'view-cart'));
 		$this->view->cart =  $ssInfo['cart'];
-		
+			
 		if($this->_request->isPost()){
 			$tblInvoice = new Front_Model_Invoice();
-			$invoice_id = $tblInvoice->saveItem($this->_arrParam,array('task'=>'public-order'));
-			
+			$invoice_id = $tblInvoice->saveItem($this->_arrParam, array('task'=>'public-order'));			
 			$tblInvoiceDetail = new Front_Model_InvoiceDetail();
 			$this->_arrParam['invoice_id'] = $invoice_id;
 			$tblInvoiceDetail->saveItem($this->_arrParam);
 			$yourCart->unsetAll();
+			$this->_redirect('/product/');
 		}
 	}
-	/*
-	public function hotAction(){
-		$this->_helper->viewRenderer->setNoRender();
-		$this->_helper->layout->disableLayout();
-		if ($this->_request->isPost ()) {
-			$link = new Link_Model_Link();
-			$hot = $link->updateHot($this->_arrParam);
-			$topHots = $link->getTopHots(array('limit'=>80), null);
-			$data = array('hot'=>$hot, 'topHots'=>$topHots);
-			$this->getResponse()->setBody(Zend_Json::encode($data));
-		}
-	}
-	*/
 }

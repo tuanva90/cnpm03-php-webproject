@@ -68,12 +68,12 @@
   </div>
   <div class="cartDetail-total"> Tổng số tiền bạn phải trả là: <span><?php echo $totalPrice . 'đ';?></span></div>
   <?php 
-                     		$full_name = $this->formText('full_name','',array('style'=>'width: 60%;'));
-                     		$email = $this->formText('email','',array('style'=>'width: 60%;'));
-                     		$phone = $this->formText('phone','',array('style'=>'width: 60%;'));
-                     		$address = $this->formTextarea('address','',array('rows'=>4,'style'=>'width: 100%;'));
-                     		$shipping = $this->formTextarea('shipping','',array('rows'=>4,'style'=>'width: 100%;'));
-                     		$comment = $this->formTextarea('comment','',array('rows'=>4,'style'=>'width: 100%;'));
+                     		$full_name = $this->formText('full_name','full_name',array('style'=>'width: 60%;'));
+                     		$email = $this->formText('email','email',array('style'=>'width: 60%;'));
+                     		$phone = $this->formText('phone','123224324',array('style'=>'width: 60%;'));
+                     		$address = $this->formTextarea('address','address',array('rows'=>4,'style'=>'width: 100%;'));
+                     		$shipping = $this->formTextarea('shipping','shipping',array('rows'=>4,'style'=>'width: 100%;'));
+                     		$comment = $this->formTextarea('comment','comment',array('rows'=>4,'style'=>'width: 100%;'));
                      	
                      	?>
                        <form name="your-cart" id="your-cart" action="" method="post">
