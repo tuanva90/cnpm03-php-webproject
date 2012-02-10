@@ -116,6 +116,9 @@ $(function(){
 		
 	});
 
+	$("#btnPages").button().click(function() {
+	});
+
 	$("#btnSelectLayout").button().click(function(){
 		$("#choose-layout-form").dialog("open");
 		for(i = 0; i < $("input[name=rdoLayout]").length; i++) {
@@ -200,6 +203,7 @@ $(function(){
 	<div id="btnSelectLayout" class="state-changable-button">Select Layout</div>
 	<input type="checkbox" id="chkLayoutModules"/>
 	<label for="chkLayoutModules">Layout Modules Mode: OFF</label>
+	<div id="btnPages" class="state-changable-button">Sites Management</div>
 </div>
 
 <!-- Form for choosing page layout -->

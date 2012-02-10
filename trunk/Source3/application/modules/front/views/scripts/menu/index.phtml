@@ -1,0 +1,104 @@
+<script>
+	var cofirm = false;
+	var selected_id;
+	
+	function deleteMenu(id) {
+		cofirm = false;
+		selected_id = id;
+		$("#cofirm-delete").dialog("open");
+	}
+
+	$(".btnEdit").button();
+	$(".btnDel").button();
+	function editMenu(id) {
+		selected_id = id;
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo HTTP_SERVER."front/menu/edit"?>',
+			data: {
+				id: selected_id
+			},
+			success: function(data) {
+				$("#edit-menu-form-content").html(data);
+			},
+			error: function(request, textStatus, error) {
+				showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+			}	
+		});
+		$(this).dialog("close");
+	}
+
+	$(function() {
+		$("#cofirm-delete").dialog({
+			autoOpen: false,
+			width: 300,
+			height: 150,
+			modal: true,
+			buttons: {
+				"Yes": function() {
+					$.ajax({
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/menu/delete"?>',
+						dataType: 'json',
+						data: {
+							id: selected_id
+						},
+						success: function(data) {
+							$("#row" + selected_id).remove();
+						},
+						error: function(request, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText);
+						}	
+					});
+					$(this).dialog("close");
+				},
+				"No": function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+	});
+</script>
+
+<div id="cofirm-delete" title="CMS Click and Change">
+	Do you want to delete this item?
+</div>
+<h3>Menu List</h3>
+<table class="list" width="" cellpadding="1" cellspacing="0">
+
+	<thead>
+		<tr>
+			<td align="center">Name</td>			
+			<td align="center">Position</td>
+			<td align="center">Link</td>
+			<td align="center">Displayed</td>
+			<td align="center">Action</td>
+		</tr>
+	</thead>
+	<tbody>
+	<?php
+		foreach($this->items as $menu) {
+			showMenuRow($menu);
+		}
+	?>
+	</tbody>
+</table>
+
+<?php
+function showMenuRow($menu) {
+	echo '<tr id="row'.$menu['id'].'">';
+    echo '<td>' . $menu['name'];
+    echo '</td> <td>' . $menu['position'];
+    echo '</td> <td>' . $menu['link'];
+    echo '</td> <td align="center">' . ($menu['is_showed']==1?'Yes':'No'). '</td>';
+?>
+	<td align="center">
+		<a class="btnEdit" onclick="editMenu('<?php echo $menu['id']?>');">Edit</a>
+		<a class="btnDel" onclick="deleteMenu('<?php echo $menu['id']?>');">Del</a>
+	</td></tr>
+<?php
+	foreach($menu['children'] as $sub) {
+		showMenuRow($sub);
+	}
+} 
+?>
