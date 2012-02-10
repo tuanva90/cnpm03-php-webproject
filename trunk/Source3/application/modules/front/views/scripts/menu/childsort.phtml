@@ -1,0 +1,55 @@
+<style>
+	#selectable .ui-selecting { background: #FECA40; }
+	#selectable .ui-selected { background: #F39814; color: white; }
+	#selectable { list-style: none; margin: 0; padding: 0; width: 80%; }
+	#selectable li { margin: 3px; padding: 0.4em; height: 18px; }
+</style>
+<?php 
+$children = $this->children;
+
+function showChildren($children) {
+	if($children == null) {
+		echo "No child menu to sort";
+	} else {
+		foreach($children as $sub) {
+			echo '<li class="ui-state-default" id="'.$sub['id'].'">'.$sub['name'].'</li>';
+		}
+	}
+}
+?>
+
+<script>
+var parent_id = <?php echo $this->parent_id;?>;
+var order = "";
+
+$(function() {
+	$( "#sortable" ).sortable({
+		placeholder: "position-highlight",
+		revert: 100
+	});
+	$( "#sortable" ).disableSelection();
+	$("#save-order").button().click(function() {
+		showMessage("Saving...");
+		order = $("#sortable").sortable('toArray');
+		
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo HTTP_SERVER."front/menu/savechildposition"?>',
+			data: {
+				parent_id: selected_id,
+				order: order
+			},
+			success: function(data) {
+				closeMessage();
+			},
+			error: function(request, status, error) {
+				showMessage(error + "<br> Detail: <br>" + request.responseText);
+			}	
+		});
+	});
+});
+</script>
+<div id="save-order">Save</div>
+<ul id="sortable">
+	<?php showChildren($children);?>
+</ul>

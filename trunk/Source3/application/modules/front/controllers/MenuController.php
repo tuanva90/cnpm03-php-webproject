@@ -58,6 +58,15 @@ class MenuController extends Honey_Controller_Action {
 		$this->view->item = $model->listAllItem(null);
 	}
 	
+	public function childsortAction() {
+		$this->_helper->layout()->disableLayout();
+		if(isset($_POST['parent_id']) && $_POST['parent_id'] != null) {
+			$model = new Front_Model_Menu();
+			$this->view->children = $model->getChildren($_POST['parent_id']);
+			$this->view->parent_id = $_POST['parent_id']; 
+		}
+	}
+	
 	public function savenewAction() {
 		$this->_helper->layout()->disableLayout();
   		$this->_helper->viewRenderer->setNoRender(true);
@@ -80,6 +89,20 @@ class MenuController extends Honey_Controller_Action {
 		if(isset($_POST['id']) && $_POST['id'] != null) {
 			$selected = $model->getDetailedItem($_POST['id']);
 			$this->view->selected = $selected;
+		}
+	}
+	
+	public function savechildpositionAction() {
+		$this->_helper->layout()->disableLayout();
+  		$this->_helper->viewRenderer->setNoRender(true);
+		try{
+			if(isset($_POST['order'])) {
+				$menu_model = new Front_Model_Menu();
+				$menu_model->saveOrder($_POST['order']);
+			}
+			echo "finished";
+		} catch(Exception $ex) {
+			echo "Error:".$ex->getMessage();
 		}
 	}
 	
