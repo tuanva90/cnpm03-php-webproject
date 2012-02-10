@@ -191,4 +191,18 @@ class Front_Model_Menu extends Honey_Db_Table {
 		$result = $db->fetchRow($query);
 		return $result['last_order'];
 	}
+	
+	public function saveOrder($order) {
+		$db = Zend_Registry::get('connectDB');
+		$where = null;
+		$temp = null;
+		$result = null;
+		for($i = 0; $i < count($order); $i++) {
+			$temp = $this->getItem($order[$i]);
+			$temp['sort_order'] = $i;
+			$where = 'id='.$order[$i];
+			$result = $db->update('cms_menu',$temp,$where);
+		}
+		return $result;
+	}
 }

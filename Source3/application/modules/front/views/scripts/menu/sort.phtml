@@ -1,17 +1,9 @@
 <?php
 $menu = $this->item;
-if(isset($this->selected) && $this->selected != null) {
-	$selected = $this->selected['parent'];
-	$position = $this->selected['position'];
-} else {
-	$selected = 0;
-	$position = "...";
-}
 
 function showPosition($menu, $margin_left) {
 	foreach($menu['children'] as $sub) {
-		echo '<li class="ui-state-default" id="'.$sub['id'].'" style="margin-left:'.$margin_left.'px;">'.$sub['name'];
-		echo '<input type="hidden" id="value" value="'.$sub['position'].$sub['name'].'"></li>';
+		echo '<li class="ui-state-default" id="'.$sub['id'].'" style="margin-left:'.$margin_left.'px;">'.$sub['name']."</li>";
 		showPosition($sub, $margin_left + 20);
 	}
 }
@@ -19,11 +11,29 @@ function showPosition($menu, $margin_left) {
 <script>
 var selected_id = 0;
 
+function selectMenu () {
+	$("child-sort").html("Loading...");
+	$.ajax({
+		type: 'POST',
+		url: '<?php echo HTTP_SERVER."front/menu/childsort"?>',
+		data: {
+			parent_id: selected_id
+		},
+		success: function(data) {
+			$("#child-sort").html(data);
+		},
+		error: function(request, status, error) {
+			showMessage(error + "<br> Detail: <br>" + request.responseText);
+		}	
+	});
+}
+
 $(function() {
 	$("#selectable").selectable({
 		stop: function() {
 			$(".ui-selected", this).each(function() {
 				selected_id = $(this).attr("id");
+				selectMenu();
 			});
 		}
 	});
@@ -35,7 +45,7 @@ $(function() {
 		<td>Select the menu to sort</td>
 		<td>Drag and drop sub-menu to sort</td>
 	</tr>
-	<tr>
+	<tr valign="top">
 		<td width="45%">
 			<div id="parent-selector">
 				<ul id="selectable">
@@ -46,6 +56,8 @@ $(function() {
 				</ul>
 			</div>
 		</td>
-		<td></td>
+		<td>
+			<div id="child-sort"></div>
+		</td>
 	</tr>
 </table>
