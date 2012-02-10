@@ -43,7 +43,6 @@
 				}
 		
 				$.ajax({
-					
 					type: 'POST',
 					url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
 					dataType: 'json',

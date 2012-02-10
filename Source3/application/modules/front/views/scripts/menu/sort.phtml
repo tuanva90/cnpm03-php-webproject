@@ -1,0 +1,51 @@
+<?php
+$menu = $this->item;
+if(isset($this->selected) && $this->selected != null) {
+	$selected = $this->selected['parent'];
+	$position = $this->selected['position'];
+} else {
+	$selected = 0;
+	$position = "...";
+}
+
+function showPosition($menu, $margin_left) {
+	foreach($menu['children'] as $sub) {
+		echo '<li class="ui-state-default" id="'.$sub['id'].'" style="margin-left:'.$margin_left.'px;">'.$sub['name'];
+		echo '<input type="hidden" id="value" value="'.$sub['position'].$sub['name'].'"></li>';
+		showPosition($sub, $margin_left + 20);
+	}
+}
+?>
+<script>
+var selected_id = 0;
+
+$(function() {
+	$("#selectable").selectable({
+		stop: function() {
+			$(".ui-selected", this).each(function() {
+				selected_id = $(this).attr("id");
+			});
+		}
+	});
+});
+</script>
+<h3>Sort Menu</h3>
+<table width="100%">
+	<tr>
+		<td>Select the menu to sort</td>
+		<td>Drag and drop sub-menu to sort</td>
+	</tr>
+	<tr>
+		<td width="45%">
+			<div id="parent-selector">
+				<ul id="selectable">
+					<li class="ui-state-default" id="0" style="margin-left:5px;">Root
+						<input type="hidden" id="value" value="...">
+					</li>
+					<?php showPosition($menu, 20);?>
+				</ul>
+			</div>
+		</td>
+		<td></td>
+	</tr>
+</table>

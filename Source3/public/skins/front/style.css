@@ -26,7 +26,7 @@ body {
 #header #page-title {
 	font-size: 3em;
 	position: absolute;
-	bottom: 50px;
+	bottom: 15px;
 	left: 20px;
 }
 
@@ -34,7 +34,7 @@ body {
 	font-size: 1.5 em;
 	position: absolute;
 	font-style: italic;
-	bottom: 40px;
+	bottom: 5px;
 	left: 20px;
 }
 
@@ -97,3 +97,8 @@ body {
 	height: 20px;
 	margin-bottom: 10px;
 }
+
+#selectable .ui-selecting { background: #FECA40; }
+#selectable .ui-selected { background: #F39814; color: white; }
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#selectable li { margin: 3px; padding: 0.4em; height: 18px; }

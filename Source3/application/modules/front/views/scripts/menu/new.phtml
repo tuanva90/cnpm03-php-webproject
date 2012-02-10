@@ -1,0 +1,163 @@
+<div id="new-menu-form">
+	<h3>New Menu</h3>
+	<div id="validating-text" class="ui-state-error"></div>
+	<script type="text/javascript">
+	var task = "";
+	$(function() {
+		var name = $("#txtName"),
+			description = $("#txtDescription"),
+			parent = $("#txtParent"),
+			sort_order = $("#txtSortOrder"),
+			chk_showed = $("input[name=chkShowed]"),
+			error_text = $("#validating-text");
+		
+		$("#btnSelectLink").button().click( function() {
+			$("#dialog").html("Loading...");
+			$("#dialog").dialog("open");
+			task = "Link";
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo HTTP_SERVER."front/menu/selectlink"?>',
+				success: function(data) {
+					$("#dialog").html(data);
+				},
+				error: function(request, status, error) {
+					showMessage(error + "<br> Detail: <br>" + request.responseText);
+				}	
+			});
+		});
+
+		$("#btnPosition").button().click(function () {
+			$("#dialog").html("Loading...");
+			$("#dialog").dialog("open");
+			task = "Position";
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo HTTP_SERVER."front/menu/selectposition"?>',
+				success: function(data) {
+					$("#dialog").html(data);
+				},
+				error: function(request, status, error) {
+					showMessage(error + "<br> Detail: <br>" + request.responseText);
+				}	
+			});
+		});
+
+		$("#dialog").dialog({
+			autoOpen: false,
+			width: 500,
+			height: 500,
+			modal: true,
+			buttons: {
+				"OK": function() {
+					if(task == "Position") {
+						var id = $("input[name=txtSelectedParent]").val();
+						var position = $("input[name=txtSelectedPosition]").val();
+						if(id == "") {
+							errorPosition("You must select one menu item");
+						}
+						else {
+							$("input[name=txtPosition]").val(position);
+							$("input[name=txtParent]").val(id);
+							$(this).dialog("close");
+						}
+					}
+				},
+				"Cancel": function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+
+		$("#btnSave").button().click(function () {
+			if(name.val()=="") {
+				error_text.html("You must type Menu Name");
+			} else if(parent.val() == "") {
+				error_text.html("You must select position for this menu");
+			}
+			else {
+				error_text.html("");
+				showMessage("Saving...");
+				var link;
+				var is_inside = $("input[name='rdoLinkInside']:checked");
+				
+				if(is_inside.val() == "0") {
+					link = $("#txtLinkOutside").val();
+				} else {
+					link = $("#txtLinkInside").val();
+				}
+				
+				$.ajax({
+					type: 'POST',
+					url: '<?php echo HTTP_SERVER."front/menu/savenew"?>',
+					dataType: 'json',
+					data: {
+						name: name.val(),
+						description: description.val(),
+						parent: parent.val(),
+						is_inside: is_inside.val(),
+						link: link,
+						sort_order: sort_order.val(),
+						is_showed: chk_showed.is(":checked")?"1":"0"
+					},
+					success: function(data) {
+						closeMessage();
+						loadMenuList();	
+					},
+					error: function(request, status, error) {
+						showMessage(error + "<br> Detail: <br>" + request.responseText);
+					}	
+				});
+			}
+		});
+	});
+	</script>
+	<form style="position: relative;">
+	<table border="0px;" width="100%">
+		<tr>
+			<td width="80px;">Name (*)</td>
+			<td><input type="text" name="txtName" id="txtName" maxlength="200" size="30" value=""/>
+		</tr>
+		<tr>
+			<td width="80px;">Description</td>
+			<td><input type="text" name="txtDescription" id="txtDescription" maxlength="200" size="60" value=""/></td>
+		</tr>
+		<tr>
+			<td>Link</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="rdoLinkInside" value="1"/>In this site
+			</td>
+			<td>
+				<input type="text" name="txtLinkInside" id="txtLinkInside" disabled="disabled" size="52"/>
+				<div id="btnSelectLink">...</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="radio" name="rdoLinkInside" value="0" checked="checked"/>Another
+			</td>
+			<td>
+				<input type="text" name="txtLinkOutside" id="txtLinkOutside" size="60" value="#"/>
+			</td>
+		</tr>
+		<tr>
+			<td>Position</td>
+			<td>
+				<input type="text" name="txtPosition" id="txtPosition" disabled="disabled" size="52" value="..."/>
+				<input type="hidden" name="txtParent" id="txtParent" value="0"/>
+				<div id="btnPosition">...</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="80px;">Displayed</td>
+			<td><input type="checkbox" name="chkShowed" checked="checked"/></td>
+		</tr>
+	</table>
+	<br><br><div id="btnSave">Create</div>
+    </form>
+    
+    <div id="dialog">
+    </div>
+</div>
