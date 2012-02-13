@@ -1,8 +1,67 @@
-<h1>Login</h1>
-
-<?php
-	echo new Admin_Form_Login();
-?>
+<div id="container">
+<div id="header">
+  <div class="div1">
+    <div class="div2"><img src="<?php echo HTTP_PUBLIC ;?>/skins/admin/images/logo.png" title="Trang Quáº£n Trá»‹" onclick="location = '#'" /></div>
+      </div>
+  </div>
+<div id="content">
+  <div class="login" style="width: 400px; min-height: 300px; margin-top: 40px; margin-left: auto; margin-right: auto;">
+    <div class="heading">
+      <h1><img src="<?php echo HTTP_PUBLIC ;?>/skins/admin/images/lockscreen.png" alt="" />Login</h1>
+    </div>
+    <div class="content" style="min-height: 150px; overflow: hidden;">
+      <?php if($this->messageError) { ?>
+      <div class="warning">Đăng nhập thất bại</div>
+      <?php } ?>
+      <form action="<?php echo $this->baseUrl($this->currentController . '/index');?>" method="POST" enctype="multipart/form-data"  id="loginForm">
+        <table style="width: 100%;">
+          <tr>
+            <td style="text-align: center;" rowspan="4"><img src="<?php echo HTTP_PUBLIC ;?>/skins/admin/images/login.png" alt="*" /></td>
+          </tr>
+          <tr>
+            <td>UserName:<br />
+              <input type="text" name="username" id="username" value="" style="margin-top:3px;" />
+              <span style="display: block; margin-top: 4px;">Password</span>
+              <input type="password" name="password" value="" style="margin-top:3px;" />
+              <a style="display: block; margin-top: 4px;" href="#">Forgot Password</a></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td style="text-align: right;"><a onclick="$('#loginForm').submit();" class="button"><span>Login</span></a></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+	/**
+	 * Validate form
+	 */
+	$('#loginForm').validate({
+		rules: {
+			username: {
+		  		required: true
+			},
+			password: {
+				required: true
+			}
+	    },
+	    username: {
+	    	username: {
+	        	required: "Vui lòng nhập Username"
+			},
+			password: {
+	        	required: "Vui lòng nhập password"
+			}
+		}
+	});
+});
+</script>
+</div>
 
 
 
