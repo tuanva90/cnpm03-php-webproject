@@ -28,6 +28,6 @@ class Admin_IndexController extends Honey_Controller_Action {
 	}
 	
 	public function indexAction() {
-		$this->_redirect('admin/news');
+		$this->_redirect('admin/login');
 	}
 }
