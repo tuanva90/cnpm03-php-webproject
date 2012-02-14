@@ -48,4 +48,5 @@ INSERT INTO `cms_module` (`module_id`, `name`, `file_name`, `is_showed`, `positi
 (6, 'Module_1', 'BlkModuleDefault', '1', 1, 2, ''),
 (7, 'Module_2', 'BlkModuleDefault', '1', 1, 3, ''),
 (8, 'Module_3', 'BlkModuleDefault', '1', 2, 0, ''),
-(9, 'Main', '', '1', 3, 1, '');
+(9, 'Main', '', '1', 3, 1, ''),
+(10, 'Contact', 'BlkContact', '', 3, 1, '');
