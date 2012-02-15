@@ -8,8 +8,8 @@
 <div class="ui-widget-content ui-conner-all module" id="<?php echo $info['module_id'];?>">
 	<script type="text/javascript">
 		$(function(){
-			$("#edit-newest-product").button().click(function(){
-				$("#edit-newest-product-form").dialog("open");
+			$("#edit-mostviewed-news").button().click(function(){
+				$("#edit-mostviewed-news-form").dialog("open");
 			});
 			function update() {
 				var max = $("input[name=txtMaxAmount]").val();
@@ -45,7 +45,7 @@
 				});				
 				
 			}
-			$("#edit-newest-product-form").dialog({
+			$("#edit-mostviewed-news-form").dialog({
 				autoOpen: false,
 				height: 300,
 				width: 350,
@@ -64,9 +64,9 @@
 		});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">
-		<h3>Sản Phẩm Mới</h3>
+		<h3>Xem Nhiều Nhất</h3>
 		<div class="edit-button">
-			<button id='edit-newest-product' class="state-changable-button">...</button>
+			<button id='edit-mostviewed-news' class="state-changable-button">...</button>
 		</div>
 	</div>
 	<!-- ///////////////////////////////////////////////////// -->
@@ -76,8 +76,8 @@
 			<thead>
 				<tr>					
 
-					<td class="left" style="min-width: 100px">Tên Sản Phẩm</td>
-					<td class="left">Giá</span></td>					
+					<td class="left" style="min-width: 100px">Bài Viết</td>
+					<td class="center">Lượt Xem</td>					
 				</tr>
 			</thead>
 			<tbody>
@@ -85,10 +85,9 @@
 				<?php foreach($items as $val){
 										
 					?>
-					<tr>
-						
-						<td><a href="<?php echo HTTP_SERVER.'/front/product/detail/product_id/'.$val['product_id']?>"><?php echo $val["model"]?></a></td>
-		            	<td><?php echo $val["price"]/1000?></td>		            	
+					<tr>						
+						<td><a href="<?php echo HTTP_SERVER.'/front/news/detail/news_id/'.$val['news_id']?>"><?php echo $val["title"]?></a></td>
+		            	<td class="center"><?php echo $val['viewed'];?></td>		            	
             		</tr>
 	          	<?php } ?>
           		<?php } else { ?>
@@ -102,7 +101,7 @@
 	</div><!-- #end #content -->
 	<!-- ///////////////////////////////////////////////////// -->
 	
-	<div id="edit-newest-product-form" title="Edit Newest Product Module">
+	<div id="edit-mostviewed-news-form" title="Edit Most View Module">
 		<form>
 			<input type="checkbox" name="chkIsShowed" id=chkIsShowed checked="checked"/>Use this module.<br>
 			Amount of items to show: <input type="text" maxlength="2" size="5" value="<?php echo $amount_items;?>" name="txtMaxAmount" id="txtMaxAmount"/>
