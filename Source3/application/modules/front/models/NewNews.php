@@ -24,7 +24,6 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			$select->limitPage($page,$rowCount);
 		}
 		
-
 		$result = $db->fetchAll($select);
 		}
 		return $result;
@@ -130,9 +129,9 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			$thenews_description = array(
 				'news_id' => $newsid,
 				'language' => $arrParam['language'],
-				'title' => $arrParam['title'],
-				'summary' => $arrParam['summary'],
-				'description' => $arrParam['description'],
+				'title' => stripslashes($arrParam['title']),
+				'summary' => stripslashes($arrParam['summary']),
+				'description' => stripslashes($arrParam['description']),
 				'meta_keywords' => $arrParam['metakeywords'],
 				'meta_description' => $arrParam['metadescription']
 			);
@@ -144,9 +143,9 @@ class Front_Model_NewNews extends Honey_Db_Table{
 		    $thenews_description = array(
 				'category_id'=>$arrParam['category'],
 		    	'news_id' => $arrParam['add_news_id'],
-		    	'language' => $arrParam['language'],
-				'summary' => $arrParam['summary'],
-				'description' => $arrParam['description'],
+		    	'language' => stripslashes($arrParam['language']),
+				'summary' => stripslashes($arrParam['summary']),
+				'description' => stripslashes($arrParam['description']),
 				'meta_keywords' => $arrParam['metakeywords'],
 				'meta_description' => $arrParam['metadescription']
 		    );
@@ -167,7 +166,7 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			$db->update($this->getPrefix().'news',$thenews,$where);
 			
 			$thenews_description = array(
-				'title' => $arrParam['title'],
+				'title' => stripslashes($arrParam['title']),
 				'description' => stripslashes($arrParam['description']),
 				'meta_keywords' => $arrParam['metakeywords'],
 				'meta_description' => $arrParam['metadescription']
