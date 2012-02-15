@@ -8,10 +8,8 @@
 		<?php echo $this->headScript();?>
 		<link id="layout" href="<?php echo HTTP_PUBLIC."/skins/front/layout/3A.css";?>" rel="stylesheet" type="text/css">
 	</head>
-	<?php session_start(); 
-		$_SESSION["back"] = $_SERVER['REQUEST_URI'];
-	?>
 	<body>
+	<?php $_SESSION['back'] = $_SERVER['REQUEST_URI'];?>
 		<div id="container">
 			<?php echo $this->render('_partial/_toolbar.phtml');?>
 			<div id="web-body">
