@@ -1,5 +1,15 @@
 <div id="content">
   <div class="breadcrumb"></div>
+  <?php if(isset($_SESSION['newseditmode'])) if($_SESSION['newseditmode'] == 'ON'){?>
+  	<script>
+		
+  	</script>
+  <?php }?>
+  
+  <div id="click-and-change-news-tool-bar ui-widget-header ui-corner-all">
+  	<div id="btnTurnOnEditMode" role="button" class="state-changable-buttonstate-changable-button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text"><a href="<?php echo $this->baseUrl($this->currentController.'/changenewseditmode');?>">Turn News Edit Mode On or Off</a></span></div>
+  </div>
+  
   <?php if ($this->Item) { ?>
   <div class="news-info">
     <div>
