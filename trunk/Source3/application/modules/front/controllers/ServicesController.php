@@ -32,6 +32,7 @@ class ServicesController extends Honey_Controller_Action{
 	public function getnewsAction(){
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
+		$this->getResponse()->setHeader('Content-type', 'application/json;charset=UTF-8', true);
 		
 		$json = array();
 		
@@ -44,6 +45,7 @@ class ServicesController extends Honey_Controller_Action{
 		}
 		else{
 		$json['news_id'] = $newses[0]['news_id'];
+		$json['category_id'] = $newses[0]['category_id'];
 		$json['author'] = $newses[0]['author'];
 		$json['image'] = $newses[0]['image'];
 		$json['viewed'] = $newses[0]['viewed'];
@@ -52,27 +54,37 @@ class ServicesController extends Honey_Controller_Action{
 		$json['date_added'] = $newses[0]['date_added'];
 		$json['date_modified'] = $newses[0]['date_modified'];
 		
-		foreach($newses as $news){
-		if($news['language'] == 'en_US')
-		{
-			$json['en_language'] = 'en_US';
-			$json['en_title'] = $news['title'];
-			$json['en_summary'] = $news['summary'];
-			$json['en_description'] = $news['description'];
-			$json['en_meta_keywords'] = $news['meta_keywords'];
-			$json['en_meta_description'] = $news['meta_description'];
-		}
-		if($news['language'] == 'vi_VN')
-		{
-			$json['vi_language'] = 'vi_VN';
-			$json['vi_title'] = $news['title'];
-			$json['vi_summary'] = $news['summary'];
-			$json['vi_description'] = $news['description'];
-			$json['vi_meta_keywords'] = $news['meta_keywords'];
-			$json['vi_meta_description'] = $news['meta_description'];
-		}
-		}
+		$json['language'] = $newses[0]['language'];
+		$json['title'] = $newses[0]['title'];
+		$json['summary'] = html_entity_decode($newses[0]['summary']);
+		$json['description'] = html_entity_decode($newses[0]['description']);
+		$json['meta_description'] = $newses[0]['meta_description'];
+		$json['meta_keywords'] = $newses[0]['meta_keywords'];
+		
 		$json['success'] = "Success:Get news success!";
+		}
+		//Zend_Json::$useBuiltinEncoderDecoder = true;
+		$this->getResponse()->setBody(Zend_Json::encode($json));
+		//$this->view->json = json_encode($json);
+	}
+	
+	public function getnewssummaryAction(){
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+		$this->getResponse()->setHeader('Content-type', 'application/json;charset=UTF-8', true);
+		
+		$json = array();
+		
+		$webservices = new Front_Model_Webservices();
+		
+		$newses = $webservices->getNews($this->_arrParam['news_id']);
+		
+		if(count($newses) <= 0){
+			$json['error'] = "Error:Get news failed! News not available.";
+		}
+		else{
+			$json['summary'] = html_entity_decode($newses[0]['summary']);
+			$json['success'] = "Lấy thông tin thành công";
 		}
 		$this->getResponse()->setBody(Zend_Json::encode($json));
 	}
@@ -94,6 +106,57 @@ class ServicesController extends Honey_Controller_Action{
 	        $json['news_title'] = $newstitles[0]['title'];
 	    }
 	    $json['success'] = "Lấy tiêu đề bài viết thành công";
+	    
+	    $this->getResponse()->setBody(Zend_Json::encode($json));
+	}
+	
+	public function getcategorylistAction(){
+	    $this->_helper->viewRenderer->setNoRender();
+	    $this->_helper->layout->disableLayout();
+	    
+	    $json = array();
+	    
+	    $category = new Front_Model_Category();
+	    
+	    $categories = $category->listItem($this->_arrParam, array('task' => 'listall'));
+	    
+	    $this->view->categories = $categories;
+	    
+	    if(count($categories) <= 0)
+	    	$json['error'] = count($categories);
+	    
+	    else{
+	     	foreach($categories as $cate)
+	     	{
+	     	    $child['category_id'] = $cate['category_id'];
+	     	    $child['name'] = $cate['name'];
+	     	    
+	     	    array_push($json,$child);
+	     	}
+	     	$json['success'] = "Lấy danh mục thành công!";
+	    }
+	    
+	    $this->getResponse()->setBody(Zend_Json::encode($json));
+	}
+	
+	public function countennewsAction(){
+	    
+	    $this->_helper->viewRenderer->setNoRender();
+	    $this->_helper->layout->disableLayout();
+	    
+	    $json = array();
+	    
+	    $news = new Front_Model_NewNews();
+	    
+	    $newscount = $news->countennews($this->_arrParam['news_id']);
+	    
+	    if(!isset($newscount))
+	        $json['error'] = "Lỗi: không xác định";
+	    
+	    else{
+	        $json['count'] = $newscount;
+	        $json['success'] = "Đếm số tin thành công";
+	    }
 	    
 	    $this->getResponse()->setBody(Zend_Json::encode($json));
 	}
