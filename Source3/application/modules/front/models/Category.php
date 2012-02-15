@@ -45,6 +45,20 @@ class Front_Model_Category extends Honey_Db_Table {
 	  		return $result;
 		}
 		
+		if($options['task'] == 'listall')
+		{
+		    $select = $db->select()
+		    	->from(array('c' => $this->getPrefix() . 'category'))
+		    	->joinLeft(array('cd' => $this->getPrefix() . 'category_description'), 'c.category_id = cd.category_id')
+		    	->where('cd.language = ?', $this->_lang)
+		    	->where('c.sort_order <> -1')
+		    	->where('c.status = ?', 1)
+		    	->order('c.sort_order');
+		    
+		    	$result =  $db->fetchAll($select);
+		    return $result;
+		}
+		
 	}
 	
 	protected function getPath($category_id) {

@@ -52,7 +52,8 @@ class Front_Model_Webservices extends Honey_Db_Table{
 		$result = $db->select()
 					->from(array('n'=>$this->getPrefix().'news'))
 					->joinLeft(array('nd'=>$this->getPrefix().'news_description'), 'n.news_id=nd.news_id')
-					->where('n.news_id = ?',$newsid);
+					->where('n.news_id = ?',$newsid)
+					->where('nd.language = ?', $this->_lang);
 		$newses = $db->fetchAll($result);
 		return $newses;
 	}
