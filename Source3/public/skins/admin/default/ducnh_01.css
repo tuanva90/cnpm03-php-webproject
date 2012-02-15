@@ -16,7 +16,7 @@ div#highlighter-region
 	padding-left:2px;
 	padding-right:2px;
 	display:block;
-	width:120px;
+	width:150px;
 }
 #contextMenu_01
 {
@@ -45,7 +45,7 @@ div#highlighter-region
 #contextMenu_01 li a span.remove-menu-item{
 	background-image:url(images/remove.png);
 }
-#contextMenu_01 li a span.add-menu-item{
+#contextMenu_01 li a span.show-detail-item{
 }
 #contextMenu_01 li:hover{
 	background:url('images/bg_menu_active.png');
