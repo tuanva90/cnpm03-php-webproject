@@ -15,6 +15,8 @@ class NewsController extends Honey_Controller_Action {
 	
 	public function init() {
 		$this->_arrParam = $this->_request->getParams ();
+		$this->_arrParam['user'] = 'ducnh'; 
+		$this->_arrParam['date'] = date("Y-m-d H:i:s");
 		
 		if(!isset($this->_arrParam['category_id'])) 
 		    $this->_arrParam['category_id'] = 1;
@@ -132,23 +134,40 @@ class NewsController extends Honey_Controller_Action {
 		$this->_helper->redirector('list', 'news', 'front');
 	}
 	public function addAction(){
+	
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 	
 		$newnews = new Front_Model_NewNews();
-	
-		$newnews->saveItem($this->_arrParam, array('task'=>'add'));
+		
+		if(isset($this->_arrParam['add_news_id']))
+			$newnews->saveItem($this->_arrParam, array('task'=>'add'));
+		else $newnews->saveItem($this->_arrParam, array('task'=>'addnew'));
 		$_SESSION['add_news_message'] = "Add news success!";
 	
 		$this->_helper->redirector('list','news', 'front');
+		//$this->view->whatuget = stripslashes($_POST['description']);
 	}
 	public function saveAction(){
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 	
 		$newnews = new Front_Model_NewNews();
-	
+		
 		$newnews->saveItem($this->_arrParam, array('task'=>'edit'));
+		$_SESSION['edit_news_message'] = "Edit news success!";
+	
+		$this->_helper->redirector('list','news', 'front');
+	}
+	
+	public function editsummaryAction(){
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+		
+		$news = new Front_Model_NewNews();
+		
+		$newnews->saveItem($this->_arrParam, array('task'=>'edit_summary'));
+		
 		$_SESSION['edit_news_message'] = "Edit news success!";
 	
 		$this->_helper->redirector('list','news', 'front');
@@ -174,5 +193,11 @@ class NewsController extends Honey_Controller_Action {
 	    $back = $_SESSION['myback'];
 	    unset($_SESSION['myback']);
 	    header("location: $back");
+	}
+	
+	public function markhotnewsAction(){
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+		
 	}
 }
