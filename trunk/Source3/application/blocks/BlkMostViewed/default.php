@@ -1,11 +1,13 @@
+
+<div class="ui-widget-content ui-conner-all module" id="<?php echo $info['module_id'];?>">
 <style>
 	#content a:hover{
 		color:#1C94C4;
 	}
-	
+	#content a{
+		text-decoration: none;
+	}
 </style>
-
-<div class="ui-widget-content ui-conner-all module" id="<?php echo $info['module_id'];?>">
 	<script type="text/javascript">
 		$(function(){
 			$("#edit-mostviewed-news").button().click(function(){
@@ -76,20 +78,19 @@
 			<thead>
 				<tr>					
 
-					<td class="left" style="min-width: 100px">Bài Viết</td>
+					<td class="center" style="min-width: 100px">Bài Viết</td>
 					<td class="center">Lượt Xem</td>					
 				</tr>
 			</thead>
 			<tbody>
-				<?php if ($items) { ?>
-				<?php foreach($items as $val){
-										
+				<?php if ($items) { ?>			
+				<?php foreach($items as $val){										
 					?>
 					<tr>						
 						<td><a href="<?php echo HTTP_SERVER.'/front/news/detail/news_id/'.$val['news_id']?>"><?php echo $val["title"]?></a></td>
 		            	<td class="center"><?php echo $val['viewed'];?></td>		            	
             		</tr>
-	          	<?php } ?>
+	          	<?php } ?>	          
           		<?php } else { ?>
 			        <tr>
 			            <td class="center" colspan="2">Không có kết quả</td>

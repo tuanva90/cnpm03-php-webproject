@@ -1,7 +1,7 @@
 <?php
-class Block_BlkMostView extends Zend_View_Helper_Abstract{
+class Block_BlkMostViewed extends Zend_View_Helper_Abstract{
 
-	public function BlkMostView ($info){
+	public function BlkMostViewed ($info){
 		
 		$view  = $this->view;
 		$arrParam = $view->arrParam;
@@ -19,6 +19,6 @@ class Block_BlkMostView extends Zend_View_Helper_Abstract{
 			'currentPage' => 1,
 		);
 		$items = $news_model->listItem($arrParam,array('task'=>'list'));
-		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkMostView' . DS . 'default.php');
+		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkMostViewed' . DS . 'default.php');
 	}
 }

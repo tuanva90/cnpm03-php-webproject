@@ -1,11 +1,12 @@
+
+
+<div class="ui-widget-content ui-conner-all module" id="<?php echo $info['module_id'];?>">
 <style>
 	#content a:hover{
 		color:#1C94C4;
 	}
 	
 </style>
-
-<div class="ui-widget-content ui-conner-all module" id="<?php echo $info['module_id'];?>">
 	<script type="text/javascript">
 		$(function(){
 			$("#edit-newest-product").button().click(function(){
@@ -64,7 +65,7 @@
 		});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">
-		<h3>Sản Phẩm Mới</h3>
+		<h3><?php echo $info['name']?></h3>
 		<div class="edit-button">
 			<button id='edit-newest-product' class="state-changable-button">...</button>
 		</div>
@@ -74,10 +75,9 @@
 	<form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
 		<table class="list">
 			<thead>
-				<tr>					
-
+				<tr>
 					<td class="left" style="min-width: 100px">Tên Sản Phẩm</td>
-					<td class="left">Giá</span></td>					
+					<td class="center">Giá <span style="font-size:6pt">(Ngàn vnđ)</span></td>					
 				</tr>
 			</thead>
 			<tbody>
@@ -87,8 +87,8 @@
 					?>
 					<tr>
 						
-						<td><a href="<?php echo HTTP_SERVER.'/front/product/detail/product_id/'.$val['product_id']?>"><?php echo $val["model"]?></a></td>
-		            	<td><?php echo $val["price"]/1000?></td>		            	
+						<td><a href="<?php echo HTTP_SERVER.'/front/product/detail/product_id/'.$val['product_id'].'#main-content'?>"><?php echo $val["model"]?></a></td>
+		            	<td class="center"><?php echo $val["price"]/1000?></td>		            	
             		</tr>
 	          	<?php } ?>
           		<?php } else { ?>
