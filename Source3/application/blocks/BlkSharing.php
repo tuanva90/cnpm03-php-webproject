@@ -11,6 +11,6 @@ class Block_BlkSharing extends Zend_View_Helper_Abstract{
 		echo '</pre>';
 		*/
 		
-		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkSharing' . DS . 'default.php');
+		require(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkSharing' . DS . 'default.php');
 	}
 }

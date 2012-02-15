@@ -1,0 +1,58 @@
+<?php
+$modules = $this->modules;
+function listModules ($modules) {
+    foreach ($modules as $module) {
+    	if($module['name'] != 'Main') {
+	        echo '<input type="checkbox" class="chk" name="'. $module['module_id'] . 
+	         '" id="chk' . $module['module_id'] . '" value="' .
+	         $module['name'] . '"/><label for="chk' . $module['module_id'] . '">' . 
+	         $module['name'] . '</label>';
+    	}
+    }
+}
+?>
+<div id="new-site-form">
+	<h3>New Site</h3>
+	<div id="validating-text" class="ui-state-error"></div>
+	<br>
+	<script>
+		
+		$(function() {
+			$("#tabs").tabs();
+			$("#SelectModule").buttonset();
+			$("#sortable").sortable();
+			$(".chk").button().click(function() {
+				var id = $(this).attr("name");
+				var name = $(this).val();
+				if($(this).is(":checked")) {
+					var html = '<li class="ui-state-default" id="' + id + '">' + name + '</li>';
+					$("#sortable").append(html);
+				} else {
+					var id = $(this).attr("name");
+					$("#sortable").remove("#" + id);
+				}
+			});
+		});
+		</script>
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">Information</a></li>
+			<li><a href="#tabs-2">Modules On Site</a></li>
+		</ul>
+		<div id="tabs-1">Site Name <br>
+			<input type="text" name="txtSiteName" maxlength="200" size=60 /><br>
+			Content<br>
+			<textarea id="txtContent" name="txtContent" rows="15" cols="120"></textarea>
+		</div>
+		<div id="tabs-2">Select module to display in this site:
+			<div id="SelectModule">
+				<?php listModules($modules);?>
+				<br>
+				Layout module on this site:
+				<ul id="sortable" style="min-height: 270px;">
+					<li class="ui-state-default" id="">Main Content</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
