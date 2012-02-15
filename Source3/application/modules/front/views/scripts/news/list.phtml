@@ -1,8 +1,8 @@
 <div id="content">
   <div class="breadcrumb"></div>
 
-  <?php if(isset($_SESSION['editmode'])) if($_SESSION['editmode'] == 'ON'){?>
-  <script>
+<?php session_start();  if(isset($_SESSION['EditMode'])) if($_SESSION['EditMode'] == 'ON'){?>
+<script>
   
 	
 $(function(){
