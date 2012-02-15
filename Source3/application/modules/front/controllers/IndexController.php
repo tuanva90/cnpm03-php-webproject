@@ -18,8 +18,13 @@ class IndexController extends Honey_Controller_Action
         $layoutPath = APPLICATION_PATH . '/templates/front/default';
         $this->loadTemplate($layout, $layoutPath, 'template.ini', 'template');
     }
-    public function indexAction ()
-    {}
+    public function indexAction () {
+    	$site_model = new Front_Model_Sites();
+		$module_model = new Front_Model_Module();
+		$this->view->item = $site_model->getItemByName("Home Page");
+		$this->view->modules = $module_model->getItemBySite($this->view->item['id']);
+    }
+    
     public function saveblockAction ()
     {
         $this->_helper->layout()->disableLayout();

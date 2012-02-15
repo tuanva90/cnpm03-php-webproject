@@ -50,6 +50,18 @@ class Front_Model_Module extends Honey_Db_Table{
   		return $result;
   	}
   	
+  	public function getItemBySite($site_id) {
+  		$db = Zend_Registry::get('connectDB');
+  		$select = $db->select()
+  				  ->from(array('m' => 'cms_module'))
+  				  ->join(array('s' => 'cms_sites_module'), 'm.module_id = s.module_id')
+  				  ->where('s.site_id = ?', $site_id)
+  				  ->order('s.sort_order');
+  		
+		$result = $db->fetchAll($select);
+  		return $result;
+  	}
+  	
   	public function updateItem($arrParram) {
   		$db = Zend_Registry::get('connectDB');
 		$where = 'module_id ='.$arrParram['module_id'];

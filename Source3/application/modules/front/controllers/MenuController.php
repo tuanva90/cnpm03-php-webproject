@@ -116,8 +116,10 @@ class MenuController extends Honey_Controller_Action {
 		}
 		
 		$category_model = new Front_Model_Category();
+		$site_model = new Front_Model_Sites();
 		$options['task'] = "list";
-		$this->view->categories = $category_model->listItem(null, $options); 
+		$this->view->categories = $category_model->listItem(null, $options);
+		$this->view->sites = $site_model->listItem(); 
 	}
 	
 	public function selectnewslinkAction() {

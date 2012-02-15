@@ -1,6 +1,6 @@
 <?php 
 $category = $this->categories;
-
+$site = $this->sites;
 function showCategoryList($category) {
 	foreach($category as $item) {
 		echo '<li class="ui-state-default" style="margin-left:5px;">'.$item['name'];
@@ -11,6 +11,15 @@ function showCategoryList($category) {
 function listCategories($category) {
 	foreach($category as $item) {
 		echo '<option value="'.$item['category_id'].'">'.$item['name'].'</option>';
+	}
+}
+
+function showSiteList($site) {
+	foreach($site as $item) {
+		if($item['name']!="Home Page") {
+			echo '<li class="ui-state-default" style="margin-left:5px;">'.$item['name'];
+			echo '<input type="hidden" id="value" value="'."front/sites/view/id/".$item['id'].'"></li>';
+		}
 	}
 }
 ?>
@@ -89,6 +98,7 @@ Select address where this item link to:
 				<li class="ui-state-default" style="margin-left:5px;">Product
 					<input type="hidden" id="value" value="<?php echo "front/product";?>">
 				</li>
+				<?php showSiteList($site);?>
 			</ul>
 		</div>
 		<div id="tabs-2">

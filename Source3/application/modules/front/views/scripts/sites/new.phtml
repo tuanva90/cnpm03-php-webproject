@@ -16,20 +16,48 @@ function listModules ($modules) {
 	<div id="validating-text" class="ui-state-error"></div>
 	<br>
 	<script>
+		function saveSite() {
+			if($("input[name=txtSiteName]").val() == "") {
+				$("#validating-text").html("You must enter Site Name");
+			} else {
+				showMessage("Saving...");
+				order = $("#sortable").sortable('toArray');
+				$.ajax({
+					type: 'POST',
+					url: '<?php echo HTTP_SERVER."front/sites/savenew"?>',
+					data: {
+						name: $("input[name=txtSiteName]").val(),
+						content: $("#txtContent").val(),
+						order: order
+					},
+					success: function(data) {
+						closeMessage();
+						$("#edit-site-form").dialog("close");
+						loadSiteList();
+					},
+					error: function(request, status, error) {
+						showMessage(error + "<br> Detail: <br>" + request.responseText);
+					}	
+				});
+			}
+		}
 		
 		$(function() {
 			$("#tabs").tabs();
 			$("#SelectModule").buttonset();
-			$("#sortable").sortable();
+			$("#sortable").sortable({
+				placeholder: "position-highlight",
+				revert: 100
+			});
 			$(".chk").button().click(function() {
 				var id = $(this).attr("name");
 				var name = $(this).val();
 				if($(this).is(":checked")) {
-					var html = '<li class="ui-state-default" id="' + id + '">' + name + '</li>';
+					var html = '<li class="ui-state-default" id="li' + id + '">' + name + '</li>';
 					$("#sortable").append(html);
 				} else {
 					var id = $(this).attr("name");
-					$("#sortable").remove("#" + id);
+					$("#li" + id).remove();
 				}
 			});
 		});
@@ -47,10 +75,10 @@ function listModules ($modules) {
 		<div id="tabs-2">Select module to display in this site:
 			<div id="SelectModule">
 				<?php listModules($modules);?>
-				<br>
+				<br><br>
 				Layout module on this site:
-				<ul id="sortable" style="min-height: 270px;">
-					<li class="ui-state-default" id="">Main Content</li>
+				<ul id="sortable" style="min-height: 230px;">
+					<li class="ui-state-default" id="li<?php echo $this->main['module_id'];?>">Main Content</li>
 				</ul>
 			</div>
 		</div>

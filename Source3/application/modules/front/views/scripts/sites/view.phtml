@@ -1,0 +1,15 @@
+<div id="content">
+<?php
+$moduleList = $this->modules;
+foreach($moduleList as $module) {
+	if($module['name'] == "Main") {
+		if(isset($this->item['content']))
+			echo $this->item['content'];
+	} else {
+		$functionName = $module['file_name'];
+		$info = $module;
+		echo $this->$functionName($info);
+	}
+}
+?>
+</div>

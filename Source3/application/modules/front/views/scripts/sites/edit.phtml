@@ -1,0 +1,109 @@
+<?php
+$modules = $this->modules;
+$selected_modules = $this->selected_module;
+function listModules ($modules, $selected_modules) {
+	$module_id_list = null;
+	foreach($selected_modules as $module) {
+		$module_id_list[] = $module['module_id'];
+	}
+    foreach ($modules as $module) {
+    	if($module['name'] != 'Main') {
+    		if(in_array($module['module_id'], $module_id_list)) {
+		        echo '<input type="checkbox" class="chk" name="'. $module['module_id'] . 
+		         '" id="chk' . $module['module_id'] . '" checked="checked" value="' .
+		         $module['name'] . '"/><label for="chk' . $module['module_id'] . '">' . 
+		         $module['name'] . '</label>';
+    		} else {
+    			echo '<input type="checkbox" class="chk" name="'. $module['module_id'] . 
+		         '" id="chk' . $module['module_id'] . '" value="' .
+		         $module['name'] . '"/><label for="chk' . $module['module_id'] . '">' . 
+		         $module['name'] . '</label>';
+    		}
+    	}
+    }
+}
+
+function listSelectedModules ($modules) {
+	foreach($modules as $module) {
+		echo '<li class="ui-state-default" id="li' . $module['module_id'] .'">' . $module['name'] . '</li>';
+	}
+}
+?>
+<div id="new-site-form">
+	<h3>Edit Site</h3>
+	<div id="validating-text" class="ui-state-error"></div>
+	<br>
+	<script>
+		var site_id = <?php echo $this->site['id'];?>;
+		function saveSite() {
+			if($("input[name=txtSiteName]").val() == "") {
+				$("#validating-text").html("You must enter Site Name");
+			} else {
+				showMessage("Saving...");
+				order = $("#sortable").sortable('toArray');
+				$.ajax({
+					type: 'POST',
+					url: '<?php echo HTTP_SERVER."front/sites/saveedit"?>',
+					data: {
+						id: site_id,
+						name: $("input[name=txtSiteName]").val(),
+						content: $("#txtContent").val(),
+						order: order
+					},
+					success: function(data) {
+						closeMessage();
+						$("#edit-site-form").dialog("close");
+						loadSiteList();
+					},
+					error: function(request, status, error) {
+						showMessage(error + "<br> Detail: <br>" + request.responseText);
+					}	
+				});
+			}
+		};
+		
+		$(function() {
+			$("#tabs").tabs();
+			$("#SelectModule").buttonset();
+			$("#sortable").sortable({
+				placeholder: "position-highlight",
+				revert: 100
+			});
+			
+			$(".chk").button().click(function() {
+				var id = $(this).attr("name");
+				var name = $(this).val();
+				if($(this).is(":checked")) {
+					var html = '<li class="ui-state-default" id="li' + id + '">' + name + '</li>';
+					$("#sortable").append(html);
+				} else {
+					var id = $(this).attr("name");
+					$("#li" + id).remove();
+				}
+			});
+		});
+		</script>
+	<div id="tabs">
+		<ul>
+			<li><a href="#tabs-1">Information</a></li>
+			<li><a href="#tabs-2">Modules On Site</a></li>
+		</ul>
+		<div id="tabs-1">Site Name <br>
+			<input type="text" name="txtSiteName" maxlength="200" size=60 value="<?php echo $this->site['name']?>" /><br>
+			Content<br>
+			<textarea id="txtContent" name="txtContent" rows="15" cols="120">
+			<?php if(isset($this->site['content'])) echo $this->site['content'];?>
+			</textarea>
+		</div>
+		<div id="tabs-2">Select module to display in this site:
+			<div id="SelectModule">
+				<?php listModules($modules, $selected_modules);?>
+				<br><br>
+				Layout module on this site:
+				<ul id="sortable" style="min-height: 230px;">
+					<?php listSelectedModules($selected_modules);?>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
