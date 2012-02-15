@@ -1,0 +1,45 @@
+<?php
+$news = $this->news;
+function showNewsList ($news)
+{
+    foreach ($news as $item) {
+        $name = "";
+        /*if (strlen($item['title']) > 60) {
+            $name = substr($item['title'], 0, 60) . "...";
+        } else {
+            $name = $item['title'];
+        }*/
+        $name = cut_string($item['title'], 60, true);
+        echo '<li class="ui-state-default" style="margin-left:5px;">' . $name;
+        echo '<input type="hidden" id="value" value="' . "front/news/detail/news_id/" . $item['news_id'] . '"></li>';
+    }
+}
+function cut_string ($str, $len, $more)
+{
+    if ($str == "" || $str == NULL)
+        return $str;
+    if (is_array($str))
+        return $str;
+    $str = trim($str);
+    if (strlen($str) <= $len)
+        return $str;
+    $str = substr($str, 0, $len);
+    if ($str != "") {
+        if (! substr_count($str, " ")) {
+            if ($more)
+                $str .= " ...";
+            return $str;
+        }
+        while (strlen($str) && ($str[strlen($str) - 1] != " ")) {
+            $str = substr($str, 0, - 1);
+        }
+        $str = substr($str, 0, - 1);
+        if ($more)
+            $str .= " ...";
+    }
+    return $str;
+}
+?>
+<ul id="selectable" class="selectable">
+	<?php showNewsList($news);?>
+</ul>

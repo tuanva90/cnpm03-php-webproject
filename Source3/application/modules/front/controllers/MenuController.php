@@ -108,5 +108,23 @@ class MenuController extends Honey_Controller_Action {
 	
 	public function selectlinkAction() {
 		$this->_helper->layout()->disableLayout();
+		
+		if(isset($_POST['link'])) {
+			$this->view->link = $_POST['link'];
+		} else {
+			$this->view->link = "front";
+		}
+		
+		$category_model = new Front_Model_Category();
+		$options['task'] = "list";
+		$this->view->categories = $category_model->listItem(null, $options); 
+	}
+	
+	public function selectnewslinkAction() {
+		$this->_helper->layout()->disableLayout();
+		
+		$category_model = new Front_Model_NewNews();
+		$options['task'] = "listbyonecate";
+		$this->view->news = $category_model->listItemByCate($_POST['category_id'], $options); 
 	}
 }

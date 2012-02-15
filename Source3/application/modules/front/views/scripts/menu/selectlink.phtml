@@ -1,49 +1,109 @@
+<?php 
+$category = $this->categories;
+
+function showCategoryList($category) {
+	foreach($category as $item) {
+		echo '<li class="ui-state-default" style="margin-left:5px;">'.$item['name'];
+		echo '<input type="hidden" id="value" value="'."front/news/index/category_id/".$item['category_id'].'"></li>';
+	}
+}
+
+function listCategories($category) {
+	foreach($category as $item) {
+		echo '<option value="'.$item['category_id'].'">'.$item['name'].'</option>';
+	}
+}
+?>
 <script>
+function errorLink(value) {
+	$("#link-validation").html(value);
+}
+
+
+$(function() {
+	function initSelectable() {
+		$(".selectable").selectable({
+			stop: function() {
+				$("#select-result").empty();
+				$(".ui-selected", this).each(function() {
+					var value =  $(this).children('input').val();
+					$("input[name=txtSelectedLink]").val(value);
+				});
+			}
+		});	
+	};
+
+	initSelectable();
+
+	$("#more").button();
+
+	$( "#tabs" ).tabs();
+
+	$("#CategoryList").change(function() {
+		var val = $("#CategoryList").val();
+		if(val == "") {
+			$("#NewsList").html("No Category Selected.");
+		} else {
+			$("#NewsList").html("Loading...");
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo HTTP_SERVER."front/menu/selectnewslink"?>',
+				data: {
+					category_id: val
+				},
+				success: function(data) {
+					$("#NewsList").html(data);
+					initSelectable();
+				},
+				error: function(request, status, error) {
+					showMessage(error + "<br> Detail: <br>" + request.responseText);
+				}	
+			});
+		}
+	});
+});
 </script>
 
 <div id="link-selector">
+Selected link: 
+<input type="text" disabled="disabled" name="txtSelectedLink" size="57" value="<?php echo $this->link;?>"/>
 <div id="link-validation" class="ui-state-error"></div>
 <br>
 Select address where this item link to:
 <br>
-<table border="0px;" width="100%">
-	<form>
-		<tr>
-			<td width="120px;">
-				<input type="radio" name="chkLinkType" value="0"/>Special Place
-			</td>
-			<td>
-				<select name="cboSpecialPlace">
-					<option>Home Page</option>
-					<option>News</option>
-					<option>Product</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td width="120px;">
-				<input type="radio" name="chkLinkType" value="1"/>Category
-			</td>
-			<td>
-				<select name="cboCategory">
-					<option>Home Page</option>
-					<option>News</option>
-					<option>Product</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td width="120px;">
-				<input type="radio" name="chkLinkType" value="2"/>Site
-			</td>
-			<td>
-				<select name="cboSite">
-					<option>Home Page</option>
-					<option>News</option>
-					<option>Product</option>
-				</select>
-			</td>
-		</tr>
-	</form>
-</table>
+	<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Sites</a></li>
+		<li><a href="#tabs-2">Categories</a></li>
+		<li><a href="#tabs-3">News</a></li>
+	</ul>
+	<div id="tabs-1">
+		<ul id="selectable" class="selectable">
+			<li class="ui-state-default" style="margin-left:5px;">Home Page
+				<input type="hidden" id="value" value="#">
+			</li>
+			<li class="ui-state-default" style="margin-left:5px;">News
+				<input type="hidden" id="value" value="<?php echo "front/news";?>">
+				<div id="children"></div>
+			</li>
+			<li class="ui-state-default" style="margin-left:5px;">Product
+				<input type="hidden" id="value" value="<?php echo "front/product";?>">
+			</li>
+		</ul>
+	</div>
+	<div id="tabs-2">
+		<ul id="selectable" class="selectable">
+			<?php showCategoryList($category);?>
+		</ul>
+	</div>
+	<div id="tabs-3">
+		Select News Category:
+		<select id="CategoryList">
+			<option value="">--Select a Category--</option>
+			<?php listCategories($category);?>
+		</select>
+		<div id="NewsList">
+		</div>
+	</div>
+</div>
 </div>
