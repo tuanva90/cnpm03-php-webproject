@@ -61,8 +61,7 @@ class Front_Model_NewNews extends Honey_Db_Table{
 	    	->where('n.status = ?', 1)
 	    	->where('nd.language = ?', $this->_lang)
 	    	->where('n.category_id IN (?)', $child_categories)
-	    	->order('n.date_modified DESC');
-	    	 
+	    	->order(array('n.date_modified DESC', 'n.sort_order ASC'));
 	    	if ($paginator['itemCountPerPage'] > 0){
 	    		$page = $paginator['currentPage'];
 	    		$rowCount = $paginator['itemCountPerPage'];
@@ -113,9 +112,10 @@ class Front_Model_NewNews extends Honey_Db_Table{
 	public function saveItem($arrParam = null, $option = null)
 	{
 		$db = Zend_Registry::get('connectDB');
-		if ($option['task'] == 'add')
+		if ($option['task'] == 'addnew')
 		{
 			$thenews = array(
+				'category_id'=>$arrParam['category'],
 				'image'=> $arrParam['image'],
 				'sort_order'=> $arrParam['sort-order'],
 				'status'=> $arrParam['status'],
@@ -127,34 +127,38 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			
 			$newsid = $db->lastInsertId();
 			
-			$thenews_description_vi = array(
+			$thenews_description = array(
 				'news_id' => $newsid,
-				'language' => 'vi_VN',
-				'title' => $arrParam['vi_title'],
-				'summary' => $arrParam['vi_summary'],
-				'description' => $arrParam['vi_description'],
-				'meta_keywords' => $arrParam['vi_metakeywords'],
-				'meta_description' => $arrParam['vi_metadescription']
+				'language' => $arrParam['language'],
+				'title' => $arrParam['title'],
+				'summary' => $arrParam['summary'],
+				'description' => $arrParam['description'],
+				'meta_keywords' => $arrParam['metakeywords'],
+				'meta_description' => $arrParam['metadescription']
 			);
 			
-			$thenews_description_en = array(
-				'news_id' => $newsid,
-				'language' => 'en_US',
-				'title' => $arrParam['en_title'],
-				'summary' => $arrParam['en_summary'],
-				'description' => $arrParam['en_description'],
-				'meta_keywords' => $arrParam['en_metakeywords'],
-				'meta_description' => $arrParam['en_metadescription']
-			);
-			
-			$db->insert($this->getPrefix().'news_description', $thenews_description_vi);
-			$db->insert($this->getPrefix().'news_description', $thenews_description_en);
+			$db->insert($this->getPrefix().'news_description', $thenews_description);
+		}
+		elseif($option['task'] == 'add')
+		{
+		    $thenews_description = array(
+				'category_id'=>$arrParam['category'],
+		    	'news_id' => $arrParam['add_news_id'],
+		    	'language' => $arrParam['language'],
+				'summary' => $arrParam['summary'],
+				'description' => $arrParam['description'],
+				'meta_keywords' => $arrParam['metakeywords'],
+				'meta_description' => $arrParam['metadescription']
+		    );
+		    
+		    $db->insert($this->getPrefix().'news_description',$thenews_description);
 		}
 		elseif ($option['task'] == 'edit')
 		{
-			$where = 'news_id = '.$arrParam['save-news-id'];
+			$where = 'news_id = '.$arrParam['save_news_id'];
 			
 			$thenews = array(
+				'category_id' => $arrParam['category'],
 				'image'=> $arrParam['image'],
 				'sort_order'=> $arrParam['sort-order'],
 				'status'=> $arrParam['status'],
@@ -162,26 +166,23 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			);
 			$db->update($this->getPrefix().'news',$thenews,$where);
 			
-			$thenews_description_vi = array(
-				'title' => $arrParam['vi_title'],
-				'summary' => $arrParam['vi_summary'],
-				'description' => $arrParam['vi_description'],
-				'meta_keywords' => $arrParam['vi_metakeywords'],
-				'meta_description' => $arrParam['vi_metadescription']
+			$thenews_description = array(
+				'title' => $arrParam['title'],
+				'description' => stripslashes($arrParam['description']),
+				'meta_keywords' => $arrParam['metakeywords'],
+				'meta_description' => $arrParam['metadescription']
 			);
-			$where = 'news_id = '.$arrParam['save-news-id'].' and language = \'vi_VN\'';
-			$db->update($this->getPrefix().'news_description',$thenews_description_vi,$where);
+			$where = array('news_id = '.$arrParam['save_news_id'], "language ='" + $arrParam['language'] + "'");
+			$db->update($this->getPrefix().'news_description',$thenews_description,$where);
 			
-			$thenews_description_en = array(
-				'title' => $arrParam['en_title'],
-				'summary' => $arrParam['en_summary'],
-				'description' => $arrParam['en_description'],
-				'meta_keywords' => $arrParam['en_metakeywords'],
-				'meta_description' => $arrParam['en_metadescription']
+		}
+		elseif($option['task']='edit_summary')
+		{
+			$thenews_description = array(
+				'summary' => stripslashes($arrParam['summary'])
 			);
-			$where = 'news_id = '.$arrParam['save-news-id'].' and language = \'en_US\'';
-			$db->update($this->getPrefix().'news_description',$thenews_description_en,$where);
-			
+			$where = array('news_id = '.$arrParam['save_news_id'], "language ='" + $arrParam['language'] + "'");
+			$db->update($this->getPrefix().'news_description',$thenews_description,$where);
 		}
 	}
 	
@@ -208,5 +209,17 @@ class Front_Model_NewNews extends Honey_Db_Table{
 					->joinLeft(array('nd'=>$this->getPrefix().'news_description'), 'n.news_id=nd.news_id')
 					->where('n.news_id = ?',753);
 					return $db->fetchAll($result);
+	}
+	
+	public function countennews($news_id)
+	{
+	    $db = Zend_Registry::get('connectDB');
+	    $select = $db->select()
+	    	->from($this->getPrefix().'news_description', array('count(*) as newscount'))
+	    	->where('news_id = ?', $news_id)
+	    	->where('language = ?', "en_US");
+	    
+	    $result = $db->fetchOne($select);
+	    return $result;
 	}
 }
