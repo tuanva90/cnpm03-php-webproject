@@ -15,9 +15,13 @@ class Front_Model_News extends Honey_Db_Table{
 	  				  ->from(array('n' => $this->getPrefix() . 'news'))
 	  				  ->joinLeft(array('nd' => $this->getPrefix() . 'news_description'), 'n.news_id = nd.news_id')
 	  				  ->where('n.status = ?', 1)
-	  				  ->where('nd.language = ?', $this->_lang)
-	  				  ->order('n.sort_order DESC');
-  			
+	  				  ->where('nd.language = ?', $this->_lang);
+	  				  
+  			if(isset($arrParam['order_mode'])){
+  				$select->order('n.'.$arrParam['order_mode']);
+  			}else{
+  				$select->order('n.product_id DESC');
+  			} 
 	  		if ($paginator ['itemCountPerPage'] > 0) {
 				$page = $paginator ['currentPage'];
 				$rowCount = $paginator ['itemCountPerPage'];
