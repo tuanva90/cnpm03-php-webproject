@@ -19,6 +19,17 @@ class Front_Model_Module extends Honey_Db_Table{
   		return $result;
   	}
   	
+  	public function listAllItem() {
+  		$db = Zend_Registry::get('connectDB');
+  		$select = $db->select()
+  				  ->from('cms_module')
+  				  ->where('is_showed = ?', 1)
+  				  ->order('sort_order ASC');
+  		
+		$result = $db->fetchAll($select);
+  		return $result;
+  	}
+  	
   	public function getItem($id) {
   		$db = Zend_Registry::get('connectDB');
   		$select = $db->select()

@@ -72,38 +72,38 @@ Selected link:
 Select address where this item link to:
 <br>
 	<div id="tabs">
-	<ul>
-		<li><a href="#tabs-1">Sites</a></li>
-		<li><a href="#tabs-2">Categories</a></li>
-		<li><a href="#tabs-3">News</a></li>
-	</ul>
-	<div id="tabs-1">
-		<ul id="selectable" class="selectable">
-			<li class="ui-state-default" style="margin-left:5px;">Home Page
-				<input type="hidden" id="value" value="#">
-			</li>
-			<li class="ui-state-default" style="margin-left:5px;">News
-				<input type="hidden" id="value" value="<?php echo "front/news";?>">
-				<div id="children"></div>
-			</li>
-			<li class="ui-state-default" style="margin-left:5px;">Product
-				<input type="hidden" id="value" value="<?php echo "front/product";?>">
-			</li>
+		<ul>
+			<li><a href="#tabs-1">Sites</a></li>
+			<li><a href="#tabs-2">Categories</a></li>
+			<li><a href="#tabs-3">News</a></li>
 		</ul>
-	</div>
-	<div id="tabs-2">
-		<ul id="selectable" class="selectable">
-			<?php showCategoryList($category);?>
-		</ul>
-	</div>
-	<div id="tabs-3">
-		Select News Category:
-		<select id="CategoryList">
-			<option value="">--Select a Category--</option>
-			<?php listCategories($category);?>
-		</select>
-		<div id="NewsList">
+		<div id="tabs-1">
+			<ul id="selectable" class="selectable">
+				<li class="ui-state-default" style="margin-left:5px;">Home Page
+					<input type="hidden" id="value" value="#">
+				</li>
+				<li class="ui-state-default" style="margin-left:5px;">News
+					<input type="hidden" id="value" value="<?php echo "front/news";?>">
+					<div id="children"></div>
+				</li>
+				<li class="ui-state-default" style="margin-left:5px;">Product
+					<input type="hidden" id="value" value="<?php echo "front/product";?>">
+				</li>
+			</ul>
+		</div>
+		<div id="tabs-2">
+			<ul id="selectable" class="selectable">
+				<?php showCategoryList($category);?>
+			</ul>
+		</div>
+		<div id="tabs-3">
+			Select News Category:
+			<select id="CategoryList">
+				<option value="">--Select a Category--</option>
+				<?php listCategories($category);?>
+			</select>
+			<div id="NewsList">
+			</div>
 		</div>
 	</div>
-</div>
 </div>

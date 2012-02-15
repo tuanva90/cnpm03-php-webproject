@@ -13,6 +13,6 @@ class Block_BlkLogin extends Zend_View_Helper_Abstract{
 		//Setting module-option
 		eval($info['option']);
 		
-		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkLogin' . DS . 'default.php');
+		require(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkLogin' . DS . 'default.php');
 	}
 }

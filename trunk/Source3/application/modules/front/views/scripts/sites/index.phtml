@@ -1,0 +1,95 @@
+<script>
+	var cofirm = false;
+	var selected_id;
+	
+	function deleteSite(id) {
+		cofirm = false;
+		selected_id = id;
+		$("#cofirm-delete").dialog("open");
+	}
+
+	$(".btnEdit").button();
+	$(".btnDel").button();
+	function editSite(id) {
+		selected_id = id;
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo HTTP_SERVER."front/sites/edit"?>',
+			data: {
+				id: selected_id
+			},
+			success: function(data) {
+				$("#edit-site-form-content").html(data);
+			},
+			error: function(request, textStatus, error) {
+				showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+			}	
+		});
+		$(this).dialog("close");
+	}
+
+	$(function() {
+		$("#cofirm-delete").dialog({
+			autoOpen: false,
+			width: 300,
+			height: 150,
+			modal: true,
+			buttons: {
+				"Yes": function() {
+					$.ajax({
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/sites/delete"?>',
+						dataType: 'json',
+						data: {
+							id: selected_id
+						},
+						success: function(data) {
+							$("#row" + selected_id).remove();
+						},
+						error: function(request, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText);
+						}	
+					});
+					$(this).dialog("close");
+				},
+				"No": function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+	});
+</script>
+
+<div id="cofirm-delete" title="CMS Click and Change">
+	Do you want to delete this site?
+</div>
+<h3>Site List</h3>
+<table class="list" width="" cellpadding="1" cellspacing="0">
+
+	<thead>
+		<tr>
+			<td align="center">Name</td>			
+			<td align="center">Action</td>
+		</tr>
+	</thead>
+	<tbody>
+	<?php
+		foreach($this->items as $site) {
+			showMenuRow($site);
+		}
+	?>
+	</tbody>
+</table>
+
+<?php
+function showMenuRow($site) {
+	echo '<tr id="row'.$site['id'].'">';
+    echo '<td>' . $site['name'];
+?>
+	<td align="center">
+		<a class="btnEdit" onclick="editSite('<?php echo $site['id']?>');">Edit</a>
+		<a class="btnDel" onclick="deleteSite('<?php echo $site['id']?>');">Del</a>
+	</td></tr>
+<?php
+}
+?>

@@ -18,6 +18,6 @@ class Block_BlkNewestProduct extends Zend_View_Helper_Abstract{
 			'currentPage' => 1,
 		);
 		$items = $product_model->listItem($arrParam,array('task'=>'list'));
-		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkNewestProduct' . DS . 'default.php');
+		require(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkNewestProduct' . DS . 'default.php');
 	}
 }
