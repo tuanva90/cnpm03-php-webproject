@@ -105,7 +105,7 @@ class NewsController extends Honey_Controller_Action {
 		$this->view->totalItem = $totalItem;
 		$paginator = new Honey_Paginator();
 		$this->view->panigator = $paginator->createPaginator($totalItem, $this->_paginator);
-		
+	
 	}
 	
 	public function detailAction() {
@@ -114,6 +114,7 @@ class NewsController extends Honey_Controller_Action {
 		$this->view->Item = $news->getItem($this->_arrParam, array('task'=>'info'));
 		$this->view->Title = 'News :: '.html_entity_decode($this->view->Item['title']);
 		$this->view->headTitle($this->view->Title, true);
+		
 	}
 	
 	
@@ -160,7 +161,7 @@ class NewsController extends Honey_Controller_Action {
 		
 		$news = new Front_Model_NewNews();
 		
-		$newnews->saveItem($this->_arrParam, array('task'=>'edit_summary'));
+		$news->saveItem($this->_arrParam, array('task'=>'edit_summary'));
 		
 		$_SESSION['edit_news_message'] = "Edit news success!";
 	
@@ -169,27 +170,23 @@ class NewsController extends Honey_Controller_Action {
 	
 	public function changeeditmodeAction()
 	{
-	    session_start();
-		
 	    $this->_helper->viewRenderer->setNoRender();
 	    $this->_helper->layout->disableLayout();
-	    
-	    if(isset($_SESSION['editmode']))
+	    session_start();
+	    if(isset($_SESSION['EditMode']))
 	    {
-	        if($_SESSION['editmode'] == 'ON')
-	            $_SESSION['editmode'] = 'OFF';
-	        else $_SESSION['editmode'] = 'ON';
+	        if($_SESSION['EditMode'] == 'ON')
+	            $_SESSION['EditMode'] = 'OFF';
+	        else $_SESSION['EditMode'] = 'ON';
 	    }
 	    else{
-	        $_SESSION['editmode'] = 'OFF';
+	        $_SESSION['EditMode'] = 'OFF';
 	    }
 	    
 	    // redirect to request page;
 	    $back = $_SESSION['back'];
 	    unset($_SESSION['back']);
-		ob_start();
 	    header("location: $back");
-		ob_flush();
 	}
 	
 	public function markhotnewsAction(){
