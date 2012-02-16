@@ -49,7 +49,7 @@ class IndexController extends Honey_Controller_Action
             $config = new Zend_Config_Ini(
             APPLICATION_PATH . DS . "configs/application.ini", null, 
             array('allowModifications' => true));
-            $config->currentLayout = $layout;
+            $config->layout->currentLayout = $layout;
             $writer = new Zend_Config_Writer_Ini(
             array("config" => $config, 
             "filename" => APPLICATION_PATH . DS . "configs/application.ini"));
@@ -67,7 +67,7 @@ class IndexController extends Honey_Controller_Action
             $config = new Zend_Config_Ini(
             APPLICATION_PATH . DS . "configs/application.ini", null, 
             array('allowModifications' => true));
-            $config->currentTheme = $theme;
+            $config->theme->currentTheme = $theme;
             $writer = new Zend_Config_Writer_Ini(
             array("config" => $config, 
             "filename" => APPLICATION_PATH . DS . "configs/application.ini"));

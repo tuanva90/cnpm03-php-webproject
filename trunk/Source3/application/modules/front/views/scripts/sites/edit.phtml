@@ -81,6 +81,7 @@ function listSelectedModules ($modules) {
 					$("#li" + id).remove();
 				}
 			});
+			replace("txtContent", "divcontent", "<?php echo HTTP_EDITOR;?>");
 		});
 		</script>
 	<div id="tabs">
@@ -89,15 +90,12 @@ function listSelectedModules ($modules) {
 			<li><a href="#tabs-2">Modules On Site</a></li>
 		</ul>
 		<div id="tabs-1">Site Name <br>
-			<input type="text" name="txtSiteName" maxlength="200" size=60 value="<?php echo $this->site['name']?>" /><br/>
+			<input type="text" name="txtSiteName" maxlength="200" size=60 value="<?php echo $this->site['name']?>" <?php if($this->site['name']== 'Home Page') echo 'disabled="disabled"'?> /><br/>
 			Content<br/>
 			<div id = divcontent></div>
 			<textarea id="txtContent" name="txtContent" rows="15" cols="120">
 			<?php if(isset($this->site['content'])) echo $this->site['content'];?>
 			</textarea>
-			<script type="text/javascript">
-			replace("txtContent", "divcontent", "<?php echo HTTP_EDITOR;?>");
-			</script>
 		</div>
 		<div id="tabs-2">Select module to display in this site:
 			<div id="SelectModule">

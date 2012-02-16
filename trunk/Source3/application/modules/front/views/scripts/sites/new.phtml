@@ -60,6 +60,8 @@ function listModules ($modules) {
 					$("#li" + id).remove();
 				}
 			});
+
+			replace("txtContent", "divcontent", "<?php echo HTTP_EDITOR;?>");
 		});
 		</script>
 	<div id="tabs">
@@ -69,8 +71,9 @@ function listModules ($modules) {
 		</ul>
 		<div id="tabs-1">Site Name <br>
 			<input type="text" name="txtSiteName" maxlength="200" size=60 /><br>
-			Content<br>
-			<textarea id="txtContent" name="txtContent" rows="15" cols="120"></textarea>
+			Content<br/>
+			<div id = divcontent></div>
+			<textarea id="txtContent" name="txtContent" rows="10" cols="120"></textarea>
 		</div>
 		<div id="tabs-2">Select module to display in this site:
 			<div id="SelectModule">
