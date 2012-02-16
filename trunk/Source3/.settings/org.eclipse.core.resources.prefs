@@ -1,4 +1,4 @@
-#Thu Nov 17 03:16:39 ICT 2011
+#Thu Feb 16 16:16:09 ICT 2012
 eclipse.preferences.version=1
 encoding//application/configs/application.ini=UTF-8
 encoding//application/modules/admin/configs/template.ini=UTF-8
@@ -13,6 +13,7 @@ encoding//application/modules/admin/views/scripts/news/delete.phtml=UTF-8
 encoding//application/modules/admin/views/scripts/news/index.phtml=UTF-8
 encoding//application/modules/admin/views/scripts/products/delete.phtml=UTF-8
 encoding//application/modules/admin/views/scripts/products/index.phtml=UTF-8
+encoding//application/modules/front/views/scripts/news/list.phtml=UTF-8
 encoding//application/modules/front/views/scripts/product/detail.phtml=UTF-8
 encoding//application/modules/front/views/scripts/product/index.phtml=UTF-8
 encoding//application/templates/admin/default/_partial/_header.phtml=UTF-8
