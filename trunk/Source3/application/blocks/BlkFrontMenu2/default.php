@@ -74,6 +74,7 @@
 					loadNewMenu();
 				},
 				"Close": function() {
+					$("#edit-menu-form-content").empty();
 					$(this).dialog("close");
 				}
 			}
