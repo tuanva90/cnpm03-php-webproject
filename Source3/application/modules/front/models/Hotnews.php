@@ -47,7 +47,7 @@ class Front_Model_Hotnews extends Honey_Db_Table{
 	        return $result;
 	    }
 	    
-	    if($option['task' == 'countOne'])
+	    if($option['task'] == 'countOne')
 	    {
 	        $select = $db->select()
 	        	->from($this->getPrefix().'hotnews', array('COUNT(*) as hotnewscount'))
