@@ -1,0 +1,79 @@
+<div id="gallery">
+<?php 
+      function recursiveDelete($directory) {
+		$handle = null;
+		if (is_dir($directory)) {
+			//echo "directory not correct";
+			$handle = opendir($directory);
+		}
+		
+		if (!$handle) {
+			return false;
+		}
+		$dem=0;
+		while (false !== ($file = readdir($handle))) {
+			if($dem==4){
+				$dem=0;
+				echo '</ul>';
+			}
+			if ($file != '.' && $file != '..') {
+				$dem++;
+				if($dem==0){
+					echo '</ul>';
+				}else{ 
+					if($dem==1) echo '<ul>';
+				}
+				if (!is_dir($directory . '/' . $file)) {
+					
+					//unlink($directory . '/' . $file);
+					//echo "this is image:".'public\images\data\computer'.'/'.$file ."</br>";
+					echo '<li><a href = "'. HTTP_IMAGES.'\data\hinhanh/'.$file . '">';
+					echo '<img src = "'. HTTP_IMAGES.'\data\hinhanh/'.$file . '" width="100" height="100"/></a><li>';
+				} else {
+					$this->recursiveDelete($directory . '/' . $file);
+				}
+			}
+			
+		}
+		if($dem==4) echo '</ul>';
+		closedir($handle);
+		
+		//rmdir($directory);
+	}
+	//echo recursiveDelete(getcwd()."/public/data/computer");
+	//echo (getcwd().'\public\data\computer');
+	echo recursiveDelete(getcwd ().'\public\images\data\hinhanh');
+?>
+</div>
+<!-- Arquivos utilizados pelo jQuery lightBox plugin -->
+  
+    <script type="text/javascript" src="<?php echo HTTP_JAVASCRIPT?>/js/jquery.lightbox-0.5.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo HTTP_JAVASCRIPT?>/css/jquery.lightbox-0.5.css" media="screen" />
+    <!-- / fim dos arquivos utilizados pelo jQuery lightBox plugin -->
+    
+    <!-- Ativando o jQuery lightBox plugin -->
+    <script type="text/javascript">
+    $(function() {
+        $('#gallery a').lightBox();
+    });
+    </script>
+   	<style type="text/css">
+	/* jQuery lightBox plugin - Gallery style */
+	#gallery {
+		background-color: #444;
+		padding: 10px;
+		width: 520px;
+	}
+	#gallery ul { list-style: none; }
+	#gallery ul li { display: inline; }
+	#gallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 20px;
+	}
+	#gallery ul a:hover img {
+		border: 5px solid #fff;
+		border-width: 5px 5px 20px;
+		color: #fff;
+	}
+	#gallery ul a:hover { color: #fff; }
+	</style>
