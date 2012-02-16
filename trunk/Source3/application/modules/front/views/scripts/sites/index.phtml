@@ -89,8 +89,10 @@ function showMenuRow($site) {
     echo '<td>' . $site['name'];
 ?>
 	<td align="center">
-		<a class="btnEdit" onclick="editSite('<?php echo $site['id']?>');">Edit</a>
-		<a class="btnDel" onclick="deleteSite('<?php echo $site['id']?>');">Del</a>
+		<a class="btnEdit" onclick="editSite('<?php echo $site['id'];?>');">Edit</a>
+		<?php if($site['name']!="Home Page") {?>
+		<a class="btnDel" onclick="deleteSite('<?php echo $site['id'];?>');">Del</a>
+		<?php }?>
 	</td></tr>
 <?php
 }
