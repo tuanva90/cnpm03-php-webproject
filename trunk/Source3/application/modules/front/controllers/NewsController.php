@@ -45,9 +45,7 @@ class NewsController extends Honey_Controller_Action {
 		
 	}
 	
-	public function indexAction() {
-	    
-	     
+	public function indexAction() {	     
 	    // Also categories view
 	    $this->view->Title = 'Front :: News';
 	    $this->view->headTitle = $this->view->Title;
