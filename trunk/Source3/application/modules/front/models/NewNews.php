@@ -142,9 +142,9 @@ class Front_Model_NewNews extends Honey_Db_Table{
 		elseif($option['task'] == 'add')
 		{
 		    $thenews_description = array(
-				'category_id'=>$arrParam['category'],
 		    	'news_id' => $arrParam['add_news_id'],
-		    	'language' => stripslashes($arrParam['language']),
+		    	'language' => $arrParam['language'],
+		    	'title' => stripslashes($arrParam['title']),
 				'summary' => stripslashes($arrParam['summary']),
 				'description' => stripslashes($arrParam['description']),
 				'meta_keywords' => $arrParam['metakeywords'],
