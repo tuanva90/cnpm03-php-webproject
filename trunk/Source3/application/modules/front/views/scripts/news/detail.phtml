@@ -1,15 +1,267 @@
 <div id="content">
   <div class="breadcrumb"></div>
-  <?php if(isset($_SESSION['editmode'])) if($_SESSION['editmode'] == 'ON'){?>
+  <?php session_start(); if(isset($_SESSION['EditMode'])) if($_SESSION['EditMode'] == 'ON'){?>
   	<script>
-		
-  	</script>
-  <?php }?>
+  	$(function(){
+  		$(document).click(function(e){
+			$('#contextMenu').hide();
+		});
+		$('#edit-news-frm').dialog({
+			autoOpen:false,
+			modal:true,
+			width:800,
+			height:600,
+			buttons:{
+				"Lưu":function(){
+					$('#edit-news-form').submit();
+				},
+				Hủy:function(){
+					//$(this).dialog("close");
+					$('#reload-page-form').submit();
+				}
+			},
+			close: function() {
+				//allFields.val( "" ).removeClass( "ui-state-error" );
+				$('#reload-page-form').submit();
+			}
+		});		
 
+		$('#add-news-frm-2').dialog({
+			autoOpen:false,
+			modal:true,
+			width:800,
+			height:600,
+			buttons: {
+				"Lưu": function() {
+					$('#add-news-form-2').submit();
+				},
+				Hủy: function() {
+					$('#reload-page-form').submit();
+				}
+			},
+			close: function() {
+				$('#reload-page-form').submit();
+			}
+		});
+		$('#edit-news-frm').dialog({
+			autoOpen:false,
+			modal:true,
+			width:800,
+			height:600,
+			buttons:{
+				"Lưu":function(){
+					$('#edit-news-form').submit();
+				},
+				Hủy:function(){
+					//$(this).dialog("close");
+					$('#reload-page-form').submit();
+				}
+			},
+			close: function() {
+				//allFields.val( "" ).removeClass( "ui-state-error" );
+				$('#reload-page-form').submit();
+			}
+		});
+
+		$(document).ready(function(){
+			var _currentNewsID = "<?php echo $this->Item['news_id']?>";
+			$('#contextMenu').hide();
+			
+
+			$('#edit-news').click(function(e){
+				e.stopPropagation();
+				// fuu, $(this).offset() lay offset top voi document, this.offsetTop lay offset top voi parent element
+				// damn u
+				var posy = e.pageY - $(this).offset().top;
+				var posx = e.pageX - $(this).offset().left;
+			
+				$('#contextMenu').css('top',posy);
+				$('#contextMenu').css('left',posx);
+				$('#contextMenu').show();
+			});
+			$('#edit-menu-item_01').bind('click',function(){
+				
+				$.ajax({
+					type:'POST',
+					url:'<?php echo $this->baseUrl('front/services/getnews')?>',
+					data:{news_id:_currentNewsID},
+					dataType:'json',
+					success:function(json){
+						if(json.success){
+							$('#edit-news-form input[name=save_news_id]').val(json.news_id);
+							$('#edit-news-form img[name=image]').attr('src',json.image);
+							$('#edit-news-form input[name=sort-order]').val(json.sort_order);
+							$('#edit-news-form select[name=status]').val(json.status);
+							$('#edit-news-form select[name=language]').val(json.language);
+							$('#edit-news-form input[name=title]').val(json.title);
+							
+							$('#edit-news-form textarea[name=summary]').val(json.summary);
+							$('#edit-news-form textarea[name=description]').val(json.description);
+							$('#edit-news-form input[name=metadescription]').val(json.meta_description);
+							$('#edit-news-form input[name=metakeywords]').val(json.meta_keywords);
+							$('#edit-news-form select[name=category]').val(json.category_id);
+							
+						}
+						if(json.error){
+							alert(json.error);
+						}
+					}
+				});
+				$('#edit-news-frm').dialog("open");
+				replace("edit_description","edit_description_posArea", "<?php echo HTTP_EDITOR;?>");
+			});
+			$('#add-en-menu-item_01').click(function(){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo $this->baseUrl('front/services/countennews')?>',
+					data:{news_id:_currentNewsID},
+					dataType:'json',
+					success:function(json){
+							if(json.success){
+								if(json.count == 0)
+								{
+									$('#add-news-frm-2').dialog("open");	
+									replace("add_description_2","add_description_2_posArea", "<?php echo HTTP_EDITOR;?>");
+								}
+								else{
+									$('<div title="Thông báo">Phiên bản tiếng Anh của tin này đã có. Sửa nó?</div>').dialog({
+											modal:true,
+											width:600,
+											height:300,
+											buttons:{
+												"Sửa":function(){
+													$.ajax({
+														type:'POST',
+														url:'<?php echo $this->baseUrl('front/services/getnews')?>',
+														data:{news_id:_currentNewsID},
+														dataType:'json',
+														success:function(json){
+															if(json.success){
+																//alert($('#edit-news-form select[name=category]'));
+																$('#edit-news-form input[name=save_news_id]').val(json.news_id);
+																$('#edit-news-form input[name=image]').val(json.image);
+																$('#edit-news-form img[name=image]').attr('src',json.image);
+																$('#edit-news-form input[name=sort-order]').val(json.sort_order);
+																$('#edit-news-form select[name=status]').val(json.status);
+																$('#edit-news-form select[name=language]').val(json.language);
+																$('#edit-news-form input[name=title]').val(json.title);
+
+																$('#edit-news-form textarea[name=summary]').val(json.summary);
+																$('#edit-news-form textarea[name=description]').val(json.description);
+																$('#edit-news-form input[name=metadescription]').val(json.meta_description);
+																$('#edit-news-form input[name=metakeywords]').val(json.meta_keywords);
+																$('#edit-news-form select[name=category]').val(json.category_id);
+																
+																//alert($('#edit-news-form textarea[name=description]').html());
+															}
+															if(json.error){
+																alert(json.error);
+															}
+														}
+													});
+													$('#edit-news-frm').dialog("open");
+													$(this).dialog("close");
+												},
+												Hủy:function(){
+													//$(this).dialog("close");
+													$('#reload-page-form').submit();
+												}
+											},
+											close:function() {
+												//allFields.val( "" ).removeClass( "ui-state-error" );
+												$('#reload-page-form').submit();
+											}
+										});
+								}
+							}
+							if(json.error){
+								alert(json.error);
+							}
+						}
+					});
+			});
+				
+			$('#set-hot-news-menu-item_01').click(function(){
+				$('#mark-as-hotnews-form input[name=news_id]').val(_currentNewsID);
+				$('#mark-as-hotnews-form').submit();
+			});
+		});
+  	  	
+  	});
+  	</script>
+  	
+  	<div id="contextMenu">
+  		<input type='hidden' name='news-id' value=''/>
+  		<ul id="contextMenu_01">
+  			<li><a href="javascript:void();"><span class="add-en-menu-item" id="add-en-menu-item_01">Thêm bản tiếng anh</span></a></li>
+  			<li><a href="javascript:void();"><span class="edit-menu-item" id="edit-menu-item_01">Sửa tin</span></a></li>
+			<li><a href="javascript:void();"><span class="set-hot-news-menu-item" id="set-hot-news-menu-item_01">Đặt làm tin nóng</span></a></li>
+  		</ul>
+ 	</div>  
+ 	<div id="add-news-frm-2" title="Khung thêm bài viết">
+  	<form id="add-news-form-2" name="add-news-form-2" method="post" action="<?php echo $this->baseUrl($this->currentController.'/add')?>">
+  		<input type="hidden" name="add_news_id" value=""/> 
+  		<fieldset>
+  			<legend>Thông tin chung</legend>
+			<span style="width:100px; display:inline-block">Mục</span><select name="category"></select><br/>
+  			<span style="width:100px; display:inline-block">Chọn 1 ngôn ngữ</span><select name="language"><option value="en_US">Tiếng Anh</option></select><br/>
+ 			<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><br/>
+ 			<span style="width:100px; display:inline-block">Thứ tự hiển thị</span><input type="text" name="sort-order" size="3"><br/>
+ 			<span style="width:100px; display:inline-block">Chọn 1 trạng thái</span><select name="status"><option value="1">Xuất bản ngay</option><option value="0">Chưa xuất bản ngay</option></select><br/>
+ 		</fieldset>
+ 	
+ 		<fieldset>
+ 			<legend>Thông tin chi tiết</legend>
+			Tiêu đề<br/><input type="text" name="vi_title" size="100"><br/>
+ 			Tóm tắt<br/><textarea cols="98" rows="2" name="summary"></textarea><br/>
+ 			Bài viết<br/><span id="add_description_2_posArea">Loading...</span><textarea cols="98" rows="10" name="description" id="add_description_2"></textarea><br/>
+ 			Meta keywords<br/><input type="text" name="metakeywords" size="100"><br/>
+ 			Meta description<br/><input type="text" name="metadescription" size="100"><br/>
+ 		</fieldset>
+ 	</form>
+  </div>
+  
+  <div id="edit-news-frm" title="Khung sửa bài viết">
+  <form id="edit-news-form" name="edit-news-form" method="post" action="<?php echo $this->baseUrl($this->currentController.'/save')?>">
+  	<input type="hidden" name="save_news_id" value=""/>
+  	<fieldset>
+ 	<legend>Thông tin chung</legend>
+ 	<span style="width:100px; display:inline-block">Mục</span><select name="category"></select><br/>
+ 	<span style="width:100px; display:inline-block">Ngôn ngữ</span><select name="language"><option value="en_US">Tiếng Anh</option><option value="vi_VN">Tiếng Việt</option></select><br/>
+ 	<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><a href="javascript:void();" id="edit-news-change-image">Duyệt</a><br/>
+ 	<span style="width:100px; display:inline-block"></span><img src="" name="image"><br/>
+ 	<span style="width:100px; display:inline-block">Thứ tự</span><input type="text" name="sort-order" size="3"><br/>
+ 	<span style="width:100px; display:inline-block">Trạng thái</span><select name="status"><option value="1">Được xuất bản</option><option value="0">Tạm ngưng</option></select><br/>
+ 	</fieldset>
+ 	
+ 	<fieldset>
+ 	<legend>Thông tin chi tiết</legend>
+ 	Tiêu đề<br/><input type="text" name="title" size="100"><br/>
+ 	Tóm tắt<br/><textarea cols="98" rows="2" name="summary"></textarea><br/>
+ 	Chi tiết<br/><span id="edit_description_posArea">Loading...</span><textarea cols="98" rows="6" name="description" id="edit_description"></textarea><br/>
+ 	Meta keywords<br/><input type="text" name="metakeywords" size="100"><br/>
+ 	Meta description<br/><input type="text" name="metadescription" size="100"><br/>
+ 	</fieldset>
+ 	</form>
+  </div>
+ 	  
+  <div id="mark-as-hotnews-frm">
+  	<form id="mark-as-hotnews-form" method="post" action="<?php echo $this->baseUrl('front/news/markhotnews');?>">
+  		<input type="hidden" name="news_id"/>
+  	</form>
+  </div>
+  <?php }?>
   <?php if ($this->Item) { ?>
   <div class="news-info">
     <div>
-      <div class="title"><?php echo $this->Item['title']; ?></div>
+    <div class="ui-widget-header ui-corner-all module-title title">
+		<h3><?php echo $this->Item['title']; ?></h3>
+		<?php if(isset($_SESSION['EditMode'])) if($_SESSION['EditMode'] == 'ON'){?>
+		<div class="edit-button">
+			<button id='edit-news' class="state-changable-button">...</button>
+		</div>
+		<?php }?>
+	</div>
       <div class="summary"><?php echo html_entity_decode($this->Item['summary'], ENT_QUOTES, 'UTF-8'); ?></div>
       <div class="description"><?php echo html_entity_decode($this->Item['description'], ENT_QUOTES, 'UTF-8'); ?></div>
     </div>

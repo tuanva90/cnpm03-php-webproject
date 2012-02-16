@@ -71,25 +71,6 @@ $(function(){
 			}
 		});
 		
-		$('#edit-news-summary-frm').dialog({
-			autoOpen:false,
-			modal:true,
-			width:800,
-			height:600,
-			buttons:{
-				"Lưu":function(){
-					$('#edit-news-summary-form').submit();
-				},
-				Hủy:function(){
-					//$(this).dialog("close");
-					$('#reload-page-form').submit();
-				}
-			},
-			close:function(){
-				//allFields.val("").removeClass("ui-state-error");
-				$('#reload-page-form').submit();
-			}
-		});
 		
 		$('#news-remove-form').dialog({
 			autoOpen:false,
@@ -201,7 +182,8 @@ $(function(){
 						$('#edit-news-form select[name=status]').val(json.status);
 						$('#edit-news-form select[name=language]').val(json.language);
 						$('#edit-news-form input[name=title]').val(json.title);
-
+						
+						$('#edit-news-form textarea[name=summary]').val(json.summary);
 						$('#edit-news-form textarea[name=description]').val(json.description);
 						$('#edit-news-form input[name=metadescription]').val(json.meta_description);
 						$('#edit-news-form input[name=metakeywords]').val(json.meta_keywords);
@@ -339,7 +321,6 @@ $(function(){
   			<li><a href="javascript:void();"><span class="add-menu-item" id="add-menu-item_01">Thêm tin mới</span></a></li>
   			<li><a href="javascript:void();"><span class="add-en-menu-item" id="add-en-menu-item_01">Thêm bản tiếng anh</span></a></li>
   			<li><a href="javascript:void();"><span class="edit-menu-item" id="edit-menu-item_01">Sửa tin</span></a></li>
-			<li><a href="javascript:void();"><span class="edit-summary-menu-item" id="edit-summary-menu-item_01">Sửa tóm tắt tin</span></a></li>
 			<?php if($this->arrParam['category_id'] != 'hot-news'){?>
 			<li><a href="javascript:void();"><span class="set-hot-news-menu-item" id="set-hot-news-menu-item_01">Đặt làm tin nóng</span></a></li>
 			<?php }?>
@@ -354,7 +335,8 @@ $(function(){
  	<legend>Thông tin chung</legend>
 	<span style="width:100px; display:inline-block">Mục</span><select name="category"></select><br/>
  	<span style="width:100px; display:inline-block">Chọn 1 ngôn ngữ</span><select name="language"><option value="vi_VN" selected="selected">Tiếng Việt</option><option value="en_US">Tiếng Anh</option></select><br/>
- 	<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><br/>
+ 	<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><a href="javascript:void();" id="edit-news-change-image">Duyệt</a><br/>
+ 	<span style="width:100px; display:inline-block"></span><img src="" name="image"><br/>
  	<span style="width:100px; display:inline-block">Thứ tự hiển thị</span><input type="text" name="sort-order" size="3"><br/>
  	<span style="width:100px; display:inline-block">Chọn 1 trạng thái</span><select name="status"><option value="1">Xuất bản ngay</option><option value="0">Chưa xuất bản ngay</option></select><br/>
  	</fieldset>
@@ -377,7 +359,8 @@ $(function(){
   			<legend>Thông tin chung</legend>
 			<span style="width:100px; display:inline-block">Mục</span><select name="category"></select><br/>
   			<span style="width:100px; display:inline-block">Chọn 1 ngôn ngữ</span><select name="language"><option value="en_US">Tiếng Anh</option></select><br/>
- 			<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><br/>
+ 			<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><a href="javascript:void();" id="edit-news-change-image">Duyệt</a><br/>
+ 			<span style="width:100px; display:inline-block"></span><img src="" name="image"><br/>
  			<span style="width:100px; display:inline-block">Thứ tự hiển thị</span><input type="text" name="sort-order" size="3"><br/>
  			<span style="width:100px; display:inline-block">Chọn 1 trạng thái</span><select name="status"><option value="1">Xuất bản ngay</option><option value="0">Chưa xuất bản ngay</option></select><br/>
  		</fieldset>
@@ -408,21 +391,12 @@ $(function(){
  	<fieldset>
  	<legend>Thông tin chi tiết</legend>
  	Tiêu đề<br/><input type="text" name="title" size="100"><br/>
+ 	Tóm tắt<br/><textarea cols="98" rows="2" name="summary"></textarea><br/>
  	Chi tiết<br/><span id="edit_description_posArea">Loading...</span><textarea cols="98" rows="6" name="description" id="edit_description"></textarea><br/>
  	Meta keywords<br/><input type="text" name="metakeywords" size="100"><br/>
  	Meta description<br/><input type="text" name="metadescription" size="100"><br/>
  	</fieldset>
  	</form>
-  </div>
-  
-  <div id="edit-news-summary-frm" title="Sửa tóm tắt tin">
-	<form id="edit-news-summary-form" name="edit-news-summary-form" method="post" action="<?php echo $this->baseUrl($this->currentController.'/editsummary')?>">
-	<input type="hidden" name="save_news_id" value=""/>
-	<fieldset>
-	<legend>Tóm tắt</legend>
- 	<br/><span id="edit_summary_posArea">Loading...</span><textarea cols="80" rows="2" name="summary" id="edit_summary"></textarea><br/>
-	</fieldset>
-	</form>
   </div>
   
   <div id="news-remove-form" title="Xóa bài viết">
