@@ -41,7 +41,7 @@
   		<?php while(!is_null(key($this->arrayItems))){ $curCategory = $this->arrayItems[key($this->arrayItems)];?>
   				<div class="child-category">
   				<div class="category-header">
-  				<a href="<?php echo $this->baseUrl($this->currentController.'/'.'index'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>"><?php echo $curCategory['categoryinfo']['category_description']['vi_VN']['name'];?></a>
+  				<a href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>"><?php echo $curCategory['categoryinfo']['category_description']['vi_VN']['name'];?></a>
   				</div>
   					<table>
   						<tr>
