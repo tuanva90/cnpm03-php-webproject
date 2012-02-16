@@ -2,7 +2,7 @@
 function replace(id, id_replace, str_directory)
 {
 	var tx = document.getElementById(id);
-	alert(tx.value);
+	//alert(tx.value);
 	RTE=new Editor('RTE', id, id_replace, tx.value,600, 350, str_directory);
 	RTE.display(id);
 	RTE.setHTMLto(id);
@@ -606,7 +606,7 @@ $(function() {
 						//aLink = $("#url1").val();
 						
 						if(aLink){
-							alert(aLink);
+							//alert(aLink);
 							//tEditor.fmt('InsertImage',  $("#url1").val());
 							if(!isIE){
 								tEditor.fmt('inserthtml',aLink);
@@ -617,7 +617,7 @@ $(function() {
 								ig.pasteHTML(aLink);
 								}
 					     
-					       alert(tEditor.getHTML());
+					      // alert(tEditor.getHTML());
 		                $(this).dialog("close");
 						}
 				},
@@ -663,7 +663,7 @@ $(function() {
 		opener.location.toLocaleString();
 		opener.close();
 		if (window.focus) {new_window.focus()}
-		alert(aLink);
+		//alert(aLink);
 		$('#url1').val(aLink); 
 		
 	});

@@ -12,6 +12,6 @@ class Block_BlkImpressiveProduct extends Zend_View_Helper_Abstract{
 		//Declare module-option
 		eval($info['option']);
 		
-		require(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkImpressiveProduct' . DS . 'default.php');
+		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkImpressiveProduct' . DS . 'default.php');
 	}
 }
