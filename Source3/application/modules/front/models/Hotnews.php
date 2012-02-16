@@ -17,7 +17,7 @@ class Front_Model_Hotnews extends Honey_Db_Table{
 		$paginator = $arrParam['paginator'];
 		if($option['task'] == 'listAll')
 		{
-			$select = "SELECT * FROM ".$this->getPrefix()."hotnews as hn LEFT JOIN ".$this->getPrefix()."news as n ON n.news_id = hn.news_id LEFT JOIN ".$this->getPrefix()."news_description as nd ON nd.news_id = hn.news_id WHERE nd.language = '".$this->_lang."' AND n.status = 1 ORDER BY hn.date_added ASC";
+			$select = "SELECT * FROM ".$this->getPrefix()."hotnews as hn LEFT JOIN ".$this->getPrefix()."news as n ON n.news_id = hn.news_id LEFT JOIN ".$this->getPrefix()."news_description as nd ON nd.news_id = hn.news_id WHERE nd.language = '".$this->_lang."' AND n.status = 1 ORDER BY hn.date_added DESC";
 			
 			if ($paginator['itemCountPerPage'] > 0){
 				$page = $paginator['currentPage'];
@@ -30,7 +30,7 @@ class Front_Model_Hotnews extends Honey_Db_Table{
 		}
 		if($option['task'] == 'listTop')
 		{
-			$select = "SELECT * FROM ".$this->getPrefix()."hotnews as hn LEFT JOIN ".$this->getPrefix()."news as n ON n.news_id = hn.news_id LEFT JOIN ".$this->getPrefix()."news_description as nd ON nd.news_id = hn.news_id WHERE nd.language = '".$this->_lang."' AND n.status = 1 ORDER BY hn.date_added ASC limit 0,5";
+			$select = "SELECT * FROM ".$this->getPrefix()."hotnews as hn LEFT JOIN ".$this->getPrefix()."news as n ON n.news_id = hn.news_id LEFT JOIN ".$this->getPrefix()."news_description as nd ON nd.news_id = hn.news_id WHERE nd.language = '".$this->_lang."' AND n.status = 1 ORDER BY hn.date_added DESC limit 0,5";
 			$result = $db->fetchAll($select);
 			return $result;
 		}

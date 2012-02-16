@@ -19,7 +19,7 @@ class NewsController extends Honey_Controller_Action {
 		$this->_arrParam['date'] = date("Y-m-d H:i:s");
 		
 		if(!isset($this->_arrParam['category_id'])) 
-		    $this->_arrParam['category_id'] = 1;
+		    $this->_arrParam['category_id'] = 25;
 		 		
 		$this->_currentController = '/' . $this->_arrParam ['module'] . '/' . $this->_arrParam ['controller'];
 		
@@ -147,9 +147,13 @@ class NewsController extends Honey_Controller_Action {
 	
 		$newnews = new Front_Model_NewNews();
 		$newnews->deleteItem($this->_arrParam);
-	
+		
+		session_start();
 		$_SESSION['delete_news_message'] = "Delete success!";
-		$this->_helper->redirector('list', 'news', 'front');
+		// redirect to request page;
+	    $back = $_SESSION['back'];
+	    unset($_SESSION['back']);
+	    header("location: $back");
 	}
 	public function addAction(){
 	
@@ -161,10 +165,13 @@ class NewsController extends Honey_Controller_Action {
 		if(isset($this->_arrParam['add_news_id']))
 			$newnews->saveItem($this->_arrParam, array('task'=>'add'));
 		else $newnews->saveItem($this->_arrParam, array('task'=>'addnew'));
+		
+		session_start();
 		$_SESSION['add_news_message'] = "Add news success!";
-	
-		$this->_helper->redirector('list','news', 'front');
-		//$this->view->whatuget = stripslashes($_POST['description']);
+		// redirect to request page;
+		$back = $_SESSION['back'];
+		unset($_SESSION['back']);
+		header("location: $back");
 	}
 	public function saveAction(){
 		$this->_helper->viewRenderer->setNoRender();
@@ -173,9 +180,13 @@ class NewsController extends Honey_Controller_Action {
 		$newnews = new Front_Model_NewNews();
 		
 		$newnews->saveItem($this->_arrParam, array('task'=>'edit'));
+		
+		session_start();
 		$_SESSION['edit_news_message'] = "Edit news success!";
-	
-		$this->_helper->redirector('list','news', 'front');
+		// redirect to request page;
+		$back = $_SESSION['back'];
+		unset($_SESSION['back']);
+		header("location: $back");
 	}
 	
 	public function editsummaryAction(){
@@ -186,9 +197,13 @@ class NewsController extends Honey_Controller_Action {
 		
 		$news->saveItem($this->_arrParam, array('task'=>'edit_summary'));
 		
+		session_start();
 		$_SESSION['edit_news_message'] = "Edit news success!";
 	
-		$this->_helper->redirector('list','news', 'front');
+		    // redirect to request page;
+	    $back = $_SESSION['back'];
+	    unset($_SESSION['back']);
+	    header("location: $back");
 	}
 	
 	public function changeeditmodeAction()
