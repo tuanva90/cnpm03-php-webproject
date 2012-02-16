@@ -134,7 +134,7 @@ body {
 }
 
 #wrapper input {
-    width: 300px;
+    width: 180px;
     border-color:#B7B7B7 #E8E8E8 #E8E8E8 #B7B7B7;
     border-style:solid;
     border-width:1px;
@@ -164,7 +164,7 @@ background: #fdffc8;
 	border-color:#B7B7B7 #E8E8E8 #E8E8E8 #B7B7B7;
 	border-style:solid;
 	border-width:1px;
-    width: 300px; height: 150px;
+    width: 180px; height: 100px;
 	display: block;
  }
  
