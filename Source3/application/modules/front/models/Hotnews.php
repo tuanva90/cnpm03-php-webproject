@@ -46,6 +46,16 @@ class Front_Model_Hotnews extends Honey_Db_Table{
 	        $result = $db->fetchOne($select);
 	        return $result;
 	    }
+	    
+	    if($option['task' == 'countOne'])
+	    {
+	        $select = $db->select()
+	        	->from($this->getPrefix().'hotnews', array('COUNT(*) as hotnewscount'))
+	        	->where('news_id = ?', $arrParam['news_id']);
+	        $result = $db->fetchOne($select);
+	        
+	        return $result;
+	    }
 	}
 	
 	public function saveItem($arrParam = null, $option = null)
@@ -54,12 +64,20 @@ class Front_Model_Hotnews extends Honey_Db_Table{
 	    
 	    if($option['task'] == 'add')
 	    {
-	        $i_data = array(
-	        	'news_id' => $arrParam['news_id'],
-	        	'date_added' => $arrParam['date']
-	        );
-	        
-	        $db->insert($this->getPrefix().'hotnews', $i_data);
+	     	if($this->countItem($arrParam,array('task'=>'countOne')) == 1){
+	     	    // chuyen sang update
+	     	    $hotnews = array('date_added' => $arrParam['date']);
+	     	    $where = 'news_id = '.$arrParam['news_id'];
+	     	    $db->update($this->getPrefix().'hotnews', $hotnews, $where);
+	     	}
+	     	else{
+	        	$i_data = array(
+	        		'news_id' => $arrParam['news_id'],
+	        		'date_added' => $arrParam['date']
+	        	);
+	       	 
+	        	$db->insert($this->getPrefix().'hotnews', $i_data);
+	     	}
 		}
 	}
 }

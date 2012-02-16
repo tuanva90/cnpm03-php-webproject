@@ -189,23 +189,6 @@ class NewsController extends Honey_Controller_Action {
 		header("location: $back");
 	}
 	
-	public function editsummaryAction(){
-		$this->_helper->viewRenderer->setNoRender();
-		$this->_helper->layout->disableLayout();
-		
-		$news = new Front_Model_NewNews();
-		
-		$news->saveItem($this->_arrParam, array('task'=>'edit_summary'));
-		
-		session_start();
-		$_SESSION['edit_news_message'] = "Edit news success!";
-	
-		    // redirect to request page;
-	    $back = $_SESSION['back'];
-	    unset($_SESSION['back']);
-	    header("location: $back");
-	}
-	
 	public function changeeditmodeAction()
 	{
 	    $this->_helper->viewRenderer->setNoRender();

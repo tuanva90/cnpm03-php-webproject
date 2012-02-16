@@ -168,6 +168,7 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			
 			$thenews_description = array(
 				'title' => stripslashes($arrParam['title']),
+				'summary' => stripslashes($arrParam['summary']),
 				'description' => stripslashes($arrParam['description']),
 				'meta_keywords' => $arrParam['metakeywords'],
 				'meta_description' => $arrParam['metadescription']
@@ -175,14 +176,6 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			$where = array('news_id = '.$arrParam['save_news_id'], "language ='" + $arrParam['language'] + "'");
 			$db->update($this->getPrefix().'news_description',$thenews_description,$where);
 			
-		}
-		elseif($option['task'] == 'edit_summary')
-		{
-			$thenews_description = array(
-				'summary' => stripslashes($arrParam['summary'])
-			);
-			$where = array('news_id = '.$arrParam['save_news_id'], "language ='" + $arrParam['language'] + "'");
-			$db->update($this->getPrefix().'news_description',$thenews_description,$where);
 		}
 	}
 	
