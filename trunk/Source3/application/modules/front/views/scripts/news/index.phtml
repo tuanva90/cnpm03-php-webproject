@@ -6,9 +6,6 @@
   	<div id="cate-list">
   		<?php if($this->arrHotnews){ ?>
   			<div class="parent-category">
-  				<div class="category-header">
-  					<a href="javascript:void();">Tin nổi bật</a>
-  				</div>
   				<div class="category-body">
   						<div id="latest-news">
   							<img class="latest-news-thumb fl" src="<?php echo $this->arrHotnews[0]['image'];?>"/>
@@ -33,35 +30,37 @@
   						</table>
   				</div>
   				
-  				<div class="category-footer">
-  					<a class="fr" href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/hot-news')?>">Xem nhiều hơn&gt;&gt;</a>
+  				<div style="text-align: right;">
+  					<h3><a class="fr" href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/hot-news')?>">Read more...</a></h3>
   				</div>
-  			</div>
+  			</div><br>
 		<?php }?>
   		<?php while(!is_null(key($this->arrayItems))){ $curCategory = $this->arrayItems[key($this->arrayItems)];?>
-  				<div class="child-category">
-  				<div class="category-header">
-  				<a href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>"><?php echo $curCategory['categoryinfo']['category_description']['vi_VN']['name'];?></a>
-  				</div>
-  					<table>
-  						<tr>
-  						<?php if(!is_null($curCategory['news'])){ reset($curCategory['news']);?>
-  						<?php while(!is_null(key($curCategory['news'])) && key($curCategory['news']) <4){ $news = current($curCategory['news']);?>
-  							<td>
-  								<span>
-  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$news['news_id'])?>">
-  								<img class="news-thumb" src="<?php echo $news['image']?>"/><br/><?php echo $news['title']?></a>
-  								</span>
-  							</td>
-  							
-  							<?php next($curCategory['news']); }?>
-  							<?php }?>
-  						</tr>
-  					</table>
-  				<div class="category-footer">
-  					<a class="fr" href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>">Xem nhiều hơn&gt;&gt;</a>
-  				</div>
-  				</div>
+  				<div class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+  					<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+  						<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
+  							<a href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>"><?php echo $curCategory['categoryinfo']['category_description']['vi_VN']['name'];?></a>
+  						</li>
+  					</ul>
+  					<div class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+	  					<table>
+	  						<tr>
+	  						<?php if(!is_null($curCategory['news'])){ reset($curCategory['news']);?>
+	  						<?php while(!is_null(key($curCategory['news'])) && key($curCategory['news']) <3){ $news = current($curCategory['news']);?>
+	  							<td>
+	  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$news['news_id'])?>">
+	  								<img class="news-thumb" src="<?php echo $news['image']?>"/><br/><?php echo $news['title']?></a>
+	  							</td>
+	  							
+	  							<?php next($curCategory['news']); }?>
+	  							<?php }?>
+	  						</tr>
+	  					</table>
+		  				<div style="text-align: right;">
+		  					<h3><a class="fr" href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>">Read more...</a></h3>
+		  				</div>
+	  				</div>
+  				</div><br>
   			<?php next($this->arrayItems);?>
   		<?php }?>
   	</div>
