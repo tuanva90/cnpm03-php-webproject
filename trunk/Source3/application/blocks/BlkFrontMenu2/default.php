@@ -83,7 +83,7 @@
 	</script>
 	
 	<div class="edit-button">
-		<button id='menu-manager' class="state-changable-button" style="z-index:1000;">...</button>
+		<button id='menu-manager' class="state-changable-button" style="z-index:600;">...</button>
 	</div>
 	
 	<div id="menu-manager-form" title="Menu Manager">
