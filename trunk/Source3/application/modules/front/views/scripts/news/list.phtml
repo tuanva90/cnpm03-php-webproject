@@ -1,6 +1,7 @@
 <div id="content">
   <div class="breadcrumb"></div>
-
+<pre>
+</pre>
 <?php session_start();  if(isset($_SESSION['EditMode'])) if($_SESSION['EditMode'] == 'ON'){?>
 <script>
   
@@ -319,6 +320,11 @@ $(function(){
 			$('#showdetails-form').find('input[name=news_id]').val(_currentNewsID);
 			$('#showdetails-form').submit();
 			});
+
+		$('#set-hot-news-menu-item_01').click(function(){
+			$('#mark-as-hotnews-form input[name=news_id]').val(_currentNewsID);
+			$('#mark-as-hotnews-form').submit();
+		});
 	});
 });
   </script>
@@ -333,7 +339,9 @@ $(function(){
   			<li><a href="javascript:void();"><span class="add-en-menu-item" id="add-en-menu-item_01">Thêm bản tiếng anh</span></a></li>
   			<li><a href="javascript:void();"><span class="edit-menu-item" id="edit-menu-item_01">Sửa tin</span></a></li>
 			<li><a href="javascript:void();"><span class="edit-summary-menu-item" id="edit-summary-menu-item_01">Sửa tóm tắt tin</span></a></li>
+			<?php if($this->arrParam['category_id'] != 'hot-news'){?>
 			<li><a href="javascript:void();"><span class="set-hot-news-menu-item" id="set-hot-news-menu-item_01">Đặt làm tin nóng</span></a></li>
+			<?php }?>
   			<li><a href="javascript:void();"><span class="remove-menu-item" id="remove-menu-item_01">Xóa tin</span></a></li>
   			<li><a href="javascript:void();"><span class="detail-menu-item" id="detail-menu-item_01">Xem chi tiết</span></a></li>
   		</ul>
@@ -425,6 +433,12 @@ $(function(){
   </div>
   <div id="news-showdetails-form">
   	<form id="showdetails-form" method="post" action="<?php echo $this->baseUrl('front/news/detail');?>">
+  		<input type="hidden" name="news_id"/>
+  	</form>
+  </div>
+  
+  <div id="mark-as-hotnews-frm">
+  	<form id="mark-as-hotnews-form" method="post" action="<?php echo $this->baseUrl('front/news/markhotnews');?>">
   		<input type="hidden" name="news_id"/>
   	</form>
   </div>

@@ -106,6 +106,7 @@ class Front_Model_NewNews extends Honey_Db_Table{
 		$where = ' news_id = '.$arrParam['news_id'];
 		$db->delete($this->getPrefix().'news', $where);
 		$db->delete($this->getPrefix().'news_description', $where);
+		$db->delete($this->getPrefix().'hotnews', $where);
 	}
 	
 	public function saveItem($arrParam = null, $option = null)
@@ -175,7 +176,7 @@ class Front_Model_NewNews extends Honey_Db_Table{
 			$db->update($this->getPrefix().'news_description',$thenews_description,$where);
 			
 		}
-		elseif($option['task']='edit_summary')
+		elseif($option['task'] == 'edit_summary')
 		{
 			$thenews_description = array(
 				'summary' => stripslashes($arrParam['summary'])

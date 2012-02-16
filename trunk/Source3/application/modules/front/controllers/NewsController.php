@@ -85,26 +85,49 @@ class NewsController extends Honey_Controller_Action {
 	    }
 	    
 	    $this->view->arrayItems = $categories;
-	
-
+		
+	    /*-------------------- Get Hotnews ------------------------*/
+	    
+	    $hotnews = new Front_Model_Hotnews();
+	    
+	    $arrHotnews = $hotnews->listItem($this->_arrParam, array('task'=>'listTop'));
+	    
+	    $this->view->arrHotnews = $arrHotnews;
 	}
 	
 	public function listAction(){
 		// format: list of news in a category
-		$this->view->Title = 'Front :: News';
-		$this->view->headTitle = $this->view->Title;
 		
-		$category = new Front_Model_Category();
-		$frontnews = new Front_Model_NewNews();
+		if($this->_arrParam['category_id'] == "hot-news"){
+		    
+		    $this->view->Title = 'Tin nổi bật';
+		    $this->view->headTitle = $this->view->Title;
+		    
+		    $hotnews = new Front_Model_Hotnews();
+		     
+		    $arrHotnews = $hotnews->listItem($this->_arrParam, array('task'=>'listAll'));
+		    $this->view->Items = $arrHotnews;
+		    $totalItem = $hotnews->countItem($this->_arrParam, array('task' =>'countAll'));
+		    $this->view->totalItem = $totalItem;
+		    $paginator = new Honey_Paginator();
+		    $this->view->panigator = $paginator->createPaginator($totalItem, $this->_paginator);
+		}
+		else{
+			$this->view->Title = 'Tin tức';
+			$this->view->headTitle = $this->view->Title;
 		
-		// get child categories
-		$this->_arrParam['child_categories'] = $category->getCategoriesByParentId($this->_arrParam['category_id']);
-		$this->view->Items = $frontnews->listItemByManyCate($this->_arrParam,array('task'=>'listbymanycate'));
+			$category = new Front_Model_Category();
+			$frontnews = new Front_Model_NewNews();
 		
-		$totalItem = $frontnews->countItemByCate($this->_arrParam);
-		$this->view->totalItem = $totalItem;
-		$paginator = new Honey_Paginator();
-		$this->view->panigator = $paginator->createPaginator($totalItem, $this->_paginator);
+			// get child categories
+			$this->_arrParam['child_categories'] = $category->getCategoriesByParentId($this->_arrParam['category_id']);
+			$this->view->Items = $frontnews->listItemByManyCate($this->_arrParam,array('task'=>'listbymanycate'));
+		
+			$totalItem = $frontnews->countItemByCate($this->_arrParam);
+			$this->view->totalItem = $totalItem;
+			$paginator = new Honey_Paginator();
+			$this->view->panigator = $paginator->createPaginator($totalItem, $this->_paginator);
+		}
 	
 	}
 	
@@ -193,5 +216,14 @@ class NewsController extends Honey_Controller_Action {
 		$this->_helper->viewRenderer->setNoRender();
 		$this->_helper->layout->disableLayout();
 		
+		$hotnews = new Front_Model_Hotnews();
+		
+		$hotnews->saveItem($this->_arrParam, array('task' => 'add'));
+		
+		session_start();
+		
+		$back = $_SESSION['back'];
+		unset($_SESSION['back']);
+		header("location: $back");
 	}
 }
