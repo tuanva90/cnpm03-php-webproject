@@ -1,224 +1,356 @@
-<?php
-$layoutConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "layout"); 
-?>
-<script>
-function showMessage(message) {
-	$("#message-content").html(message);
-	$("#message").dialog("open");
-};
-
-function closeMessage() {
-	$("#message").dialog("close");
-};
-
-$(function(){
-	var currentLayout="<?php echo $layoutConfig->currentLayout;?>";
-	var changeLayout = false;
-	var order1, order2, order3;
-
-	//Order a DIV follow a List
-	function orderDIV(object, array) {
-		for(var i=0; i < array.length; i++) {
-			array[i] = $('#' + array[i]);
-			$("#temp").append(array[i]);
-			object.append(array[i]);
-		}
-	}
-		  
-	//If user do not SAVE, reset the DIV order as original order
-	function resetDIVsOrder() {
-		orderDIV($("#col-1"), order1);
-		orderDIV($("#col-2"), order2);
-		orderDIV($("#col-main"), order3);
-	}
+<div id="toolbar">
+	<?php
+	$layoutConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "layout");
+	$themeConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "theme");
+	?>
+	<script>
+	function loadSiteList() {
+		$("#site-manager-form-content").html("Loading...");
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo HTTP_SERVER."front/sites/index"?>',
+			success: function(data) {
+				$("#site-manager-form-content").html(data);
+			},
+			error: function(request, textStatus, error) {
+				showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+			}	
+		});
+	};
 	
-	//Init message dialog
-	$("#message").dialog({
-		autoOpen: false,
-		height: 100,
-		width: 200,
-		modal: true
-	});
-
-	//Init ask dialog
-	$("#ask").dialog({
-		autoOpen: false,
-		height: 150,
-		width: 300,
-		modal: true,
-		buttons: {
-			"Save": function() {
+	function showMessage(message) {
+		$("#message-content").html(message);
+		$("#message").dialog("open");
+	};
+	
+	function closeMessage() {
+		$("#message").dialog("close");
+	};
+	
+	$(function(){
+		var currentLayout="<?php echo $layoutConfig->currentLayout;?>";
+		var currentTheme="<?php echo $themeConfig->currentTheme;?>";
+		var changeLayout = false;
+		var order1, order2, order3;
+	
+		$("#site-manager-form").dialog({
+			autoOpen: false,
+			width: 400,
+			height: 500,
+			modal: true,
+			buttons: {
+				"New Site": function() {
+					$("#edit-site-form").dialog("open");
+					$("#edit-site-form-content").html("Loading...");
+					$.ajax({
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/sites/new"?>',
+						success: function(data) {
+							$("#edit-site-form-content").html(data);
+						},
+						error: function(request, textStatus, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+						}	
+					});
+				},
+				"Close": function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		
+		$("#edit-site-form").dialog({
+			autoOpen: false,
+			width: 800,
+			height: 600,
+			modal: true,
+			buttons: {
+				"OK": function() {
+					saveSite();
+				},
+				"Close": function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+		
+		$("#btnSiteManager").button().click(function() {
+			$("#site-manager-form").dialog("open");
+			loadSiteList();
+		});
+	
+		//Order a DIV follow a List
+		function orderDIV(object, array) {
+			for(var i=0; i < array.length; i++) {
+				array[i] = $('#' + array[i]);
+				$("#temp").append(array[i]);
+				object.append(array[i]);
+			}
+		}
+			  
+		//If user do not SAVE, reset the DIV order as original order
+		function resetDIVsOrder() {
+			orderDIV($("#col-1"), order1);
+			orderDIV($("#col-2"), order2);
+			orderDIV($("#col-main"), order3);
+		}
+		
+		//Init message dialog
+		$("#message").dialog({
+			autoOpen: false,
+			height: 100,
+			width: 200,
+			modal: true
+		});
+	
+		//Init ask dialog
+		$("#ask").dialog({
+			autoOpen: false,
+			height: 150,
+			width: 300,
+			modal: true,
+			buttons: {
+				"Save": function() {
+					//Get the current orderring information
+					order1 = $("#col-1").sortable('toArray');
+					order2 = $("#col-2").sortable('toArray');
+					order3 = $("#col-main").sortable('toArray');
+					
+					$.ajax({
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/index/saveposition"?>',
+						dataType: 'json',
+						data: {
+							col_1: order1, 
+							col_2: order2, 
+							col_main: order3
+						},
+						success: function(data) {
+							closeMessage();	
+						},
+						error: function(request, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText);
+						}	
+					});
+					$(this).dialog("close");
+				},
+				Cancel: function() {
+					resetDIVsOrder();
+					$(this).dialog("close");
+				}
+			}
+		});
+	
+		//Init choose-layout-form dialog
+		$("#choose-layout-form").dialog({
+			autoOpen: false,
+			height: 400,
+			width: 700,
+			modal: true,
+			buttons: {
+				"Save": function(){
+					currentLayout = $("input[name=rdoLayout]:checked").val();
+					$.ajax({
+						
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/index/savelayout"?>',
+						dataType: 'json',
+						data: {
+							currentLayout: currentLayout
+						},
+						success: function(data) {
+							closeMessage();	
+						},
+						error: function(request, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText);
+						}	
+					});
+					$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
+					$(this).dialog("close");
+				},
+				Cancel: function(){
+					$(this).dialog("close");
+				}
+			}
+		});
+	
+		$("#choose-theme-form").dialog({
+			autoOpen: false,
+			width: 750,
+			height: 550,
+			modal: true,
+			buttons: {
+				"Save": function(){
+					currentTheme = $("input[name=rdoTheme]:checked").val();
+					$.ajax({
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/index/savetheme"?>',
+						dataType: 'json',
+						data: {
+							currentTheme: currentTheme
+						},
+						success: function(data) {
+							closeMessage();	
+						},
+						error: function(request, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText);
+						}	
+					});
+					$("#theme").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/themes/"?>" + currentTheme + "/jquery-ui-1.8.17.custom.css");
+					$(this).dialog("close");
+				},
+				"Close": function() {
+					$(this).dialog("close");
+				}
+			}
+		});
+	
+		//Init toolbar buttons
+		$("#btnMoreModules").button().click(function(){
+			
+		});
+	
+		$("#btnTheme").button().click(function() {
+			$("#choose-theme-form").dialog("open");
+			for(i = 0; i < $("input[name=rdoTheme]").length; i++) {
+				if ($("input[name=rdoTheme]")[i].value == currentTheme) {
+					$("input[name=rdoTheme]")[i].checked = true;
+				} else {
+					$("input[name=rdoTheme]")[i].checked = false;
+				}
+			}
+		});
+	
+		$("#btnTurnOnEditMode").button();
+	
+		$("#btnSelectLayout").button().click(function(){
+			$("#choose-layout-form").dialog("open");
+			for(i = 0; i < $("input[name=rdoLayout]").length; i++) {
+				if ($("input[name=rdoLayout]")[i].value == currentLayout) {
+					$("input[name=rdoLayout]")[i].checked = true;
+				} else {
+					$("input[name=rdoLayout]")[i].checked = false;
+				}
+			}
+		});
+		
+		$("#chkLayoutModules").button().click(function(){
+			if($(this).is(":checked")) {
+				//Turn on Layout Mode
+				$(this).button({
+					label: "Layout Modules Mode: ON"
+					});
+				$(".state-changable-button").button("option", "disabled", true);
+				$("#col-1, #col-2, #col-main").sortable("enable");
+	
 				//Get the current orderring information
 				order1 = $("#col-1").sortable('toArray');
 				order2 = $("#col-2").sortable('toArray');
 				order3 = $("#col-main").sortable('toArray');
 				
-				$.ajax({
-					type: 'POST',
-					url: '<?php echo HTTP_SERVER."front/index/saveposition"?>',
-					dataType: 'json',
-					data: {
-						col_1: order1, 
-						col_2: order2, 
-						col_main: order3
-					},
-					success: function(data) {
-						closeMessage();	
-					},
-					error: function(request, error) {
-						showMessage("Error! <br> Detail: <br>" + request.responseText);
-					}	
-				});
-				$(this).dialog("close");
-			},
-			Cancel: function() {
-				resetDIVsOrder();
-				$(this).dialog("close");
-			}
-		}
-	});
-
-	//Init choose-layout-form dialog
-	$("#choose-layout-form").dialog({
-		autoOpen: false,
-		height: 400,
-		width: 700,
-		modal: true,
-		buttons: {
-			"Save": function(){
-				currentLayout = $("input[name=rdoLayout]:checked").val();
-				$.ajax({
-					
-					type: 'POST',
-					url: '<?php echo HTTP_SERVER."front/index/savelayout"?>',
-					dataType: 'json',
-					data: {
-						currentLayout: currentLayout
-					},
-					success: function(data) {
-						closeMessage();	
-					},
-					error: function(request, error) {
-						showMessage("Error! <br> Detail: <br>" + request.responseText);
-					}	
-				});
-				$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
-				$(this).dialog("close");
-			},
-			Cancel: function(){
-				$(this).dialog("close");
-			}
-		}
-	});
-
-	//Init toolbar buttons
-	$("#btnMoreModules").button().click(function(){
-		
-	});
-
-	$("#btnPages").button().click(function() {
-	});
-
-	$("#btnSelectLayout").button().click(function(){
-		$("#choose-layout-form").dialog("open");
-		for(i = 0; i < $("input[name=rdoLayout]").length; i++) {
-			if ($("input[name=rdoLayout]")[i].value == currentLayout) {
-				$("input[name=rdoLayout]")[i].checked = true;
+				/*var newOrder = $(this).sortable('toArray');
+				var str = "Order1: ";
+	            for(i in order1) {
+	                str += order1[i] + ", ";
+	            }
+	            alert(str);*/
 			} else {
-				$("input[name=rdoLayout]")[i].checked = false;
+				//Turn off Layout Mode
+				$(this).button({
+					label: "Layout Modules Mode: OFF"
+					});
+				$(".state-changable-button").button("option", "disabled", false);
+				$("#col-1, #col-2, #col-main").sortable("disable");
+	
+				if(changeLayout == true) {
+					$("#ask").dialog("open");
+					changeLayout = false;
+				}
 			}
-		}
+		});
+	
+		//Layout followed setting
+		$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
+
+		//Change Theme followed setting
+		$("#theme").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/themes/"?>" + currentTheme + "/jquery-ui-1.8.17.custom.css");
+	
+		//Allow sort modules but disable until turn on Layout Mode
+		$("#col-1, #col-2, #col-main").sortable({
+			connectWith: ".changeable",
+			cancel: "#main-content",
+			placeholder: "position-highlight",
+			revert: 100,
+			update: function() {
+				changeLayout = true;
+			}
+		});
+		$("#col-1, #col-2, #col-main").disableSelection();
+		$("#col-1, #col-2, #col-main").sortable("disable");
 	});
 	
-	$("#chkLayoutModules").button().click(function(){
-		if($(this).is(":checked")) {
-			//Turn on Layout Mode
-			$(this).button({
-				label: "Layout Modules Mode: ON"
-				});
-			$(".state-changable-button").button("option", "disabled", true);
-			$("#col-1, #col-2, #col-main").sortable("enable");
-
-			//Get the current orderring information
-			order1 = $("#col-1").sortable('toArray');
-			order2 = $("#col-2").sortable('toArray');
-			order3 = $("#col-main").sortable('toArray');
-			
-			/*var newOrder = $(this).sortable('toArray');
-			var str = "Order1: ";
-            for(i in order1) {
-                str += order1[i] + ", ";
-            }
-            alert(str);*/
-		} else {
-			//Turn off Layout Mode
-			$(this).button({
-				label: "Layout Modules Mode: OFF"
-				});
-			$(".state-changable-button").button("option", "disabled", false);
-			$("#col-1, #col-2, #col-main").sortable("disable");
-
-			if(changeLayout == true) {
-				$("#ask").dialog("open");
-				changeLayout = false;
-			}
-		}
-	});
-
-	//Layout followed setting
-	$("#layout").attr("href", "<?php echo HTTP_PUBLIC."/skins/front/layout/"?>" + currentLayout + ".css");
-
-	//Allow sort modules but disable until turn on Layout Mode
-	$("#col-1, #col-2, #col-main").sortable({
-		connectWith: ".changeable",
-		cancel: "#main-content",
-		placeholder: "position-highlight",
-		revert: 100,
-		update: function() {
-			changeLayout = true;
-		}
-	});
-	$("#col-1, #col-2, #col-main").disableSelection();
-	$("#col-1, #col-2, #col-main").sortable("disable");
-});
-
-</script>
-
-<!-- Temporary DIV for orderDIV function -->
-<div id="temp"></div>
-
-<!-- Define MessageBox with default information -->
-<div id="message" title="CMS Click and Change">
-	<p id="message-content" align="center">Saving...</p>
-</div>
-
-<!-- Define MessageBox with Yes/No button -->
-<div id="ask" title="CMS Click and Change">
-	<p id="ask-content" align="center">Do you want to save changes you made to Modules Position?</p>
-</div>
-
-<!-- Toolbar for administrator's editor mode -->
-<div id="admin-toolbar" class="ui-widget-header ui-corner-all">
-	<div id="btnMoreModules" class="state-changable-button">More Modules</div>
-	<div id="btnSelectLayout" class="state-changable-button">Select Layout</div>
-	<input type="checkbox" id="chkLayoutModules"/>
-	<label for="chkLayoutModules">Layout Modules Mode: OFF</label>
-	<div id="btnPages" class="state-changable-button">Sites Management</div>
-  <div id="click-and-change-news-tool-bar ui-widget-header ui-corner-all">
-  	<div id="btnTurnOnEditMode" role="button" class="state-changable-buttonstate-changable-button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text"><a href="<?php echo $this->baseUrl('front/news/changeeditmode');?>">Turn Edit Mode On or Off</a></span></div>
-  </div>
-</div>
-
-<!-- Form for choosing page layout -->
-<div id="choose-layout-form" title="Select Page Layout">
-	<input type="radio" name="rdoLayout" value="3A">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3A.JPG";?>">
-	<input type="radio" name="rdoLayout" value="3B">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3B.JPG";?>">
-	<input type="radio" name="rdoLayout" value="3C">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3C.JPG";?>"><br>
-	<input type="radio" name="rdoLayout" value="2A">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2A.JPG";?>">
-	<input type="radio" name="rdoLayout" value="2B">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2B.JPG";?>">
+	</script>
+	
+	<!-- Temporary DIV for orderDIV function -->
+	<div id="temp"></div>
+	
+	<!-- Define MessageBox with default information -->
+	<div id="message" title="CMS Click and Change">
+		<p id="message-content" align="center">Saving...</p>
+	</div>
+	
+	<!-- Define MessageBox with Yes/No button -->
+	<div id="ask" title="CMS Click and Change">
+		<p id="ask-content" align="center">Do you want to save changes you made to Modules Position?</p>
+	</div>
+	
+	<!-- Toolbar for administrator's editor mode -->
+	<div id="admin-toolbar" class="ui-widget-header ui-corner-all">
+		<div id="btnMoreModules" class="state-changable-button">More Modules</div>
+		<div id="btnSelectLayout" class="state-changable-button">Select Layout</div>
+		<input type="checkbox" id="chkLayoutModules"/>
+		<label for="chkLayoutModules">Layout Modules Mode: OFF</label>
+		<div id="btnSiteManager" class="state-changable-button">Sites Management</div>
+		<div id="btnTheme" class="state-changable-button">Select Theme</div>
+	  	<div id="btnTurnOnEditMode" class="state-changable-button"><a href="<?php echo $this->baseUrl('front/news/changeeditmode');?>">Turn Edit Mode On or Off</a></div>
+	</div>
+	
+	<!-- Form for choosing page layout -->
+	<div id="choose-layout-form" title="Select Page Layout">
+		<input type="radio" name="rdoLayout" value="3A">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3A.JPG";?>">
+		<input type="radio" name="rdoLayout" value="3B">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3B.JPG";?>">
+		<input type="radio" name="rdoLayout" value="3C">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3C.JPG";?>"><br>
+		<input type="radio" name="rdoLayout" value="2A">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2A.JPG";?>">
+		<input type="radio" name="rdoLayout" value="2B">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2B.JPG";?>">
+	</div>
+	
+	<div id="choose-theme-form" title="Select Theme">
+		<input type="radio" name="rdoTheme" value="ui-darkness"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-darkness.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-lightness"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-lightness.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-overcast"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-overcast.JPG";?>" style="width: 200px; height: 200px;">
+		<br>
+		<input type="radio" name="rdoTheme" value="ui-smoothness"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-smoothness.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-start"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-start.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-sunny"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-sunny.JPG";?>" style="width: 200px; height: 200px;">
+	</div>
+	
+	<div id="site-manager-form" title="Sites Manager">
+		<div id="site-manager-form-content">
+		</div>
+	</div>
+	<div id="edit-site-form" title="Sites Manager">
+		<div id="edit-site-form-content">
+		</div>
+	</div>
 </div>

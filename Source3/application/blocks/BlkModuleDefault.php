@@ -13,6 +13,6 @@ class Block_BlkModuleDefault extends Zend_View_Helper_Abstract{
 		//Turn the line below on to load option from database
 		//eval($info['option']);
 		
-		require(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkModuleDefault' . DS . 'default.php');
+		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkModuleDefault' . DS . 'default.php');
 	}
 }

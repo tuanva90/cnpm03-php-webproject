@@ -11,6 +11,6 @@ class Block_BlkHelloWorld extends Zend_View_Helper_Abstract{
 		//Setting module-option
 		eval($info['option']);
 		
-		require(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkHelloWorld' . DS . 'default.php');
+		require_once(APPLICATION_PATH . DS . DS . 'blocks' . DS. 'BlkHelloWorld' . DS . 'default.php');
 	}
 }
