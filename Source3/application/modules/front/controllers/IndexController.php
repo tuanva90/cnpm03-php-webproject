@@ -127,4 +127,17 @@ class IndexController extends Honey_Controller_Action
     	}
     	echo "Error dzmnaskdjhasd";
     }
+	public function searchAction()
+    {
+    	$this->_helper->layout()->disableLayout();
+    	try{    		
+	    	$TuKhoa= $_POST['tukhoa'];
+	    	$db = Zend_Registry::get('connectDB');
+			$query = "select * from cms_product_description where name like '%".$TuKhoa."%'";
+			$result = $db->fetchAll($query);
+		     $this->view->results = $result;
+    	}catch(Exception $e) {
+    		echo "Error:" + $e->getMessage();
+    	}
+    }
 }
