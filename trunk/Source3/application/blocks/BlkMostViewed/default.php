@@ -9,6 +9,26 @@
 	}
 </style>
 	<script type="text/javascript">
+		///
+		function most_viewed_refesh(){		
+			$("#most-view-content").html("<center><h3>Loading...</h3></center>");
+			var max = $("#edit-mostviewed-news-form input[name='txtMaxAmount']").val();			
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo HTTP_SERVER."front/index/mostviewed"?>',
+				data: {				
+					num_rows: max
+				},
+				success: function(data) {
+					//alert(data);
+					$("#most-view-content").html(data);
+				},
+				error: function(request, textStatus, error) {
+					showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+				}	
+			});
+		}
+		//////////////////
 		$(function(){
 			$("#edit-mostviewed-news").button().click(function(){
 				$("#edit-mostviewed-news-form").dialog("open");
@@ -42,7 +62,7 @@
 						if(!isShowed){
 							$("#<?php echo $info['module_id']?>").remove();
 						}else{
-							window.location.reload() 
+							most_viewed_refesh();
 						}
 					},
 					error: function(request, error) {						
@@ -67,6 +87,7 @@
 					}
 				}
 			});
+			most_viewed_refesh();
 		});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">
@@ -76,32 +97,9 @@
 		</div>
 	</div>
 	<!-- ///////////////////////////////////////////////////// -->
-	<div id="content" style="overflow-x:auto;min-height: 10px; ">
+	<div id="most-view-content" style="overflow-x:auto;min-height: 10px; ">
 	
-		<table class="list" style="margin-bottom: 0px;">
-			<thead>
-				<tr>					
-
-					<td class="center" style="min-width: 100px">News</td>
-					<td class="center">Viewed</td>					
-				</tr>
-			</thead>
-			<tbody>
-				<?php if ($items) { ?>			
-				<?php foreach($items as $val){										
-					?>
-					<tr>						
-						<td><a href="<?php echo HTTP_SERVER.'/front/news/detail/news_id/'.$val['news_id']?>"><?php echo $val["title"]?></a></td>
-		            	<td class="center"><?php echo $val['viewed'];?></td>		            	
-            		</tr>
-	          	<?php } ?>	          
-          		<?php } else { ?>
-			        <tr>
-			            <td class="center" colspan="2">Không có kết quả</td>
-			        </tr>
-          		<?php } ?>
-			</tbody>
-		</table>
+		
 		
 	</div><!-- #end #content -->
 	<!-- ///////////////////////////////////////////////////// -->
