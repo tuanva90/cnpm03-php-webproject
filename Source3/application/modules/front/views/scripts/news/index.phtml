@@ -43,19 +43,15 @@
   						</li>
   					</ul>
   					<div class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-	  					<table>
-	  						<tr>
-	  						<?php if(!is_null($curCategory['news'])){ reset($curCategory['news']);?>
-	  						<?php while(!is_null(key($curCategory['news'])) && key($curCategory['news']) <3){ $news = current($curCategory['news']);?>
-	  							<td>
-	  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$news['news_id'])?>">
-	  								<img class="news-thumb" src="<?php echo $news['image']?>"/><br/><?php echo $news['title']?></a>
-	  							</td>
-	  							
-	  							<?php next($curCategory['news']); }?>
-	  							<?php }?>
-	  						</tr>
-	  					</table>
+  						<?php if(!is_null($curCategory['news'])){ reset($curCategory['news']);?>
+  						<?php while(!is_null(key($curCategory['news'])) && key($curCategory['news']) <3){ $news = current($curCategory['news']);?>
+  							<div class="news-box">
+  								<a class="news-title" href="<?php echo $this->baseUrl($this->currentController.'/'.'detail'.'/news_id/'.$news['news_id'])?>">
+  								<img class="news-thumb" src="<?php echo $news['image']?>"/><br/><?php echo $news['title']?></a>
+  							</div>
+  						<?php next($curCategory['news']); }?>
+  						<?php }?>
+  						<div class="clear"></div>
 		  				<div style="text-align: right;">
 		  					<h3><a class="fr" href="<?php echo $this->baseUrl($this->currentController.'/'.'list'.'/category_id/'.$curCategory['categoryinfo']['category_id'])?>">Read more...</a></h3>
 		  				</div>

@@ -1,3 +1,4 @@
+<div id="toolbar">
 <?php
 	$layoutConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "layout"); 
 	$themeConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "theme");
@@ -267,7 +268,7 @@
 			if($(this).is(":checked")) {
 				//Turn on Layout Mode
 				$(this).button({
-					label: "Layout Modules Mode: ON"
+					label: "Layout Mode: ON"
 					});
 				$(".state-changable-button").button("option", "disabled", true);
 				$("#col-1, #col-2, #col-main").sortable("enable");
@@ -286,7 +287,7 @@
 			} else {
 				//Turn off Layout Mode
 				$(this).button({
-					label: "Layout Modules Mode: OFF"
+					label: "Layout Mode: OFF"
 					});
 				$(".state-changable-button").button("option", "disabled", false);
 				$("#col-1, #col-2, #col-main").sortable("disable");
@@ -342,71 +343,72 @@
 			}
 		});
 	});
-</script>
-
-<!-- Temporary DIV for orderDIV function -->
-<div id="temp"></div>
-
-<!-- Define MessageBox with default information -->
-<div id="message" title="CMS Click and Change">
-	<p id="message-content" align="center">Saving...</p>
-</div>
-
-<!-- Define MessageBox with Yes/No button -->
-<div id="ask" title="CMS Click and Change">
-	<p id="ask-content" align="center">Do you want to save changes you made to Modules Position?</p>
-</div>
-
-<!-- Toolbar for administrator's editor mode -->
-<div id="admin-toolbar" class="ui-widget-header ui-corner-all">
-	<div id="btnMoreModules" class="state-changable-button">More Modules</div>
-	<div id="btnSelectLayout" class="state-changable-button">Select Layout</div>
-	<input type="checkbox" id="chkLayoutModules"/>
-	<label for="chkLayoutModules">Layout Modules Mode: OFF</label>
-	<div id="btnSiteManager" class="state-changable-button">Sites Management</div>
-	<div id="btnTheme" class="state-changable-button">Select Theme</div>
-	<div id="btnUserManager" class="state-changable-button">User Manager</div>
-	<div id="btnTurnOnEditMode" class="state-changable-button"><a href="<?php echo $this->baseUrl('front/news/changeeditmode');?>">Edit News Mode: <?php if(isset($_SESSION['EditMode'])) echo $_SESSION['EditMode']; else echo "OFF";?></a></div>
-</div>
-
-<div id="user-manager" title="User Manager">
-</div>
-
-<!-- Form for choosing page layout -->
-<div id="choose-layout-form" title="Select Page Layout">
-	<input type="radio" name="rdoLayout" value="3A">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3A.JPG";?>">
-	<input type="radio" name="rdoLayout" value="3B">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3B.JPG";?>">
-	<input type="radio" name="rdoLayout" value="3C">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3C.JPG";?>"><br>
-	<input type="radio" name="rdoLayout" value="2A">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2A.JPG";?>">
-	<input type="radio" name="rdoLayout" value="2B">
-	<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2B.JPG";?>">
-</div>
+	</script>
 	
-<div id="choose-theme-form" title="Select Theme">
-	<input type="radio" name="rdoTheme" value="ui-darkness"/>
-	<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-darkness.JPG";?>" style="width: 200px; height: 200px;">
-	<input type="radio" name="rdoTheme" value="ui-lightness"/>
-	<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-lightness.JPG";?>" style="width: 200px; height: 200px;">
-	<input type="radio" name="rdoTheme" value="ui-overcast"/>
-	<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-overcast.JPG";?>" style="width: 200px; height: 200px;">
-	<br>
-	<input type="radio" name="rdoTheme" value="ui-smoothness"/>
-	<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-smoothness.JPG";?>" style="width: 200px; height: 200px;">
-	<input type="radio" name="rdoTheme" value="ui-start"/>
-	<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-start.JPG";?>" style="width: 200px; height: 200px;">
-	<input type="radio" name="rdoTheme" value="ui-sunny"/>
-	<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-sunny.JPG";?>" style="width: 200px; height: 200px;">
-</div>
-
-<div id="site-manager-form" title="Sites Manager">
-	<div id="site-manager-form-content">
+	<!-- Temporary DIV for orderDIV function -->
+	<div id="temp"></div>
+	
+	<!-- Define MessageBox with default information -->
+	<div id="message" title="CMS Click and Change">
+		<p id="message-content" align="center">Saving...</p>
 	</div>
-</div>
-<div id="edit-site-form" title="Sites Manager">
-	<div id="edit-site-form-content">
+	
+	<!-- Define MessageBox with Yes/No button -->
+	<div id="ask" title="CMS Click and Change">
+		<p id="ask-content" align="center">Do you want to save changes you made to Modules Position?</p>
+	</div>
+	
+	<!-- Toolbar for administrator's editor mode -->
+	<div id="admin-toolbar" class="ui-widget-header ui-corner-all">
+		<div id="btnMoreModules" class="state-changable-button">More Modules</div>
+		<div id="btnSelectLayout" class="state-changable-button">Select Layout</div>
+		<div id="btnTheme" class="state-changable-button">Select Theme</div>
+		<div id="btnSiteManager" class="state-changable-button">Sites Manager</div>
+		<div id="btnUserManager" class="state-changable-button">User Manager</div>
+		<div id="btnTurnOnEditMode" class="state-changable-button"><a href="<?php echo $this->baseUrl('front/news/changeeditmode');?>">Edit News Mode: <?php if(isset($_SESSION['EditMode'])) echo $_SESSION['EditMode']; else echo "OFF";?></a></div>
+		<input type="checkbox" id="chkLayoutModules"/>
+		<label id="lbLayout" for="chkLayoutModules">Layout Mode: OFF</label>
+	</div>
+	
+	<div id="user-manager" title="User Manager">
+	</div>
+	
+	<!-- Form for choosing page layout -->
+	<div id="choose-layout-form" title="Select Page Layout">
+		<input type="radio" name="rdoLayout" value="3A">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3A.JPG";?>">
+		<input type="radio" name="rdoLayout" value="3B">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3B.JPG";?>">
+		<input type="radio" name="rdoLayout" value="3C">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3C.JPG";?>"><br>
+		<input type="radio" name="rdoLayout" value="2A">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2A.JPG";?>">
+		<input type="radio" name="rdoLayout" value="2B">
+		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2B.JPG";?>">
+	</div>
+		
+	<div id="choose-theme-form" title="Select Theme">
+		<input type="radio" name="rdoTheme" value="ui-darkness"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-darkness.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-lightness"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-lightness.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-overcast"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-overcast.JPG";?>" style="width: 200px; height: 200px;">
+		<br>
+		<input type="radio" name="rdoTheme" value="ui-smoothness"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-smoothness.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-start"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-start.JPG";?>" style="width: 200px; height: 200px;">
+		<input type="radio" name="rdoTheme" value="ui-sunny"/>
+		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-sunny.JPG";?>" style="width: 200px; height: 200px;">
+	</div>
+	
+	<div id="site-manager-form" title="Sites Manager">
+		<div id="site-manager-form-content">
+		</div>
+	</div>
+	<div id="edit-site-form" title="Sites Manager">
+		<div id="edit-site-form-content">
+		</div>
 	</div>
 </div>

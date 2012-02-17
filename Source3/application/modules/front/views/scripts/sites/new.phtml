@@ -2,7 +2,7 @@
 $modules = $this->modules;
 function listModules ($modules) {
     foreach ($modules as $module) {
-    	if($module['name'] != 'Main') {
+    	if(Front_Model_Module::isNormalModules($module)) {
 	        echo '<input type="checkbox" class="chk" name="'. $module['module_id'] . 
 	         '" id="chk' . $module['module_id'] . '" value="' .
 	         $module['name'] . '"/><label for="chk' . $module['module_id'] . '">' . 

@@ -96,4 +96,15 @@ class Front_Model_Module extends Honey_Db_Table{
 		}
 		return $result;
 	}
+	
+	public static function isNormalModules($module) {
+		switch ($module['name']) {
+			case 'Main':
+			case 'Header':
+			case 'Footer':
+				return false;
+			default:
+				return true;
+		}
+	}
 }
