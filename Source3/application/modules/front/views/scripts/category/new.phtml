@@ -1,0 +1,30 @@
+<div id="new-category-form">
+	<h3>New Category</h3>
+	<div id="validating-category" class="ui-state-error"></div>
+	<br>
+	<script>
+	function saveCategory() {
+		if($("input[name=txtName]").val() == "") {
+			$("#validating-category").html("You must enter category name.");
+		} else {
+			showMessage("Saving...");
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo HTTP_SERVER."front/category/savenew"?>',
+				data: {
+					name: $("input[name=txtName]").val()
+				},
+				success: function(data) {
+					closeMessage();
+					$("#edit-category-form").dialog("close");
+					loadCategoryList();
+				},
+				error: function(request, status, error) {
+					showMessage(error + "<br> Detail: <br>" + request.responseText);
+				}	
+			});
+		}
+	}
+	</script>
+	Name <input type="text" name="txtName" maxlength="255" size="43"/>
+</div>

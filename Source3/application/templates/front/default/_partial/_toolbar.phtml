@@ -4,7 +4,7 @@
 	$themeConfig = new Zend_Config_Ini(APPLICATION_PATH.DS."configs/application.ini", "theme");
 ?>
 	<script>
-	function loadSiteList() {
+	function loadPageList() {
 		$("#site-manager-form-content").html("Loading...");
 		$.ajax({
 			type: 'POST',
@@ -17,6 +17,20 @@
 			}	
 		});
 	};
+
+	function loadCategoryList() {
+		$("#site-manager-form-content").html("Loading...");
+		$.ajax({
+			type: 'POST',
+			url: '<?php echo HTTP_SERVER."front/category/index"?>',
+			success: function(data) {
+				$("#site-manager-form-content").html(data);
+			},
+			error: function(request, textStatus, error) {
+				showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+			}	
+		});
+	}
 	
 	function showMessage(message) {
 		$("#message-content").html(message);
@@ -63,11 +77,11 @@
 	
 		$("#site-manager-form").dialog({
 			autoOpen: false,
-			width: 400,
+			width: 600,
 			height: 500,
 			modal: true,
 			buttons: {
-				"New Site": function() {
+				"New Page": function() {
 					$("#edit-site-form").dialog("open");
 					$("#edit-site-form-content").html("Loading...");
 					$.ajax({
@@ -75,6 +89,26 @@
 						url: '<?php echo HTTP_SERVER."front/sites/new"?>',
 						success: function(data) {
 							$("#edit-site-form-content").html(data);
+						},
+						error: function(request, textStatus, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+						}	
+					});
+				},
+				"Page List": function() {
+					loadPageList();
+				},
+				"Category List": function() {
+					loadCategoryList();
+				},
+				"New Category": function() {
+					$("#edit-category-form").dialog("open");
+					$("#edit-category-form-content").html("Loading...");
+					$.ajax({
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/category/new"?>',
+						success: function(data) {
+							$("#edit-category-form-content").html(data);
 						},
 						error: function(request, textStatus, error) {
 							showMessage("Error! <br> Detail: <br>" + request.responseText + error);
@@ -103,10 +137,26 @@
 				}
 			}
 		});
+
+		$("#edit-category-form").dialog({
+			autoOpen: false,
+			width: 400,
+			height: 250,
+			modal: true,
+			buttons: {
+				"OK": function() {
+					saveCategory();
+				},
+				"Close": function() {
+					$("#edit-category-form-content").empty();
+					$(this).dialog("close");
+				}
+			}
+		});
 		
 		$("#btnSiteManager").button().click(function() {
 			$("#site-manager-form").dialog("open");
-			loadSiteList();
+			loadPageList();
 		});
 	
 		//Order a DIV follow a List
@@ -335,7 +385,7 @@
 						dataType: 'json',
 						data: {
 							module_id: selectedModuleId,							
-							is_showed: 1,							
+							is_showed: 1						
 						},
 						success: function(data) {							
 							closeMessage();	
@@ -481,6 +531,10 @@
 	</div>
 	<div id="edit-site-form" title="Sites Manager">
 		<div id="edit-site-form-content">
+		</div>
+	</div>
+	<div id="edit-category-form" title="Sites Manager">
+		<div id="edit-category-form-content">
 		</div>
 	</div>
 </div>

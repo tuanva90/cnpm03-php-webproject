@@ -213,13 +213,15 @@ class Front_Model_Category extends Honey_Db_Table {
 			$db->delete($this->getPrefix() . 'category', $where);
 			$db->delete($this->getPrefix() . 'category_description', $where);
 			
-			$select = $db->select('category_id')
+			/*$select = $db->select('category_id')
 						 ->from($this->getPrefix() . 'category')
 						 ->where('parent_id = ?', (int)$arrParam ['category_id']);
 			
+			
 			foreach($db->fetchAll($select) as $result) {
 				$this->deleteItem(array('category_id' => $result['category_id']),  array('task' => 'delete'));
-			}		
+			}
+			*/		
 		}
 	}
 	
