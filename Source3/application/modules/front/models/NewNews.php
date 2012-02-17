@@ -215,4 +215,27 @@ class Front_Model_NewNews extends Honey_Db_Table{
 	    $result = $db->fetchOne($select);
 	    return $result;
 	}
+	
+	public function getViewCountOfNews($news_id)
+	{
+	    $db = Zend_Registry::get('connectDB');
+	    
+	    $select = $db->select()
+	    	->from($this->getPrefix().'news', array('viewed'))
+	    	->where('news_id = ?', $news_id);
+	    $result = $db->fetchOne($select);
+	}
+	
+	public function updateViewCountOfNews($news_id, $view)
+	{
+	    $db = Zend_Registry::get('connectDB');
+	    
+	   	$data = array(
+	   		'viewed' => $view
+	   	);
+	   	
+	   	$where = 'news_id = '.$news_id;
+	   	
+	   	$db->update($this->getPrefix().'news', $data, $where);
+	}
 }

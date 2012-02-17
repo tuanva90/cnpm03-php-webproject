@@ -64,7 +64,7 @@
 		});
 
 		$(document).ready(function(){
-			var _currentNewsID = "<?php echo $this->Item['news_id']?>";
+			var _currentNewsID = <?php echo $this->Item['news_id']?>;
 			$('#contextMenu').hide();
 			
 
@@ -250,6 +250,25 @@
   		<input type="hidden" name="news_id"/>
   	</form>
   </div>
+  <?php }?>
+  
+  <?php if(!isset($_SESSION['EditMode']) || $_SESSION['EditMode'] == 'OFF'){?>
+  	<script>
+		$(function(){
+			$(document).ready(function(){
+				$.ajax({
+					type:'POST',
+					url:'<?php echo $this->baseUrl($this->currentController.'/viewcount')?>',
+					data:{news_id:<?php echo $this->Item['news_id']?>},
+					dataType:'json',
+					error:function(xhr){
+						alert(xhr.responseText);
+						return;
+					}
+				});
+			});
+		});
+  	</script>
   <?php }?>
   <?php if ($this->Item) { ?>
   <div class="news-info">
