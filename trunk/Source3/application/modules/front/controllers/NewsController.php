@@ -229,4 +229,17 @@ class NewsController extends Honey_Controller_Action {
 		$this->view->count770 = $hotnews->countItem(array('news_id'=> 770), array('task'=> 'countOne'));
 		
 	}
+	
+	
+	public function viewcountAction(){
+	    $this->_helper->viewRenderer->setNoRender();
+	    $this->_helper->layout->disableLayout();
+		
+	    $news = new Front_Model_NewNews();
+	    $curViewed = $news->getViewCountOfNews($this->_arrParam['news_id']);
+	    
+	    // update
+	    
+	    $news->updateViewCountOfNews($this->_arrParam['news_id'], ++$curViewed);
+	}
 }
