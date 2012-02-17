@@ -7,7 +7,7 @@ function listModules ($modules, $selected_modules) {
 		$module_id_list[] = $module['module_id'];
 	}
     foreach ($modules as $module) {
-    	if($module['name'] != 'Main') {
+    	if(Front_Model_Module::isNormalModules($module)) {
     		if(in_array($module['module_id'], $module_id_list)) {
 		        echo '<input type="checkbox" class="chk" name="'. $module['module_id'] . 
 		         '" id="chk' . $module['module_id'] . '" checked="checked" value="' .
