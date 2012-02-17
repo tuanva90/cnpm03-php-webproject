@@ -179,7 +179,7 @@ class Front_Model_Category extends Honey_Db_Table {
 				'category_description' => $this->getCategoryDescriptions($result['category_id'])
 			);
 			return $category_data;
-		}		
+		}
 	}
 	
 	protected function getCategoryDescriptions($category_id) {

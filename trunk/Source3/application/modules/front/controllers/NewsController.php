@@ -45,7 +45,9 @@ class NewsController extends Honey_Controller_Action {
 		
 	}
 	
-	public function indexAction() {	     
+	public function indexAction() {
+	    
+	     
 	    // Also categories view
 	    $this->view->Title = 'Front :: News';
 	    $this->view->headTitle = $this->view->Title;
@@ -58,32 +60,25 @@ class NewsController extends Honey_Controller_Action {
 	    // an instance of NewNews class
 	    $frontnews = new Front_Model_NewNews();
 	    
-	    // get category_id from request
-	    $category_id = $this->_arrParam['category_id'];
+	    // get all the available categories
+	    $categories_info = array();
+	    $categories = $category->listItem($this->_arrParam, array('task' => 'listall'));
 	    
-	    // then get all the newses that has category_id = $category_id
-	    $category_info = array();
-	    $category_info['news'] = $frontnews->listItemByCate($category_id, array('task'=>'listbyonecate'));
-	    $category_info['categoryinfo'] = $category->getItem(array('category_id'=>$this->_arrParam['category_id']),array('task'=>'info'));
-	    array_push($categories, $category_info);
-	    
-	    // get child categories
-	    $child_categories = array();
-	    $child_categories = $category->getCategoriesByParentId($category_id);
-	    
-	    if(count($child_categories) > 0)
+	    if(count($categories) > 0)
 	    {
-	    	foreach ($child_categories as $child_category)
+	    	foreach ($categories as $cate)
 	    	{
-	    	    $child_category_info = array();
-	    	    $child_category_info['news'] = $frontnews->listItemByCate($child_category, array('task'=>'listbyonecate'));
-	    	    $child_category_info['categoryinfo'] = $category->getItem(array('category_id'=>$child_category),array('task'=>'info'));
-	    		array_push($categories, $child_category_info);
+	    	    $cate_info = array();
+	    	    $cate_info['news'] = $frontnews->listItemByCate($cate['category_id'], array('task'=>'listbyonecate'));
+	    	    $cate_info['categoryinfo'] = $cate; 
+	    	    //$category->getItem(array('category_id'=>$cate['category_id']),array('task'=>'info'));
+	    	    if(count($cate_info['news']) > 0)
+	    			array_push($categories_info, $cate_info);
 	    	}
 	    }
 	    
-	    $this->view->arrayItems = $categories;
-		
+	    $this->view->arrayItems = $categories_info;
+		$this->view->categories_info = $categories;
 	    /*-------------------- Get Hotnews ------------------------*/
 	    
 	    $hotnews = new Front_Model_Hotnews();
@@ -221,5 +216,12 @@ class NewsController extends Honey_Controller_Action {
 		$back = $_SESSION['back'];
 		unset($_SESSION['back']);
 		header("location: $back");
+	}
+	
+	
+	public function testAction(){
+	    $hotnews = new Front_Model_Hotnews();
+		$this->view->count770 = $hotnews->countItem(array('news_id'=> 770), array('task'=> 'countOne'));
+		
 	}
 }
