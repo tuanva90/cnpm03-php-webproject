@@ -72,8 +72,8 @@
 				e.stopPropagation();
 				// fuu, $(this).offset() lay offset top voi document, this.offsetTop lay offset top voi parent element
 				// damn u
-				var posy = e.pageY - $(this).offset().top;
-				var posx = e.pageX - $(this).offset().left;
+				var posy = this.offsetTop;
+				var posx = this.offsetLeft + 400;
 			
 				$('#contextMenu').css('top',posy);
 				$('#contextMenu').css('left',posx);

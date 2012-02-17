@@ -198,9 +198,14 @@ class NewsController extends Honey_Controller_Action {
 	    }
 	    
 	    // redirect to request page;
-	    $back = $_SESSION['back'];
-	    unset($_SESSION['back']);
-	    header("location: $back");
+	    if(!isset($_SESSION['back']))
+	        $this->_helper->redirector('index','news','front');
+	    
+	    else{
+	    	$back = $_SESSION['back'];
+	    	unset($_SESSION['back']);
+	    	header("location: $back");
+	    }
 	}
 	
 	public function markhotnewsAction(){
