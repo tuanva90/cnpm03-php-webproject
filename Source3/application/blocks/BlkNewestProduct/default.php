@@ -31,7 +31,7 @@
 						module_id: <?php echo $info['module_id'];?>,
 						name: "<?php echo $info['name'];?>",
 						file_name: "<?php echo $info['file_name'];?>",
-						is_showed: $("input[name=chkIsShowed]").is("checked")?1:0,
+						is_showed: $("#edit-newest-product-form :checkbox['chkIsShowed']").is(":checked")?1:0,
 						position: <?php echo $info['position'];?>,
 						sort_order: <?php echo $info['sort_order'];?>,
 						option: option_str

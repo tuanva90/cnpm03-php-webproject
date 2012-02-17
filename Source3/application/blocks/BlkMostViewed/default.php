@@ -32,16 +32,17 @@
 						module_id: <?php echo $info['module_id'];?>,
 						name: "<?php echo $info['name'];?>",
 						file_name: "<?php echo $info['file_name'];?>",
-						is_showed: $("input[name=chkIsShowed]").is("checked")?1:0,
+						is_showed: $("#edit-mostviewed-news-form :checkbox['chkIsShowed']").is(":checked")?1:0,
 						position: <?php echo $info['position'];?>,
 						sort_order: <?php echo $info['sort_order'];?>,
 						option: option_str
 					},
-					success: function(data) {
+					success: function(data) {						
 						closeMessage();	
 						location.reload();
 					},
 					error: function(request, error) {
+						alert(data);
 						showMessage("Error! <br> Detail: <br>" + request.responseText);
 					}	
 				});				
@@ -53,7 +54,8 @@
 				width: 350,
 				modal: true,
 				buttons: {
-					"Save": function() {
+					"Save": function() {	
+										
 						showMessage("Saving...");
 						update();
 						$(this).dialog("close");
@@ -103,8 +105,8 @@
 	<!-- ///////////////////////////////////////////////////// -->
 	
 	<div id="edit-mostviewed-news-form" title="Edit Most View Module">
-		<form>
-			<input type="checkbox" name="chkIsShowed" id=chkIsShowed checked="checked"/>Use this module.<br>
+		<form >
+			<input type="checkbox" name="chkIsShowed" id="mostviewedIsShowed" checked="checked"/>Use this module.<br>
 			Amount of items to show: <input type="text" maxlength="2" size="5" value="<?php echo $amount_items;?>" name="txtMaxAmount" id="txtMaxAmount"/>
 		</form>
 	</div>

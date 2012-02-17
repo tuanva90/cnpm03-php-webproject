@@ -18,7 +18,31 @@ class Front_Model_Module extends Honey_Db_Table{
 		$result = $db->fetchAll($select);
   		return $result;
   	}
+  	//////////////ThaoNX////////////
+	public function listItemsNotShowed($arrParam) {
+  		$db = Zend_Registry::get('connectDB');
+  		$select = $db->select()
+  				  ->from('cms_module')  				  
+  				  ->order('sort_order ASC');
+  		if(isset($arrParam['is_showed'])){
+  			$select->where('is_showed = ?',$arrParam['is_showed']);
+  		}  		
+		$result = $db->fetchAll($select);
+  		return $result;
+  	}
   	
+	public function updateItemToShow($arrParram) {  		
+		if(isset($arrParram['module_id'])){		
+			$db = Zend_Registry::get('connectDB');
+			$where = 'module_id ='.$arrParram['module_id'];
+			if(isset($arrParram['is_showed'])){
+				$module['is_showed'] = $arrParram['is_showed'];
+			}
+			$result = $db->update('cms_module',$module,$where);	
+			return $result;
+		}				
+  	}
+  	/////////////////////////////////
   	public function listAllItem() {
   		$db = Zend_Registry::get('connectDB');
   		$select = $db->select()
@@ -73,11 +97,11 @@ class Front_Model_Module extends Honey_Db_Table{
 		'position'	=> $arrParram['position'],
 		'sort_order'=> $arrParram['sort_order'],
 		'option'	=> $arrParram['option']
-		);
-
+		);	
 		$result = $db->update('cms_module',$module,$where);
 		return $result;
   	}
+  	
   	
 	public static function savePosition($position, $order) {
 		$db = Zend_Registry::get('connectDB');
