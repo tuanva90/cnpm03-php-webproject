@@ -7,11 +7,7 @@ $username = "";
 $auth = Zend_Auth::getInstance ();
 if($auth->hasIdentity ()) {
     $isLoggedIn = 1;
-    
-    //get user name
-    $pmInfo = new Honey_Plugin_Permission_Info ();
-    $userinfo = $pmInfo->getMemberInfo();
-    $username = $userinfo['username'];
+    $username = $username = $auth->getIdentity()->username;
 }
 ?>
 	<script type="text/javascript">
@@ -79,14 +75,14 @@ if($auth->hasIdentity ()) {
 				dataType: 'json',
 				data: {
 					password: password,
-					username:username
+					username: username
 				},
 				success: function(data) {
 					if(data.status) {
 						 updateAfterLogIn(data.name);
 					} else {
 						$("#validating-login").show();
-						$("#validating-login").html("Wrong!");
+						$("#validating-login").html("Wrong User Name or Password");
 					}
 				},
 				error: function(request, textStatus, error) {
