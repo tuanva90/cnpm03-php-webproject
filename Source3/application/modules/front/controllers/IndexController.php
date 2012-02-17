@@ -139,7 +139,7 @@ class IndexController extends Honey_Controller_Action
 	            else{
 	            echo "Loi roi!";}
 	            }
-	        }
+	        
     	} catch(Exception $e) {
     		echo "Error:" + $e->getMessage();
     	}
