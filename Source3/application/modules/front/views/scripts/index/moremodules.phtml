@@ -1,0 +1,15 @@
+<?php 
+	if(!empty($this->items)){?>
+		<ul>
+		<?php
+		foreach ($this->items as $value){?>		
+			<li>
+			<label ><div class="icon <?php echo $value['file_name']?>"></div><h4><?php echo $value['name']?></h4><ins><?php echo $value['desc']?></ins></label>
+			<div><input type="radio" name="rdoModule" id="statistic-modimg" value="<?php echo $value['module_id']?>"></div>
+			</li>
+		<?php }?> 
+		</ul>	
+
+<?php }else {?>	<!-- Don't Hava any Module -->
+	<center><h3>Don't Have any Module here</h3></center>
+<?php }?>	

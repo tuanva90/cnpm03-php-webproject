@@ -30,7 +30,7 @@ class Front_Model_Product extends Honey_Db_Table{
   				$select->order('p.product_id DESC');
   			} 
   				
-	  		if ($paginator ['itemCountPerPage'] > 0) {
+	  		if ($paginator ['itemCountPerPage'] >= 0) {
 				$page = $paginator ['currentPage'];
 				$rowCount = $paginator ['itemCountPerPage'];
 				$select->limitPage ( $page, $rowCount );

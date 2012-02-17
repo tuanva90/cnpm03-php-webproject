@@ -41,7 +41,7 @@ class IndexController extends Honey_Controller_Action
             echo $e->getMessage();
         }
     }
-    
+    //////////////////ThaoNX///////////////////////
  	public function saveblock2Action ()
     {
         $this->_helper->layout()->disableLayout();
@@ -55,6 +55,25 @@ class IndexController extends Honey_Controller_Action
         }
           
     }
+    
+ 	public function moremodulesAction ()
+    {
+        $this->_helper->layout()->disableLayout();
+        $model_module = new Front_Model_Module();
+		$items = $model_module->listItemsNotShowed(Array('is_showed'=>0));
+		$this->view->items = $items; 
+       // $this->_helper->viewRenderer->setNoRender(true);
+//        if (isset($_POST['is_showed']) && isset($_POST['module_id']) ) {
+//            $info = array("module_id" => $_POST['module_id'],             
+//            "is_showed" => $_POST['is_showed']);
+//            $modules = new Front_Model_Module();
+//            $result = $modules->updateItemToShow($info);
+//            echo $result;
+//        }
+          
+    }
+    
+    ////////////////////////////////////////////
     public function savelayoutAction ()
     {
         $this->_helper->layout()->disableLayout();
@@ -119,11 +138,11 @@ class IndexController extends Honey_Controller_Action
         $this->_helper->viewRenderer->setNoRender(true);
     	try {
 	        if (array_key_exists('send', $_POST)) {
-	            $to = 'votaka.vtn@gmail.com';
+	            $to = 'huynvk@gmail.com';
 	
 	            //go ahead only if all required fields OK
 	            //if ($_SESSION['security_code'] == $_POST['security_code']) {
-	            if ($_SESSION['security_code'] == $_POST['security_code1']) {
+	            if (true) {
 	                //build the message 
 	                $message = "Name: ".$_POST['name']."\n\n";
 	                $message .= "Email: ".$_POST['email']."\n\n";
@@ -136,10 +155,7 @@ class IndexController extends Honey_Controller_Action
 	                    echo "Error sending mail";
 	                }
 	            }
-	            else{
-	            echo "Loi roi!";}
-	            }
-	        
+	        }
     	} catch(Exception $e) {
     		echo "Error:" + $e->getMessage();
     	}
