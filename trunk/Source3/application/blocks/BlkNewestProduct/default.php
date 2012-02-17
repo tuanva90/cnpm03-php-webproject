@@ -13,7 +13,8 @@
 				$("#edit-newest-product-form").dialog("open");
 			});
 			function update() {
-				var max = $("input[name=txtMaxAmount]").val();
+				var max = $("#edit-newest-product-form input[name=txtMaxAmount]").val();
+				var isShowed = $("#edit-newest-product-form :checkbox['chkIsShowed']").is(":checked");
 				var option_str = "";
 				//alert(max);
 				var max_number = 0;				
@@ -38,7 +39,11 @@
 					},
 					success: function(data) {
 						closeMessage();	
-						location.reload();
+						if(!isShowed){
+							$("#<?php echo $info['module_id']?>").remove();
+						}else{
+							window.location.reload();
+						}
 					},
 					error: function(request, error) {
 						showMessage("Error! <br> Detail: <br>" + request.responseText);
@@ -71,13 +76,12 @@
 		</div>
 	</div>
 	<!-- ///////////////////////////////////////////////////// -->
-	<div id="content" style="overflow-x:scroll;min-height: 10px; ">
-	<form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
-		<table class="list">
+	<div id="content" style="overflow-x:auto;min-height: 10px; ">	
+		<table class="list" style="margin-bottom: 0px;">
 			<thead>
 				<tr>
-					<td class="left" style="min-width: 100px">Tên Sản Phẩm</td>
-					<td class="center">Giá <span style="font-size:6pt">(Ngàn vnđ)</span></td>					
+					<td class="left" style="min-width: 100px">Product Name</td>
+					<td class="center">Price <br><span style="font-size:6pt">(Thousand vnđ)</span></td>					
 				</tr>
 			</thead>
 			<tbody>
@@ -98,7 +102,6 @@
           		<?php } ?>
 			</tbody>
 		</table>
-	</form>		
 	</div><!-- #end #content -->
 	<!-- ///////////////////////////////////////////////////// -->
 	

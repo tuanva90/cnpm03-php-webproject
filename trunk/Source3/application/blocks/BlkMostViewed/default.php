@@ -14,16 +14,16 @@
 				$("#edit-mostviewed-news-form").dialog("open");
 			});
 			function update() {
-				var max = $("input[name=txtMaxAmount]").val();
-				var option_str = "";
-				//alert(max);
+				var max = $("#edit-mostviewed-news-form input[name=txtMaxAmount]").val();
+				var isShowed = $("#edit-mostviewed-news-form :checkbox['chkIsShowed']").is(":checked");
+				var option_str = "";				
 				var max_number = 0;				
 				if(isNaN(max)){
 					max_number = 5;
 				}else{
 					max_number = parseInt(max);
 				}
-				option_str += "$amount_items=" + max_number + ";";				
+				option_str += "$amount_items=" + max_number + ";";						
 				$.ajax({
 					type: 'POST',
 					url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
@@ -32,17 +32,20 @@
 						module_id: <?php echo $info['module_id'];?>,
 						name: "<?php echo $info['name'];?>",
 						file_name: "<?php echo $info['file_name'];?>",
-						is_showed: $("#edit-mostviewed-news-form :checkbox['chkIsShowed']").is(":checked")?1:0,
+						is_showed: isShowed?1:0,
 						position: <?php echo $info['position'];?>,
 						sort_order: <?php echo $info['sort_order'];?>,
 						option: option_str
 					},
 					success: function(data) {						
 						closeMessage();	
-						location.reload();
+						if(!isShowed){
+							$("#<?php echo $info['module_id']?>").remove();
+						}else{
+							window.location.reload() 
+						}
 					},
-					error: function(request, error) {
-						alert(data);
+					error: function(request, error) {						
 						showMessage("Error! <br> Detail: <br>" + request.responseText);
 					}	
 				});				
@@ -54,8 +57,7 @@
 				width: 350,
 				modal: true,
 				buttons: {
-					"Save": function() {	
-										
+					"Save": function() {										
 						showMessage("Saving...");
 						update();
 						$(this).dialog("close");
@@ -68,20 +70,20 @@
 		});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">
-		<h3>Xem Nhiều Nhất</h3>
+		<h3><?php echo $info['name']?></h3>
 		<div class="edit-button">
 			<button id='edit-mostviewed-news' class="state-changable-button">...</button>
 		</div>
 	</div>
 	<!-- ///////////////////////////////////////////////////// -->
-	<div id="content" style="overflow-x:scroll;min-height: 10px; ">
-	<form action="" method="post" enctype="multipart/form-data" id="form" name="form" >
-		<table class="list">
+	<div id="content" style="overflow-x:auto;min-height: 10px; ">
+	
+		<table class="list" style="margin-bottom: 0px;">
 			<thead>
 				<tr>					
 
-					<td class="center" style="min-width: 100px">Bài Viết</td>
-					<td class="center">Lượt Xem</td>					
+					<td class="center" style="min-width: 100px">News</td>
+					<td class="center">Viewed</td>					
 				</tr>
 			</thead>
 			<tbody>
@@ -100,7 +102,7 @@
           		<?php } ?>
 			</tbody>
 		</table>
-	</form>		
+		
 	</div><!-- #end #content -->
 	<!-- ///////////////////////////////////////////////////// -->
 	

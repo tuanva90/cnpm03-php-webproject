@@ -41,7 +41,7 @@
 					use_keep_signed_in = 0;
 					option_str += "$use_keep_signed_in=0;";
 				}
-		
+				var isShowed = $("#edit-login-form:checkbox['chkIsShowed']").is(":checked");
 				$.ajax({
 					type: 'POST',
 					url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
@@ -50,13 +50,16 @@
 						module_id: <?php echo $info['module_id'];?>,
 						name: "<?php echo $info['name'];?>",
 						file_name: "<?php echo $info['file_name'];?>",
-						is_showed: $("input[name=chkIsShowed]").is("checked")?1:0,
+						is_showed: isShowed?1:0,
 						position: <?php echo $info['position'];?>,
 						sort_order: <?php echo $info['sort_order'];?>,
 						option: option_str
 					},
 					success: function(data) {
 						closeMessage();	
+						if(!isShowed){
+							$("#<?php echo $info['module_id']?>").remove();
+						}
 					},
 					error: function(request, error) {
 						showMessage("Error! <br> Detail: <br>" + request.responseText);
@@ -120,7 +123,7 @@
 	
 	<div id="edit-login-form" title="Edit Login Module">
 	<form>
-		<input type="checkbox" name="chkIsShowed" id="chkIsShowed" checked="checked"/>Use this module.<br>
+		<input type="checkbox" name="chkLơginIsShowed" id="chkIsShowed" checked="checked"/>Use this module.<br>
 		<input type="checkbox" name="chkShowForgetPass" id="chkShowForgetPass" checked="checked"/>Show 'Forgort password' link.<br>
 		<input type="checkbox" name="chkShowKeepSignIn" id="chkShowKeepSignIn" checked="checked"/>Show 'Keep me signed in' checkbox.<br>
 	</form>

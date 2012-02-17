@@ -2,13 +2,13 @@
 #more-modules-form{
 	
 }
-#more-modules-form ul {
+#more-modules-form-content ul {
 	margin: 20px 0;
-	margin-left: 54px;
+	margin-left: 28px;
 	clear: both;
 }
 
-#more-modules-form li {
+#more-modules-form-content li {
 	color: #666;
 	float: left;
 	width: 200px;
@@ -19,7 +19,7 @@
 	margin: 10px;
 }
 
-#more-modules li ins {
+#more-modules-form li ins {
 	text-decoration: none;
 	color: #656565;
 	font-size: 12px;
@@ -42,7 +42,19 @@
 	background: url('images/toolbar/newest_product.png') no-repeat;
 	background-position-x: 32px;
 }
+#more-modules-form li .BlkContact {
+	background: url('images/toolbar/contact_us.png') no-repeat;
+	background-position-x: 32px;
+}
+#more-modules-form li .BlkLogin {
+	background: url('images/toolbar/login.png') no-repeat;
+	background-position-x: 32px;
+}
 
+#more-modules-form li .BlkImpressiveProduct	{
+	background: url('images/toolbar/impressive_products.png') no-repeat;
+	background-position-x: 32px;
+}
 #more-modules-form li div {
 	padding-left: 50px;
 	clear: both;
