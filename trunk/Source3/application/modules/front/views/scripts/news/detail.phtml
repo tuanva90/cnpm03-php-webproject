@@ -108,7 +108,7 @@
 					}
 				});
 				$('#edit-news-frm').dialog("open");
-				replace("edit_description","edit_description_posArea", "<?php echo HTTP_EDITOR;?>");
+				replace("edit_description","edit_description_posArea", "<?php echo HTTP_SERVER;?>");
 			});
 			$('#add-en-menu-item_01').click(function(){
 				$.ajax({
@@ -121,7 +121,7 @@
 								if(json.count == 0)
 								{
 									$('#add-news-frm-2').dialog("open");	
-									replace("add_description_2","add_description_2_posArea", "<?php echo HTTP_EDITOR;?>");
+									replace("add_description_2","add_description_2_posArea", "<?php echo HTTP_SERVER;?>");
 								}
 								else{
 									$('<div title="Thông báo">Phiên bản tiếng Anh của tin này đã có. Sửa nó?</div>').dialog({
