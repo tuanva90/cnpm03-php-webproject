@@ -167,7 +167,7 @@ class IndexController extends Honey_Controller_Action
     	try{    		
 	    	$TuKhoa= $_POST['tukhoa'];
 	    	$db = Zend_Registry::get('connectDB');
-			$query = "select * from cms_product_description where name like '%".$TuKhoa."%'";
+			$query = "select * from cms_product where model like '%".$TuKhoa."%'";
 			$result = $db->fetchAll($query);
 		     $this->view->results = $result;
     	}catch(Exception $e) {
