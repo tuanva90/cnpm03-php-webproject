@@ -41,7 +41,7 @@
 					use_keep_signed_in = 0;
 					option_str += "$use_keep_signed_in=0;";
 				}
-				var isShowed = $("#edit-login-form:checkbox['chkIsShowed']").is(":checked");
+				var isShowed = $("input[name=chkLơginIsShowed]").is(":checked");
 				$.ajax({
 					type: 'POST',
 					url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
