@@ -16,6 +16,7 @@ class NewsController extends Honey_Controller_Action {
 	public function init() {
 		$this->_arrParam = $this->_request->getParams ();
 		$this->_arrParam['user'] = 'ducnh'; 
+		date_default_timezone_set('Asia/Saigon');	
 		$this->_arrParam['date'] = date("Y-m-d H:i:s");
 		
 		if(!isset($this->_arrParam['category_id'])) 
@@ -184,9 +185,9 @@ class NewsController extends Honey_Controller_Action {
 	
 	public function changeeditmodeAction()
 	{
+		session_start();
 	    $this->_helper->viewRenderer->setNoRender();
 	    $this->_helper->layout->disableLayout();
-	    session_start();
 	    if(isset($_SESSION['EditMode']))
 	    {
 	        if($_SESSION['EditMode'] == 'ON')
