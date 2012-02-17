@@ -119,11 +119,11 @@ class IndexController extends Honey_Controller_Action
         $this->_helper->viewRenderer->setNoRender(true);
     	try {
 	        if (array_key_exists('send', $_POST)) {
-	            $to = 'huynvk@gmail.com';
+	            $to = 'votaka.vtn@gmail.com';
 	
 	            //go ahead only if all required fields OK
 	            //if ($_SESSION['security_code'] == $_POST['security_code']) {
-	            if (true) {
+	            if ($_SESSION['security_code'] == $_POST['security_code1']) {
 	                //build the message 
 	                $message = "Name: ".$_POST['name']."\n\n";
 	                $message .= "Email: ".$_POST['email']."\n\n";
@@ -135,6 +135,9 @@ class IndexController extends Honey_Controller_Action
 	                if (!$mailSent) {
 	                    echo "Error sending mail";
 	                }
+	            }
+	            else{
+	            echo "Loi roi!";}
 	            }
 	        }
     	} catch(Exception $e) {
