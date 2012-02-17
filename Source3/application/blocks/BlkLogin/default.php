@@ -94,6 +94,7 @@ if($auth->hasIdentity ()) {
 		//Update values
 		function updateLogin() {
 			var option_str = "";
+			var isShowed = $("#edit-login-form :checkbox['chkIsShowed']").is(":checked");			
 			if($("input[name=chkShowForgetPass]").is(":checked")) {
 				use_forgot_password_link = 1;
 				option_str += "$use_forgot_password_link=1;";
@@ -117,13 +118,18 @@ if($auth->hasIdentity ()) {
 					module_id: <?php echo $info['module_id'];?>,
 					name: "<?php echo $info['name'];?>",
 					file_name: "<?php echo $info['file_name'];?>",
-					is_showed: $("input[name=chkIsShowed]").is("checked")?1:0,
+					is_showed: 1,
 					position: <?php echo $info['position'];?>,
 					sort_order: <?php echo $info['sort_order'];?>,
 					option: option_str
 				},
 				success: function(data) {
 					closeMessage();	
+					if(!isShowed){	
+						$("#<?php echo $info['module_id']?>").remove();
+					}else{
+						refresh();
+					}
 				},
 				error: function(request, error) {
 					showMessage("Error! <br> Detail: <br>" + request.responseText);
@@ -197,8 +203,7 @@ if($auth->hasIdentity ()) {
 	
 	
 	<div id="edit-login-form" title="Edit Login Module">
-	<form>
-		<input type="checkbox" name="chkLoginIsShowed" id="chkIsShowed" checked="checked"/>Use this module.<br>
+	<form>		
 		<input type="checkbox" name="chkShowForgetPass" id="chkShowForgetPass" checked="checked"/>Show 'Forgort password' link.<br>
 		<input type="checkbox" name="chkShowKeepSignIn" id="chkShowKeepSignIn" checked="checked"/>Show 'Keep me signed in' checkbox.<br>
 	</form>

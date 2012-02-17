@@ -74,16 +74,30 @@ class IndexController extends Honey_Controller_Action
 			'itemCountPerPage' => isset($_POST['num_rows'])?$_POST['num_rows']:5,
 			'currentPage' => 1,
 		);
-		$items = $product_model->listItem($arrParam,array('task'=>'list'));
-		
+		$items = $product_model->listItem($arrParam,array('task'=>'list'));		
 		$this->view->items = $items;
-//        $model_module = new Front_Model_Module();
-//		$items = $model_module->listItemsNotShowed(Array('is_showed'=>0));
-//		$this->view->items = $items; 
     	} catch (Exception $e) {
             echo $e->getMessage();
         } 
     }
+    
+ 	public function mostviewedAction ()
+    {
+    	try {
+        $this->_helper->layout()->disableLayout();        
+        $news_model = new Front_Model_News();
+		$arrParam['order_mode'] = "viewed DESC";
+		$arrParam['paginator'] = array(
+			'itemCountPerPage' => isset($_POST['num_rows'])?$_POST['num_rows']:5,
+			'currentPage' => 1,
+		);
+		$items = $news_model->listItem($arrParam,array('task'=>'list'));		
+		$this->view->items = $items;
+    	} catch (Exception $e) {
+            echo $e->getMessage();
+        } 
+    }
+    
     ////////////////////////////////////////////
     public function savelayoutAction ()
     {
