@@ -20,6 +20,26 @@ if($auth->hasIdentity ()) {
 		var use_keep_signed_in = <?php echo $use_keep_signed_in==1?1:0;?>;
 		var isLoggedIn = <?php echo $isLoggedIn;?>;
 		var username = "<?php echo $username;?>";
+
+		//Refresh module after changes
+		function refresh() {
+			if(use_forgot_password_link==1) {
+				$("input[name=chkShowForgetPass]").prop('checked',true);
+				$("#forget-pass").show();
+			} else {
+				$("input[name=chkShowForgetPass]").prop('checked',false);
+				$("#forget-pass").hide();
+			}
+			
+			if(use_keep_signed_in==1) {
+				$("input[name=chkShowKeepSignIn]").prop('checked',true);
+				$("#keep-signed-in").show();
+			} else {
+				$("input[name=chkShowKeepSignIn]").prop('checked',false);
+				$("#keep-signed-in").hide();
+			}
+		}
+		
 		function updateAfterLogIn(username) {
 			$("#user-name").html(username);
 			$("#login-title-default").hide();
@@ -31,6 +51,8 @@ if($auth->hasIdentity ()) {
 	
 		function updateAfterLogOut() {
 			$("#login-title").html("<h3>Login</h3>");
+			$("#login-title-default").show();
+			$("#login-title-welcome").hide();
 			$("#login-form").show();
 			$("#toolbar").hide();
 			$(".edit-button").hide();
@@ -73,59 +95,6 @@ if($auth->hasIdentity ()) {
 			});
 		}
 		
-			//Update values
-			function updateLogin() {
-				var option_str = "";
-				if($("input[name=chkShowForgetPass]").is(":checked")) {
-					use_forgot_password_link = 1;
-					option_str += "$use_forgot_password_link=1;";
-				} else {
-					use_forgot_password_link = 0;
-					option_str += "$use_forgot_password_link=0;";
-				}
-				if($("input[name=chkShowKeepSignIn]").is(":checked")) {
-					use_keep_signed_in = 1;
-					option_str += "$use_keep_signed_in=1;";
-				} else {
-					use_keep_signed_in = 0;
-					option_str += "$use_keep_signed_in=0;";
-				}
-				var isShowed = $("input[name=chkLoginIsShowed]").is(":checked");
-				$.ajax({
-					type: 'POST',
-					url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
-					dataType: 'json',
-					data: {
-						module_id: <?php echo $info['module_id'];?>,
-						name: "<?php echo $info['name'];?>",
-						file_name: "<?php echo $info['file_name'];?>",
-						is_showed: isShowed?1:0,
-						position: <?php echo $info['position'];?>,
-						sort_order: <?php echo $info['sort_order'];?>,
-						option: option_str
-					},
-					success: function(data) {
-						closeMessage();	
-						if(!isShowed){
-							$("#<?php echo $info['module_id']?>").remove();
-						}
-					},
-					error: function(request, error) {
-						showMessage("Error! <br> Detail: <br>" + request.responseText);
-					}	
-				});
-				refresh();
-			}
-			
-			if(use_keep_signed_in==1) {
-				$("input[name=chkShowKeepSignIn]").prop('checked',true);
-				$("#keep-signed-in").show();
-			} else {
-				$("input[name=chkShowKeepSignIn]").prop('checked',false);
-				$("#keep-signed-in").hide();
-			}
-		}
-	
 		//Update values
 		function updateLogin() {
 			var option_str = "";
