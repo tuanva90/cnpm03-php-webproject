@@ -307,13 +307,14 @@ function Editor(instanceName, contentplaceholder, contain, defaultContent, width
 	
 	this.getText=function(){return isIE?this.ed.body.innerText:this.ed.body.textContent;};
 	
-	this.iconPath= str_directory + 'pics/';
-	this.emoticonPath= str_directory +'emoticons/';
+	this.path = str_directory;
+	this.iconPath= str_directory + 'public/editor/' + 'pics/';
+	this.emoticonPath= str_directory + 'public/editor/' +'emoticons/';
 	this.textColor='#000000';
 	this.textFont='sans-serif';
 	this.textSize='14px';
 	this.backgroundImage=new Object();
-	this.backgroundImage.url= str_directory +'pics/background.jpg';
+	this.backgroundImage.url= str_directory + 'public/editor/' +'pics/background.jpg';
 	this.backgroundImage.repeat='no-repeat';
 	this.backgroundImage.position='top right';
 	this.backgroundColor='#ffffff';
@@ -560,7 +561,7 @@ $(function() {
 	$('#insert-hyperlink-tab').hide();
 		
 	$('#RTE_btnInsertImage').live("click",function() {
-		$( '<div id="insert-image-form" title="Chèn hình ảnh"><form><div id="tab-header"><ul id="tab-buttons"><li id="image-info" class="active-tab"><a href="javascript:void();">Thong tin hinh anh</a></li><li class="unactive-tab" id="insert-hyperlink"><a href="javascript:void();">Lien ket</a></li></ul></div> <div id="tab-content">'
+		$('<div id="insert-image-form" title="Chèn hình ảnh"><form><div id="tab-header"><ul id="tab-buttons"><li id="image-info" class="active-tab"><a href="javascript:void();">Thong tin hinh anh</a></li><li class="unactive-tab" id="insert-hyperlink"><a href="javascript:void();">Lien ket</a></li></ul></div> <div id="tab-content">'
 		+ '<div id="image-info-tab">URL<br/><input type="text" size="45" name="url" id="url1"/><input type="button" name="btnBrowser" id="btnBrowser1" value="Duyet"/><br/>'
 		+'<table border="2" cellpadding="0" cellspacing="1"> <tr> <td>' + 'Chú thích hình ảnh<br/><input type="text" size="14" name="image-alt" id="image-alt"/><br/>'
 		+ 'Chiều rộng<br/><input type="text" size="14" id="image-width"/><br/>'
@@ -606,7 +607,7 @@ $(function() {
 						//aLink = $("#url1").val();
 						
 						if(aLink){
-							//alert(aLink);
+							alert(aLink);
 							//tEditor.fmt('InsertImage',  $("#url1").val());
 							if(!isIE){
 								tEditor.fmt('inserthtml',aLink);
@@ -617,7 +618,7 @@ $(function() {
 								ig.pasteHTML(aLink);
 								}
 					     
-					      // alert(tEditor.getHTML());
+					       alert(tEditor.getHTML());
 		                $(this).dialog("close");
 						}
 				},
@@ -656,17 +657,69 @@ $(function() {
 		
 		
 	});	
-	$('#btnBrowser1').live("click",function(){
+	/*$('#btnBrowser1').live("click",function(){
 		
 		var url = $('#url1').val();
 		var aLink=window.open('http://localhost/Zends/link.so1vn.vn/admin/filemanager','name','height=500,width=600');
 		opener.location.toLocaleString();
 		opener.close();
 		if (window.focus) {new_window.focus()}
-		//alert(aLink);
+		alert(aLink);
 		$('#url1').val(aLink); 
 		
+	});*/
+
+	function image_upload(field, thumb) {
+		$('#dialog').remove();
+		$strlayout = '<div id="dialog" style="padding: 3px 0px 0px 0px;"> <div id = "11111"><iframe id = "123" src="' + RTE.path + 'admin/filemanager?field=' + encodeURIComponent(field) + '" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div></div>';
+		$('#content').prepend($strlayout);
+		
+		$('#dialog').dialog({
+			
+			title: 'Quáº£n lÃ½ hÃ¬nh áº£nh',
+			close: function (event, ui) {
+				//alert("event clicked");
+				if ($('#' + field).attr('value')) {
+					$.ajax({
+						url: RTE.path + 'admin/filemanager/image?image=' + encodeURIComponent($('#' + field).val()),
+						dataType: 'text',
+						success: function(data) {
+							//$('#' + thumb).replaceWith('<img src="' + data + '" alt="" id="' + thumb + '" />');
+						}
+					});
+				}
+				var imglink = RTE.path + "public/images/" + $("#url1").val();
+				$("#url1").val(imglink);
+				//alert($("#url1").val());
+				$("#url1").change();
+			},	
+			bgiframe: false,
+			width: 800,
+			height: 400,
+			resizable: false,
+			modal: true
+		});
+	};
+	
+	//
+	
+	$('#btnBrowser1').live("click",function(){
+		/*var url = $('#url1').val();
+		var aLink = "";
+		//var aLink=window.open('http://localhost/Zends/link.so1vn.vn/admin/filemanager','name','height=500,width=600');
+		//opener.location.toLocaleString();
+			
+		
+		//opener.close();
+		if (window.focus) {new_window.focus();}
+		alert(aLink);
+		$('#url1').val(aLink); 
+		*/
+		
+		image_upload('url1', 'thumb');
+		
 	});
+	
 	//
 	$("#url1").live("change",function(){
 		var alt = $("#image-alt").val();
