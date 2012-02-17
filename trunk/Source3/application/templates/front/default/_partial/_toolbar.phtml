@@ -318,6 +318,54 @@
 		$("#col-1, #col-2, #col-main").disableSelection();
 		$("#col-1, #col-2, #col-main").sortable("disable");
 
+		//////////////////////THAONX////////////////////////
+		//Init more-modules-form dialog
+		$("#more-modules-form").dialog({
+			autoOpen: false,
+			height: 400,
+			width: 700,
+			modal: true,
+			buttons: {
+				"Add": function(){
+					var selectedModuleId = $("input[name=rdoModule]:checked").val();
+					//alert(selectedModuleId);
+					$.ajax({						
+						type: 'POST',
+						url: '<?php echo HTTP_SERVER."front/index/saveblock2"?>',
+						dataType: 'json',
+						data: {
+							module_id: selectedModuleId,							
+							is_showed: 1,							
+						},
+						success: function(data) {							
+							closeMessage();	
+							location.reload();
+						},
+						error: function(request, error) {
+							showMessage("Error! <br> Detail: <br>" + request.responseText);
+						}	
+					});					
+					//$(this).dialog("close");
+				},
+				Cancel: function(){
+					$(this).dialog("close");
+				}
+			}
+		});		
+
+		//Init click more module
+		$("#btnMoreModules").button().click(function(){
+			$("#more-modules-form").dialog("open");
+			for(i = 0; i < $("input[name=rdoLayout]").length; i++) {
+				if ($("input[name=rdoLayout]")[i].value == currentLayout) {
+					$("input[name=rdoLayout]")[i].checked = true;
+				} else {
+					$("input[name=rdoLayout]")[i].checked = false;
+				}
+			}
+		});
+		/////////////////////////////////////////////////////
+
 		//Init btnUserManager
 		$("#btnUserManager").button().click(function(){
 			$("#user-manager").dialog("open");
@@ -374,7 +422,7 @@
 	</div>
 	
 	<!-- Form for choosing page layout -->
-	<div id="choose-layout-form" title="Select Page Layout">
+	<div id="choose-layout-form" title="Select Page Layout" style="display: none">
 		<input type="radio" name="rdoLayout" value="3A">
 		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."3A.JPG";?>">
 		<input type="radio" name="rdoLayout" value="3B">
@@ -387,7 +435,8 @@
 		<img src="<?php echo HTTP_IMAGES.DS."layout".DS."2B.JPG";?>">
 	</div>
 		
-	<div id="choose-theme-form" title="Select Theme">
+	
+	<div id="choose-theme-form" title="Select Theme" style="display: none">
 		<input type="radio" name="rdoTheme" value="ui-darkness"/>
 		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-darkness.JPG";?>" style="width: 200px; height: 200px;">
 		<input type="radio" name="rdoTheme" value="ui-lightness"/>
@@ -403,6 +452,29 @@
 		<img src="<?php echo HTTP_IMAGES.DS."theme".DS."ui-sunny.JPG";?>" style="width: 200px; height: 200px;">
 	</div>
 	
+	<!-- /////////////////ThaoNX///////////////////// -->
+	<!-- Form for choosing page layout -->
+	<div id="more-modules-form" title="Select A Module" style="display: none">
+	<?php 
+		$model_module = new Front_Model_Module();
+		$items = $model_module->listItemsNotShowed(Array('is_showed'=>0));
+		if(!empty($items)){			
+	
+		?>
+		<ul>
+			<?php
+			foreach ($items as $value){
+			?>
+				<li>
+				<label ><div class="icon <?php echo $value['file_name']?>"></div><h4><?php echo $value['name']?></h4><ins><?php echo $value['desc']?></ins></label>
+				<div><input type="radio" name="rdoModule" id="statistic-modimg" value="<?php echo $value['module_id']?>"></div>
+				</li>
+			<?php }?> 
+		<?php }else {?> <!-- Don't Hava any Module -->
+			<h3><center>Don't Have any Module here</center></h3>
+		<?php }?>	
+	    </ul>	
+	</div>
 	<div id="site-manager-form" title="Sites Manager">
 		<div id="site-manager-form-content">
 		</div>
