@@ -36,9 +36,24 @@ class IndexController extends Honey_Controller_Action
             "sort_order" => $_POST['sort_order'], "option" => $_POST['option']);
             $modules = new Front_Model_Module();
             $modules->updateItem($info);
+            //echo $info['is_showed'];
         } catch (Exception $e) {
             echo $e->getMessage();
         }
+    }
+    
+ 	public function saveblock2Action ()
+    {
+        $this->_helper->layout()->disableLayout();
+        $this->_helper->viewRenderer->setNoRender(true);
+        if (isset($_POST['is_showed']) && isset($_POST['module_id']) ) {
+            $info = array("module_id" => $_POST['module_id'],             
+            "is_showed" => $_POST['is_showed']);
+            $modules = new Front_Model_Module();
+            $result = $modules->updateItemToShow($info);
+            echo $result;
+        }
+          
     }
     public function savelayoutAction ()
     {
