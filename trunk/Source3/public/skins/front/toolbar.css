@@ -55,6 +55,11 @@
 	background: url('images/toolbar/impressive_products.png') no-repeat;
 	background-position-x: 32px;
 }
+
+#more-modules-form li .BlkSearch	{
+	background: url('images/toolbar/search.png') no-repeat;
+	background-position-x: 32px;
+}
 #more-modules-form li div {
 	padding-left: 50px;
 	clear: both;

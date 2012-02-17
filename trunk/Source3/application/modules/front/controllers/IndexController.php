@@ -61,18 +61,29 @@ class IndexController extends Honey_Controller_Action
         $this->_helper->layout()->disableLayout();
         $model_module = new Front_Model_Module();
 		$items = $model_module->listItemsNotShowed(Array('is_showed'=>0));
-		$this->view->items = $items; 
-       // $this->_helper->viewRenderer->setNoRender(true);
-//        if (isset($_POST['is_showed']) && isset($_POST['module_id']) ) {
-//            $info = array("module_id" => $_POST['module_id'],             
-//            "is_showed" => $_POST['is_showed']);
-//            $modules = new Front_Model_Module();
-//            $result = $modules->updateItemToShow($info);
-//            echo $result;
-//        }
-          
+		$this->view->items = $items;           
     }
     
+ 	public function impressiveproductsAction ()
+    {
+    	try {
+        $this->_helper->layout()->disableLayout();        
+        $product_model = new Front_Model_Product();
+		$arrParam['order_mode'] = "viewed DESC";
+		$arrParam['paginator'] = array(
+			'itemCountPerPage' => isset($_POST['num_rows'])?$_POST['num_rows']:5,
+			'currentPage' => 1,
+		);
+		$items = $product_model->listItem($arrParam,array('task'=>'list'));
+		
+		$this->view->items = $items;
+//        $model_module = new Front_Model_Module();
+//		$items = $model_module->listItemsNotShowed(Array('is_showed'=>0));
+//		$this->view->items = $items; 
+    	} catch (Exception $e) {
+            echo $e->getMessage();
+        } 
+    }
     ////////////////////////////////////////////
     public function savelayoutAction ()
     {
