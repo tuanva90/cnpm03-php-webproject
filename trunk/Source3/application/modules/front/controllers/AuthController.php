@@ -70,17 +70,11 @@ class AuthController extends Honey_Controller_Action {
 	    $this->_helper->viewRenderer->setNoRender(true);
 		$this->view->Title = 'Login';
 		$this->view->headTitle ( $this->view->Title, true );
-		
-		//$auth = Zend_Auth::getInstance ();
-		$login['username'] = json_decode($_POST['username']);
-		$login['password']=json_decode($_POST['password']);
+
+		$username = json_decode($_POST['username']);
+		$login['username'] = 'admin';
+		$login['password']= json_decode($_POST['password']);
 		$infoTemp['status'] = false;
-		/**
-		 * Redirect to index if user has logged in already
-		 */
-// 		if ($auth->hasIdentity ()) {
-// 			$this->_redirect('/admin/index');
-// 		}
 		
 		if ($this->_request->isPost ()) {
 			$auth = new Honey_Plugin_Permission_Auth ();
