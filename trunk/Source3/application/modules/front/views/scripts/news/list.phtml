@@ -2,7 +2,8 @@
   <div class="breadcrumb"></div>
 <pre>
 </pre>
-<?php session_start();  if(isset($_SESSION['EditMode'])) if($_SESSION['EditMode'] == 'ON'){?>
+<?php $ducnhtrash = new Zend_Session_Namespace('news_support');?>
+<?php if($ducnhtrash->editmode) if($ducnhtrash->editmode == 'ON'){?>
 <script>
   
 	
@@ -177,6 +178,7 @@ $(function(){
 				success:function(json){
 					if(json.success){
 						$('#edit-news-form input[name=save_news_id]').val(json.news_id);
+						$('#edit-news-form input[name=image]').val(json.image);
 						$('#edit-news-form img[name=image]').attr('src',json.image);
 						$('#edit-news-form input[name=sort-order]').val(json.sort_order);
 						$('#edit-news-form select[name=status]').val(json.status);
@@ -188,7 +190,8 @@ $(function(){
 						$('#edit-news-form input[name=metadescription]').val(json.meta_description);
 						$('#edit-news-form input[name=metakeywords]').val(json.meta_keywords);
 						$('#edit-news-form select[name=category]').val(json.category_id);
-						
+
+						alert(json.description);
 					}
 					if(json.error){
 						alert(json.error);
@@ -196,7 +199,7 @@ $(function(){
 				}
 			});
 			$('#edit-news-frm').dialog("open");
-			replace("edit_description","edit_description_posArea", "<?php echo HTTP_SERVER;?>");
+			replace("edit_description","edit_description_posArea", "<?php echo HTTP_SERVER;?>", $('#edit-news-form textarea[name=description]').val());
 		});
 
 		$('#edit-summary-menu-item_01').bind("click",function(){

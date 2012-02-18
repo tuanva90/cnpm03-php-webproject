@@ -470,7 +470,7 @@
 		<div id="btnTheme" class="state-changable-button">Select Theme</div>
 		<div id="btnSiteManager" class="state-changable-button">Sites Manager</div>
 		<div id="btnUserManager" class="state-changable-button">User Manager</div>
-		<div id="btnTurnOnEditMode" class="state-changable-button"><a href="<?php echo $this->baseUrl('front/news/changeeditmode');?>">Edit News Mode: <?php if(isset($_SESSION['EditMode'])) echo $_SESSION['EditMode']; else echo "OFF";?></a></div>
+		<div id="btnTurnOnEditMode" class="state-changable-button"><a href="<?php echo $this->baseUrl('front/news/changeeditmode');?>">Edit News Mode: <?php $ducnhtrash = new Zend_Session_Namespace('news_support'); echo $ducnhtrash->editmode;?></a></div>
 		<input type="checkbox" id="chkLayoutModules"/>
 		<label id="lbLayout" for="chkLayoutModules">Layout Mode: OFF</label>
 	</div>

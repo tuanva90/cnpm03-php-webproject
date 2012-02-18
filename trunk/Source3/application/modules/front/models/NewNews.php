@@ -133,8 +133,8 @@ class Front_Model_NewNews extends Honey_Db_Table{
 				'title' => stripslashes($arrParam['title']),
 				'summary' => stripslashes($arrParam['summary']),
 				'description' => stripslashes($arrParam['description']),
-				'meta_keywords' => $arrParam['metakeywords'],
-				'meta_description' => $arrParam['metadescription']
+				'meta_keywords' => stripslashes($arrParam['metakeywords']),
+				'meta_description' => stripslashes($arrParam['metadescription'])
 			);
 			
 			$db->insert($this->getPrefix().'news_description', $thenews_description);
@@ -147,8 +147,8 @@ class Front_Model_NewNews extends Honey_Db_Table{
 		    	'title' => stripslashes($arrParam['title']),
 				'summary' => stripslashes($arrParam['summary']),
 				'description' => stripslashes($arrParam['description']),
-				'meta_keywords' => $arrParam['metakeywords'],
-				'meta_description' => $arrParam['metadescription']
+				'meta_keywords' => stripslashes($arrParam['metakeywords']),
+				'meta_description' => stripslashes($arrParam['metadescription'])
 		    );
 		    
 		    $db->insert($this->getPrefix().'news_description',$thenews_description);
