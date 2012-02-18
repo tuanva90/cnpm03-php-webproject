@@ -98,6 +98,23 @@ class IndexController extends Honey_Controller_Action
         } 
     }
     
+     public function newestproductsAction ()
+    {
+    	try {
+        $this->_helper->layout()->disableLayout();        
+        $news_model = new Front_Model_Product();
+		$arrParam['order_mode'] = "date_added DESC";
+		$arrParam['paginator'] = array(
+			'itemCountPerPage' => isset($_POST['num_rows'])?$_POST['num_rows']:5,
+			'currentPage' => 1,
+		);
+		$items = $news_model->listItem($arrParam,array('task'=>'list'));		
+		$this->view->items = $items;
+    	} catch (Exception $e) {
+            echo $e->getMessage();
+        } 
+    }
+    
     ////////////////////////////////////////////
     public function savelayoutAction ()
     {

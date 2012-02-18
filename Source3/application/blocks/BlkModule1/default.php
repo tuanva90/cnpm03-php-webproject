@@ -1,8 +1,8 @@
 <div class="ui-widget-content ui-conner-all module" id="<?php echo $info['module_id'];?>">
 <script type="text/javascript">
-	function update() {
+	function module1update() {
 		var option_str = "";			
-		var isShowed = $("input[name=chkModule1IsShowed]").is(":checked");			
+		var isShowed = $("input[name=chkModule1IsShowed]").is(":checked");				
 		$.ajax({
 			type: 'POST',
 			url: '<?php echo HTTP_SERVER."front/index/saveblock"?>',
@@ -37,7 +37,7 @@
 			buttons: {
 				"Save": function() {
 					showMessage("Saving...");
-					update();
+					module1update();
 					$(this).dialog("close");
 				},
 				Cancel: function() {
@@ -47,7 +47,8 @@
 		});
     	$("#edit-module1").button().click(function() {
 			$("#edit-module1-form").dialog("open");
-		});		
+		});	
+			
 		});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">

@@ -8,6 +8,24 @@
 	
 </style>
 	<script type="text/javascript">
+		function newest_products_refresh(){		
+			$("#newest-products-content").html("<center><h3>Loading...</h3></center>");
+			var max = $("#edit-newest-product-form input[name='txtMaxAmount']").val();			
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo HTTP_SERVER."front/index/newestproducts"?>',
+				data: {				
+					num_rows: max
+				},
+				success: function(data) {
+					//alert(data);
+					$("#newest-products-content").html(data);
+				},
+				error: function(request, textStatus, error) {
+					showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+				}	
+			});
+		}
 		$(function(){
 			$("#edit-newest-product").button().click(function(){
 				$("#edit-newest-product-form").dialog("open");
@@ -42,7 +60,7 @@
 						if(!isShowed){
 							$("#<?php echo $info['module_id']?>").remove();
 						}else{
-							window.location.reload();
+							newest_products_refresh();
 						}
 					},
 					error: function(request, error) {
@@ -67,6 +85,7 @@
 					}
 				}
 			});
+			newest_products_refresh();
 		});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">
@@ -76,32 +95,8 @@
 		</div>
 	</div>
 	<!-- ///////////////////////////////////////////////////// -->
-	<div id="content" style="overflow-x:auto;min-height: 10px; ">	
-		<table class="list" style="margin-bottom: 0px;">
-			<thead>
-				<tr>
-					<td class="left" style="min-width: 100px">Product Name</td>
-					<td class="center">Price <br><span style="font-size:6pt">(Thousand vnđ)</span></td>					
-				</tr>
-			</thead>
-			<tbody>
-				<?php if ($items) { ?>
-				<?php foreach($items as $val){
-										
-					?>
-					<tr>
-						
-						<td><a href="<?php echo HTTP_SERVER.'/front/product/detail/product_id/'.$val['product_id'].'#main-content'?>"><?php echo $val["model"]?></a></td>
-		            	<td class="center"><?php echo $val["price"]/1000?></td>		            	
-            		</tr>
-	          	<?php } ?>
-          		<?php } else { ?>
-			        <tr>
-			            <td class="center" colspan="2">Không có kết quả</td>
-			        </tr>
-          		<?php } ?>
-			</tbody>
-		</table>
+	<div id="newest-products-content" style="overflow-x:auto;min-height: 10px; ">	
+		
 	</div><!-- #end #content -->
 	<!-- ///////////////////////////////////////////////////// -->
 	

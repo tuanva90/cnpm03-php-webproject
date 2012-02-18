@@ -60,6 +60,14 @@
 	background: url('images/toolbar/search.png') no-repeat;
 	background-position-x: 32px;
 }
+#more-modules-form li .BlkModule1	{
+	background: url('images/toolbar/not_yet.png') no-repeat;
+	background-position-x: 32px;
+}
+#more-modules-form li .BlkModule2	{
+	background: url('images/toolbar/not_yet.png') no-repeat;
+	background-position-x: 32px;
+}
 #more-modules-form li div {
 	padding-left: 50px;
 	clear: both;
