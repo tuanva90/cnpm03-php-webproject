@@ -14,6 +14,15 @@ class HinhanhController extends Honey_Controller_Action {
 	protected $_paginator;
 	
 	public function init() {
+		//Mang tham so nhan duoc o moi Action
+		$this->_arrParam = $this->_request->getParams ();
+		
+		//Duong dan cua Controller
+		$this->_currentController = '/' . $this->_arrParam ['module'] . '/' . $this->_arrParam ['controller'];
+		
+		//Duong dan cua Action chinh		
+		$this->_actionMain = '/' . $this->_arrParam ['module'] . '/' . $this->_arrParam ['controller'] . '/index';
+				
 		/** View */
 		$this->view->arrParam = $this->_arrParam;
 		$this->view->currentController = $this->_currentController;
@@ -26,8 +35,10 @@ class HinhanhController extends Honey_Controller_Action {
 	}
 	
 	public function indexAction() {
-		
-		
+		$this->view->huy = '';
+		if($this->_request->isPost()){
+			$this->view->huy = $this->_arrParam['album'];
+		}
 
 	}
 	
