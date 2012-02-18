@@ -97,8 +97,40 @@ $(function() {
 		$("#edit-header-form").dialog( "open" );
 	})
 
+	function image_upload(field, thumb) {
+		$('#dialog').remove();
+		$strlayout = '<div id="dialog" style="padding: 3px 0px 0px 0px;"> <div id = "11111"><iframe id = "123" src="' + "<?php echo HTTP_SERVER?>" + 'admin/filemanager?field=' + encodeURIComponent(field) + '" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div></div>';
+		$('#content').prepend($strlayout);
+		
+		$('#dialog').dialog({
+			
+			title: 'Quản lý hình ảnh',
+			close: function (event, ui) {
+				//alert("event clicked");
+				if ($('#' + field).attr('value')) {
+					$.ajax({
+						url: "<?php echo HTTP_SERVER;?>" + 'admin/filemanager/image?image=' + encodeURIComponent($('#' + field).val()),
+						dataType: 'text',
+						success: function(data) {
+							//$('#' + thumb).replaceWith('<img src="' + data + '" alt="" id="' + thumb + '" />');
+						}
+					});
+				}
+				var imglink = "<?php echo HTTP_SERVER;?>" + "public/images/" + $("#txtUrl").val();
+				$("#txtUrl").val(imglink);
+				//alert($("#txtUrl").val());
+				$("#txtUrl").change();
+			},	
+			bgiframe: false,
+			width: 800,
+			height: 400,
+			resizable: false,
+			modal: true
+		});
+	};
+	
 	$("#choose-image").button().click(function(){
-		$("input[name='rdoBannerImage']").each(function(){
+		/*$("input[name='rdoBannerImage']").each(function(){
 			if($(this).val() == imageLink) {
 				$(this).prop('checked', true);
 			} else {
@@ -106,7 +138,8 @@ $(function() {
 			}
 		});
 		$("#choose-image-form").dialog("open");
-		
+		*/
+		image_upload('txtUrl', 'thumb');
 	});
 });
 </script>
