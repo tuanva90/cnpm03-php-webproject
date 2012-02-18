@@ -562,10 +562,10 @@ $(function() {
 		+ 'Đường viền<br/><input type="text" size="14" id="image-border"/><br/>'
 		+ 'Khoảng đệm ngang<br/><input type="text" size="14" id="image-hmargin"/><br/>'
 		+ 'Khoảng đệm dọc<br/><input type="text" size="14" id="image-vmargin"><br/>'
-		+ ' Vị trí<br/><select name="float" >'
-		+ '<option selected="selected">none</option>'
-		+ '<option>left</option>'
-		+ '<option>right</option>'
+		+ ' Vị trí<br/><select name="float" id = "float" >'
+		+ '<option value = "none" selected="selected">none</option>'
+		+ '<option value = "left">left</option>'
+		+ '<option value = "right">right</option>'
 		+ '</select>'
 		+ '</td>'
 		+'<td valign="top"><div id="div-pre">josafoofja òa à jafjaj jafasjfi aafoij ậ faij ậ jfafjaf aaif à afaf <br/>osjfsjofsofjsfsfsjofjs<br/>jsofsfs</div></td></tr></table>'
@@ -586,7 +586,7 @@ $(function() {
 						var bord = $("#image-border").val();
 						var hmarg = $("#image-hmargin").val();
 						var vmarg = $("#image-vmargin").val();
-						var _float = $("select option:selected").text();
+						var _float = $("#float").val();
 						var float = "";
 						if(_float=="none"){float = ""}
 						else
@@ -721,7 +721,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
@@ -746,7 +746,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
@@ -771,7 +771,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
@@ -796,7 +796,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
@@ -821,7 +821,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
@@ -846,7 +846,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
@@ -871,7 +871,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
@@ -896,7 +896,7 @@ $(function() {
 		var bord = $("#image-border").val();
 		var hmarg = $("#image-hmargin").val();
 		var vmarg = $("#image-vmargin").val();
-		var _float = $("select option:selected").text();
+		var _float = $("#float").val();
 		var float = "";
 		if(_float=="none"){float = ""}
 		else
