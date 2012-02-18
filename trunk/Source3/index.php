@@ -6,7 +6,7 @@ if (version_compare(phpversion(), '5.2.0', '<') === true) {
     die('ERROR: Your PHP version is ' . phpversion() . '. Honey CMS requires PHP 5.2.0 or newer.');
 }
 
-define('DS', DIRECTORY_SEPARATOR);
+define('DS', "/");
 define('PS', PATH_SEPARATOR);
 
 include_once 'config.php';
