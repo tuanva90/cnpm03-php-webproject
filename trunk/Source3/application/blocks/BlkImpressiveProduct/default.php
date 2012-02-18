@@ -10,7 +10,7 @@
 </style>
 	<script type="text/javascript">
 	///
-	function impressive_product_refesh(){		
+	function impressive_product_refresh(){		
 		$("#impressive-product-content").html("<center><h3>Loading...</h3></center>");
 		var max = $("#edit-impressive-product-form input[name='txtMaxAmount']").val();
 		$.ajax({
@@ -63,7 +63,7 @@
 					if(!isShowed){	
 						$("#<?php echo $info['module_id']?>").remove();
 					}else{
-						impressive_product_refesh();
+						impressive_product_refresh();
 					}
 						
 				},
@@ -90,8 +90,7 @@
 				}
 			}
 		});
-
-		impressive_product_refesh();
+		impressive_product_refresh();	
 	});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">
