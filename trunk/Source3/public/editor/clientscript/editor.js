@@ -554,6 +554,7 @@ $(function() {
 	$('#insert-hyperlink-tab').hide();
 		
 	$('#RTE_btnInsertImage').live("click",function() {
+/*
 		$('<div id="insert-image-form" title="Chèn hình ảnh"><form><div id="tab-header"></div> <div id="tab-content">'
 		+ '<div id="image-info-tab">URL<br/><input type="text" size="45" name="url" id="url1"/><input type="button" name="btnBrowser" id="btnBrowser1" value="Duyet"/><br/>'
 		+'<table border="2" cellpadding="0" cellspacing="1"> <tr> <td>' + 'Chú thích hình ảnh<br/><input type="text" size="14" name="image-alt" id="image-alt"/><br/>'
@@ -571,6 +572,28 @@ $(function() {
 		+'<td valign="top"><div id="div-pre">josafoofja òa à jafjaj jafasjfi aafoij ậ faij ậ jfafjaf aaif à afaf <br/>osjfsjofsofjsfsfsjofjs<br/>jsofsfs</div></td></tr></table>'
 		+'</div>'
 		+'</div></form></div>').dialog({
+	*/
+		$('#insert-image-form').remove();
+		$strdialog = '<div id="insert-image-form" title="Chèn hình ảnh"><form><div id="tab-header"></div> <div id="tab-content">'
+		+ '<div id="image-info-tab">URL<br/><input type="text" size="45" name="url" id="url1"/><input type="button" name="btnBrowser" id="btnBrowser1" value="Duyet"/><br/>'
+		+'<table border="2" cellpadding="0" cellspacing="1"> <tr> <td>' + 'Chú thích hình ảnh<br/><input type="text" size="14" name="image-alt" id="image-alt"/><br/>'
+		+ 'Chiều rộng<br/><input type="text" size="14" id="image-width"/><br/>'
+		+ 'Chiều cao<br/><input type="text" size="14" id="image-height"/><br/>'
+		+ 'Đường viền<br/><input type="text" size="14" id="image-border"/><br/>'
+		+ 'Khoảng đệm ngang<br/><input type="text" size="14" id="image-hmargin"/><br/>'
+		+ 'Khoảng đệm dọc<br/><input type="text" size="14" id="image-vmargin"><br/>'
+		+ ' Vị trí<br/><select name="float" id = "float" >'
+		+ '<option value = "none" selected="selected">none</option>'
+		+ '<option value = "left">left</option>'
+		+ '<option value = "right">right</option>'
+		+ '</select>'
+		+ '</td>'
+		+'<td valign="top"><div id="div-pre">josafoofja òa à jafjaj jafasjfi aafoij ậ faij ậ jfafjaf aaif à afaf <br/>osjfsjofsofjsfsfsjofjs<br/>jsofsfs</div></td></tr></table>'
+		+'</div>'
+		+'</div></form></div>';
+		$('#dialog-content').prepend($strdialog);
+		
+		$('#insert-image-form').dialog({ 
 			height: 500,
 			width: 500,
 			modal: true,
