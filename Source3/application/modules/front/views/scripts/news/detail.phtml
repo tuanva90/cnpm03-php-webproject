@@ -51,6 +51,7 @@
 			height:600,
 			buttons:{
 				"Lưu":function(){
+					$('#edit-news-form textarea[name=description]').val($('#edit-news-form textarea[name=description]').html());
 					$('#edit-news-form').submit();
 				},
 				Hủy:function(){
@@ -239,12 +240,12 @@
 				});
 			};
 			
-			$('#add_btn_browser').click(function(){
+			$('#add_btn_Browser').click(function(){
 
 				image_upload('add_image_Url', 'thumb');
 				});
 
-			$('#edit_btn_browser').click(function(){
+			$('#edit_btn_Browser').click(function(){
 
 				image_upload('edit_image_Url', 'thumb');
 				});
@@ -271,7 +272,7 @@
   			<legend>Thông tin chung</legend>
 			<span style="width:100px; display:inline-block">Mục</span><select name="category"></select><br/>
   			<span style="width:100px; display:inline-block">Chọn 1 ngôn ngữ</span><select name="language"><option value="en_US">Tiếng Anh</option></select><br/>
- 			<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75" id="add_image_Url"><input type="button" id="add_btn_browser" val="Duyệt ảnh"/><br/>
+ 			<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75" id="add_image_Url"><input type="button" id="add_btn_Browser" val="Duyệt ảnh"/><br/>
  			<span style="width:100px; display:inline-block">Thứ tự hiển thị</span><input type="text" name="sort-order" size="3"><br/>
  			<span style="width:100px; display:inline-block">Chọn 1 trạng thái</span><select name="status"><option value="1">Xuất bản ngay</option><option value="0">Chưa xuất bản ngay</option></select><br/>
  		</fieldset>
