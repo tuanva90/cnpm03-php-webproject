@@ -191,39 +191,14 @@ $(function(){
 						$('#edit-news-form input[name=metakeywords]').val(json.meta_keywords);
 						$('#edit-news-form select[name=category]').val(json.category_id);
 
-						alert(json.description);
+						$('#edit-news-frm').dialog("open");
+						replace("edit_description","edit_description_posArea", "<?php echo HTTP_SERVER;?>");
 					}
 					if(json.error){
 						alert(json.error);
 					}
 				}
 			});
-			$('#edit-news-frm').dialog("open");
-			replace("edit_description","edit_description_posArea", "<?php echo HTTP_SERVER;?>", $('#edit-news-form textarea[name=description]').val());
-		});
-
-		$('#edit-summary-menu-item_01').bind("click",function(){
-			$.ajax({
-				type:'POST',
-				url:'<?php echo $this->baseUrl('front/services/getnewssummary')?>',
-				data:{news_id:_currentNewsID},
-				dataType:'json',
-				success:function(json){
-					if(json.success)
-					{
-						
-						$('#edit-news-summary-form textarea[name=summary]').val(json.summary);
-					}
-					if(json.error)
-					{
-						alert(json.error);
-					}
-				}
-			});
-			
-			$('#edit-news-summary-frm').dialog("open");
-			replace("edit_summary", "edit_summary_posArea","<?php echo HTTP_SERVER;?>");
-			
 		});
 		
 		$('#add-menu-item_01').click(function(){
@@ -258,7 +233,6 @@ $(function(){
 													dataType:'json',
 													success:function(json){
 														if(json.success){
-															//alert($('#edit-news-form select[name=category]'));
 															$('#edit-news-form input[name=save_news_id]').val(json.news_id);
 															$('#edit-news-form input[name=image]').val(json.image);
 															$('#edit-news-form img[name=image]').attr('src',json.image);
@@ -272,24 +246,22 @@ $(function(){
 															$('#edit-news-form input[name=metadescription]').val(json.meta_description);
 															$('#edit-news-form input[name=metakeywords]').val(json.meta_keywords);
 															$('#edit-news-form select[name=category]').val(json.category_id);
+															$('#edit-news-frm').dialog("open");
+															replace("edit_description","edit_description_posArea", "<?php echo HTTP_SERVER;?>");
 															
-															//alert($('#edit-news-form textarea[name=description]').html());
 														}
 														if(json.error){
 															alert(json.error);
 														}
 													}
 												});
-												$('#edit-news-frm').dialog("open");
 												$(this).dialog("close");
 											},
 											Hủy:function(){
-												//$(this).dialog("close");
 												$('#reload-page-form').submit();
 											}
 										},
 										close:function() {
-											//allFields.val( "" ).removeClass( "ui-state-error" );
 											$('#reload-page-form').submit();
 										}
 									});
