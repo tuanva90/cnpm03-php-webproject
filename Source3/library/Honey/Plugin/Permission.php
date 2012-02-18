@@ -17,9 +17,9 @@ class Honey_Plugin_Permission extends Zend_Controller_Plugin_Abstract {
 		
 		if ($flagAdmin == true) {
 			if ($auth->hasIdentity () == false) {
-				$this->_request->setModuleName ( 'admin' );
-				$this->_request->setControllerName ( 'login' );
-				$this->_request->setActionName ( 'index' );
+				//$this->_request->setModuleName ( 'admin' );
+				//$this->_request->setControllerName ( 'auth' );
+				//$this->_request->setActionName ( 'login' );
 			} else {
 				$info = new Honey_Plugin_Permission_Info ();
 				$permission = $info->getGroupInfo ( 'permission' );
