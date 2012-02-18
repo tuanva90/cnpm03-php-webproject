@@ -13,6 +13,7 @@
 		
 	?>
 	<div class="right">
+		<div><a  onclick="editUser($('input[name=user_id]').val(),$('input[name=username]').val(),$('input[name=avarta]').val(),$('input[name=password]').val(),$('input[name=firstname]').val(),$('input[name=lastname]').val(),$('input[name=birthday]').val(),$('input[name=email]').val(),$('input[name=user_group_id]').val(),$('input[checked=checked]').val(),$('input[name=status]').val(),$('input[name=sign]').val())"><img src="<?php echo HTTP_IMAGES . '/icon/icon-32-save.png';?>"/><br><?php echo $this->cmsTranslator('user_add_save_button');?></a></div>
 		<div><a  onclick="$('#form').submit();"><img src="<?php echo HTTP_IMAGES . '/icon/icon-32-save.png';?>"/><br><?php echo $this->cmsTranslator('user_add_save_button');?></a></div>
 		<?php echo $btnCancel;?>
 	</div>
@@ -151,20 +152,27 @@
 				}
 			}
 		});
+		$("#btnSave").button().click(function (){
+			$.ajax({
+				type: 'POST',
+				url: '<?php echo HTTP_SERVER."front/user/saveedit"?>',
+				dataType: 'json',
+				data: {
+				},
+				success: function(data) {
+					if(data.status) {
+						 updateAfterLogIn(data.name);
+					} else {
+						$("#validating-login").show();
+						$("#validating-login").html("Wrong!");
+					}
+				},
+				error: function(request, textStatus, error) {
+					showMessage("Error! <br> Detail: <br>" + request.responseText + error);
+				}	
+			});
 		function editUser(id,username,avarta,password,firstname,lastname,birthday,email,status,sign) {
 			$.ajax({
-				$row->user_group_id = $arrParam ['user_group_id'];
-				$row->username = $arrParam ['username'];
-				$row->avatar = $arrParam ['avatar'];
-				$row->password = $encode->password ( $arrParam ['password'] );
-				$row->firstname = $arrParam ['firstname'];
-				$row->lastname = $arrParam ['lastname'];
-				$row->birthday = $arrParam ['birthday'];
-				$row->email = $arrParam ['email'];
-				$row->status = $arrParam ['status'];
-				$row->ip = $_SERVER ['REMOTE_ADDR'];
-				$row->date_added = date ( "Y-m-d H:i:s" );
-				$row->sign = $arrParam ['sign'];
 				type: 'POST',
 				url: '<?php echo HTTP_SERVER."front/user/saveedit"?>',
 				dataType: 'json',

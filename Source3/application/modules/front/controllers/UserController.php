@@ -137,8 +137,20 @@ class UserController extends Honey_Controller_Action
 	
 	}
 	public function saveeditAction(){
+		$arr['user_group_id'] = $_POST['user_group_id'];
+			$arr->username = $_POST ['username'];
+			$arr['avatar'] = $_POST ['avatar'];
+			$arr['password'] =$_POST ['password'];
+			$arr['firstname'] = $_POST ['firstname'];
+			$arr['lastname'] = $_POST ['lastname'];
+			$arr['birthday'] = $_POST ['birthday'];
+			$arr['email'] = $_POST ['email'];
+			$arr['status'] = $_POST ['status'];
+			$arr['sign'] = $_POST ['sign'];
+		$this->_helper->layout()->disableLayout();
+  		$this->_helper->viewRenderer->setNoRender(true);
 	    $user = new Admin_Model_User ();
-	     				$user->saveItem ( $this->_arrParam, array ('task' => 'edit' ) );
+	     				$user->saveItem ( $arr, array ('task' => 'edit' ) );
 	     				$this->_redirect ( $this->_actionMain );
 	}
 	
