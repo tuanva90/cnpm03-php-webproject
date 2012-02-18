@@ -170,10 +170,10 @@ class Front_Model_NewNews extends Honey_Db_Table{
 				'title' => stripslashes($arrParam['title']),
 				'summary' => stripslashes($arrParam['summary']),
 				'description' => stripslashes($arrParam['description']),
-				'meta_keywords' => $arrParam['metakeywords'],
-				'meta_description' => $arrParam['metadescription']
+				'meta_keywords' => stripslashes($arrParam['metakeywords']),
+				'meta_description' => stripslashes($arrParam['metadescription'])
 			);
-			$where = array('news_id = '.$arrParam['save_news_id'], "language ='" + $arrParam['language'] + "'");
+			$where = array('news_id = '.$arrParam['save_news_id'], "language ='vi_VN'");
 			$db->update($this->getPrefix().'news_description',$thenews_description,$where);
 			
 		}
