@@ -15,7 +15,8 @@ class NewsController extends Honey_Controller_Action {
 	
 	public function init() {
 		$this->_arrParam = $this->_request->getParams ();
-		$this->_arrParam['user'] = 'ducnh'; 
+		$this->_arrParam['user'] =  'admin';
+		
 		date_default_timezone_set('Asia/Saigon');	
 		$this->_arrParam['date'] = date("Y-m-d H:i:s");
 		
