@@ -1,6 +1,6 @@
 <div class="ui-widget-content ui-conner-all module" id="<?php echo $info['module_id'];?>">
 	<script type="text/javascript">
-	function update() {
+	function module2update() {
 		var option_str = "";			
 		var isShowed = $("input[name=chkModule2IsShowed]").is(":checked");			
 		$.ajax({
@@ -37,7 +37,7 @@
 			buttons: {
 				"Save": function() {
 					showMessage("Saving...");
-					update();
+					module2update();
 					$(this).dialog("close");
 				},
 				Cancel: function() {

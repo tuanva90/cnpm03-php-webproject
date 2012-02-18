@@ -10,7 +10,7 @@
 </style>
 	<script type="text/javascript">
 		///
-		function most_viewed_refesh(){		
+		function most_viewed_refresh(){		
 			$("#most-view-content").html("<center><h3>Loading...</h3></center>");
 			var max = $("#edit-mostviewed-news-form input[name='txtMaxAmount']").val();			
 			$.ajax({
@@ -62,7 +62,7 @@
 						if(!isShowed){
 							$("#<?php echo $info['module_id']?>").remove();
 						}else{
-							most_viewed_refesh();
+							most_viewed_refresh();
 						}
 					},
 					error: function(request, error) {						
@@ -87,7 +87,7 @@
 					}
 				}
 			});
-			most_viewed_refesh();
+			most_viewed_refresh();
 		});
 	</script>
 	<div class="ui-widget-header ui-corner-all module-title">
