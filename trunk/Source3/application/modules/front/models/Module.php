@@ -47,7 +47,7 @@ class Front_Model_Module extends Honey_Db_Table{
   		$db = Zend_Registry::get('connectDB');
   		$select = $db->select()
   				  ->from('cms_module')
-  				  ->where('is_showed = ?', 1)
+  				  //->where('is_showed = ?', 1)
   				  ->order('sort_order ASC');
   		
 		$result = $db->fetchAll($select);
