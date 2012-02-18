@@ -164,17 +164,17 @@ class NewsController extends Honey_Controller_Action {
 	    header("location: $back");
 	}
 	public function saveAction(){
-		//$this->_helper->viewRenderer->setNoRender();
-		//$this->_helper->layout->disableLayout();
-		$this->view->descriptionPost = stripslashes($_POST['description']);
-		//$newnews = new Front_Model_NewNews();
+		$this->_helper->viewRenderer->setNoRender();
+		$this->_helper->layout->disableLayout();
+		//$this->view->descriptionPost = stripslashes($_POST['description']);
+		$newnews = new Front_Model_NewNews();
 		
-		//$newnews->saveItem($this->_arrParam, array('task'=>'edit'));
+		$newnews->saveItem($this->_arrParam, array('task'=>'edit'));
 		
-		// redirect to request page;
-		//$ducnhtrash = new Zend_Session_Namespace('news_support');
-	    //$back = $ducnhtrash->back;
-	    //header("location: $back");
+		//redirect to request page;
+		$ducnhtrash = new Zend_Session_Namespace('news_support');
+	    $back = $ducnhtrash->back;
+	    header("location: $back");
 	}
 	
 	public function changeeditmodeAction()
