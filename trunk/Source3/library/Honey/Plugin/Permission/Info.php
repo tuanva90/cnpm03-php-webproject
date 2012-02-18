@@ -29,7 +29,7 @@ class Honey_Plugin_Permission_Info {
 		$db = Zend_Registry::get ( 'connectDB' );
 		$select = $db->select ()
 					 ->from ( $prefix . 'user' )
-					 ->where ( 'user_id = ? ', $infoAuth->user_id, INTEGER );
+					 ->where ( 'user_id = ? ', $infoAuth->user_id);
 		$result = $db->fetchRow ( $select );
 		
 		$ns = new Zend_Session_Namespace ( 'info' );
@@ -43,7 +43,7 @@ class Honey_Plugin_Permission_Info {
 		$db = Zend_Registry::get ( 'connectDB' );
 		$select = $db->select ()
 					 ->from ( $prefix . 'user_group' )
-					 ->where ( 'user_group_id = ? ', $infoAuth->user_group_id, INTEGER );
+					 ->where ( 'user_group_id = ? ', $infoAuth->user_group_id);
 		$result = $db->fetchRow ( $select );
 		$ns = new Zend_Session_Namespace ( 'info' );
 		$ns->group = $result;

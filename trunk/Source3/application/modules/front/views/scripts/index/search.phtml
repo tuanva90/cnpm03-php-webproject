@@ -14,7 +14,7 @@ foreach ($this->results as $Item)
 {
 ?>
 <tr>
-<td width="100"><div align="center"><a href="<?php echo $this->baseUrl($this->currentController . 'front/product/detail/product_id/' . $Item['product_id']);?>" title="<?php echo $Item['model']; ?>"><img src="<?php echo HTTP_IMAGES . 'public/images/' . $Item['image']; ?>" alt="<?php echo $Item['model']; ?>" width="90" height="90" title="<?php echo $Item['model']; ?>" /></a></div></td>
+<td width="100"><div align="center"><a href="<?php echo $this->baseUrl($this->currentController . 'front/product/detail/product_id/' . $Item['product_id']);?>" title="<?php echo $Item['model']; ?>"><img src="<?php echo HTTP_IMAGES . '/' . $Item['image']; ?>" alt="<?php echo $Item['model']; ?>" width="90" height="90" title="<?php echo $Item['model']; ?>" /></a></div></td>
 <td width="300"><div align="center"><a href="<?php echo $this->baseUrl($this->currentController . 'front/product/detail/product_id/' . $Item['product_id']);?>"><?php echo $Item['model']; ?></a></div></td>
 <td width="300"><div align="center"><?php echo $Item['price']?></div></td>
 </tr>
