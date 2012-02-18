@@ -142,11 +142,9 @@ class NewsController extends Honey_Controller_Action {
 		$newnews = new Front_Model_NewNews();
 		$newnews->deleteItem($this->_arrParam);
 		
-		session_start();
-		$_SESSION['delete_news_message'] = "Delete success!";
 		// redirect to request page;
-	    $back = $_SESSION['back'];
-	    unset($_SESSION['back']);
+		$ducnhtrash = new Zend_Session_Namespace('news_support');
+	    $back = $ducnhtrash->back;
 	    header("location: $back");
 	}
 	public function addAction(){
@@ -160,53 +158,41 @@ class NewsController extends Honey_Controller_Action {
 			$newnews->saveItem($this->_arrParam, array('task'=>'add'));
 		else $newnews->saveItem($this->_arrParam, array('task'=>'addnew'));
 		
-		session_start();
-		$_SESSION['add_news_message'] = "Add news success!";
 		// redirect to request page;
-		$back = $_SESSION['back'];
-		unset($_SESSION['back']);
-		header("location: $back");
+		$ducnhtrash = new Zend_Session_Namespace('news_support');
+	    $back = $ducnhtrash->back;
+	    header("location: $back");
 	}
 	public function saveAction(){
-		$this->_helper->viewRenderer->setNoRender();
-		$this->_helper->layout->disableLayout();
-	
-		$newnews = new Front_Model_NewNews();
+		//$this->_helper->viewRenderer->setNoRender();
+		//$this->_helper->layout->disableLayout();
+		$this->view->descriptionPost = stripslashes($_POST['description']);
+		//$newnews = new Front_Model_NewNews();
 		
-		$newnews->saveItem($this->_arrParam, array('task'=>'edit'));
+		//$newnews->saveItem($this->_arrParam, array('task'=>'edit'));
 		
-		session_start();
-		$_SESSION['edit_news_message'] = "Edit news success!";
 		// redirect to request page;
-		$back = $_SESSION['back'];
-		unset($_SESSION['back']);
-		header("location: $back");
+		//$ducnhtrash = new Zend_Session_Namespace('news_support');
+	    //$back = $ducnhtrash->back;
+	    //header("location: $back");
 	}
 	
 	public function changeeditmodeAction()
 	{
-		session_start();
 	    $this->_helper->viewRenderer->setNoRender();
 	    $this->_helper->layout->disableLayout();
-	    if(isset($_SESSION['EditMode']))
-	    {
-	        if($_SESSION['EditMode'] == 'ON')
-	            $_SESSION['EditMode'] = 'OFF';
-	        else $_SESSION['EditMode'] = 'ON';
-	    }
-	    else{
-	        $_SESSION['EditMode'] = 'OFF';
-	    }
 	    
-	    // redirect to request page;
-	    if(!isset($_SESSION['back']))
-	        $this->_helper->redirector('index','news','front');
+	    $ducnhtrash = new Zend_Session_Namespace('news_support');
 	    
-	    else{
-	    	$back = $_SESSION['back'];
-	    	unset($_SESSION['back']);
-	    	header("location: $back");
-	    }
+	    if($ducnhtrash->editmode == 'OFF')
+	        $ducnhtrash->editmode = 'ON';
+	    else
+	        $ducnhtrash->editmode = 'OFF';
+	    
+		// redirect to request page;
+		$ducnhtrash = new Zend_Session_Namespace('news_support');
+	    $back = $ducnhtrash->back;
+	    header("location: $back");
 	}
 	
 	public function markhotnewsAction(){
@@ -217,11 +203,10 @@ class NewsController extends Honey_Controller_Action {
 		
 		$hotnews->saveItem($this->_arrParam, array('task' => 'add'));
 		
-		session_start();
-		
-		$back = $_SESSION['back'];
-		unset($_SESSION['back']);
-		header("location: $back");
+		// redirect to request page;
+		$ducnhtrash = new Zend_Session_Namespace('news_support');
+	    $back = $ducnhtrash->back;
+	    header("location: $back");
 	}
 	
 	

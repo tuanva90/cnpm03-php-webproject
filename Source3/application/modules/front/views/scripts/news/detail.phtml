@@ -1,6 +1,7 @@
 <div id="content">
   <div class="breadcrumb"></div>
-  <?php session_start(); if(isset($_SESSION['EditMode'])) if($_SESSION['EditMode'] == 'ON'){?>
+  <?php $ducnhtrash = new Zend_Session_Namespace('news_support');?>
+  <?php if($ducnhtrash->editmode == 'ON'){?>
   	<script>
   	$(function(){
   		$(document).click(function(e){
@@ -67,7 +68,24 @@
 			var _currentNewsID = <?php echo $this->Item['news_id']?>;
 			$('#contextMenu').hide();
 			
-
+			$.ajax({
+				type:'POST',
+				url:'<?php echo $this->baseUrl('front/services/getcategorylist')?>',
+				dataType:'json',
+				success:function(json){
+					if(json.success){
+						$.each(json, function(key, value){
+							$('#edit-news-form select[name=category]').append(new Option(value.name,value.category_id));
+							$('#add-news-form-2 select[name=category]').append(new Option(value.name,value.category_id));
+						});
+					}
+					if(json.error){
+						alert(json.error);
+					}
+				}
+			
+			});
+			
 			$('#edit-news').click(function(e){
 				e.stopPropagation();
 				// fuu, $(this).offset() lay offset top voi document, this.offsetTop lay offset top voi parent element
@@ -89,6 +107,7 @@
 					success:function(json){
 						if(json.success){
 							$('#edit-news-form input[name=save_news_id]').val(json.news_id);
+							$('#edit-news-form input[name=image]').val(json.image);
 							$('#edit-news-form img[name=image]').attr('src',json.image);
 							$('#edit-news-form input[name=sort-order]').val(json.sort_order);
 							$('#edit-news-form select[name=status]').val(json.status);
@@ -100,6 +119,8 @@
 							$('#edit-news-form input[name=metadescription]').val(json.meta_description);
 							$('#edit-news-form input[name=metakeywords]').val(json.meta_keywords);
 							$('#edit-news-form select[name=category]').val(json.category_id);
+
+							
 							
 						}
 						if(json.error){
@@ -238,7 +259,7 @@
  	<legend>Thông tin chi tiết</legend>
  	Tiêu đề<br/><input type="text" name="title" size="100"><br/>
  	Tóm tắt<br/><textarea cols="98" rows="2" name="summary"></textarea><br/>
- 	Chi tiết<br/><span id="edit_description_posArea">Loading...</span><textarea cols="98" rows="6" name="description" id="edit_description"></textarea><br/>
+ 	Chi tiết<br/><span id="edit_description_posArea">Loading...</span><textarea cols="98" rows="6" name="edit_description" id="edit_description"></textarea><br/>
  	Meta keywords<br/><input type="text" name="metakeywords" size="100"><br/>
  	Meta description<br/><input type="text" name="metadescription" size="100"><br/>
  	</fieldset>
@@ -252,7 +273,7 @@
   </div>
   <?php }?>
   
-  <?php if(!isset($_SESSION['EditMode']) || $_SESSION['EditMode'] == 'OFF'){?>
+  <?php if(!isset($ducnhtrash->editmode) || $ducnhtrash->editmode == 'OFF'){?>
   	<script>
 		$(function(){
 			$(document).ready(function(){
@@ -275,7 +296,7 @@
     <div>
     <div class="ui-widget-header ui-corner-all module-title title">
 		<h3><?php echo $this->Item['title']; ?></h3>
-		<?php if(isset($_SESSION['EditMode'])) if($_SESSION['EditMode'] == 'ON'){?>
+		<?php if(isset($ducnhtrash->editmode)) if($ducnhtrash->editmode == 'ON'){?>
 		<div class="edit-button">
 			<button id='edit-news' class="state-changable-button">...</button>
 		</div>

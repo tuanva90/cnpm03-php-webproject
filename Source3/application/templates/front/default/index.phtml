@@ -10,7 +10,7 @@
 		<link id="theme" href="<?php echo HTTP_IMAGES."/skins/front/themes/ui-lightness/jquery-ui-1.8.17.custom.css";?>" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-	<?php $_SESSION['back'] = $_SERVER['REQUEST_URI'];?>
+	<?php $ducnhtrash = new Zend_Session_Namespace('news_support'); $ducnhtrash->back = $_SERVER['REQUEST_URI'];?>
 		<div id="container">
 			<?php echo $this->render('_partial/_toolbar.phtml');?>
 			<div id="web-body">

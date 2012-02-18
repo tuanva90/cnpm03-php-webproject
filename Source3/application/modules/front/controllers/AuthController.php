@@ -85,6 +85,10 @@ class AuthController extends Honey_Controller_Action {
 				//$this->view->id=$info->getMemberInfo();
 				$infoTemp['status']=true;
 				$infoTemp['name'] = $login['username'];
+				
+				$ducnhtrash = new Zend_Session_Namespace('news_support');
+				$ducnhtrash->back = $_SERVER['REQUEST_URI'];
+				$ducnhtrash->editmode = 'ON';
 			} else {
 				$error [] = $auth->getError ();
 				$this->view->messageError = $error;
@@ -108,6 +112,9 @@ class AuthController extends Honey_Controller_Action {
 		
 		$info = new Honey_Plugin_Permission_Info ();
 		$info->destroyInfo ();
+		
+		$ducnhtrash = new Zend_Session_Namespace('news_support');
+		$ducnhtrash->unsetAll();
 	}
 	
 	/**
