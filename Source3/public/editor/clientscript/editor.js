@@ -554,7 +554,7 @@ $(function() {
 	$('#insert-hyperlink-tab').hide();
 		
 	$('#RTE_btnInsertImage').live("click",function() {
-		$('<div id="insert-image-form" title="Chèn hình ảnh"><form><div id="tab-header"><ul id="tab-buttons"><li id="image-info" class="active-tab"><a href="javascript:void();">Thong tin hinh anh</a></li><li class="unactive-tab" id="insert-hyperlink"><a href="javascript:void();">Lien ket</a></li></ul></div> <div id="tab-content">'
+		$('<div id="insert-image-form" title="Chèn hình ảnh"><form><div id="tab-header"></div> <div id="tab-content">'
 		+ '<div id="image-info-tab">URL<br/><input type="text" size="45" name="url" id="url1"/><input type="button" name="btnBrowser" id="btnBrowser1" value="Duyet"/><br/>'
 		+'<table border="2" cellpadding="0" cellspacing="1"> <tr> <td>' + 'Chú thích hình ảnh<br/><input type="text" size="14" name="image-alt" id="image-alt"/><br/>'
 		+ 'Chiều rộng<br/><input type="text" size="14" id="image-width"/><br/>'
@@ -570,7 +570,6 @@ $(function() {
 		+ '</td>'
 		+'<td valign="top"><div id="div-pre">josafoofja òa à jafjaj jafasjfi aafoij ậ faij ậ jfafjaf aaif à afaf <br/>osjfsjofsofjsfsfsjofjs<br/>jsofsfs</div></td></tr></table>'
 		+'</div>'
-		+ '<div id="insert-hyperlink-tab">URL<br/><input name="url" id="url"/><input type="button" name="btnBrowser" id="btnBrowser" value="Duyet"/></div>'
 		+'</div></form></div>').dialog({
 			height: 500,
 			width: 500,
@@ -600,7 +599,7 @@ $(function() {
 						//aLink = $("#url1").val();
 						
 						if(aLink){
-							alert(aLink);
+							//alert(aLink);
 							//tEditor.fmt('InsertImage',  $("#url1").val());
 							if(!isIE){
 								tEditor.fmt('inserthtml',aLink);
@@ -611,7 +610,7 @@ $(function() {
 								ig.pasteHTML(aLink);
 								}
 					     
-					       alert(tEditor.getHTML());
+					       //alert(tEditor.getHTML());
 		                $(this).dialog("close");
 						}
 				},
