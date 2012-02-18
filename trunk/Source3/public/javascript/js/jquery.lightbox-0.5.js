@@ -27,11 +27,11 @@
 			// Configuration related to navigation
 			fixedNavigation:		false,		// (boolean) Boolean that informs if the navigation (next and prev button) will be fixed or not in the interface.
 			// Configuration related to images
-			imageLoading:			'http://localhost/Source3/public/javascript/images/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
-			imageBtnPrev:			'http://localhost/Source3/public/javascript/images/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
-			imageBtnNext:			'http://localhost/Source3/public/javascript/images/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
-			imageBtnClose:			'http://localhost/Source3/public/javascript/images/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
-			imageBlank:				'http://localhost/Source3/public/javascript/images/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
+			imageLoading:			'http://localhost/CMS-Source3/public/javascript/js/images/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
+			imageBtnPrev:			'http://localhost/CMS-Source3/public/javascript/js/images/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
+			imageBtnNext:			'http://localhost/CMS-Source3/public/javascript/js/images/lightbox-btn-next.gif',			// (string) Path and the name of the next button image
+			imageBtnClose:			'http://localhost/CMS-Source3/public/javascript/js/images/lightbox-btn-close.gif',		// (string) Path and the name of the close btn
+			imageBlank:				'http://localhost/CMS-Source3/public/javascript/js/images/lightbox-blank.gif',			// (string) Path and the name of a blank image (one pixel)
 			// Configuration related to container image box
 			containerBorderSize:	10,			// (integer) If you adjust the padding in the CSS for the container, #lightbox-container-image-box, you will need to update this value
 			containerResizeSpeed:	400,		// (integer) Specify the resize duration of container image. These number are miliseconds. 400 is default.

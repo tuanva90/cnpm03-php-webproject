@@ -23,7 +23,7 @@ var welcomeText = "<?php echo $welcome_text;?>";
 
 $(function() {
 	function updateHeader() {
-		$("#banner").attr("src", imageRoot + '/' + imageLink);
+		$("#banner").attr("src", imageLink);
 		$("#page-title").html(pageTitle);
 		$("#welcome-text").html(welcomeText);
 		var option_str = "$banner='" + imageLink + "';$title='" + pageTitle + "';$welcome_text='" + welcomeText +"';"
@@ -50,7 +50,7 @@ $(function() {
 		});
 	}
 	
-	$("#banner").attr("src", imageRoot + '/' + imageLink);
+	$("#banner").attr("src", imageLink);
 	$("#page-title").html(pageTitle);
 	$("#welcome-text").html(welcomeText);
 	$("#choose-image-form").dialog({
