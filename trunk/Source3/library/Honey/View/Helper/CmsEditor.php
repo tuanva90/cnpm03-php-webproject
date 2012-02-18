@@ -7,7 +7,7 @@ class Honey_View_Helper_CmsEditor extends Zend_View_Helper_Abstract {
 		$xhtml = '';
 		if(count($arrParam)>0){
 			foreach ($arrParam as $key => $val) {
-				/*$xhtml .=			
+				$xhtml .=			
 				'<script type="text/javascript">
 				CKEDITOR.replace(\'' . $val . '\', {
 					language : \'vi\',
@@ -22,7 +22,7 @@ class Honey_View_Helper_CmsEditor extends Zend_View_Helper_Abstract {
 					
 				});
 				</script>';
-				*/
+				/*
 				$xhtml .=			
 				'<script type="text/javascript">
 				CKEDITOR.replace(\'' . $val . '\', {
@@ -37,7 +37,8 @@ class Honey_View_Helper_CmsEditor extends Zend_View_Helper_Abstract {
 					filebrowserWindowHeight : \'500\'
 					
 				});
-				</script>';				
+				</script>';
+				*/			
 			}
 		}
 		

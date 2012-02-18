@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Get link and save to database
  * 
@@ -19,22 +19,23 @@ class Honey_Plugin_Cron extends Zend_Controller_Plugin_Abstract {
 	}
 	
 	public function preDispatch(Zend_Controller_Request_Abstract $request) {
-		
+		/*
 		$moduleName = $this->_request->getModuleName ();
 		
 		$controllerName = $this->_request->getControllerName ();
 
 		$ationName = $this->_request->getActionName ();
 		
-		//if($moduleName == 'admin' && $controllerName == 'index' && $ationName == 'index'){
-			/*$this->thethaovanhoa();
-			$this->megafun();
-			$this->dantri();
-			$this->vtc();
-			$this->zing();
-			$this->vnexpress();	
-			$this->kenh14();*/
-		//}
+		if($moduleName == 'link' && $controllerName == 'index' && $ationName == 'index'){
+			//$this->thethaovanhoa();
+			//$this->megafun();
+			//$this->dantri();
+			//$this->vtc();
+			//$this->zing();
+			//$this->vnexpress();	
+			//$this->kenh14();
+		}
+		*/
 	}
 	
 	public function vtc()
