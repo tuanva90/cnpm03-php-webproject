@@ -8,6 +8,7 @@
 	
 </style>
 	<script type="text/javascript">
+		//var newest_products = true;
 		function newest_products_refresh(){		
 			$("#newest-products-content").html("<center><h3>Loading...</h3></center>");
 			var max = $("#edit-newest-product-form input[name='txtMaxAmount']").val();			
@@ -85,6 +86,7 @@
 					}
 				}
 			});
+
 			newest_products_refresh();
 		});
 	</script>
