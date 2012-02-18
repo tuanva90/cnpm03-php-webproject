@@ -122,13 +122,13 @@ class Admin_Model_User extends Honey_Db_Table {
 	
 	}
 	
-	public function getItem($id, $options = null) {
+	public function getItem($arrParam = null, $options = null) {
 		
 		if ($options ['task'] == 'info' || $options ['task'] == 'edit') {
 			$db = Zend_Registry::get ( 'connectDB' );
 			$select = $db->select ()->from ( array('u' => $this->getPrefix().'user') )
 									->joinLeft ( array('ug' => $this->getPrefix().'user_group') , 'u.user_group_id = ug.user_group_id')
-									->where ( 'u.user_id = ?', $id );
+									->where ( 'u.user_id = ?', $arrParam ['user_id']);
 			
 			$result = $db->fetchRow ( $select );
 		}
