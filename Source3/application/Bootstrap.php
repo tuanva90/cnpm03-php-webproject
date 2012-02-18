@@ -54,14 +54,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
 	 * @return void
 	 */
 	protected function _initPlugins() {
-		$front = Zend_Controller_Front::getInstance ();
-		
-		/** 
-		 * Register plugins
-		 */
-		$front->registerPlugin(new Honey_Plugin_Permission())
-			  ->registerPlugin(new Honey_Plugin_Cron());
-		return $front;
 	
 	/**
 	 * Error handler
