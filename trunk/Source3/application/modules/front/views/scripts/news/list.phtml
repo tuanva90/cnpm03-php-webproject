@@ -58,6 +58,7 @@ $(function(){
 			height:600,
 			buttons:{
 				"Lưu":function(){
+					$('#edit-news-form textarea[name=description]').val($('#edit-news-form textarea[name=description]').html());
 					$('#edit-news-form').submit();
 				},
 				Hủy:function(){
@@ -349,9 +350,7 @@ $(function(){
   			<li><a href="javascript:void();"><span class="add-menu-item" id="add-menu-item_01">Thêm tin mới</span></a></li>
   			<li><a href="javascript:void();"><span class="add-en-menu-item" id="add-en-menu-item_01">Thêm bản tiếng anh</span></a></li>
   			<li><a href="javascript:void();"><span class="edit-menu-item" id="edit-menu-item_01">Sửa tin</span></a></li>
-			<?php if($this->arrParam['category_id'] != 'hot-news'){?>
-			<li><a href="javascript:void();"><span class="set-hot-news-menu-item" id="set-hot-news-menu-item_01">Đặt làm tin nóng</span></a></li>
-			<?php }?>
+			<li><a href="javascript:void();"><span class="set-hot-news-menu-item" id="set-hot-news-menu-item_01">Đặt làm tin nổi bật</span></a></li>
   			<li><a href="javascript:void();"><span class="remove-menu-item" id="remove-menu-item_01">Xóa tin</span></a></li>
   			<li><a href="javascript:void();"><span class="detail-menu-item" id="detail-menu-item_01">Xem chi tiết</span></a></li>
   		</ul>
