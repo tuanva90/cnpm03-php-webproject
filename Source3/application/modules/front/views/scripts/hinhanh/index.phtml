@@ -1,6 +1,6 @@
 <div id="gallery">
 <?php 
-      function recursiveDelete($directory) {
+      function recursiveDelete($directory,$folder) {
 		$handle = null;
 		if (is_dir($directory)) {
 			//echo "directory not correct";
@@ -16,7 +16,9 @@
 				$dem=0;
 				echo '</ul>';
 			}
-			if ($file != '.' && $file != '..') {
+			if ($file != '.' && $file != '..' ) {
+				if(substr($file, -4)==".JPG" || substr($file, -4)==".PNG"
+				|| substr($file, -4)==".jpg" || substr($file, -4)==".png"){
 				$dem++;
 				if($dem==0){
 					echo '</ul>';
@@ -24,27 +26,76 @@
 					if($dem==1) echo '<ul>';
 				}
 				if (!is_dir($directory . '/' . $file)) {
+					$nameImage=$file;
+					if($folder!="") $nameImage=$folder.'/'.$file;
 					
-					//unlink($directory . '/' . $file);
-					//echo "this is image:".'public\images\data\computer'.'/'.$file ."</br>";
-					echo '<li><a href = "'. HTTP_IMAGES.'/data/hinhanh/'.$file . '">';
-					echo '<img src = "'. HTTP_IMAGES.'/data/hinhanh/'.$file . '" width="100" height="100"/></a><li>';
+					echo '<li><a href = "'. HTTP_IMAGES.'/data/hinhanh/'.$nameImage . '">';
+					echo '<img src = "'. HTTP_IMAGES.'/data/hinhanh/'.$nameImage.'" width="100" height="100"/></a><li>';
 				} else {
 					//$this->recursiveDelete($directory . '/' . $file);
 				}
+			}
 			}
 			
 		}
 		if($dem==4) echo '</ul>';
 		closedir($handle);
-		
-		//rmdir($directory);
 	}
-	//echo recursiveDelete(getcwd()."/public/data/computer");
-	//echo (getcwd().'\public\data\computer');
-	echo recursiveDelete(getcwd ().'\public\images\data\hinhanh');
+	//echo recursiveDelete(getcwd ().'\public\images\data\hinhanh');
+	//echo showfolder(getcwd ().'\public\images\data\hinhanh');
+	function showfolder($directory,$chon) {
+		$handle = null;
+		if (is_dir($directory)) {
+			//echo "directory not correct";
+			$handle = opendir($directory);
+		}
+		
+		if (!$handle) {
+			return false;
+		}
+		$dem=0;
+		while (false !== ($file = readdir($handle))) {
+		
+			if (1) {
+				if (substr($file, -4)!=".JPG" && $file!=".." && substr($file, -4)!=".png"
+				&& substr($file, -4)!=".PNG" && substr($file, -4)!=".gif" && $file!=".") {
+					if($file==$chon)
+						echo "<option selected='selected' value='$file'>$file</option>\n";
+					else echo "<option value='$file'>$file</option>\n";
+				} else {
+				//	$this->showfolder($directory . '/' . $file);
+				}
+			}
+			
+		}
+		
+		closedir($handle);
+	}
+	
+	
+	
+?>
+
+<form class="naviform" action="" name="tftnavi" method="post">
+	<select name="album" onchange="javascript:document.tftnavi.submit();">
+	<option value='empty' >Chọn thư mục</option> 
+	<?php
+		echo showfolder(getcwd ().'\public\images\data\hinhanh',$this->huy); 
+	?>
+	</select>
+	
+</form>
+
+<?php 
+	if($this->huy!="") {
+		//echo recursiveDelete(getcwd ().'\public\images\data\hinhanh\Congty');
+		$baodinh='\public\images\data\hinhanh\\'.$this->huy;
+		echo recursiveDelete(getcwd ().$baodinh,$this->huy);
+	}
+	else echo recursiveDelete(getcwd ().'\public\images\data\hinhanh',$this->huy);
 ?>
 </div>
+
 <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
   
     <script type="text/javascript" src="<?php echo HTTP_JAVASCRIPT?>/js/jquery.lightbox-0.5.js"></script>
