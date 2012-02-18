@@ -58,7 +58,7 @@
 		
 			if (1) {
 				if (substr($file, -4)!=".JPG" && $file!=".." && substr($file, -4)!=".png"
-				&& substr($file, -4)!=".PNG" && substr($file, -4)!=".gif" && $file!=".") {
+				&& substr($file, -4)!=".PNG" && substr($file, -4)!=".gif" && $file!="." && substr($file, -4)!=".jpg") {
 					if($file==$chon)
 						echo "<option selected='selected' value='$file'>$file</option>\n";
 					else echo "<option value='$file'>$file</option>\n";
