@@ -205,6 +205,52 @@
 				$('#mark-as-hotnews-form input[name=news_id]').val(_currentNewsID);
 				$('#mark-as-hotnews-form').submit();
 			});
+			
+			function image_upload(field, thumb) {
+				$('#dialog').remove();
+				$strlayout = '<div id="dialog" style="padding: 3px 0px 0px 0px;"> <div id = "11111"><iframe id = "123" src="' + "<?php echo HTTP_SERVER?>" + 'admin/filemanager?field=' + encodeURIComponent(field) + '" style="padding:0; margin: 0; display: block; width: 100%; height: 100%;" frameborder="no" scrolling="auto"></iframe></div></div>';
+				$('#content').prepend($strlayout);
+				$('#dialog').dialog({
+					
+					title: 'Quản lý hình ảnh',
+					close: function (event, ui) {
+						//alert("event clicked");
+						if ($('#' + field).attr('value')) {
+							$.ajax({
+								url: "<?php echo HTTP_SERVER;?>" + 'admin/filemanager/image?image=' + encodeURIComponent($('#' + field).val()),
+								dataType: 'text',
+								success: function(data) {
+									//$('#' + thumb).replaceWith('<img src="' + data + '" alt="" id="' + thumb + '" />');
+								}
+							});
+						}
+						//alert($("'#" + field + "'").val());
+						var imglink = "<?php echo HTTP_SERVER;?>" + "public/images/" + $("#" + field).val();
+						//alert(imglink);
+						$("#" + field).val(imglink);
+						//alert($("#txtUrl").val());
+						$("#" + field).change();
+					},	
+					bgiframe: false,
+					width: 800,
+					height: 400,
+					resizable: false,
+					modal: true
+				});
+			};
+			
+			$('#add_btn_browser').click(function(){
+
+				image_upload('add_image_Url', 'thumb');
+				});
+
+			$('#edit_btn_browser').click(function(){
+
+				image_upload('edit_image_Url', 'thumb');
+				});
+			$('#edit_image_Url').change(function(){
+					$('#edit_image').attr('src', $(this).val());
+				});
 		});
   	  	
   	});
@@ -225,7 +271,7 @@
   			<legend>Thông tin chung</legend>
 			<span style="width:100px; display:inline-block">Mục</span><select name="category"></select><br/>
   			<span style="width:100px; display:inline-block">Chọn 1 ngôn ngữ</span><select name="language"><option value="en_US">Tiếng Anh</option></select><br/>
- 			<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><br/>
+ 			<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75" id="add_image_Url"><input type="button" id="add_btn_browser" val="Duyệt ảnh"/><br/>
  			<span style="width:100px; display:inline-block">Thứ tự hiển thị</span><input type="text" name="sort-order" size="3"><br/>
  			<span style="width:100px; display:inline-block">Chọn 1 trạng thái</span><select name="status"><option value="1">Xuất bản ngay</option><option value="0">Chưa xuất bản ngay</option></select><br/>
  		</fieldset>
@@ -248,8 +294,8 @@
  	<legend>Thông tin chung</legend>
  	<span style="width:100px; display:inline-block">Mục</span><select name="category"></select><br/>
  	<span style="width:100px; display:inline-block">Ngôn ngữ</span><select name="language"><option value="en_US">Tiếng Anh</option><option value="vi_VN">Tiếng Việt</option></select><br/>
- 	<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75"><a href="javascript:void();" id="edit-news-change-image">Duyệt</a><br/>
- 	<span style="width:100px; display:inline-block"></span><img src="" name="image"><br/>
+ 	<span style="width:100px; display:inline-block">Hình ảnh</span><input type="text" name="image" size="75" id="edit_image_Url"><input type="button" id="edit_btn_Browser" value="Duyệt ảnh"/><br/>
+ 	<span style="width:100px; display:inline-block"></span><img src="" name="image" id="edit_image"><br/>
  	<span style="width:100px; display:inline-block">Thứ tự</span><input type="text" name="sort-order" size="3"><br/>
  	<span style="width:100px; display:inline-block">Trạng thái</span><select name="status"><option value="1">Được xuất bản</option><option value="0">Tạm ngưng</option></select><br/>
  	</fieldset>
