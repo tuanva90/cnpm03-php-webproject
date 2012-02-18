@@ -2,7 +2,6 @@
 function replace(id, id_replace, str_directory)
 {
 	var tx = document.getElementById(id);
-	alert(tx.value);
 	RTE=new Editor('RTE', id, id_replace, tx.value,600, 350, str_directory);
 	RTE.display(id);
 	RTE.setHTMLto(id);
@@ -13,12 +12,6 @@ function replace(id, id_replace, str_directory)
 	tEditor = RTE;
 }
 
-
-function rte_reset()
-{
-	tEditor = null;
-	RTE = null;
-}
 
 function getNavigator(){
 	var bUserAgent=navigator.userAgent.toLowerCase();
